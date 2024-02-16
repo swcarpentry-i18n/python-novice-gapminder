@@ -1,38 +1,38 @@
 ---
-title: Data Types and Type Conversion
+title: Tipi di dati e conversione di tipo
 teaching: 10
 exercises: 10
 ---
 
-::::::::::::::::::::::::::::::::::::::: objectives
+::::::::::::::::::::::::::::::::::::::::::::::: obiettivi
 
-- Explain key differences between integers and floating point numbers.
-- Explain key differences between numbers and character strings.
-- Use built-in functions to convert between integers, floating point numbers, and strings.
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
-
-:::::::::::::::::::::::::::::::::::::::: questions
-
-- What kinds of data do programs store?
-- How can I convert one type to another?
+- Spiega le differenze chiave tra numeri interi e numeri in virgola mobile.
+- Spiega le differenze tra numeri e stringhe di caratteri.
+- Usa le funzioni integrate per convertire tra numeri interi, numeri in virgola mobile e stringhe.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Every value has a type.
+:::::::::::::::::::::::::::::::::::::::::::::::: domande
 
-- Every value in a program has a specific type.
-- Integer (`int`): represents positive or negative whole numbers like 3 or -512.
-- Floating point number (`float`): represents real numbers like 3.14159 or -2.5.
-- Character string (usually called "string", `str`): text.
-  - Written in either single quotes or double quotes (as long as they match).
-  - The quote marks aren't printed when the string is displayed.
+- Quali tipi di dati memorizzano i programmi?
+- Come posso convertire un tipo in un altro?
 
-## Use the built-in function `type` to find the type of a value.
+::::::::::::::::::::::::::::::::::::::::::::::::::
 
-- Use the built-in function `type` to find out what type a value has.
-- Works on variables as well.
-  - But remember: the _value_ has the type --- the _variable_ is just a label.
+## Ogni valore ha un tipo.
+
+- Ogni valore in un programma ha un tipo specifico.
+- Intero (`int`): rappresenta numeri interi positivi o negativi come 3 o -512.
+- Numero a virgola mobile (`float`): rappresenta numeri reali come 3.14159 o -2.5.
+- Stringa di carattere (solitamente chiamata "stringa", `str`): testo.
+  - Scritto in virgolette singole o in virgolette doppie (purché corrispondenti).
+  - I preventivi non sono stampati quando viene visualizzata la stringa.
+
+## Usa la funzione `type` integrata per trovare il tipo di valore.
+
+- Usa la funzione `type` integrata per scoprire che tipo ha un valore.
+- Funziona anche su variabili.
+  - Ma ricorda: il _value_ ha il tipo --- la _variabile_ è solo un'etichetta.
 
 ```python
 print(type(52))
@@ -43,7 +43,7 @@ print(type(52))
 ```
 
 ```python
-fitness = 'average'
+fitness = 'media'
 print(type(fitness))
 ```
 
@@ -51,9 +51,9 @@ print(type(fitness))
 <class 'str'>
 ```
 
-## Types control what operations (or methods) can be performed on a given value.
+## I tipi controllano quali operazioni (o metodi) possono essere eseguite su un dato valore.
 
-- A value's type determines what the program can do to it.
+- Il tipo di valore determina ciò che il programma può fare ad esso.
 
 ```python
 print(5 - 3)
@@ -69,16 +69,16 @@ print('hello' - 'h')
 
 ```error
 ---------------------------------------------------------------------------
-TypeError                                 Traceback (most recent call last)
+TypeError Traceback (most recent call last)
 <ipython-input-2-67f5626a1e07> in <module>()
 ----> 1 print('hello' - 'h')
 
 TypeError: unsupported operand type(s) for -: 'str' and 'str'
 ```
 
-## You can use the "+" and "\*" operators on strings.
+## È possibile utilizzare gli operatori "+" e "\*" sulle stringhe.
 
-- "Adding" character strings concatenates them.
+- Le stringhe di caratteri "Aggiungi" le concatenano.
 
 ```python
 full_name = 'Ahmed' + ' ' + 'Walsh'
@@ -89,8 +89,8 @@ print(full_name)
 Ahmed Walsh
 ```
 
-- Multiplying a character string by an integer _N_ creates a new string that consists of that character string repeated  _N_ times.
-  - Since multiplication is repeated addition.
+- Moltiplicare una stringa di caratteri per un intero _N_ crea una nuova stringa che consiste di quella stringa di caratteri ripetuta _N_ volte.
+  - Dal momento che la moltiplicazione è aggiunta ripetuta.
 
 ```python
 separator = '=' * 10
@@ -101,9 +101,9 @@ print(separator)
 ==========
 ```
 
-## Strings have a length (but numbers don't).
+## Le stringhe hanno una lunghezza (ma i numeri non sono).
 
-- The built-in function `len` counts the number of characters in a string.
+- La funzione `len` incorporata conta il numero di caratteri in una stringa.
 
 ```python
 print(len(full_name))
@@ -113,7 +113,7 @@ print(len(full_name))
 11
 ```
 
-- But numbers don't have a length (not even zero).
+- Ma i numeri non hanno una lunghezza (nemmeno zero).
 
 ```python
 print(len(52))
@@ -121,16 +121,16 @@ print(len(52))
 
 ```error
 ---------------------------------------------------------------------------
-TypeError                                 Traceback (most recent call last)
+TypeError Traceback (most recent call last)
 <ipython-input-3-f769e8e8097d> in <module>()
 ----> 1 print(len(52))
 
 TypeError: object of type 'int' has no len()
 ```
 
-## Must convert numbers to strings or vice versa when operating on them. {#convert-numbers-and-strings}
+## È necessario convertire i numeri in stringhe o viceversa quando si opera su di esse. {#convert-numbers-and-strings}
 
-- Cannot add numbers and strings.
+- Impossibile aggiungere numeri e stringhe.
 
 ```python
 print(1 + '2')
@@ -138,15 +138,15 @@ print(1 + '2')
 
 ```error
 ---------------------------------------------------------------------------
-TypeError                                 Traceback (most recent call last)
+TypeError Traceback (most recent call last)
 <ipython-input-4-fe4f54a023c6> in <module>()
 ----> 1 print(1 + '2')
 
 TypeError: unsupported operand type(s) for +: 'int' and 'str'
 ```
 
-- Not allowed because it's ambiguous: should `1 + '2'` be `3` or `'12'`?
-- Some types can be converted to other types by using the type name as a function.
+- Non consentito perché è ambiguo: `1 + '2'` dovrebbe essere `3` o `'12'`?
+- Alcuni tipi possono essere convertiti in altri tipi utilizzando il nome del tipo come funzione.
 
 ```python
 print(1 + int('2'))
@@ -158,10 +158,10 @@ print(str(1) + '2')
 12
 ```
 
-## Can mix integers and floats freely in operations.
+## Puoi mescolare interi e galleggianti liberamente nelle operazioni.
 
-- Integers and floating-point numbers can be mixed in arithmetic.
-  - Python 3 automatically converts integers to floats as needed.
+- I numeri interi e i numeri a virgola mobile possono essere mescolati in aritmetica.
+  - Python 3 converte automaticamente gli interi in float secondo necessità.
 
 ```python
 print('half is', 1 / 2.0)
@@ -169,16 +169,16 @@ print('three squared is', 3.0 ** 2)
 ```
 
 ```output
-half is 0.5
-three squared is 9.0
+metà è 0,5
+tre quadrati è 9.0
 ```
 
-## Variables only change value when something is assigned to them.
+## Le variabili cambiano valore solo quando è assegnato qualcosa a loro.
 
-- If we make one cell in a spreadsheet depend on another,
-  and update the latter,
-  the former updates automatically.
-- This does **not** happen in programming languages.
+- Se facciamo una cella in un foglio di calcolo dipende da un altro,
+  e aggiorna il secondo,
+  gli aggiornamenti precedenti automaticamente.
+- Questo **non** accade nei linguaggi di programmazione.
 
 ```python
 variable_one = 1
@@ -188,27 +188,27 @@ print('first is', variable_one, 'and second is', variable_two)
 ```
 
 ```output
-first is 2 and second is 5
+il primo è 2 e il secondo è 5
 ```
 
-- The computer reads the value of `variable_one` when doing the multiplication,
-  creates a new value, and assigns it to `variable_two`.
-- Afterwards, the value of `variable_two` is set to the new value and _not dependent on `variable_one`_ so its value
-  does not automatically change when `variable_one` changes.
+- Il computer legge il valore di `variable_one` quando si esegue la moltiplicazione,
+  crea un nuovo valore e lo assegna a `variable_two`.
+- Successivamente, il valore di `variable_two` è impostato al nuovo valore e _non dipende da `variable_one`_ quindi il suo valore
+  non cambia automaticamente quando `variable_one` cambia.
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::::::::: challenge
 
-## Fractions
+## Frazioni
 
-What type of value is 3.4?
-How can you find out?
+Che tipo di valore è 3.4?
+Come riesci a scoprire?
 
-:::::::::::::::  solution
+::::::::::::::: soluzione
 
-## Solution
+## Soluzione
 
-It is a floating-point number (often abbreviated "float").
-It is possible to find out by using the built-in function `type()`.
+È un numero in virgola mobile (spesso abbreviato "float").
+È possibile scoprire utilizzando la funzione `type()`.
 
 ```python
 print(type(3.4))
@@ -222,74 +222,74 @@ print(type(3.4))
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::::::::: challenge
 
-## Automatic Type Conversion
+## Conversione Automatica Del Tipo
 
-What type of value is 3.25 + 4?
+Che tipo di valore è 3,25 + 4?
 
-:::::::::::::::  solution
+::::::::::::::: soluzione
 
-## Solution
+## Soluzione
 
-It is a float:
-integers are automatically converted to floats as necessary.
+È un galleggiante: gli interi
+vengono automaticamente convertiti in galleggianti se necessario.
 
 ```python
-result = 3.25 + 4
-print(result, 'is', type(result))
+risultato = 3.25 + 4
+print(risultato, 'is', type(result))
 ```
 
 ```output
-7.25 is <class 'float'>
+7,25 è <class 'float'>
 ```
 
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::::::::: challenge
 
-## Choose a Type
+## Scegli un tipo
 
-What type of value (integer, floating point number, or character string)
-would you use to represent each of the following?  Try to come up with more than one good answer for each problem.  For example, in  # 1, when would counting days with a floating point variable make more sense than using an integer?
+Quale tipo di valore (numero intero, numero in virgola mobile, o stringa di caratteri)
+utilizzeresti per rappresentare ciascuno dei seguenti valori?  Cercate di trovare più di una buona risposta per ogni problema.  Ad esempio, in # 1, quando si contano i giorni con una variabile in virgola mobile hanno più senso che usare un intero?
 
-1. Number of days since the start of the year.
-2. Time elapsed from the start of the year until now in days.
-3. Serial number of a piece of lab equipment.
-4. A lab specimen's age
-5. Current population of a city.
-6. Average population of a city over time.
+1. Numero di giorni dall'inizio dell'anno.
+2. Tempo trascorso dall'inizio dell'anno fino ad ora in giorni.
+3. Numero di serie di un pezzo di attrezzatura di laboratorio.
+4. Età del campione di laboratorio
+5. Popolazione attuale di una città.
+6. Popolazione media di una città nel tempo.
 
-:::::::::::::::  solution
+::::::::::::::: soluzione
 
-## Solution
+## Soluzione
 
-The answers to the questions are:
+Le risposte alle domande sono:
 
-1. Integer, since the number of days would lie between 1 and 365.
+1. Intero, poiché il numero di giorni sarebbe compreso tra 1 e 365.
 
-2. Floating point, since fractional days are required
+2. Punto di galleggiamento, poiché sono richiesti giorni frazionati
 
-3. Character string if serial number contains letters and numbers, otherwise integer if the serial number consists only of numerals
+3. Stringa di caratteri se il numero di serie contiene lettere e numeri, altrimenti interi se il numero di serie è costituito solo da numeri
 
-4. This will vary! How do you define a specimen's age? whole days since collection (integer)? date and time (string)?
+4. Questo cambierà! Come definisci l'età di un esemplare? giorni interi dalla raccolta (intero)? data e ora (stringa)?
 
-5. Choose floating point to represent population as large aggregates (eg millions), or integer to represent population in units of individuals.
+5. Scegli un punto fluttuante per rappresentare la popolazione come grandi aggregati (ad esempio milioni), o interi per rappresentare la popolazione in unità di individui.
 
-6. Floating point number, since an average is likely to have a fractional part.
+6. Numero in virgola mobile, poiché è probabile che una media abbia una parte frazionata.
 
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::::::::: challenge
 
-## Division Types
+## Tipi Di Divisione
 
-In Python 3, the `//` operator performs integer (whole-number) floor division, the `/` operator performs floating-point
-division, and the `%` (or _modulo_) operator calculates and returns the remainder from integer division:
+In Python 3, l'operatore `//` esegue la divisione di pavimento interi (numero intero), l'operatore `/` esegue la divisione in virgola mobile
+, e l'operatore `%` (o _modulo_) calcola e restituisce il resto dalla divisione intera:
 
 ```python
 print('5 // 3:', 5 // 3)
@@ -299,47 +299,47 @@ print('5 % 3:', 5 % 3)
 
 ```output
 5 // 3: 1
-5 / 3: 1.6666666666666667
+5 / 3: 1.666666666666666667
 5 % 3: 2
 ```
 
-If `num_subjects` is the number of subjects taking part in a study,
-and `num_per_survey` is the number that can take part in a single survey,
-write an expression that calculates the number of surveys needed
-to reach everyone once.
+Se `num_subjects` è il numero di soggetti che partecipano a uno studio,
+e `num_per_survey` è il numero che può partecipare a un singolo sondaggio,
+scrive un'espressione che calcola il numero di sondaggi necessari
+per raggiungere tutti una volta.
 
-:::::::::::::::  solution
+::::::::::::::: soluzione
 
-## Solution
+## Soluzione
 
-We want the minimum number of surveys that reaches everyone once, which is
-the rounded up value of `num_subjects/ num_per_survey`. This is
-equivalent to performing a floor division with `//` and adding 1. Before
-the division we need to subtract 1 from the number of subjects to deal with
-the case where `num_subjects` is evenly divisible by `num_per_survey`.
+Vogliamo il numero minimo di indagini che raggiungono tutti una volta, che è
+il valore arrotondato di `num_subjects/ num_per_survey`. Questo è
+equivalente a eseguire una divisione di pavimento con `//` e aggiungendo 1. Prima di
+la divisione dobbiamo sottrarre 1 dal numero di soggetti per trattare con
+il caso in cui `num_subjects` è uniformemente divisibile per `num_per_survey`.
 
 ```python
 num_subjects = 600
 num_per_survey = 42
-num_surveys = (num_subjects - 1) // num_per_survey + 1
+num_survey = (num_subjects - 1) // num_per_survey + 1
 
 print(num_subjects, 'subjects,', num_per_survey, 'per survey:', num_surveys)
 ```
 
 ```output
-600 subjects, 42 per survey: 15
+600 soggetti, 42 per indagine: 15
 ```
 
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::::::::: challenge
 
-## Strings to Numbers
+## Stringhe a numeri
 
-Where reasonable, `float()` will convert a string to a floating point number,
-and `int()` will convert a floating point number to an integer:
+Laddove ragionevole, `float()` convertirà una stringa in un numero in virgola mobile,
+e `int()` convertiranno un numero in virgola mobile in un numero intero:
 
 ```python
 print("string to float:", float("3.4"))
@@ -347,57 +347,56 @@ print("float to int:", int(3.4))
 ```
 
 ```output
-string to float: 3.4
+stringa da float: 3.4
 float to int: 3
 ```
 
-If the conversion doesn't make sense, however, an error message will occur.
+Se la conversione non ha senso, tuttavia, si verificherà un messaggio di errore.
 
 ```python
-print("string to float:", float("Hello world!"))
+print("string to float:", float("Ciao mondo!"))
 ```
 
 ```error
 ---------------------------------------------------------------------------
-ValueError                                Traceback (most recent call last)
+ValueError Traceback (most recent call last)
 <ipython-input-5-df3b790bf0a2> in <module>
-----> 1 print("string to float:", float("Hello world!"))
+----> 1 print("string to float:", float("Ciao mondo! ))
 
-ValueError: could not convert string to float: 'Hello world!'
+ValueError: impossibile convertire la stringa in float: 'Ciao mondo!'
 ```
 
-Given this information, what do you expect the following program to do?
+Date queste informazioni, che cosa ti aspetti il seguente programma?
 
-What does it actually do?
+Che cosa fa realmente?
 
-Why do you think it does that?
+Perché pensi che lo faccia?
 
 ```python
-print("fractional string to int:", int("3.4"))
+print("stringa frazionaria per int:", int("3.4"))
 ```
 
-:::::::::::::::  solution
+::::::::::::::: soluzione
 
-## Solution
+## Soluzione
 
-What do you expect this program to do? It would not be so unreasonable to expect the Python 3 `int` command to
-convert the string "3.4" to 3.4 and an additional type conversion to 3. After all, Python 3 performs a lot of other
-magic - isn't that part of its charm?
+Cosa ti aspetti che questo programma faccia? Non sarebbe così irragionevole aspettarsi che il comando `int` di Python 3 converti
+la stringa "3. " a 3.4 e una conversione di tipo supplementare a 3. Dopo tutto, Python 3 esegue un sacco di altra magia* non è quella parte del suo fascino?
 
 ```python
-int("3.4")
+int("3,4")
 ```
 
 ```output
 ---------------------------------------------------------------------------
-ValueError                                Traceback (most recent call last)
+ValueError Traceback (most recent call last)
 <ipython-input-2-ec6729dfccdc> in <module>
-----> 1 int("3.4")
-ValueError: invalid literal for int() with base 10: '3.4'
+----> 1 int("3. ")
+ValoreErrore: letterale non valido per int() con base 10: '3.4'
 ```
 
-However, Python 3 throws an error. Why? To be consistent, possibly. If you ask Python to perform two consecutive
-typecasts, you must convert it explicitly in code.
+Tuttavia, Python 3 lancia un errore. Perché? Per essere coerenti, possibilmente. Se si chiede a Python di eseguire due tipecast
+consecutivi, è necessario convertirlo esplicitamente in codice.
 
 ```python
 int(float("3.4"))
@@ -411,45 +410,45 @@ int(float("3.4"))
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::::::::: challenge
 
-## Arithmetic with Different Types
+## Arithmetic con diversi tipi
 
-Which of the following will return the floating point number `2.0`?
-Note: there may be more than one right answer.
+Quale di seguito restituirà il numero in virgola mobile `2.0`?
+Nota: può esserci più di una risposta corretta.
 
 ```python
-first = 1.0
-second = "1"
-third = "1.1"
+primo = 1,0
+secondo = "1"
+terzo = "1,1"
 ```
 
 1. `first + float(second)`
-2. `float(second) + float(third)`
+2. `float(secondo) + float(third)`
 3. `first + int(third)`
 4. `first + int(float(third))`
 5. `int(first) + int(float(third))`
-6. `2.0 * second`
+6. `2.0 * secondo`
 
-:::::::::::::::  solution
+::::::::::::::: soluzione
 
-## Solution
+## Soluzione
 
-Answer: 1 and 4
+Risposta: 1 e 4
 
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::::::::: challenge
 
-## Complex Numbers
+## Numeri Complessi
 
-Python provides complex numbers,
-which are written as `1.0+2.0j`.
-If `val` is a complex number,
-its real and imaginary parts can be accessed using _dot notation_
-as `val.real` and `val.imag`.
+Python fornisce numeri complessi,
+che sono scritti come `1.0+2.0j`.
+Se `val` è un numero complesso,
+le sue parti reali e immaginarie possono essere accessibili usando _dot notation_
+come `val.real` e `val.imag`.
 
 ```python
 a_complex_number = 6 + 2j
@@ -458,27 +457,27 @@ print(a_complex_number.imag)
 ```
 
 ```output
-6.0
-2.0
+6,0
+2,0
 ```
 
-1. Why do you think Python uses `j` instead of `i` for the imaginary part?
-2. What do you expect `1 + 2j + 3` to produce?
-3. What do you expect `4j` to be?  What about `4 j` or `4 + j`?
+1. Perché pensi che Python utilizzi `j` invece di `i` per la parte immaginaria?
+2. Cosa ti aspetti di produrre `1 + 2j + 3`?
+3. Cosa ci si aspetta che sia `4j`?  Che dire di `4 j` o `4 + j`?
 
-:::::::::::::::  solution
+::::::::::::::: soluzione
 
-## Solution
+## Soluzione
 
-1. Standard mathematics treatments typically use `i` to denote an imaginary number. However, from media reports it
-   was an early convention established from electrical engineering that now presents a technically expensive area to
-   change. Stack Overflow provides additional explanation and
-   discussion.
+1. I trattamenti matematici standard usano tipicamente `i` per indicare un numero immaginario. Tuttavia, dai media riporta che
+   è stata una prima convenzione stabilita dalla ingegneria elettrica che ora presenta una zona tecnicamente costosa a
+   cambiamento. Stack Overflow fornisce ulteriori spiegazioni e discussioni
+   .
 
 2. `(4+2j)`
 
-3. `4j` and `Syntax Error: invalid syntax`. In the latter cases, `j` is considered a variable and the statement
-   depends on if `j` is defined and if so, its assigned value.
+3. `4j` e `Errore di sintassi: sintassi non valida`. In questi ultimi casi, `j` è considerato una variabile e l'istruzione
+   dipende da se `j` è definito e in caso affermativo, il suo valore assegnato.
 
 :::::::::::::::::::::::::
 
@@ -486,13 +485,13 @@ print(a_complex_number.imag)
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- Every value has a type.
-- Use the built-in function `type` to find the type of a value.
-- Types control what operations can be done on values.
-- Strings can be added and multiplied.
-- Strings have a length (but numbers don't).
-- Must convert numbers to strings or vice versa when operating on them.
-- Can mix integers and floats freely in operations.
-- Variables only change value when something is assigned to them.
+- Ogni valore ha un tipo.
+- Usa la funzione `type` integrata per trovare il tipo di valore.
+- I tipi controllano quali operazioni possono essere fatte sui valori.
+- Le stringhe possono essere aggiunte e moltiplicate.
+- Le stringhe hanno una lunghezza (ma i numeri non sono).
+- È necessario convertire i numeri in stringhe o viceversa quando si opera su di esse.
+- Puoi mescolare interi e galleggianti liberamente nelle operazioni.
+- Le variabili cambiano valore solo quando è assegnato qualcosa a loro.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
