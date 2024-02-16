@@ -1,38 +1,38 @@
 ---
-title: For Loops
+title: Цикли For
 teaching: 10
 exercises: 15
 ---
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- Explain what for loops are normally used for.
-- Trace the execution of a simple (unnested) loop and correctly state the values of variables in each iteration.
-- Write for loops that use the Accumulator pattern to aggregate values.
+- Пояснити, що для циклів зазвичай використовуються.
+- Спостерігати за виконанням простого (невкладеного) циклу і правильно визначати значення змінних в кожній ітерації.
+- Запис циклів, які використовують шаблон Акумулятора для сукупних значень.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::: questions
+::::::::::::::::::::::::::::::::::::::::::::: питань
 
-- How can I make a program do many things?
+- Як зробити програму багато речей?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## A _for loop_ executes commands once for each value in a collection.
+## _для циклу_ виконує команди один раз для кожного значення в колекції.
 
-- Doing calculations on the values in a list one by one
-  is as painful as working with `pressure_001`, `pressure_002`, etc.
-- A _for loop_ tells Python to execute some statements once for each value in a list,
-  a character string,
-  or some other collection.
-- "for each thing in this group, do these operations"
+- Робити розрахунки по значеннях у списку один за одним
+  є болісним, як це працює з `pressure_001`, `pressure_002`, etc.
+- _для циклу_ повідомляє Python виконувати деякі команди для кожного значення у списку,
+  символьний рядок,
+  або іншої колекції.
+- "Для кожної речі в групі, виконувати ці операції"
 
 ```python
-for number in [2, 3, 5]:
+для числа в [2, 3, 5]:
     print(number)
 ```
 
-- This `for` loop is equivalent to:
+- Цей цикл `for` еквівалентний для:
 
 ```python
 print(2)
@@ -40,7 +40,7 @@ print(3)
 print(5)
 ```
 
-- And the `for` loop's output is:
+- А результат циклу `for`:
 
 ```output
 2
@@ -48,65 +48,65 @@ print(5)
 5
 ```
 
-## A `for` loop is made up of a collection, a loop variable, and a body.
+## Цикл `for` складається з колекції, змінної циклу і тіла.
 
 ```python
-for number in [2, 3, 5]:
+для числа в [2, 3, 5]:
     print(number)
 ```
 
-- The collection, `[2, 3, 5]`, is what the loop is being run on.
-- The body, `print(number)`, specifies what to do for each value in the collection.
-- The loop variable, `number`, is what changes for each _iteration_ of the loop.
-  - The "current thing".
+- Колекція `[2, 3, 5]`, це те, на чому запускається цикл.
+- Тіло, `print(number)`, вказує, що робити для кожного значення у колекції.
+- Змінна циклу, `number`, це те, що змінюється для кожної _ітерації_ циклу.
+  - Нинішня річ.
 
-## The first line of the `for` loop must end with a colon, and the body must be indented.
+## Перший рядок циклу `for` має закінчуватися двокрапкою, і тіло має бути відступом.
 
-- The colon at the end of the first line signals the start of a _block_ of statements.
-- Python uses indentation rather than `{}` or `begin`/`end` to show _nesting_.
-  - Any consistent indentation is legal, but almost everyone uses four spaces.
+- Двокрапка в кінці першого рядка сигналізує про початок _блок_ команд.
+- Python використовує відступи, а не `{}` або `begin`/`end`, щоб показати _вкладення_.
+  - Будь-яка послідовна відстуність є законною, але майже всі користуються чотирма пробілами.
 
 ```python
-for number in [2, 3, 5]:
+для числа в [2, 3, 5]:
 print(number)
 ```
 
 ```error
-IndentationError: expected an indented block
+Помилка відступу: очікувався вкладений блок
 ```
 
-- Indentation is always meaningful in Python.
+- Відступ завжди значить у Python.
 
 ```python
 firstName = "Jon"
-  lastName = "Smith"
+  lastName = "Смайл"
 ```
 
 ```error
-  File "<ipython-input-7-f65f2962bf9c>", line 2
+  Файл "<ipython-input-7-f65f2962bf9c>", рядок 2
     lastName = "Smith"
     ^
-IndentationError: unexpected indent
+відступ : неочікуваний відступ
 ```
 
-- This error can be fixed by removing the extra spaces
-  at the beginning of the second line.
+- Ця помилка може бути виправлена шляхом видалення зайвих прогалин
+  на початку другої лінії.
 
-## Loop variables can be called anything.
+## Змінні циклу можна назвати що завгодно.
 
-- As with all variables, loop variables are:
-  - Created on demand.
-  - Meaningless: their names can be anything at all.
+- Як і всі змінні, змінні циклу:
+  - Створено на вимогу.
+  - Тим не значення: їх імена можуть бути будь-що взагалі.
 
 ```python
-for kitten in [2, 3, 5]:
+для кошеня в [2, 3, 5]:
     print(kitten)
 ```
 
-## The body of a loop can contain many statements.
+## Тіло циклу може містити багато команд.
 
-- But no loop should be more than a few lines long.
-- Hard for human beings to keep larger chunks of code in mind.
+- Але цикл не повинен бути довгим декількох ліній.
+- Важко для людських істот пам’ятати про більші шматочки коду.
 
 ```python
 primes = [2, 3, 5]
@@ -122,18 +122,18 @@ for p in primes:
 5 25 125
 ```
 
-## Use `range` to iterate over a sequence of numbers.
+## Використайте "діапазон" для повторення послідовності чисел.
 
-- The built-in function [`range`](https://docs.python.org/3/library/stdtypes.html#range) produces a sequence of numbers.
+- Вбудована функція ["range\`](https://docs.python.org/3/library/stdtypes.html#range) створює послідовність чисел.
   - _Not_ a list: the numbers are produced on demand
     to make looping over large ranges more efficient.
-- `range(N)` is the numbers 0..N-1
-  - Exactly the legal indices of a list or character string of length N
+- `діапазон(N)` є числами 0..N-1
+  - Саме правові індекси списку або символьного рядка N довжин
 
 ```python
-print('a range is not a list: range(0, 3)')
-for number in range(0, 3):
-    print(number)
+print('діапазон не є списком: range(0, 3)')
+для числа поза діапазоном (0, 3):
+    друку (число)
 ```
 
 ```output
@@ -143,96 +143,96 @@ a range is not a list: range(0, 3)
 2
 ```
 
-## The Accumulator pattern turns many values into one.
+## Шаблон Акумулятора перетворює багато значень на один.
 
-- A common pattern in programs is to:
-  1. Initialize an _accumulator_ variable to zero, the empty string, or the empty list.
-  2. Update the variable with values from a collection.
+- Типовий шаблон в програмах до:
+  1. Ініціалізуйте _акумулятор_ змінну до нуля, пустий рядок або порожній список.
+  2. Оновити змінну зі списку значень з колекції.
 
 ```python
-# Sum the first 10 integers.
-total = 0
-for number in range(10):
-   total = total + (number + 1)
-print(total)
+# Sum перші 10 цілих чисел.
+всього = 0
+для числа в діапазоні (10):
+   всього = total + (число + 1)
+printal)
 ```
 
 ```output
 55
 ```
 
-- Read `total = total + (number + 1)` as:
-  - Add 1 to the current value of the loop variable `number`.
-  - Add that to the current value of the accumulator variable `total`.
-  - Assign that to `total`, replacing the current value.
-- We have to add `number + 1` because `range` produces 0..9, not 1..10.
+- Читати `total = total + (number + 1)` як:
+  - Додати 1 до поточного значення змінної циклу `number`.
+  - Додати це до поточного значення змінної акумулятора, `загалом`.
+  - Призначте це загалом, замінивши поточне значення.
+- Ми повинні додати `number + 1`, тому що `діапазон` видає 0..9, не 1..10.
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+:::::::::::::::::::::::::::::::::::::::::::: виклик
 
-## Classifying Errors
+## Класифікація помилок
 
-Is an indentation error a syntax error or a runtime error?
+Чи є помилка відступів синтаксичною помилкою або помилкою runtime ?
 
-:::::::::::::::  solution
+:::::::::::::::::::: Рішення
 
-## Solution
+## Розв'язок
 
-An IndentationError is a syntax error. Programs with syntax errors cannot be started.
-A program with a runtime error will start but an error will be thrown under certain conditions.
+Відступна помилка - синтаксична помилка. Програми з синтаксичними помилками не можуть бути запущені.
+Програма з почнеться під час виконання програми, але буде кинута помилка в певних умовах.
 
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+:::::::::::::::::::::::::::::::::::::::::::: виклик
 
-## Tracing Execution
+## Відстеження виконання
 
-Create a table showing the numbers of the lines that are executed when this program runs,
-and the values of the variables after each line is executed.
+Створіть таблицю, яка показує кількість рядків, які виконуються під час виконання цієї програми,
+та значення змінних після кожного рядка.
 
 ```python
 total = 0
-for char in "tin":
-    total = total + 1
+для символів в "tin":
+    підсумок = всього + 1
 ```
 
-:::::::::::::::  solution
+:::::::::::::::::::: Рішення
 
-## Solution
+## Розв'язок
 
-| Line no | Variables            |
-| ------- | -------------------- |
-| 1       | total = 0            |
-| 2       | total = 0 char = 't' |
-| 3       | total = 1 char = 't' |
-| 2       | total = 1 char = 'i' |
-| 3       | total = 2 char = 'i' |
-| 2       | total = 2 char = 'n' |
-| 3       | total = 3 char = 'n' |
+| Без рядка | Змінні                   |
+| --------- | ------------------------ |
+| 1         | всього = 0               |
+| 2         | total = 0 символів = 't' |
+| 3         | total = 1 символ = 't'   |
+| 2         | всього = 1 символ = 'і'  |
+| 3         | всього = 2 символ = 'і'  |
+| 2         | всього = 2 символ = 'n'  |
+| 3         | total = 3 символ = 'n'   |
 
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+:::::::::::::::::::::::::::::::::::::::::::: виклик
 
 ## Reversing a String
 
-Fill in the blanks in the program below so that it prints "nit"
-(the reverse of the original character string "tin").
+Заповніть пропуски в програмі нижче для того, щоб він друкував "ніт"
+(зворотній рядок вихідного символу "tin").
 
 ```python
 original = "tin"
-result = ____
-for char in original:
-    result = ____
-print(result)
+результат = ____
+для символів в оригіналі:
+    результат = ____
+print(результат)
 ```
 
-:::::::::::::::  solution
+:::::::::::::::::::: Рішення
 
-## Solution
+## Розв'язок
 
 ```python
 original = "tin"
@@ -246,24 +246,24 @@ print(result)
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+:::::::::::::::::::::::::::::::::::::::::::: виклик
 
-## Practice Accumulating
+## Тренування на накопиченні
 
-Fill in the blanks in each of the programs below
-to produce the indicated result.
+Заповніть пропуски по кожному з зазначених програм нижче
+для створення зазначеного результату.
 
 ```python
-# Total length of the strings in the list: ["red", "green", "blue"] => 12
-total = 0
-for word in ["red", "green", "blue"]:
-    ____ = ____ + len(word)
-print(total)
+# Загальна довжина рядків у списку: ["червоний", "зелений", "синій"] => 12
+загальний = 0
+для слова ["червоний", "green", "blue"]:
+    ____ + len(word)
+print(загалом)
 ```
 
-:::::::::::::::  solution
+:::::::::::::::::::: Рішення
 
-## Solution
+## Розв'язок
 
 ```python
 total = 0
@@ -275,20 +275,20 @@ print(total)
 :::::::::::::::::::::::::
 
 ```python
-# List of word lengths: ["red", "green", "blue"] => [3, 5, 4]
-lengths = ____
-for word in ["red", "green", "blue"]:
-    lengths.____(____)
-print(lengths)
+# Довжина слів: ["червоний", "зелений", "синій"] => [3, 5, 4]
+довжиною = __
+для слова в ["червоний", "зелений", "синій"]:
+    довжини. ___(__)
+print(довжина)
 ```
 
-:::::::::::::::  solution
+:::::::::::::::::::: Рішення
 
-## Solution
+## Розв'язок
 
 ```python
 lengths = []
-for word in ["red", "green", "blue"]:
+для слова ["червоний", "зелений", "синій"]:
     lengths.append(len(word))
 print(lengths)
 ```
@@ -296,41 +296,41 @@ print(lengths)
 :::::::::::::::::::::::::
 
 ```python
-# Concatenate all words: ["red", "green", "blue"] => "redgreenblue"
-words = ["red", "green", "blue"]
-result = ____
-for ____ in ____:
+# Concatenate всі слова: ["червоний", "зелений", "синій"] => "redgreenblue"
+words = ["червоний", "зелений", "blue"]
+результат = __
+для ____ в __:
     ____
-print(result)
+print(результат)
 ```
 
-:::::::::::::::  solution
+:::::::::::::::::::: Рішення
 
-## Solution
+## Розв'язок
 
 ```python
-words = ["red", "green", "blue"]
-result = ""
-for word in words:
-    result = result + word
-print(result)
+words = ["червоний", "зелений", "blue"]
+результат = ""
+для слова в словах:
+    результат = результат + слово
+print(результат)
 ```
 
 :::::::::::::::::::::::::
 
-**Create an acronym:** Starting from the list `["red", "green", "blue"]`, create the acronym `"RGB"` using
-a for loop.
+**Створіть акронім:** Починаючи зі списку `["червоний", "зелений", "синій"]`, створіть акронім `"RGB"`, використовуючи
+для циклу.
 
-**Hint:** You may need to use a string method to properly format the acronym.
+**Підказка:** Вам може знадобитися використовувати метод рядка для коректного форматування акроніму.
 
-:::::::::::::::  solution
+:::::::::::::::::::: Рішення
 
-## Solution
+## Розв'язок
 
 ```python
 acronym = ""
-for word in ["red", "green", "blue"]:
-    acronym = acronym + word[0].upper()
+для слова ["червоний", "зелений", "синій"]:
+    acronym = acronym + слово[0].upper()
 print(acronym)
 ```
 
@@ -338,13 +338,13 @@ print(acronym)
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+:::::::::::::::::::::::::::::::::::::::::::: виклик
 
-## Cumulative Sum
+## Сукупність сум
 
 Reorder and properly indent the lines of code below
 so that they print a list with the cumulative sum of data.
-The result should be `[1, 3, 5, 10]`.
+Результатом має бути `1, 3, 5, 10]`.
 
 ```python
 cumulative.append(total)
@@ -356,9 +356,9 @@ print(cumulative)
 data = [1,2,2,5]
 ```
 
-:::::::::::::::  solution
+:::::::::::::::::::: Рішення
 
-## Solution
+## Розв'язок
 
 ```python
 total = 0
@@ -374,18 +374,18 @@ print(cumulative)
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+:::::::::::::::::::::::::::::::::::::::::::: виклик
 
-## Identifying Variable Name Errors
+## Визначення помилок імені змінної
 
 1. Read the code below and try to identify what the errors are
    _without_ running it.
-2. Run the code and read the error message.
-   What type of `NameError` do you think this is?
+2. Запустіть код та прочитайте повідомлення про помилку.
+   Який тип `NameError` вважаєте це?
    Is it a string with no quotes, a misspelled variable, or a
    variable that should have been defined but was not?
-3. Fix the error.
-4. Repeat steps 2 and 3, until you have fixed all the errors.
+3. Виправ помилку.
+4. Повторюйте кроки 2 та 3, поки ви не виправите всі помилки.
 
 ```python
 for number in range(10):
@@ -397,13 +397,13 @@ for number in range(10):
 print(message)
 ```
 
-:::::::::::::::  solution
+:::::::::::::::::::: Рішення
 
-## Solution
+## Розв'язок
 
-- Python variable names are case sensitive: `number` and `Number` refer to different variables.
-- The variable `message` needs to be initialized as an empty string.
-- We want to add the string `"a"` to `message`, not the undefined variable `a`.
+- Імена змінних Python чутливі до регістру: `number` та `Number` вказують на різні змінні.
+- Змінна `повідомлення` повинна бути ініціалізована як пустий рядок.
+- Ми хочемо додати рядок `"a"` до `message`, не невизначена змінна `a`.
 
 ```python
 message = ""
@@ -420,29 +420,29 @@ print(message)
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+:::::::::::::::::::::::::::::::::::::::::::: виклик
 
-## Identifying Item Errors
+## Визначення помилок елемента
 
 1. Read the code below and try to identify what the errors are
    _without_ running it.
-2. Run the code, and read the error message. What type of error is it?
-3. Fix the error.
+2. Запустіть код та прочитайте повідомлення про помилку. Який тип помилки?
+3. Виправ помилку.
 
 ```python
 seasons = ['Spring', 'Summer', 'Fall', 'Winter']
-print('My favorite season is ', seasons[4])
+print('Мій улюблений сезон, пора[4])
 ```
 
-:::::::::::::::  solution
+:::::::::::::::::::: Рішення
 
-## Solution
+## Розв'язок
 
-This list has 4 elements and the index to access the last element in the list is `3`.
+Цей список має 4 елементи і індекс для доступу до останнього елемента у списку становить `3`.
 
 ```python
 seasons = ['Spring', 'Summer', 'Fall', 'Winter']
-print('My favorite season is ', seasons[3])
+print('Мій улюблений сезон, пора[3])
 ```
 
 :::::::::::::::::::::::::
@@ -451,13 +451,13 @@ print('My favorite season is ', seasons[3])
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- A _for loop_ executes commands once for each value in a collection.
-- A `for` loop is made up of a collection, a loop variable, and a body.
-- The first line of the `for` loop must end with a colon, and the body must be indented.
-- Indentation is always meaningful in Python.
-- Loop variables can be called anything (but it is strongly advised to have a meaningful name to the looping variable).
-- The body of a loop can contain many statements.
-- Use `range` to iterate over a sequence of numbers.
-- The Accumulator pattern turns many values into one.
+- _для циклу_ виконує команди один раз для кожного значення в колекції.
+- Цикл `for` складається з колекції, змінної циклу і тіла.
+- Перший рядок циклу `for` має закінчуватися двокрапкою, і тіло має бути відступом.
+- Відступ завжди значить у Python.
+- Змінні циклу можна назвати будь-що (настійно рекомендується мати змістовне ім'я змінної).
+- Тіло циклу може містити багато команд.
+- Використайте "діапазон" для повторення послідовності чисел.
+- Шаблон Акумулятора перетворює багато значень на один.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
