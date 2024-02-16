@@ -1,57 +1,57 @@
 ---
-title: Variable Scope
+title: Область видимості
 teaching: 10
 exercises: 10
 ---
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- Identify local and global variables.
-- Identify parameters as local variables.
-- Read a traceback and determine the file, function, and line number on which the error occurred, the type of error, and the error message.
+- Визначити локальні та глобальні змінні.
+- Визначити параметри як локальні змінні.
+- Прочитати traceback та визначити файл, функцію та номер рядка, з якого сталася помилка, тип помилки та повідомлення про помилку.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::: questions
+::::::::::::::::::::::::::::::::::::::::::::: питань
 
-- How do function calls actually work?
-- How can I determine where errors occurred?
+- Як виклики функцій насправді працюють?
+- Як я можу визначити, де виникають помилки?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## The scope of a variable is the part of a program that can 'see' that variable.
+## Межі змінної - це частина програми, яка може 'побачити' яку змінну.
 
-- There are only so many sensible names for variables.
+- Існує тільки стільки розумних імен для змінних.
 - People using functions shouldn't have to worry about
   what variable names the author of the function used.
 - People writing functions shouldn't have to worry about
   what variable names the function's caller uses.
-- The part of a program in which a variable is visible is called its _scope_.
+- Частина програми, в якій видима змінна називається її \* scope\*.
 
 ```python
-pressure = 103.9
+тиск = 103.9
 
-def adjust(t):
-    temperature = t * 1.43 / pressure
-    return temperature
+значення def (t): температура
+    = t * 1.43 / тиск
+    повернути температуру
 ```
 
-- `pressure` is a _global variable_.
-  - Defined outside any particular function.
-  - Visible everywhere.
-- `t` and `temperature` are _local variables_ in `adjust`.
-  - Defined in the function.
-  - Not visible in the main program.
+- `pressure` є _глобальною_.
+  - Визначено поза межами будь-якої конкретної функції.
+  - Видиме всюди.
+- `t` та `температура` є _місцевими змінними_ у `adjust`.
+  - Визначена в функції.
+  - Не відображається в головній програмі.
   - Remember: a function parameter is a variable
     that is automatically assigned a value when the function is called.
 
 ```python
-print('adjusted:', adjust(0.9))
-print('temperature after call:', temperature)
+print('скориговано:', adjust(0.9))
+print('температура після виклику:', температура)
 ```
 
 ```output
-adjusted: 0.01238691049085659
+скориговано: 0.01238691049085659
 ```
 
 ```error
@@ -61,12 +61,12 @@ Traceback (most recent call last):
 NameError: name 'temperature' is not defined
 ```
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+:::::::::::::::::::::::::::::::::::::::::::: виклик
 
-## Local and Global Variable Use
+## Використання локальної та глобальної змінної
 
-Trace the values of all variables in this program as it is executed.
-(Use '---' as the value of variables before and after they exist.)
+Відстежувати значення всіх змінних у цій програмі оскільки вони виконуються.
+(Використовуйте "---" як значення змінних до і після їх існування.)
 
 ```python
 limit = 100
@@ -80,58 +80,57 @@ print(clip(value))
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+:::::::::::::::::::::::::::::::::::::::::::: виклик
 
-## Reading Error Messages
+## Повідомлення про помилку
 
-Read the traceback below, and identify the following:
+Зчитати інформацію про трасування нижченаведене відео та визначити наступне:
 
-1. How many levels does the traceback have?
-2. What is the file name where the error occurred?
-3. What is the function name where the error occurred?
-4. On which line number in this function did the error occur?
-5. What is the type of error?
-6. What is the error message?
+1. Скільки рівнів має трасесія?
+2. Що таке ім'я файлу, де сталася помилка?
+3. Яка назва функції де відбулася помилка?
+4. При якому номері рядка в цій функції виникла помилка?
+5. Який тип помилки?
+6. Яке повідомлення про помилку?
 
 ```error
 ---------------------------------------------------------------------------
-KeyError                                  Traceback (most recent call last)
-<ipython-input-2-e4c4cbafeeb5> in <module>()
-      1 import errors_02
-----> 2 errors_02.print_friday_message()
+KeyError Traceback (останній виклик останній)<ipython-input-2-e4c4cbafeeb5> в <module>()
+      1 errors_02
+----> 2 errors_02. rint_friday_message()
 
-/Users/ghopper/thesis/code/errors_02.py in print_friday_message()
+/Users/ghopper/thesis/code/errors_02. y print_friday_message()
      13
      14 def print_friday_message():
----> 15     print_message("Friday")
+---> 15 print_message("П'ятниця")
 
-/Users/ghopper/thesis/code/errors_02.py in print_message(day)
-      9         "sunday": "Aw, the weekend is almost over."
-     10     }
----> 11     print(messages[day])
+/Users/ghopper/thesis/code/errors_02. y в print_message(день)
+      "неділя": "Шоу, вихідні майже скінчилися.
+     10 }
+---> 11 print(повідомлення[day])
      12
      13
 
-KeyError: 'Friday'
+KeyError: 'П'ятниця'
 ```
 
-:::::::::::::::  solution
+:::::::::::::::::::: Рішення
 
-## Solution
+## Розв'язок
 
-1. Three levels.
+1. Три рівні.
 
 2. `errors_02.py`
 
 3. `print_message`
 
-4. Line 11
+4. Лінія 11 CPTM
 
-5. `KeyError`. These errors occur when we are trying to look up a key that does not exist (usually in a data
-   structure such as a dictionary). We can find more information about the `KeyError` and other built-in exceptions
-   in the [Python docs](https://docs.python.org/3/library/exceptions.html#KeyError).
+5. `KeyError`. При спробі знайти ключ, який не існує (зазвичай в структурі
+   на кшталт словника). Ми можемо знайти більше інформації про `KeyError` та інші вбудовані виключення
+   в [документації Python.org/3/library/exceptions.html#KeyError).
 
-6. `KeyError: 'Friday'`
+6. `KeyError: 'П'ятниця'`
 
 :::::::::::::::::::::::::
 
@@ -139,6 +138,6 @@ KeyError: 'Friday'
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- The scope of a variable is the part of a program that can 'see' that variable.
+- Межі змінної - це частина програми, яка може 'побачити' яку змінну.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
