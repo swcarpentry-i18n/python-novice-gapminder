@@ -1,37 +1,37 @@
 ---
-title: Programming Style
+title: プログラミングスタイル
 teaching: 15
 exercises: 15
 ---
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- Provide sound justifications for basic rules of coding style.
-- Refactor one-page programs to make them more readable and justify the changes.
-- Use Python community coding standards (PEP-8).
+- コーディングスタイルの基本的なルールの正当化を提供します。
+- 1 ページのプログラムをリファクタリングして、より読みやすくなり、変更を正当化します。
+- Python コミュニティのコーディング規格 (PEP-8) を使用してください。
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::: questions
+::::::::::::::::::::::::::::::::::
 
-- How can I make my programs more readable?
-- How do most programmers format their code?
-- How can programs check their own operation?
+- プログラムをもっと読みやすくするにはどうすればいいですか?
+- ほとんどのプログラマーはどのようにコードをフォーマットしますか?
+- プログラムはどのように自分の操作を確認することができますか?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Coding style
 
-A consistent coding style helps others (including our future selves) read and understand code more easily. Code is read much more often than it is written, and as the [Zen of Python](https://www.python.org/dev/peps/pep-0020) states, "Readability counts".
-Python proposed a standard style through one of its first Python Enhancement Proposals (PEP), [PEP8](https://www.python.org/dev/peps/pep-0008).
+一貫性のあるコーディングスタイルは、他の人(私たちの将来を含む)がコードを読み取り、理解するのに役立ちます。 コードは書かれているよりもはるかに頻繁に読み取られ、format@@0(https\://www\.python.org/dev/peps/pep-0020) は「読みやすさ」を示しています。
+Pythonは最初のPython拡張提案 (PEP), [PEP8](https://www.python.org/dev/peps/pep-0008) を通して標準的なスタイルを提案しました。
 
-Some points worth highlighting:
+ハイライトする価値のあるいくつかのポイント:
 
-- document your code and ensure that assumptions, internal algorithms, expected inputs, expected outputs, etc., are clear
-- use clear, semantically meaningful variable names
-- use white-space, _not_ tabs, to indent lines (tabs can cause problems across different text editors, operating systems, and version control systems)
+- コードを文書化し、仮定、内部アルゴリズム、期待される入力、期待される出力などが明確であることを確認してください
+- 意味的に意味のある変数名を使ってください
+- ホワイトスペース、_not_ タブを使用して行をインデントする (タブは異なるテキストエディタ、オペレーティングシステム、バージョン管理システムで問題を引き起こす可能性があります)
 
-## Follow standard Python style in your code.
+## あなたのコードで標準の Python スタイルに従ってください。
 
 - [PEP8](https://www.python.org/dev/peps/pep-0008):
   a style guide for Python that discusses topics such as how to name variables,
@@ -39,26 +39,26 @@ Some points worth highlighting:
   how to structure your `import` statements,
   etc.
   Adhering to PEP8 makes it easier for other Python developers to read and understand your code, and to understand what their contributions should look like.
-- To check your code for compliance with PEP8, you can use the [pycodestyle application](https://pypi.org/project/pycodestyle/) and tools like the [black code formatter](https://github.com/psf/black) can automatically format your code to conform to PEP8 and pycodestyle (a Jupyter notebook formatter also exists [nb_black](https://github.com/dnanhkhoa/nb_black)).
-- Some groups and organizations follow different style guidelines besides PEP8. For example, the [Google style guide on Python](https://google.github.io/styleguide/pyguide.html) makes slightly different recommendations. Google wrote an application that can help you format your code in either their style or PEP8 called [yapf](https://github.com/google/yapf/).
-- With respect to coding style, the key is _consistency_. Choose a style for your project be it PEP8, the Google style, or something else and do your best to ensure that you and anyone else you are collaborating with sticks to it. Consistency within a project is often more impactful than the particular style used. A consistent style will make your software easier to read and understand for others and for your future self.
+- PEP8 に準拠しているかどうかを確認するには、[pycodestyle application](https://pypi.org/project/pycodestyle/)と、format@@0(https\://github) のようなツールを使用します。 om/psf/black)はPEP8とpycodestyle(Jupyterノートブックフォーマッタは[nb_black](https://github.com/dnanhkhoa/nb_black)に準拠するようにコードを自動的にフォーマットできます。
+- 一部のグループや組織はPEP8以外にも異なるスタイルガイドラインに従っています。 例えば、[PythonのGoogleスタイルガイド](https://google.github.io/styleguide/pyguide/html)は少し異なる推奨をしています。 Google は、コードをスタイルまたは [yapf](https://github.com/google/yapf/) と呼ばれるPEP8 のいずれかでフォーマットするのに役立つアプリケーションを作成しました。
+- コーディングスタイルに関しては、キーは_一貫性_です。 PEP8、Googleスタイルのプロジェクトのスタイルを選択してください。 自分と他の人が協力していることを確認するために最善を尽くしてください プロジェクト内の一貫性は、使用される特定のスタイルよりも影響力が高いことがよくあります。 一貫したスタイルは、ソフトウェアを他の人のために、そしてあなたの将来の自己のために読みやすくします。
 
-## Use assertions to check for internal errors.
+## アサーションを使用して内部エラーを確認します。
 
-Assertions are a simple but powerful method for making sure that the context in which your code is executing is as you expect.
+アサーションは、コードが実行されているコンテキストが期待どおりであることを確認するためのシンプルで強力なメソッドです。
 
 ```python
 def calc_bulk_density(mass, volume):
-    '''Return dry bulk density = powder mass / powder volume.'''
+    '''''ドライバルク密度=粉末量/粉末量を返す。'''
     assert volume > 0
     return mass / volume
 ```
 
-If the assertion is `False`, the Python interpreter raises an `AssertionError` runtime exception. The source code for the expression that failed will be displayed as part of the error message. To ignore assertions in your code run the interpreter with the '-O' (optimize) switch. Assertions should contain only simple checks and never change the state of the program. For example, an assertion should never contain an assignment.
+アサーションが `False` の場合、Python インタプリタは `AssertionError` ランタイム例外を発生させます。 失敗した式のソースコードがエラーメッセージの一部として表示されます。 コード内のアサーションを無視するには、インタプリタを '-O' (最適化) スイッチで実行します。 アサーションには、単純なチェックのみが含まれており、プログラムの状態を変更することはありません。 たとえば、アサーションに代入を含めてはいけません。
 
-## Use docstrings to provide builtin help.
+## 組み込みヘルプを提供するには、docstringsを使用してください。
 
-If the first thing in a function is a character string that is not assigned directly to a variable, Python attaches it to the function, accessible via the builtin help function. This string that provides documentation is also known as a _docstring_.
+関数内の最初のものが変数に直接割り当てられていない文字列である場合。 Pythonはそれを関数にアタッチし、組み込みのヘルプ関数でアクセスできます。 ドキュメントを提供するこの文字列は _docstring_ とも呼ばれます。
 
 ```python
 def average(values):
@@ -72,19 +72,19 @@ help(average)
 ```
 
 ```output
-Help on function average in module __main__:
+モジュール __main__の関数平均に関するヘルプ :
 
 average(values)
-    Return average of values, or None if no values are supplied.
+    値の平均値を返すか、値が指定されていない場合は None を返します。
 ```
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Multiline Strings
+## 複数行の文字列
 
-Often use _multiline strings_ for documentation.
-These start and end with three quote characters (either single or double)
-and end with three matching characters.
+ドキュメントには _multiline strings_ を使うことが多い。
+これらの開始と終了は、3つの引用符文字 (シングルまたはダブル)
+で、3つの一致する文字で終了します。
 
 ```python
 """This string spans
@@ -95,13 +95,13 @@ Blank lines are allowed."""
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::: チャレンジ
 
-## What Will Be Shown?
+## 何を表示しますか？
 
-Highlight the lines in the code below that will be available as online help.
-Are there lines that should be made available, but won't be?
-Will any lines produce a syntax error or a runtime error?
+以下のコードの行を強調表示します。オンラインヘルプが表示されます。
+利用可能にすべきではあるがそうでないラインはあるか。
+どの行でも構文エラーやランタイムエラーが発生しますか?
 
 ```python
 "Find maximum edit distance between multiple sequences."
@@ -124,17 +124,17 @@ def overall_max(sequences):
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::: チャレンジ
 
-## Document This
+## これを文書にする
 
-Use comments to describe and help others understand potentially unintuitive
-sections or individual lines of code. They are especially useful to whoever
-may need to understand and edit your code in the future, including yourself.
+コメントを使用して、他の人が潜在的に直感的でない
+セクションや個々のコード行を理解するのに役立ちます。
+があなたのコードを理解し編集する必要がある人には、あなた自身も含めて特に役立ちます。
 
-Use docstrings to document the acceptable inputs and expected outputs of a method
-or class, its purpose, assumptions and intended behavior. Docstrings are displayed
-when a user invokes the builtin `help` method on your method or class.
+docstrings を使用して、許容可能な入力と期待されるメソッド
+またはクラスの出力、その目的、仮定、および意図された動作を文書化します。 ユーザがメソッドやクラスに組み込みの `help` メソッドを呼び出すと、Docstrings は
+と表示されます。
 
 Turn the comment in the following function into a docstring
 and check that `help` displays it properly.
@@ -148,9 +148,9 @@ def middle(a, b, c):
     return values[1]
 ```
 
-:::::::::::::::  solution
+::::::::::::::::: solution
 
-## Solution
+## 解決策
 
 ```python
 def middle(a, b, c):
@@ -165,17 +165,17 @@ def middle(a, b, c):
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::: チャレンジ
 
-## Clean Up This Code
+## このコードをクリーンアップする
 
-1. Read this short program and try to predict what it does.
-2. Run it: how accurate was your prediction?
-3. Refactor the program to make it more readable.
-   Remember to run it after each change to ensure its behavior hasn't changed.
-4. Compare your rewrite with your neighbor's.
-   What did you do the same?
-   What did you do differently, and why?
+1. この短いプログラムを読んで、それが何をするかを予測してみてください。
+2. それを実行します:あなたの予測はどのくらい正確でしたか?
+3. プログラムをより読みやすくするためにリファクタリングします。
+   動作が変更されていないことを確認するために、変更ごとに実行することを忘れないでください。
+4. あなたの書き換えを隣人のものと比較しなさい。
+   あなたも同じことをしたのですか。
+   あなたは何を違っていましたか、そしてなぜですか?
 
 ```python
 n = 10
@@ -195,11 +195,11 @@ while i < n:
     i += 1
 ```
 
-:::::::::::::::  solution
+::::::::::::::::: solution
 
-## Solution
+## 解決策
 
-Here's one solution.
+これが一つの解決策です
 
 ```python
 def string_machine(input_string, iterations):
@@ -249,7 +249,7 @@ et cetera
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- Follow standard Python style in your code.
-- Use docstrings to provide builtin help.
+- あなたのコードで標準の Python スタイルに従ってください。
+- 組み込みヘルプを提供するには、docstringsを使用してください。
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
