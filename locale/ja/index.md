@@ -1,27 +1,25 @@
 ---
 permalink: index.html
-site: sandpaper::sandpaper_site
+site: sandpaper_site
 ---
 
-This lesson is an introduction to programming in Python 3 for people with little or no previous
-programming experience. It uses plotting as its motivating example and is designed to be used in
+このレッスンは、
+プログラミング経験がほとんどない人のためのPython3でのプログラミングの紹介です。 It uses plotting as its motivating example and is designed to be used in
 both [Data Carpentry][dc-lessons] and [Software Carpentry][swc-lessons] workshops.
-This lesson references [JupyterLab][jupyterlab] but can be taught using alternative Python 3 interpreters
-as well (e.g., repl.it, Anaconda).
+このレッスンでは、 [JupyterLab][jupyterlab] を参照していますが、代替の Python 3 インタプリタの
+を使用しても教えることができます (例: repl.it, Anaconda )。
 
 ::::::::::::::::::::::::::::::::::::::::::  prereq
 
-## Prerequisites
+## 前提条件
 
-1. Learners need to understand what files and directories are,
-   what a working directory is,
-   and how to start a Python interpreter.
+1. 学習者は、
+   作業ディレクトリとは何か、
+   Pythonインタプリタを起動する方法を理解する必要があります。
 
-2. Learners must install Python 3 before the class starts.
+2. クラスを開始する前に、学習者は Python 3 をインストールする必要があります。
 
-3. Learners must get the gapminder data before class starts:
-   please download and unzip the file
-   [python-novice-gapminder-data.zip](episodes/files/python-novice-gapminder-data.zip).
+3. [python-novice-gapminder-data.zip](episodes/files/python-novice-gapminder-data.zip) をダウンロードして解凍してください。
 
 Please see [the setup instructions](learners/setup.md)
 for more details.
