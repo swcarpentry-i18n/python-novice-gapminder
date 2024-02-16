@@ -1,16 +1,16 @@
 ---
-title: Afternoon Coffee
+title: Вдень Коффі
 teaching: 0
 exercises: 0
 break: 15
 ---
 
-## Reflection exercise
+## Відбиття
 
-Over break, reflect on and discuss the following:
+Помірковувати над процесом, обговорювати наступне:
 
-- A common refrain in software engineering is "Don't Repeat Yourself". How do the techniques we've learned in the last
+- Поширений рефрен у програмній інженерії -- "Не повторюйте себе". How do the techniques we've learned in the last
   lessons help us avoid repeating ourselves? _Note that in practice there is some nuance to this and should be balanced
   with doing the simplest thing that could possibly work._
-- What are the pros / cons of making a variable global or local to a function?
-- When would you consider turning a block of code into a function definition?
+- Якими є плюси / мінуси створення змінної змінної по глобальному чи локальному функції?
+- Коли ви розглянете можливість перетворення блоку коду в функцію визначення?
