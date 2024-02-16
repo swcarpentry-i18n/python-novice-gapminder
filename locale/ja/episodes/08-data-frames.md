@@ -6,20 +6,20 @@ exercises: 15
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- Select individual values from a Pandas dataframe.
-- Select entire rows or entire columns from a dataframe.
-- Select a subset of both rows and columns from a dataframe in a single operation.
-- Select a subset of a dataframe by a single Boolean criterion.
+- パンダデータフローから個々の値を選択します。
+- データフローから行全体または列全体を選択します。
+- 単一の操作でデータフローから行と列の両方のサブセットを選択します。
+- 単一のブール値基準でデータフローのサブセットを選択します。
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::: questions
+::::::::::::::::::::::::::::::::::
 
-- How can I do statistical analysis of tabular data?
+- 表形式データの統計分析を行うにはどうすればよいですか?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Note about Pandas DataFrames/Series
+## パンダデータフレーム/シリーズについての注意
 
 A [DataFrame][pandas-dataframe] is a collection of [Series][pandas-series];
 The DataFrame is the way Pandas represents a table, and Series is the data-structure
@@ -32,20 +32,20 @@ What makes Pandas so attractive is the powerful interface to access individual r
 of the table, proper handling of missing values, and relational-databases operations
 between DataFrames.
 
-## Selecting values
+## 値の選択
 
-To access a value at the position `[i,j]` of a DataFrame, we have two options, depending on
-what is the meaning of `i` in use.
+DataFrameの位置`[i,j]`で値にアクセスするには、2つのオプションがあります。 使用中の「i」の意味は、
+によって異なります。
 Remember that a DataFrame provides an _index_ as a way to identify the rows of the table;
 a row, then, has a _position_ inside the table as well as a _label_, which
 uniquely identifies its _entry_ in the DataFrame.
 
-## Use `DataFrame.iloc[..., ...]` to select values by their (entry) position
+## `DataFrame.iloc[..., ...]` を使用して、値を選択します (エントリ)
 
-- Can specify location by numerical index analogously to 2D version of character selection in strings.
+- 文字列中の文字選択の2Dバージョンと同様に数値インデックスで位置を指定することができます。
 
 ```python
-import pandas as pd
+import pandas pd
 data = pd.read_csv('data/gapminder_gdp_europe.csv', index_col='country')
 print(data.iloc[0, 0])
 ```
@@ -54,9 +54,9 @@ print(data.iloc[0, 0])
 1601.056136
 ```
 
-## Use `DataFrame.loc[..., ...]` to select values by their (entry) label.
+## `DataFrame.loc[..., ...]` を使用して、その（エントリ）ラベルで値を選択します。
 
-- Can specify location by row and/or column name.
+- 行または列名で場所を指定できます。
 
 ```python
 print(data.loc["Albania", "gdpPercap_1952"])
@@ -66,9 +66,9 @@ print(data.loc["Albania", "gdpPercap_1952"])
 1601.056136
 ```
 
-## Use `:` on its own to mean all columns or all rows.
+## すべての列またはすべての行を意味するには、単独で `:` を使用します。
 
-- Just like Python's usual slicing notation.
+- Pythonの通常のスライス表記と同じように。
 
 ```python
 print(data.loc["Albania", :])
@@ -90,7 +90,7 @@ gdpPercap_2007    5937.029526
 Name: Albania, dtype: float64
 ```
 
-- Would get the same result printing `data.loc["Albania"]` (without a second index).
+- `data.loc["Albania"]`を（2番目のインデックスなしで）出力します。
 
 ```python
 print(data.loc[:, "gdpPercap_1952"])
@@ -108,13 +108,13 @@ United Kingdom             9979.508487
 Name: gdpPercap_1952, dtype: float64
 ```
 
-- Would get the same result printing `data["gdpPercap_1952"]`
-- Also get the same result printing `data.gdpPercap_1952` (not recommended, because easily confused with `.` notation for methods)
+- `data["gdpPercap_1952"]` を同じ結果に出力します。
+- `data.gdpPercap_1952` も同じ結果を出力します（メソッドでは `.` 表記と簡単に混同されるため、お勧めしません）
 
-## Select multiple columns or rows using `DataFrame.loc` and a named slice.
+## `DataFrame.loc` と名前付きスライスを使用して、複数の列または行を選択します。
 
 ```python
-print(data.loc['Italy':'Poland', 'gdpPercap_1962':'gdpPercap_1972'])
+print(data.loc['イタリア':'ポーランド', 'gdpPercap_1962':'gdpPercap_1972'])
 ```
 
 ```output
@@ -131,39 +131,39 @@ In the above code, we discover that **slicing using `loc` is inclusive at both
 ends**, which differs from **slicing using `iloc`**, where slicing indicates
 everything up to but not including the final index.
 
-## Result of slicing can be used in further operations.
+## スライスの結果は、さらなる操作で使用できます。
 
-- Usually don't just print a slice.
-- All the statistical operators that work on entire dataframes
-  work the same way on slices.
-- E.g., calculate max of a slice.
+- 通常、スライスを印刷するだけではありません。
+- すべての統計演算子は、データフレーム
+  全体で動作しますが、スライスでも同じように動作します。
+- 例えば、スライスの最大値を計算します。
 
 ```python
-print(data.loc['Italy':'Poland', 'gdpPercap_1962':'gdpPercap_1972'].max())
+print(data.loc['イタリア':'ポーランド', 'gdpPercap_1962':'gdpPercap_1972'].max())
 ```
 
 ```output
-gdpPercap_1962    13450.40151
-gdpPercap_1967    16361.87647
-gdpPercap_1972    18965.05551
+gdpPercap_1962 13450.40151
+gdpPercap_1967 16361.8867
+gdpPercap_1972 18965.0551
 dtype: float64
 ```
 
 ```python
-print(data.loc['Italy':'Poland', 'gdpPercap_1962':'gdpPercap_1972'].min())
+print(data.loc['イタリア':'ポーランド', 'gdpPercap_1962':'gdpPercap_1972'].min())
 ```
 
 ```output
-gdpPercap_1962    4649.593785
-gdpPercap_1967    5907.850937
-gdpPercap_1972    7778.414017
+gdpPercap_1962 4649.593785
+gdpPercap_1967 5907.850937
+gdpPercap_1972 7778.414017
 dtype: float64
 ```
 
-## Use comparisons to select data based on value.
+## 比較を使用して、値に基づいてデータを選択します。
 
-- Comparison is applied element by element.
-- Returns a similarly-shaped dataframe of `True` and `False`.
+- 比較は要素ごとに適用されます。
+- `True` と `False` に似た形のデータフレームを返します。
 
 ```python
 # Use a subset of data to keep output readable.
@@ -194,9 +194,9 @@ Norway                True           True           True
 Poland               False          False          False
 ```
 
-## Select values or NaN using a Boolean mask.
+## ブールマスクを使用して値またはNaNを選択します。
 
-- A frame full of Booleans is sometimes called a _mask_ because of how it can be used.
+- Booleanのフルフレームは、使用方法から_マスク_と呼ばれることがあります。
 
 ```python
 mask = subset > 10000
@@ -213,8 +213,8 @@ Norway          13450.40151     16361.87647     18965.05551
 Poland                  NaN             NaN             NaN
 ```
 
-- Get the value where the mask is true, and NaN (Not a Number) where it is false.
-- Useful because NaNs are ignored by operations like max, min, average, etc.
+- mask が true の場所で値を取得し、NaN (数値ではない) が false の場所で値を取得します。
+- NaN は最大、最小、平均などの操作によって無視されるので便利です。
 
 ```python
 print(subset[subset > 10000].describe())
@@ -232,34 +232,34 @@ min      12790.849560    10022.401310    12269.273780
 max      13450.401510    16361.876470    18965.055510
 ```
 
-## Group By: split-apply-combine
+## グループ化: 分割適用-結合
 
 ::::::::::::::::::::::::::::::::::::: instructor
 Learners often struggle here, many may not work with financial data and concepts so they
-find the example concepts difficult to get their head around. The biggest problem
-though is the line generating the wealth_score, this step needs to be talked through
-throughly:
+find the example concepts difficult to get their head around.
+の最大の問題は、wellth_scoreを生成する行ですが、このステップは
+を通して話さなければなりません。
 
-- It uses implicit conversion between boolean and float values which
-  has not been covered in the course so far.
-- The axis=1 argument needs to be explained clearly.
+- これまで
+  コースでカバーされていなかったブール値とフロート値の間の暗黙的変換を使用します。
+- axis=1引数は明確に説明する必要があります。
   :::::::::::::::::::::::::::::::::::::::::::::::::
 
 Pandas vectorizing methods and grouping operations are features that provide users
 much flexibility to analyse their data.
 
-For instance, let's say we want to have a clearer view on how the European countries
-split themselves according to their GDP.
+例えば、欧州諸国
+がGDPに応じてどのように分割されているかについて、明確な見方をしたいとしましょう。
 
-1. We may have a glance by splitting the countries in two groups during the years surveyed,
-   those who presented a GDP _higher_ than the European average and those with a _lower_ GDP.
-2. We then estimate a _wealthy score_ based on the historical (from 1962 to 2007) values,
-   where we account how many times a country has participated in the groups of _lower_ or _higher_ GDP
+1. 調査された年の間に国を二つのグループに分割することによって、私たちは一目見ることができるかもしれません
+   ヨーロッパ平均よりも_高い_GDPを示した人と_低い_GDPを示した人。
+2. その後、歴史的(1962年から2007年まで)の値に基づいて、_裕福なスコア_を見積もります。
+   では、ある国が_より低い_または_より高い_GDPのグループに参加した回数を記録しています。
 
 ```python
 mask_higher = data > data.mean()
-wealth_score = mask_higher.aggregate('sum', axis=1) / len(data.columns)
-print(wealth_score)
+bilth_score = mask_higher.aggregate('sum', axis=1) / len(data.columns)
+print(wellth_score)
 ```
 
 ```output
@@ -297,8 +297,8 @@ United Kingdom            1.000000
 dtype: float64
 ```
 
-Finally, for each group in the `wealth_score` table, we sum their (financial) contribution
-across the years surveyed using chained methods:
+最後に、`weelth_score`表の各グループについて、チェーン付きのメソッドを使用して調査された年間にわたって彼らの(金融)貢献
+を合計します。
 
 ```python
 print(data.groupby(wealth_score).sum())
@@ -324,32 +324,32 @@ print(data.groupby(wealth_score).sum())
 1.000000   315238.235970   346930.926170   385109.939210   427850.333420
 ```
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::: チャレンジ
 
-## Selection of Individual Values
+## 個々の値の選択
 
 Assume Pandas has been imported into your notebook
 and the Gapminder GDP data for Europe has been loaded:
 
 ```python
-import pandas as pd
+import pandas pd
 
 data_europe = pd.read_csv('data/gapminder_gdp_europe.csv', index_col='country')
 ```
 
-Write an expression to find the Per Capita GDP of Serbia in 2007.
+2007でセルビアのPer CapitaGDPを見つけるために表現を書きます。
 
-:::::::::::::::  solution
+::::::::::::::::: solution
 
-## Solution
+## 解決策
 
-The selection can be done by using the labels for both the row ("Serbia") and the column ("gdpPercap_2007"):
+選択は行("セルビア")と列("gdpPercap_2007")の両方のラベルを使用して行うことができます。
 
 ```python
 print(data_europe.loc['Serbia', 'gdpPercap_2007'])
 ```
 
-The output is
+出力は
 
 ```output
 9786.534714
@@ -359,123 +359,122 @@ The output is
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::: チャレンジ
 
-## Extent of Slicing
+## スライスの範囲
 
-1. Do the two statements below produce the same output?
-2. Based on this,
-   what rule governs what is included (or not) in numerical slices and named slices in Pandas?
+1. 以下の2つのステートメントは同じ出力を生成しますか?
+2. これに基づいて、
+   何が数字スライスに含まれている(あるいは含まれていない)とパンダでスライスに名前を付けられているのか?
 
 ```python
 print(data_europe.iloc[0:2, 0:2])
-print(data_europe.loc['Albania':'Belgium', 'gdpPercap_1952':'gdpPercap_1962'])
+print(data_europe.loc['Albania':'ベルギー', 'gdpPercap_1952':'gdpPercap_1962'])
 ```
 
-:::::::::::::::  solution
+::::::::::::::::: solution
 
-## Solution
+## 解決策
 
-No, they do not produce the same output! The output of the first statement is:
+いいえ、彼らは同じ出力を生成しません! 最初の文の出力は次のとおりです。
 
 ```output
-        gdpPercap_1952  gdpPercap_1957
+        gdpPercap_1952 gdpPercap_1957
 country                                
-Albania     1601.056136     1942.284244
-Austria     6137.076492     8842.598030
+Albania 1601.056136 1942.284244
+オーストリア 6137.076492 8842.598030
 ```
 
-The second statement gives:
+2 番目の文は以下のように与えられます。
 
 ```output
-        gdpPercap_1952  gdpPercap_1957  gdpPercap_1962
+        gdpPercap_1952 gdpPercap_1957 gdpPercap_1962
 country                                                
-Albania     1601.056136     1942.284244     2312.888958
-Austria     6137.076492     8842.598030    10750.721110
-Belgium     8343.105127     9714.960623    10991.206760
+Albania 1601.056136 1942.284244 2312.888958
+オーストリア 6137.076497 8842.598030 10750.721110
+ベルギー 8343.105127 9714.960623 10991.206760
 ```
 
-Clearly, the second statement produces an additional column and an additional row compared to the first statement.\
-What conclusion can we draw? We see that a numerical slice, 0:2, _omits_ the final index (i.e. index 2)
-in the range provided,
-while a named slice, 'gdpPercap_1952':'gdpPercap_1962', _includes_ the final element.
+明らかに、2 番目の文は、最初の文と比較して追加の列と追加の行を生成します。\
+どのような結論を出せますか？ 数字のスライス、0:2、_省略_、最終的なインデックスがあることがわかります。 index 2)
+が指定された範囲内の
+が 'gdpPercap_1952':'gdpPercap_1962', \*最終要素が含まれています。
 
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::: チャレンジ
 
-## Reconstructing Data
+## データの再構築
 
-Explain what each line in the following short program does:
-what is in `first`, `second`, etc.?
-
-```python
-first = pd.read_csv('data/gapminder_all.csv', index_col='country')
-second = first[first['continent'] == 'Americas']
-third = second.drop('Puerto Rico')
-fourth = third.drop('continent', axis = 1)
-fourth.to_csv('result.csv')
-```
-
-:::::::::::::::  solution
-
-## Solution
-
-Let's go through this piece of code line by line.
+`first`, `second`などには何がありますか？
 
 ```python
 first = pd.read_csv('data/gapminder_all.csv', index_col='country')
-```
-
-This line loads the dataset containing the GDP data from all countries into a dataframe called
-`first`. The `index_col='country'` parameter selects which column to use as the
-row labels in the dataframe.
-
-```python
-second = first[first['continent'] == 'Americas']
-```
-
-This line makes a selection: only those rows of `first` for which the 'continent' column matches
-'Americas' are extracted. Notice how the Boolean expression inside the brackets,
-`first['continent'] == 'Americas'`, is used to select only those rows where the expression is true.
-Try printing this expression! Can you print also its individual True/False elements?
-(hint: first assign the expression to a variable)
-
-```python
+second = first['csv'] == 'Americas']
 third = second.drop('Puerto Rico')
+fth = third.drop('csv', axis = 1)
+furth.to_csv('result.csv')
 ```
 
-As the syntax suggests, this line drops the row from `second` where the label is 'Puerto Rico'. The
-resulting dataframe `third` has one row less than the original dataframe `second`.
+::::::::::::::::: solution
+
+## 解決策
+
+このコードを一行ずつ見ていきましょう。
 
 ```python
-fourth = third.drop('continent', axis = 1)
+first = pd.read_csv('data/gapminder_all.csv', index_col='country')
 ```
 
-Again we apply the drop function, but in this case we are dropping not a row but a whole column.
-To accomplish this, we need to specify also the `axis` parameter (we want to drop the second column
-which has index 1).
+この行は、すべての国のGDPデータを含むデータセットを
+`first` と呼ばれるデータフローにロードします。 `index_col='country'`パラメータは、データフローの
+行のラベルとして使用する列を選択します。
 
 ```python
-fourth.to_csv('result.csv')
+second = first['大陸'] == 'Americas']
 ```
 
-The final step is to write the data that we have been working on to a csv file. Pandas makes this easy
-with the `to_csv()` function. The only required argument to the function is the filename. Note that the
-file will be written in the directory from which you started the Jupyter or Python session.
+この行は選択します。'大陸' 列が
+'Americas' に一致する列の `first` のみが抽出されます。 括弧
+`first['continent'] == 'Americas'` 内のブール値の式が、式が true の行のみを選択するために使用されていることに注意してください。
+この式を印刷してみてください！ また、それぞれの True/False 要素も印刷できますか?
+(ヒント: 最初に式を変数に割り当てます)
+
+```python
+third = second.drop('プエルトリコ)
+```
+
+構文が示すように、この行はラベルが「プエルトリコ」の「second」から行をドロップします。 結果として生成された
+は、元の `second` よりも 1 つの行を持っています。
+
+```python
+4番目= third.drop('大陸', axis = 1)
+```
+
+ドロップ関数を適用しますが、この場合は行ではなく列全体をドロップします。
+これを実現するには、 `axis` パラメータも指定する必要があります(インデックス1を持つ2番目の列
+をドロップします)。
+
+```python
+fth.to_csv('result.csv')
+```
+
+最後のステップは、csvファイルに取り組んでいるデータを書き込むことです。 パンダは `to_csv()` 関数で
+を簡単にします。 関数に必要な引数はファイル名だけです。
+ファイルは、Jupyter または Python セッションを開始したディレクトリに書き込まれます。
 
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::: チャレンジ
 
-## Selecting Indices
+## インデックスの選択
 
-Explain in simple terms what `idxmin` and `idxmax` do in the short program below.
-When would you use these methods?
+以下の短いプログラムで `idxmin` と `idxmax` が何をするかを簡単な用語で説明します。
+これらの方法はいつ使われますか。
 
 ```python
 data = pd.read_csv('data/gapminder_gdp_europe.csv', index_col='country')
@@ -483,35 +482,35 @@ print(data.idxmin())
 print(data.idxmax())
 ```
 
-:::::::::::::::  solution
+::::::::::::::::: solution
 
-## Solution
+## 解決策
 
-For each column in `data`, `idxmin` will return the index value corresponding to each column's minimum;
-`idxmax` will do accordingly the same for each column's maximum value.
+`data`の各列に対して、`idxmin`は各列の最小値に対応するインデックス値を返します。
+`idxmax` は各列の最大値に対して同じ動作をします。
 
-You can use these functions whenever you want to get the row index of the minimum/maximum value and not the actual minimum/maximum value.
+これらの関数は、実際の最小/最大値ではなく、最小/最大値の行インデックスを取得したいときはいつでも使用できます。
 
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::: チャレンジ
 
-## Practice with Selection
+## 選択肢を使って練習
 
-Assume Pandas has been imported and the Gapminder GDP data for Europe has been loaded.
-Write an expression to select each of the following:
+パンダが輸入され、ヨーロッパのGapminderGDPデータがロードされたと仮定してください。
+以下のいずれかを選択する式を記述します。
 
-1. GDP per capita for all countries in 1982.
-2. GDP per capita for Denmark for all years.
-3. GDP per capita for all countries for years _after_ 1985.
-4. GDP per capita for each country in 2007 as a multiple of
-   GDP per capita for that country in 1952.
+1. 1982年の全ての国の一人当たりGDP。
+2. デンマークの一人当たりGDPは何年も続いています
+3. 1985年以降の全ての国の一人当たりGDP\*。
+4. 2007年の各国の一人当たりGDPは、1952年の
+   一人当たりGDPの倍数である。
 
-:::::::::::::::  solution
+::::::::::::::::: solution
 
-## Solution
+## 解決策
 
 1:
 
@@ -528,10 +527,10 @@ data.loc['Denmark',:]
 3:
 
 ```python
-data.loc[:,'gdpPercap_1985':]
+data.loc[:,'gdpPercap_1985':)
 ```
 
-Pandas is smart enough to recognize the number at the end of the column label and does not give you an error, although no column named `gdpPercap_1985` actually exists. This is useful if new columns are added to the CSV file later.
+Pandasはカラムラベルの末尾にある数字を認識するのに十分スマートであり、エラーは発生しません。 `gdpPercap_1985`という名前の列は実際には存在しません。 これは、後でCSVファイルに新しい列を追加する場合に便利です。
 
 4:
 
@@ -543,29 +542,29 @@ data['gdpPercap_2007']/data['gdpPercap_1952']
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::: チャレンジ
 
-## Many Ways of Access
+## アクセスの多くの方法
 
-There are at least two ways of accessing a value or slice of a DataFrame: by name or index.
-However, there are many others. For example, a single column or row can be accessed either as a `DataFrame`
-or a `Series` object.
+DataFrameには、名前またはインデックスで値またはスライスにアクセスするには、少なくとも2つの方法があります。
+しかし、他にもたくさんあります。 例えば、1つの列または行は、`DataFrame`
+または`Series`オブジェクトとしてアクセスできます。
 
-Suggest different ways of doing the following operations on a DataFrame:
+DataFrameで以下の操作を行うさまざまな方法を提案します:
 
-1. Access a single column
-2. Access a single row
-3. Access an individual DataFrame element
-4. Access several columns
-5. Access several rows
-6. Access a subset of specific rows and columns
-7. Access a subset of row and column ranges
+1. 単一列にアクセス
+2. 1行にアクセス
+3. 個々の DataFrame 要素にアクセス
+4. 複数の列にアクセス
+5. 複数の行にアクセス
+6. 特定の行と列のサブセットにアクセスします
+7. 行範囲と列範囲のサブセットにアクセス
 
-:::::::::::::::  solution
+::::::::::::::::: solution
 
-## Solution
+## 解決策
 
-1\. Access a single column:
+1\. 単一列へのアクセス:
 
 ```python
 # by name
@@ -587,7 +586,7 @@ data.iloc[:, [col_index]] # as a DataFrame
 data.T[data.T.index == "col_name"].T
 ```
 
-2\. Access a single row:
+2\. 1行へのアクセス:
 
 ```python
 # by name using .loc
@@ -606,7 +605,7 @@ data.iloc[[row_index]]   # as a DataFrame
 data[data.index == "row_name"]
 ```
 
-3\. Access an individual DataFrame element:
+3\. 個々のDataFrame要素にアクセス:
 
 ```python
 # by column/row names
@@ -646,7 +645,7 @@ data.iloc[:, [col_index]].loc[["row_name"]]  # as a DataFrame
 data[data.index == "row_name"].T[data.T.index == "col_name"].T
 ```
 
-4\. Access several columns:
+4\. 複数の列にアクセス:
 
 ```python
 # by name
@@ -657,7 +656,7 @@ data.loc[:, ["col1", "col2", "col3"]]
 data.iloc[:, [col1_index, col2_index, col3_index]]
 ```
 
-5\. Access several rows
+5\. 複数の行にアクセス
 
 ```python
 # by name
@@ -667,7 +666,7 @@ data.loc[["row1", "row2", "row3"]]
 data.iloc[[row1_index, row2_index, row3_index]]
 ```
 
-6\. Access a subset of specific rows and columns
+6\. 特定の行と列のサブセットにアクセスします
 
 ```python
 # by names
@@ -683,7 +682,7 @@ data[["col1", "col2", "col3"]].iloc[[row1_index, row2_index, row3_index]]
 data.iloc[:, [col1_index, col2_index, col3_index]].loc[["row1", "row2", "row3"]]
 ```
 
-7\. Access a subset of row and column ranges
+7\. 行範囲と列範囲のサブセットにアクセス
 
 ```python
 # by name
@@ -703,18 +702,18 @@ data.iloc[:, col1_index:col2_index].loc["row1":"row2"]
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::: チャレンジ
 
-## Exploring available methods using the `dir()` function
+## `dir()`関数を使って利用可能なメソッドを探索する
 
-Python includes a `dir()` function that can be used to display all of the available methods (functions) that are built into a data object.  In Episode 4, we used some methods with a string. But we can see many more are available by using `dir()`:
+Python には `dir()` 関数が含まれており、データオブジェクトに組み込まれている利用可能なすべてのメソッド (関数) を表示できます。  第4話では、いくつかのメソッドを文字列で使用しました。 しかし、`dir()`を使用することで、より多くのものが利用可能になります。
 
 ```python
-my_string = 'Hello world!'   # creation of a string object 
+my_string = 'Hello world!' # string object 
 dir(my_string)
 ```
 
-This command returns:
+このコマンドは以下を返します:
 
 ```python
 ['__add__',
@@ -728,16 +727,16 @@ This command returns:
 'zfill']
 ```
 
-You can use `help()` or <kbd>Shift</kbd>+<kbd>Tab</kbd> to get more information about what these methods do.
+`help()` または <kbd>Shift</kbd>+<kbd>Tab</kbd> を使用すると、これらのメソッドの詳細情報を取得できます。
 
-Assume Pandas has been imported and the Gapminder GDP data for Europe has been loaded as `data`.  Then, use `dir()`
-to find the function that prints out the median per-capita GDP across all European countries for each year that information is available.
+パンダがインポートされ、ヨーロッパのGapminderGDPデータが「data」としてロードされたとします。  次に、`dir()`
+を使用して、毎年その情報が入手可能なすべてのヨーロッパ諸国で一人当たりGDPの中央値を出力する関数を見つけます。
 
-:::::::::::::::  solution
+::::::::::::::::: solution
 
-## Solution
+## 解決策
 
-Among many choices, `dir()` lists the `median()` function as a possibility.  Thus,
+多くの選択肢の中で、`dir()`は`median()`関数を可能としてリストしています。  したがって、
 
 ```python
 data.median()
@@ -747,14 +746,14 @@ data.median()
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::: チャレンジ
 
-## Interpretation
+## 解説
 
-Poland's borders have been stable since 1945,
-but changed several times in the years before then.
-How would you handle this if you were creating a table of GDP per capita for Poland
-for the entire twentieth century?
+ポーランドの国境は1945年、
+以来安定していますが、それ以前の数年間で数回変わりました。
+20世紀全体にわたってポーランド
+の一人当たりGDPの表を作っていたら、どのように対処するでしょうか。
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -766,11 +765,11 @@ for the entire twentieth century?
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- Use `DataFrame.iloc[..., ...]` to select values by integer location.
-- Use `:` on its own to mean all columns or all rows.
-- Select multiple columns or rows using `DataFrame.loc` and a named slice.
-- Result of slicing can be used in further operations.
-- Use comparisons to select data based on value.
-- Select values or NaN using a Boolean mask.
+- 整数の位置で値を選択するには、`DataFrame.iloc[..., ...]` を使用します。
+- すべての列またはすべての行を意味するには、単独で `:` を使用します。
+- `DataFrame.loc` と名前付きスライスを使用して、複数の列または行を選択します。
+- スライスの結果は、さらなる操作で使用できます。
+- 比較を使用して、値に基づいてデータを選択します。
+- ブールマスクを使用して値またはNaNを選択します。
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
