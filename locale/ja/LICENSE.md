@@ -1,52 +1,52 @@
 ---
-title: Licenses
+title: ライセンス
 ---
 
-## Instructional Material
+## 教材紹介
 
-All Carpentries (Software Carpentry, Data Carpentry, and Library Carpentry)
-instructional material is made available under the [Creative Commons
-Attribution license][cc-by-human]. The following is a human-readable summary of
+すべてのCarpentries（ソフトウェアカーペントリー、データカーペントリー、および図書館カーペントリー）
+教材は[Creative Commons
+Attribution license][cc-by-human] の下で利用可能になります。 The following is a human-readable summary of
 (and not a substitute for) the [full legal text of the CC BY 4.0
 license][cc-by-legal].
 
-You are free:
+あなたは無料です:
 
-- to **Share**---copy and redistribute the material in any medium or format
-- to **Adapt**---remix, transform, and build upon the material
+- **共有**---コピーし、任意の媒体またはフォーマットで材料を再配布する
+- 材料を**適応**---リミックス、変換、組み立てます。
 
-for any purpose, even commercially.
+営利目的であってもです
 
-The licensor cannot revoke these freedoms as long as you follow the license
-terms.
+ライセンス
+の条件に従っている限り、ライセンサーはこれらの自由を取り消すことはできません。
 
-Under the following terms:
+以下の用語に基づきます。
 
 - **Attribution**---You must give appropriate credit (mentioning that your work
   is derived from work that is Copyright (c) The Carpentries and, where
   practical, linking to https\://carpentries.org/), provide a [link to the
-  license][cc-by-human], and indicate if changes were made. You may do so in
-  any reasonable manner, but not in any way that suggests the licensor endorses
-  you or your use.
+  license][cc-by-human], and indicate if changes were made. あなたは、合理的な方法で
+  行うことができますが、使用許諾者が
+  あなたまたはあなたの使用を推奨するものではありません。
 
-- **No additional restrictions**---You may not apply legal terms or
-  technological measures that legally restrict others from doing anything the
-  license permits.  With the understanding that:
+- **追加の制限はありません**---法的に他の人が
+  許諾を行うことを制限する法的な条項または
+  技術的な措置を適用することはできません。  それを理解してください:
 
-Notices:
+通知:
 
-- You do not have to comply with the license for elements of the material in
-  the public domain or where your use is permitted by an applicable exception
-  or limitation.
-- No warranties are given. The license may not give you all of the permissions
-  necessary for your intended use. For example, other rights such as publicity,
-  privacy, or moral rights may limit how you use the material.
+- 公開ドメイン
+  または適用される例外
+  または制限によって使用が許可されている場合には、素材の要素に関するライセンスを遵守する必要はありません。
+- 保証はありません。 The license may not give you all of the permissions
+  necessary for your intended use. 例えば、宣伝、
+  プライバシー、または道徳的権利など、その他の権利は、お客様の素材の使用方法を制限する場合があります。
 
-## Software
+## ソフトウェア
 
-Except where otherwise noted, the example programs and other software provided
-by The Carpentries are made available under the [OSI][osi]-approved [MIT
-license][mit-license].
+別途記載されている場合を除き、 The Carpentries によって提供された
+のサンプルプログラムやその他のソフトウェアは [OSI][osi]-approved [MIT
+license][mit-license] の下で利用可能になっています。
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
@@ -55,8 +55,8 @@ use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
 of the Software, and to permit persons to whom the Software is furnished to do
 so, subject to the following conditions:
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+上記の著作権表示およびこの許可通知は、本ソフトウェアのすべての
+コピーまたは実質的な部分に含まれるものとします。
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
@@ -66,11 +66,11 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-## Trademark
+## 商標
 
 "The Carpentries", "Software Carpentry", "Data Carpentry", and "Library
-Carpentry" and their respective logos are registered trademarks of [Community
-Initiatives][ci].
+Carpentry" そしてそれぞれのロゴは[Community
+Initiatives][ci] の登録商標です。
 
 [cc-by-human]: https://creativecommons.org/licenses/by/4.0/
 
