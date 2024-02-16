@@ -3,27 +3,27 @@ permalink: index.html
 site: sandpaper::sandpaper_site
 ---
 
-This lesson is an introduction to programming in Python 3 for people with little or no previous
-programming experience. It uses plotting as its motivating example and is designed to be used in
-both [Data Carpentry][dc-lessons] and [Software Carpentry][swc-lessons] workshops.
-This lesson references [JupyterLab][jupyterlab] but can be taught using alternative Python 3 interpreters
-as well (e.g., repl.it, Anaconda).
+Questa lezione è un'introduzione alla programmazione in Python 3 per le persone con poca o nessuna esperienza di programmazione
+precedente. Utilizza il tracciato come suo esempio motivante ed è progettato per essere utilizzato in
+entrambi i laboratori [Carpenteria dati][dc-lessons] e [Carpenteria software][swc-lessons].
+Questa lezione fa riferimento ad [JupyterLab][jupyterlab] ma può essere insegnata anche utilizzando interpreti alternativi di Python 3
+(ad esempio, repl.it, Anaconda).
 
 ::::::::::::::::::::::::::::::::::::::::::  prereq
 
-## Prerequisites
+## Prerequisiti
 
-1. Learners need to understand what files and directories are,
-   what a working directory is,
-   and how to start a Python interpreter.
+1. Gli studenti devono capire quali sono i file e le directory,
+   cos'è una directory di lavoro,
+   e come avviare un interprete Python.
 
-2. Learners must install Python 3 before the class starts.
+2. Gli studenti devono installare Python 3 prima dell'inizio della classe.
 
-3. Learners must get the gapminder data before class starts:
-   please download and unzip the file
+3. Gli studenti devono ottenere i dati gapminder prima dell'inizio della classe:
+   scaricare e decomprimere il file
    [python-novice-gapminder-data.zip](episodes/files/python-novice-gapminder-data.zip).
 
-Please see [the setup instructions](learners/setup.md)
-for more details.
+Vedi [le istruzioni di installazione](studenti/setup.md)
+per maggiori dettagli.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
