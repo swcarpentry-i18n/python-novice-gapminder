@@ -18,7 +18,7 @@
 
 [cran-stringr]: https://cran.r-project.org/package=stringr
 
-[dc-lessons]: https://www.datacarpentry.org/lessons/
+[dc-lessons]: https://www.datacarpentry.org/lezioni/
 
 [email]: mailto:team@carpentries.org
 
@@ -40,7 +40,7 @@
 
 [kramdown]: https://kramdown.gettalong.org/
 
-[lc-lessons]: https://librarycarpentry.org/lessons/
+[lc-lessons]: https://librarycarpentry.org/lezioni/
 
 [lesson-example]: https://carpentries.github.io/lesson-example/
 
@@ -64,7 +64,7 @@
 
 [rstudio]: https://www.rstudio.com/
 
-[ruby-install-guide]: https://www.ruby-lang.org/en/downloads/
+[ruby-install-guide]: https://www.ruby-lang.org/it/downloads/
 
 [ruby-installer]: https://rubyinstaller.org/
 
@@ -72,7 +72,7 @@
 
 [styles]: https://github.com/carpentries/styles/
 
-[swc-lessons]: https://software-carpentry.org/lessons/
+[swc-lessons]: https://software-carpentry.org/lezioni/
 
 [swc-releases]: https://github.com/swcarpentry/swc-releases
 
