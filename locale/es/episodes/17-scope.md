@@ -1,137 +1,137 @@
 ---
-title: Variable Scope
+title: Alcance variable
 teaching: 10
 exercises: 10
 ---
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- Identify local and global variables.
-- Identify parameters as local variables.
-- Read a traceback and determine the file, function, and line number on which the error occurred, the type of error, and the error message.
+- Identificar variables locales y globales.
+- Identificar parámetros como variables locales.
+- Lee un traceback y determina el archivo, función y número de línea en el que ocurrió el error, el tipo de error y el mensaje de error.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::: questions
+:::::::::::::::::::::::::::::::::::::::::::::::::: preguntas
 
-- How do function calls actually work?
-- How can I determine where errors occurred?
+- ¿Cómo funcionan realmente las llamadas de funciones?
+- ¿Cómo puedo determinar dónde ocurrieron los errores?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## The scope of a variable is the part of a program that can 'see' that variable.
+## El alcance de una variable es la parte de un programa que puede 'ver' esa variable.
 
-- There are only so many sensible names for variables.
-- People using functions shouldn't have to worry about
-  what variable names the author of the function used.
-- People writing functions shouldn't have to worry about
-  what variable names the function's caller uses.
-- The part of a program in which a variable is visible is called its _scope_.
+- Sólo hay tantos nombres sensatos para las variables.
+- Las personas que usan funciones no deberían tener que preocuparse por
+  qué nombres de variables usa el autor de la función.
+- Las personas que escriben funciones no deberían tener que preocuparse por
+  qué nombres de variables utiliza el llamador de la función.
+- La parte de un programa en el que una variable es visible se llama su \*ámbito \*.
 
 ```python
-pressure = 103.9
+presión = 103.9
 
-def adjust(t):
-    temperature = t * 1.43 / pressure
-    return temperature
+ajuste de def (t):
+    temperatura = t * 1.43 / presión
+    temperatura de retorno
 ```
 
-- `pressure` is a _global variable_.
-  - Defined outside any particular function.
-  - Visible everywhere.
-- `t` and `temperature` are _local variables_ in `adjust`.
-  - Defined in the function.
-  - Not visible in the main program.
-  - Remember: a function parameter is a variable
-    that is automatically assigned a value when the function is called.
+- `pressure` es una _variable global_.
+  - Definido fuera de cualquier función en particular.
+  - Visible en todas partes.
+- `t` y `temperature` son _variables locales_ en `ajust`.
+  - Definido en la función.
+  - No visible en el programa principal.
+  - Recuerda: un parámetro de función es una variable
+    que se asigna automáticamente un valor cuando se llama a la función.
 
 ```python
-print('adjusted:', adjust(0.9))
-print('temperature after call:', temperature)
+print('ajustado:', adjust(0.9))
+print('temperatura después de la llamada:', temperatura)
 ```
 
 ```output
-adjusted: 0.01238691049085659
+ajustado: 0.01238691049085659
 ```
 
 ```error
-Traceback (most recent call last):
-  File "/Users/swcarpentry/foo.py", line 8, in <module>
+Tracebo (la última llamada más reciente):
+  Archivo "/Users/swcarpentry/foo.py", línea 8, en <module>
     print('temperature after call:', temperature)
-NameError: name 'temperature' is not defined
+NameError: nombre 'temperature' no está definido
 ```
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::::::::::::::: desafío
 
-## Local and Global Variable Use
+## Uso variable local y global
 
-Trace the values of all variables in this program as it is executed.
-(Use '---' as the value of variables before and after they exist.)
+Traza los valores de todas las variables en este programa mientras se ejecuta.
+(Usar '---' como el valor de las variables antes y después de que existan.)
 
 ```python
 limit = 100
 
-def clip(value):
-    return min(max(0.0, value), limit)
+clip def (valor):
+    return min(max(0.0, valor), limit)
 
-value = -22.5
-print(clip(value))
+valor = -22.5
+print(clip(valor))
 ```
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::::::::::::::: desafío
 
-## Reading Error Messages
+## Leyendo mensajes de error
 
-Read the traceback below, and identify the following:
+Lee la traza abajo, e identifica lo siguiente:
 
-1. How many levels does the traceback have?
-2. What is the file name where the error occurred?
-3. What is the function name where the error occurred?
-4. On which line number in this function did the error occur?
-5. What is the type of error?
-6. What is the error message?
+1. ¿Cuántos niveles tiene la traceback?
+2. ¿Cuál es el nombre del archivo donde se produjo el error?
+3. ¿Cuál es el nombre de la función donde se produjo el error?
+4. ¿En qué número de línea de esta función se produjo el error?
+5. ¿Cuál es el tipo de error?
+6. ¿Cuál es el mensaje de error?
 
 ```error
----------------------------------------------------------------------------
-KeyError                                  Traceback (most recent call last)
-<ipython-input-2-e4c4cbafeeb5> in <module>()
-      1 import errors_02
-----> 2 errors_02.print_friday_message()
+-------------------------------------------------------------------
+KeyError Traceback (última llamada)
+<ipython-input-2-e4c4cbafeeb5> en <module>()
+      1 error de importación_02
+----> 2 errores_02. rint_friday_message()
 
-/Users/ghopper/thesis/code/errors_02.py in print_friday_message()
+/Users/ghopper/thesis/code/errors_02. y en print_friday_message()
      13
      14 def print_friday_message():
----> 15     print_message("Friday")
+---> 15 print_message("Viern")
 
-/Users/ghopper/thesis/code/errors_02.py in print_message(day)
-      9         "sunday": "Aw, the weekend is almost over."
-     10     }
----> 11     print(messages[day])
+/Users/ghopper/thesis/code/errors_02. y en print_message(day)
+      9 "sunday": "Aw, el fin de semana está casi terminado.
+     10 }
+---> 11 print(messages[day])
      12
      13
 
-KeyError: 'Friday'
+KeyError: 'Viernes'
 ```
 
-:::::::::::::::  solution
+::::::::::::::::: solución
 
-## Solution
+## Solución
 
-1. Three levels.
+1. Tres niveles.
 
 2. `errors_02.py`
 
 3. `print_message`
 
-4. Line 11
+4. Línea 11
 
-5. `KeyError`. These errors occur when we are trying to look up a key that does not exist (usually in a data
-   structure such as a dictionary). We can find more information about the `KeyError` and other built-in exceptions
-   in the [Python docs](https://docs.python.org/3/library/exceptions.html#KeyError).
+5. `KeyError`. Estos errores ocurren cuando estamos intentando buscar una clave que no existe (normalmente en una estructura
+   de datos como un diccionario). Podemos encontrar más información sobre `KeyError` y otras excepciones incorporadas
+   en la [documentación de Python](https://docs.python.org/3/library/exceptions.html#KeyError).
 
-6. `KeyError: 'Friday'`
+6. `KeyError: 'Viernes'`
 
 :::::::::::::::::::::::::
 
@@ -139,6 +139,6 @@ KeyError: 'Friday'
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- The scope of a variable is the part of a program that can 'see' that variable.
+- El alcance de una variable es la parte de un programa que puede 'ver' esa variable.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
