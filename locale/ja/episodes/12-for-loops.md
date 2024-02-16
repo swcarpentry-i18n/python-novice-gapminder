@@ -1,38 +1,38 @@
 ---
-title: For Loops
+title: ループ
 teaching: 10
 exercises: 15
 ---
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- Explain what for loops are normally used for.
-- Trace the execution of a simple (unnested) loop and correctly state the values of variables in each iteration.
-- Write for loops that use the Accumulator pattern to aggregate values.
+- ループが通常に使用されるものを説明します。
+- 単純(unnested)ループの実行をトレースし、各反復内の変数の値を正しくステートメントします。
+- Accumulatorパターンを使用して値を集計するループに書き込みます。
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::: questions
+::::::::::::::::::::::::::::::::::
 
-- How can I make a program do many things?
+- プログラムを作るにはどうしたらいいですか？
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## A _for loop_ executes commands once for each value in a collection.
+## _for loop_ は、コレクション内の値ごとにコマンドを1回実行します。
 
-- Doing calculations on the values in a list one by one
-  is as painful as working with `pressure_001`, `pressure_002`, etc.
-- A _for loop_ tells Python to execute some statements once for each value in a list,
-  a character string,
-  or some other collection.
-- "for each thing in this group, do these operations"
+- リスト内の値を1つずつ計算する
+  は、 `pressure_001` や `pressure_002` などを扱うのと同じくらい苦労します。
+- _for loop_ は、リスト、
+  文字列、
+  または他のコレクション内の値ごとに、いくつかの文を1回実行するようにPythonに指示します。
+- "このグループの各事ごとに、これらの操作を行います"
 
 ```python
 for number in [2, 3, 5]:
     print(number)
 ```
 
-- This `for` loop is equivalent to:
+- `まで` は次のようになります。
 
 ```python
 print(2)
@@ -40,7 +40,7 @@ print(3)
 print(5)
 ```
 
-- And the `for` loop's output is:
+- `まつ`の出力は次のとおりです。
 
 ```output
 2
@@ -48,23 +48,23 @@ print(5)
 5
 ```
 
-## A `for` loop is made up of a collection, a loop variable, and a body.
+## `まつ`は、コレクション、ループ変数、および本体で構成されています。
 
 ```python
 for number in [2, 3, 5]:
     print(number)
 ```
 
-- The collection, `[2, 3, 5]`, is what the loop is being run on.
-- The body, `print(number)`, specifies what to do for each value in the collection.
-- The loop variable, `number`, is what changes for each _iteration_ of the loop.
-  - The "current thing".
+- `[2, 3, 5]`のコレクションは、ループが実行されているものです。
+- body `print(number)` は、コレクション内の各値に対して何をするかを指定します。
+- ループ変数`number`は、ループの_繰り返し_ごとに変更されるものです。
+  - 「現在のもの」。
 
-## The first line of the `for` loop must end with a colon, and the body must be indented.
+## `まつ` の最初の行はコロンで終わらなければなりません。そして、本体はインデントされなければなりません。
 
-- The colon at the end of the first line signals the start of a _block_ of statements.
-- Python uses indentation rather than `{}` or `begin`/`end` to show _nesting_.
-  - Any consistent indentation is legal, but almost everyone uses four spaces.
+- 最初の行の末尾にあるコロンは、文の_ブロック_の始まりを示します。
+- Python は _ネスティング_を表示するために `{}` や `begin`/`end` ではなくインデントを使用します。
+  - 一貫したインデントは合法ですが、ほとんどの人は4つのスペースを使用します。
 
 ```python
 for number in [2, 3, 5]:
@@ -72,10 +72,10 @@ print(number)
 ```
 
 ```error
-IndentationError: expected an indented block
+IndentationError: expected block
 ```
 
-- Indentation is always meaningful in Python.
+- インデントはPythonでは常に意味があります。
 
 ```python
 firstName = "Jon"
@@ -86,34 +86,34 @@ firstName = "Jon"
   File "<ipython-input-7-f65f2962bf9c>", line 2
     lastName = "Smith"
     ^
-IndentationError: unexpected indent
+indentationError: unexpected indent
 ```
 
-- This error can be fixed by removing the extra spaces
-  at the beginning of the second line.
+- このエラーは、2行目の最初の余分なスペース
+  を削除することで修正できます。
 
-## Loop variables can be called anything.
+## ループ変数は何でも呼ぶことができます。
 
-- As with all variables, loop variables are:
-  - Created on demand.
-  - Meaningless: their names can be anything at all.
+- すべての変数と同様に、ループ変数は次のとおりです。
+  - 需要に応じて作成されます。
+  - 意味のない:彼らの名前は何でもあり得ます。
 
 ```python
-for kitten in [2, 3, 5]:
+for kitten [2, 3, 5]:
     print(kitten)
 ```
 
-## The body of a loop can contain many statements.
+## ループの本文には多くの文を含めることができます。
 
-- But no loop should be more than a few lines long.
-- Hard for human beings to keep larger chunks of code in mind.
+- しかし、ループは数行以上でなければなりません。
+- 人間がより大きなコードを念頭に置くのは難しい。
 
 ```python
 primes = [2, 3, 5]
 for p in primes:
     squared = p ** 2
     cubed = p ** 3
-    print(p, squared, cubed)
+    print(p. 2乗、3乗)
 ```
 
 ```output
@@ -122,13 +122,13 @@ for p in primes:
 5 25 125
 ```
 
-## Use `range` to iterate over a sequence of numbers.
+## 数字のシーケンスを繰り返すには、`range` を使います。
 
-- The built-in function [`range`](https://docs.python.org/3/library/stdtypes.html#range) produces a sequence of numbers.
-  - _Not_ a list: the numbers are produced on demand
-    to make looping over large ranges more efficient.
-- `range(N)` is the numbers 0..N-1
-  - Exactly the legal indices of a list or character string of length N
+- 組み込み関数 [`range`](https://docs.python.org/3/library/stdtypes.html#range) は数字のシーケンスを生成します。
+  - _注意_ リスト：数字はオンデマンドで
+    生成され、広い範囲でループをより効率的にします。
+- `range(N)` は0..N-1
+  - 正確には長さNのリストまたは文字列の法的インデックス
 
 ```python
 print('a range is not a list: range(0, 3)')
@@ -137,20 +137,20 @@ for number in range(0, 3):
 ```
 
 ```output
-a range is not a list: range(0, 3)
-0
+範囲がリストではありません: range(0, 3)
+0 0
 1
 2
 ```
 
-## The Accumulator pattern turns many values into one.
+## Accumulatorパターンは多くの値を1に変換します。
 
-- A common pattern in programs is to:
-  1. Initialize an _accumulator_ variable to zero, the empty string, or the empty list.
-  2. Update the variable with values from a collection.
+- プログラムの一般的なパターンは以下です。
+  1. _accumulator_ 変数をゼロ、空の文字列、または空のリストに初期化します。
+  2. コレクションの値で変数を更新します。
 
 ```python
-# Sum the first 10 integers.
+# 最初の10の整数を合計します。
 total = 0
 for number in range(10):
    total = total + (number + 1)
@@ -161,35 +161,35 @@ print(total)
 55
 ```
 
-- Read `total = total + (number + 1)` as:
-  - Add 1 to the current value of the loop variable `number`.
-  - Add that to the current value of the accumulator variable `total`.
-  - Assign that to `total`, replacing the current value.
-- We have to add `number + 1` because `range` produces 0..9, not 1..10.
+- `total = total + (number + 1)`を次のように読みます。
+  - `number` 変数の現在の値に 1 を足します。
+  - accumulator 変数 `total` の現在の値に追加します。
+  - これを `total` に割り当て、現在の値を置き換えます。
+- `range`は1..10ではなく0..9を生成するので、`number + 1` を追加します。
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::: チャレンジ
 
-## Classifying Errors
+## エラーの分類
 
-Is an indentation error a syntax error or a runtime error?
+インデントエラーは構文エラーまたは実行時エラーですか?
 
-:::::::::::::::  solution
+::::::::::::::::: solution
 
-## Solution
+## 解決策
 
-An IndentationError is a syntax error. Programs with syntax errors cannot be started.
-A program with a runtime error will start but an error will be thrown under certain conditions.
+IndentationError は、構文エラーです。 構文エラーのあるプログラムを起動できません。
+実行時エラーのあるプログラムが起動しますが、特定の条件下でエラーがスローされます。
 
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::: チャレンジ
 
-## Tracing Execution
+## 実行のトレース
 
-Create a table showing the numbers of the lines that are executed when this program runs,
-and the values of the variables after each line is executed.
+このプログラムを実行したときに実行される行の数を示すテーブルを作成します。
+と各行後の変数の値が実行されます。
 
 ```python
 total = 0
@@ -197,30 +197,30 @@ for char in "tin":
     total = total + 1
 ```
 
-:::::::::::::::  solution
+::::::::::::::::: solution
 
-## Solution
+## 解決策
 
-| Line no | Variables            |
-| ------- | -------------------- |
-| 1       | total = 0            |
-| 2       | total = 0 char = 't' |
-| 3       | total = 1 char = 't' |
-| 2       | total = 1 char = 'i' |
-| 3       | total = 2 char = 'i' |
-| 2       | total = 2 char = 'n' |
-| 3       | total = 3 char = 'n' |
+| 行番号 | 変数                   |
+| --- | -------------------- |
+| 1   | total = 0            |
+| 2   | total = 0 char = 't' |
+| 3   | total = 1 char = 't' |
+| 2   | total = 1 char = 'i' |
+| 3   | total = 2 char = 'i' |
+| 2   | total = 2 char = 'n' |
+| 3   | total = 3 char = 'n' |
 
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::: チャレンジ
 
 ## Reversing a String
 
-Fill in the blanks in the program below so that it prints "nit"
-(the reverse of the original character string "tin").
+"nit"
+(元の文字列「tin」の逆)を出力するように、以下のプログラムの空白を埋めてください。
 
 ```python
 original = "tin"
@@ -230,9 +230,9 @@ for char in original:
 print(result)
 ```
 
-:::::::::::::::  solution
+::::::::::::::::: solution
 
-## Solution
+## 解決策
 
 ```python
 original = "tin"
@@ -246,12 +246,12 @@ print(result)
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::: チャレンジ
 
-## Practice Accumulating
+## 累積練習をする
 
-Fill in the blanks in each of the programs below
-to produce the indicated result.
+指定された結果を生成するには、
+以下の各プログラムの空白を入力してください。
 
 ```python
 # Total length of the strings in the list: ["red", "green", "blue"] => 12
@@ -261,9 +261,9 @@ for word in ["red", "green", "blue"]:
 print(total)
 ```
 
-:::::::::::::::  solution
+::::::::::::::::: solution
 
-## Solution
+## 解決策
 
 ```python
 total = 0
@@ -282,12 +282,12 @@ for word in ["red", "green", "blue"]:
 print(lengths)
 ```
 
-:::::::::::::::  solution
+::::::::::::::::: solution
 
-## Solution
+## 解決策
 
 ```python
-lengths = []
+length= []
 for word in ["red", "green", "blue"]:
     lengths.append(len(word))
 print(lengths)
@@ -304,9 +304,9 @@ for ____ in ____:
 print(result)
 ```
 
-:::::::::::::::  solution
+::::::::::::::::: solution
 
-## Solution
+## 解決策
 
 ```python
 words = ["red", "green", "blue"]
@@ -318,14 +318,14 @@ print(result)
 
 :::::::::::::::::::::::::
 
-**Create an acronym:** Starting from the list `["red", "green", "blue"]`, create the acronym `"RGB"` using
-a for loop.
+**頭字語を作成しましょう** `["red", "green", "blue"]`のリストから始まり、
+a for ループを使って頭字語`RGB"`を作りましょう。
 
-**Hint:** You may need to use a string method to properly format the acronym.
+**ヒント:** 頭字語を正しくフォーマットするために文字列メソッドを使用する必要があります。
 
-:::::::::::::::  solution
+::::::::::::::::: solution
 
-## Solution
+## 解決策
 
 ```python
 acronym = ""
@@ -338,13 +338,13 @@ print(acronym)
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::: チャレンジ
 
-## Cumulative Sum
+## 累積合計
 
 Reorder and properly indent the lines of code below
 so that they print a list with the cumulative sum of data.
-The result should be `[1, 3, 5, 10]`.
+結果は `[1, 3, 5, 10]` でなければなりません。
 
 ```python
 cumulative.append(total)
@@ -356,9 +356,9 @@ print(cumulative)
 data = [1,2,2,5]
 ```
 
-:::::::::::::::  solution
+::::::::::::::::: solution
 
-## Solution
+## 解決策
 
 ```python
 total = 0
@@ -374,18 +374,18 @@ print(cumulative)
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::: チャレンジ
 
-## Identifying Variable Name Errors
+## 変数名エラーの識別
 
-1. Read the code below and try to identify what the errors are
-   _without_ running it.
-2. Run the code and read the error message.
-   What type of `NameError` do you think this is?
-   Is it a string with no quotes, a misspelled variable, or a
-   variable that should have been defined but was not?
-3. Fix the error.
-4. Repeat steps 2 and 3, until you have fixed all the errors.
+1. 以下のコードを読んで、
+   _実行しない_エラーを特定してみてください。
+2. コードを実行し、エラーメッセージを読みます。
+   `NameError` の種類は？
+   引用符なし、スペルミスのある変数、または定義されるべきではなかった
+   変数を含む文字列ですか?
+3. エラーを修正します。
+4. すべてのエラーを修正するまで、ステップ2と3を繰り返します。
 
 ```python
 for number in range(10):
@@ -397,13 +397,13 @@ for number in range(10):
 print(message)
 ```
 
-:::::::::::::::  solution
+::::::::::::::::: solution
 
-## Solution
+## 解決策
 
-- Python variable names are case sensitive: `number` and `Number` refer to different variables.
-- The variable `message` needs to be initialized as an empty string.
-- We want to add the string `"a"` to `message`, not the undefined variable `a`.
+- Python の変数名は大文字と小文字を区別します: `number` と `Number` は異なる変数を参照します。
+- 変数`message`は空の文字列として初期化する必要があります。
+- 未定義の変数 `a` ではなく、文字列 `a" を `message\` に追加します。
 
 ```python
 message = ""
@@ -420,29 +420,29 @@ print(message)
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::: チャレンジ
 
-## Identifying Item Errors
+## 項目エラーの識別
 
-1. Read the code below and try to identify what the errors are
-   _without_ running it.
-2. Run the code, and read the error message. What type of error is it?
-3. Fix the error.
+1. 以下のコードを読んで、
+   _実行しない_エラーを特定してみてください。
+2. コードを実行し、エラーメッセージを読みます。 どのようなタイプのエラーですか?
+3. エラーを修正します。
 
 ```python
-seasons = ['Spring', 'Summer', 'Fall', 'Winter']
-print('My favorite season is ', seasons[4])
+seases = ['春', '夏', '秋', '冬']
+print('私の好きな季節は', seasons[4])
 ```
 
-:::::::::::::::  solution
+::::::::::::::::: solution
 
-## Solution
+## 解決策
 
-This list has 4 elements and the index to access the last element in the list is `3`.
+このリストには4つの要素があり、リストの最後の要素にアクセスするインデックスは `3` です。
 
 ```python
-seasons = ['Spring', 'Summer', 'Fall', 'Winter']
-print('My favorite season is ', seasons[3])
+seases = ['春', '夏', '秋', '冬']
+print('私の好きな季節は', seasons[3])
 ```
 
 :::::::::::::::::::::::::
@@ -451,13 +451,13 @@ print('My favorite season is ', seasons[3])
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- A _for loop_ executes commands once for each value in a collection.
-- A `for` loop is made up of a collection, a loop variable, and a body.
-- The first line of the `for` loop must end with a colon, and the body must be indented.
-- Indentation is always meaningful in Python.
-- Loop variables can be called anything (but it is strongly advised to have a meaningful name to the looping variable).
-- The body of a loop can contain many statements.
-- Use `range` to iterate over a sequence of numbers.
-- The Accumulator pattern turns many values into one.
+- _for loop_ は、コレクション内の値ごとにコマンドを1回実行します。
+- `まつ`は、コレクション、ループ変数、および本体で構成されています。
+- `まつ` の最初の行はコロンで終わらなければなりません。そして、本体はインデントされなければなりません。
+- インデントはPythonでは常に意味があります。
+- ループ変数は何でも呼び出すことができます(ただし、ループ変数に意味のある名前を付けることを強くお勧めします)。
+- ループの本文には多くの文を含めることができます。
+- 数字のシーケンスを繰り返すには、`range` を使います。
+- Accumulatorパターンは多くの値を1に変換します。
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
