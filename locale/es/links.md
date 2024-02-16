@@ -26,7 +26,7 @@
 
 [importer]: https://github.com/new/import
 
-[jekyll-collection]: https://jekyllrb.com/docs/collections/
+[jekyll-collection]: https://jekyllrb.com/docs/colecciones/
 
 [jekyll-install]: https://jekyllrb.com/docs/installation/
 
@@ -36,7 +36,7 @@
 
 [jupyter]: https://jupyter.org/
 
-[jupyterlab]: https://jupyterlab.readthedocs.io/en/stable/
+[jupyterlab]: https://jupyterlab.readthedocs.io/es/estable/
 
 [kramdown]: https://kramdown.gettalong.org/
 
@@ -64,7 +64,7 @@
 
 [rstudio]: https://www.rstudio.com/
 
-[ruby-install-guide]: https://www.ruby-lang.org/en/downloads/
+[ruby-install-guide]: https://www.ruby-lang.org/es/downloads/
 
 [ruby-installer]: https://rubyinstaller.org/
 
