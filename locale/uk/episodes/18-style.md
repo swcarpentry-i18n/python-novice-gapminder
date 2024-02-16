@@ -1,51 +1,51 @@
 ---
-title: Programming Style
+title: Стиль програмування
 teaching: 15
 exercises: 15
 ---
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- Provide sound justifications for basic rules of coding style.
-- Refactor one-page programs to make them more readable and justify the changes.
-- Use Python community coding standards (PEP-8).
+- Забезпечити звукові виправдання основних правил стилю програмування.
+- Фактор програм односторінкових сторінок, щоб зробити їх більш читабельними та виправдати зміни.
+- Використовувати стандарти кодування спільноти Python (PEP-8).
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::: questions
+::::::::::::::::::::::::::::::::::::::::::::: питань
 
-- How can I make my programs more readable?
-- How do most programmers format their code?
-- How can programs check their own operation?
+- Як я можу зробити програми більш розбірливими?
+- Як більшість програмістів форматують свій код?
+- Як можуть програми перевірити власну операцію?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Coding style
 
-A consistent coding style helps others (including our future selves) read and understand code more easily. Code is read much more often than it is written, and as the [Zen of Python](https://www.python.org/dev/peps/pep-0020) states, "Readability counts".
-Python proposed a standard style through one of its first Python Enhancement Proposals (PEP), [PEP8](https://www.python.org/dev/peps/pep-0008).
+Відповідний стиль кодування допомагає іншим (у тому числі нашим майбутнім предмам) читати та розуміти код простіше. Код читається набагато частіше, ніж написано, і як [Zen для Python](https://www.python.org/dev/peps/pep-0020) ст., "Кількість читань".
+Python запропонував стандартний стиль через один з своїх перших пропозицій підвищення Python (PEP), [PEP8](https://www.python.org/dev/peps/pep-0008).
 
-Some points worth highlighting:
+Варто виділити деякі бали:
 
-- document your code and ensure that assumptions, internal algorithms, expected inputs, expected outputs, etc., are clear
-- use clear, semantically meaningful variable names
-- use white-space, _not_ tabs, to indent lines (tabs can cause problems across different text editors, operating systems, and version control systems)
+- документуйте ваш код і переконайтеся, що припущення, внутрішні алгоритми, очікувані введення, дані тощо, є зрозумілим
+- використовувати чіткі, семантично значущі імена змінних
+- використовувати пробіл, _not_ для ліній відступу (вкладки можуть викликати проблеми різних текстових редакторів, операційних систем і систем контролю версій)
 
-## Follow standard Python style in your code.
+## Виконайте стандартний стиль Python в коді.
 
-- [PEP8](https://www.python.org/dev/peps/pep-0008):
-  a style guide for Python that discusses topics such as how to name variables,
-  how to indent your code,
-  how to structure your `import` statements,
-  etc.
-  Adhering to PEP8 makes it easier for other Python developers to read and understand your code, and to understand what their contributions should look like.
-- To check your code for compliance with PEP8, you can use the [pycodestyle application](https://pypi.org/project/pycodestyle/) and tools like the [black code formatter](https://github.com/psf/black) can automatically format your code to conform to PEP8 and pycodestyle (a Jupyter notebook formatter also exists [nb_black](https://github.com/dnanhkhoa/nb_black)).
-- Some groups and organizations follow different style guidelines besides PEP8. For example, the [Google style guide on Python](https://google.github.io/styleguide/pyguide.html) makes slightly different recommendations. Google wrote an application that can help you format your code in either their style or PEP8 called [yapf](https://github.com/google/yapf/).
-- With respect to coding style, the key is _consistency_. Choose a style for your project be it PEP8, the Google style, or something else and do your best to ensure that you and anyone else you are collaborating with sticks to it. Consistency within a project is often more impactful than the particular style used. A consistent style will make your software easier to read and understand for others and for your future self.
+- [PEP8](https\://www\.python. rg/dev/peps/pep-0008):
+  – керівництво зі стилів для Python, яке обговорює такі теми, як імені змінних,
+  як подавати відступ своєму коду,
+  як структурувати дані `import`,
+  і т. д.
+  Відповідно до PEP8 полегшує читання та розуміння коду інших Python розробників, і щоб зрозуміти, як мають виглядати їх внески.
+- Щоб перевірити свій код для відповідності PEP8, ви можете використовувати [програму стилю pycode](https://pypi.org/project/pycodestyle/) та інструменти, такі як [формат чорного коду](https\://github. om/psf/black) може автоматично форматувати ваш код, щоб відповідати PEP8 та pycodestyle (формат блокнотів Jupyter також існує [nb_black](https://github.com/dnanhkhoa/nb_black)).
+- Деякі групи та організації дотримуються різних принципів стилю, окрім PEP8. Наприклад, [Google style Guide для Python](https://google.github.io/styleguide/pyguide.html) висловлює дещо різні рекомендації. Google написав програму, яка може допомогти відформатувати код або PEP8 називається [yapf](https://github.com/google/yapf/).
+- Що стосується стилю кодування, то ключ - _відповідність_. Виберіть стиль для вашого проекту PEP8, стиль Google, або щось інше і робіть все, щоб ви і всі інші, що працюєте з паличками для цього. Послідовність у проекті часто більш впливає, ніж цей певний стиль. Сумісний стиль зробить ваше програмне забезпечення простішим для читання та розуміння для інших та вашого майбутнього себе.
 
-## Use assertions to check for internal errors.
+## Використовувати твердження для перевірки внутрішніх помилок.
 
-Assertions are a simple but powerful method for making sure that the context in which your code is executing is as you expect.
+Призначення — це простий, але потужний метод, який дозволяє переконатися, що контекст, в якому виконується ваш код, як ви очікуєте.
 
 ```python
 def calc_bulk_density(mass, volume):
@@ -54,21 +54,21 @@ def calc_bulk_density(mass, volume):
     return mass / volume
 ```
 
-If the assertion is `False`, the Python interpreter raises an `AssertionError` runtime exception. The source code for the expression that failed will be displayed as part of the error message. To ignore assertions in your code run the interpreter with the '-O' (optimize) switch. Assertions should contain only simple checks and never change the state of the program. For example, an assertion should never contain an assignment.
+Якщо твердження "False", інтерпретер Python викликає виняток "AssertionError\` runtime excepation. Вихідний код виразу, який не вдається, буде відображатися як частина повідомлення про помилку. Щоб ігнорувати твердження у вашому коді запустіть інтерпретер з ключем '-O' (оптимізація). Призначення повинні містити лише прості перевірки і ніколи не змінювати стан програми. Наприклад, твердження ніколи не повинно містити призначення.
 
-## Use docstrings to provide builtin help.
+## Використовуйте док-струни, щоб надати вбудовану допомогу.
 
-If the first thing in a function is a character string that is not assigned directly to a variable, Python attaches it to the function, accessible via the builtin help function. This string that provides documentation is also known as a _docstring_.
+Якщо першим ділом у функції є рядок символів, який не присвоєний безпосередньо змінній, Python прикріплює його до функції, доступної через функцію довідки конструктонів. Цей рядок, що забезпечує документацію, також відомий як _docstring_.
 
 ```python
-def average(values):
-    "Return average of values, or None if no values are supplied."
+середні значення def (значень):
+    "Середнє значення або N0, якщо немає ніяких значень.
 
-    if len(values) == 0:
+    якщо len(values) == 0:
         return None
-    return sum(values) / len(values)
+    return sum(значень) / len(значень)
 
-help(average)
+за допомогою (середня)
 ```
 
 ```output
@@ -80,11 +80,11 @@ average(values)
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Multiline Strings
+## Багаторядкові рядки
 
-Often use _multiline strings_ for documentation.
-These start and end with three quote characters (either single or double)
-and end with three matching characters.
+Часто використовувати _багаторядкові рядки_ для документації.
+Вони починаються і закінчуються трьома символами лапок (одинарними або подвійними)
+та закінчуються трьома відповідними символами.
 
 ```python
 """This string spans
@@ -95,13 +95,13 @@ Blank lines are allowed."""
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+:::::::::::::::::::::::::::::::::::::::::::: виклик
 
-## What Will Be Shown?
+## Що буде коштувати?
 
-Highlight the lines in the code below that will be available as online help.
-Are there lines that should be made available, but won't be?
-Will any lines produce a syntax error or a runtime error?
+Виділіть рядки в коді нижче, які будуть доступні як он-лайн допомога.
+Чи мають бути доступні, але чи не так?
+Чи призведе всі рядки до синтаксичної помилки або помилки під час роботи?
 
 ```python
 "Find maximum edit distance between multiple sequences."
@@ -124,16 +124,16 @@ def overall_max(sequences):
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+:::::::::::::::::::::::::::::::::::::::::::: виклик
 
-## Document This
+## Документ Це
 
-Use comments to describe and help others understand potentially unintuitive
-sections or individual lines of code. They are especially useful to whoever
+Використовуйте коментарі, щоб описати і допомогти іншим зрозуміти потенційно неінтуїтивні
+розділи або окремі рядки коду. They are especially useful to whoever
 may need to understand and edit your code in the future, including yourself.
 
-Use docstrings to document the acceptable inputs and expected outputs of a method
-or class, its purpose, assumptions and intended behavior. Docstrings are displayed
+Використовуйте docstrings для документування прийнятних входів і очікуються виходи методу
+або класу, його призначення, припущення і призначені для поведінки. Docstrings are displayed
 when a user invokes the builtin `help` method on your method or class.
 
 Turn the comment in the following function into a docstring
@@ -141,41 +141,41 @@ and check that `help` displays it properly.
 
 ```python
 def middle(a, b, c):
-    # Return the middle value of three.
-    # Assumes the values can actually be compared.
+    # повернути середнє значення в 3.
+    # Припустимі, значення можна порівнювати.
     values = [a, b, c]
     values.sort()
-    return values[1]
+    повертають значення[1]
 ```
 
-:::::::::::::::  solution
+:::::::::::::::::::: Рішення
 
-## Solution
+## Розв'язок
 
 ```python
 def middle(a, b, c):
-    '''Return the middle value of three.
-    Assumes the values can actually be compared.'''
+    ''Повертає середнє значення в 3.
+    Припустимі, які значення дійсно можна порівняти. ''
     values = [a, b, c]
-    values.sort()
-    return values[1]
+    значень. ort()
+    повертає значення[1]
 ```
 
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+:::::::::::::::::::::::::::::::::::::::::::: виклик
 
-## Clean Up This Code
+## Прибрати цей код
 
-1. Read this short program and try to predict what it does.
-2. Run it: how accurate was your prediction?
-3. Refactor the program to make it more readable.
-   Remember to run it after each change to ensure its behavior hasn't changed.
-4. Compare your rewrite with your neighbor's.
-   What did you do the same?
-   What did you do differently, and why?
+1. Прочитайте цю коротку програму і спробуйте передбачити, що вона робить.
+2. Запустити її: наскільки точним був ваш прогноз?
+3. Розв'язати програму, щоб зробити її більш читабельною.
+   Не забувайте запускати його після кожної зміни, щоб гарантувати його поведінку не змінилася.
+4. Порівняйте свій перезапис з сусідами.
+   Що ти зробила так само?
+   Що ви робите по-іншому, і чому?
 
 ```python
 n = 10
@@ -195,11 +195,11 @@ while i < n:
     i += 1
 ```
 
-:::::::::::::::  solution
+:::::::::::::::::::: Рішення
 
-## Solution
+## Розв'язок
 
-Here's one solution.
+Ось одне рішення.
 
 ```python
 def string_machine(input_string, iterations):
@@ -249,7 +249,7 @@ et cetera
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- Follow standard Python style in your code.
-- Use docstrings to provide builtin help.
+- Виконайте стандартний стиль Python в коді.
+- Використовуйте док-струни, щоб надати вбудовану допомогу.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
