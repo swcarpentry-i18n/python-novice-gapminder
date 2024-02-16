@@ -1,40 +1,40 @@
 ---
-title: Wrap-Up
+title: ラップアップ
 teaching: 20
 exercises: 0
 ---
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- Name and locate scientific Python community sites for software, workshops, and help.
+- ソフトウェア、ワークショップ、ヘルプのための科学的なPythonコミュニティサイトの名前と場所を指定します。
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::: questions
+::::::::::::::::::::::::::::::::::
 
-- What have we learned?
-- What else is out there and where do I find it?
+- 私たちは何を学びましたか？
+- 他に何があり、私はそれをどこで見つけるのですか?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-Leslie Lamport once said, "Writing is nature's way of showing you how sloppy your thinking is."
-The same is true of programming:
-many things that seem obvious when we're thinking about them
-turn out to be anything but when we have to explain them precisely.
+レスリー・ランポートはかつて言った、「執筆は自然界のあなたの考えがいかにずさんであるかを示す方法である」。
+同じことがプログラミングにも当てはまります:
+私たちが考えているときに明らかに思える多くのことは、
+は何かであることが判明しますが、それらを正確に説明しなければなりません。
 
-## Python supports a large and diverse community across academia and industry.
+## Pythonは、学術界や業界全体で大規模で多様なコミュニティをサポートしています。
 
-- The [Python 3 documentation](https://docs.python.org/3/) covers the core language
-  and the standard library.
+- [Python 3 ドキュメント](https://docs.python.org/3/) はコア言語
+  と標準ライブラリをカバーしています。
 
-- [PyCon](https://pycon.org/) is the largest annual conference for the Python community.
+- [PyCon](https://pycon.org/) は Python コミュニティにとって最大の年次カンファレンスです。
 
-- [SciPy](https://scipy.org) is a rich collection of scientific utilities.
-  It is also the name of [a series of annual conferences](https://conference.scipy.org/).
+- [SciPy](https://scipy.org) は豊富な科学的ユーティリティのコレクションです。
+  また、format@@0(https\://conference.scipy.org/)の名前でもあります。
 
-- [Jupyter](https://jupyter.org) is the home of Project Jupyter.
+- [Jupyter](https://jupyter.org) は Project Jupyter の拠点です。
 
-- [Pandas](https://pandas.pydata.org) is the home of the Pandas data library.
+- [Pandas](https://pandas.pydata.org) は Pandas データライブラリの本拠地です。
 
 - Stack Overflow's [general Python section](https://stackoverflow.com/questions/tagged/python?tab=Votes)
   can be helpful,
@@ -44,6 +44,6 @@ turn out to be anything but when we have to explain them precisely.
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- Python supports a large and diverse community across academia and industry.
+- Pythonは、学術界や業界全体で大規模で多様なコミュニティをサポートしています。
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
