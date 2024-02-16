@@ -1,38 +1,38 @@
 ---
-title: Libraries
+title: Бібліотеки
 teaching: 10
 exercises: 10
 ---
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- Explain what software libraries are and why programmers create and use them.
-- Write programs that import and use modules from Python's standard library.
-- Find and read documentation for the standard library interactively (in the interpreter) and online.
+- Поясніть, якими є програмні бібліотеки, і чому програмісти створюють та використовують їх.
+- Записувати програми, які імпортують і використовують модулі зі стандартної бібліотеки Python.
+- Знайти та прочитати документацію для стандартної бібліотеки інтерактивно (в інтерпретаторі) та онлайн.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::: questions
+::::::::::::::::::::::::::::::::::::::::::::: питань
 
-- How can I use software that other people have written?
-- How can I find out what that software does?
+- Як я можу використовувати програму, написану іншими людьми?
+- Як я можу дізнатися, що це програмне забезпечення?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Most of the power of a programming language is in its libraries.
+## Більша частина сили мови програмування полягає в її бібліотеках.
 
-- A _library_ is a collection of files (called _modules_) that contains
-  functions for use by other programs.
-  - May also contain data values (e.g., numerical constants) and other things.
-  - Library's contents are supposed to be related, but there's no way to enforce that.
-- The Python [standard library][stdlib] is an extensive suite of modules that comes
-  with Python itself.
-- Many additional libraries are available from [PyPI][pypi] (the Python Package Index).
-- We will see later how to write new libraries.
+- _бібліотека_ - це колекція файлів (званих _модулі_), що містить функції
+  для використання іншими програмами.
+  - Також можуть містити значення даних (наприклад, числові константи) та інші речі.
+  - Вміст бібліотеки повинен бути пов'язані, але це не так.
+- Python [стандартна бібліотека][stdlib] є великим набором модулів, що поставляються
+  самим Python.
+- Існує багато додаткових бібліотек [PyPI][pypi] (Індекс пакетів Python).
+- Пізніше ми побачимо як писати нові бібліотеки.
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Libraries and modules
+## Бібліотеки та модулі
 
 A library is a collection of modules, but the terms are often used
 interchangeably, especially since many libraries only consist of a single
@@ -40,35 +40,35 @@ module, so don't worry if you mix them.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## A program must import a library module before using it.
+## Програма повинна імпортувати модуль бібліотеки перед її використанням.
 
-- Use `import` to load a library module into a program's memory.
-- Then refer to things from the module as `module_name.thing_name`.
-  - Python uses `.` to mean "part of".
-- Using `math`, one of the modules in the standard library:
+- Використовуйте `import`, щоб завантажити модуль бібліотеки в пам'ять.
+- Перегляньте з модуля "module_name.thing_name".
+  - Python використовує `.`, щоб означати "частина".
+- Використовуючи `math`, один з модулів в стандартній бібліотеці:
 
 ```python
-import math
+імпортувати математику
 
 print('pi is', math.pi)
-print('cos(pi) is', math.cos(math.pi))
+print('cos(pi) це', math.cos(math.pi))
 ```
 
 ```output
-pi is 3.141592653589793
-cos(pi) is -1.0
+pi є 3.141592653589793
+cos(pi) дорівнює -1.0
 ```
 
-- Have to refer to each item with the module's name.
-  - `math.cos(pi)` won't work: the reference to `pi`
-    doesn't somehow "inherit" the function's reference to `math`.
+- Звертайтеся до кожного елемента з назвою модуля.
+  - `math.cos(pi)` не працюватиме: посилання на `pi`
+    якось "inherit" функцію посилання на `math`.
 
-## Use `help` to learn about the contents of a library module.
+## Використовуйте `help`, щоб дізнатися більше про вміст бібліотечного модуля.
 
-- Works just like help for a function.
+- Працює так само як допомога для функції.
 
 ```python
-help(math)
+допомога (математика)
 ```
 
 ```output
@@ -96,101 +96,101 @@ FUNCTIONS
 ⋮ ⋮ ⋮
 ```
 
-## Import specific items from a library module to shorten programs.
+## Імпортувати спеціальні елементи з модуля бібліотеки для скорочення програм.
 
-- Use `from ... import ...` to load only specific items from a library module.
-- Then refer to them directly without library name as prefix.
+- Використати `з... імпорт ...` для завантаження тільки конкретних елементів з бібліотеки модуля.
+- Потім додайте їх безпосередньо без назви бібліотеки як префікс.
 
 ```python
-from math import cos, pi
+з математичних імпортів cos, pi
 
 print('cos(pi) is', cos(pi))
 ```
 
 ```output
-cos(pi) is -1.0
+cos (pi) дорівнює -1.0
 ```
 
-## Create an alias for a library module when importing it to shorten programs.
+## Створення псевдоніма для модуля бібліотеки при імпорті її до скорочення програм.
 
-- Use `import ... as ...` to give a library a short _alias_ while importing it.
-- Then refer to items in the library using that shortened name.
+- Використати `import ... як ...`, щоб створити бібліотеку короткий _псевдонім_ під час імпортування.
+- Потім зверніться до елементів в бібліотеці з використанням цього скороченого імені.
 
 ```python
-import math as m
+імпортувати математику як m
 
-print('cos(pi) is', m.cos(m.pi))
+print('cos(pi) ', m.cos(m.pi))
 ```
 
 ```output
-cos(pi) is -1.0
+cos (pi) дорівнює -1.0
 ```
 
-- Commonly used for libraries that are frequently used or have long names.
-  - E.g., the `matplotlib` plotting library is often aliased as `mpl`.
-- But can make programs harder to understand,
-  since readers must learn your program's aliases.
+- Найчастіше використовувані для бібліотек, які часто використовуються або мають довгі імена.
+  - Наприклад, графік бібліотеки "matplotlib" часто сприймається як "mpl".
+- Але можна зробити програми складнішими,
+  оскільки читачі повинні вивчити псевдоніми вашої програми.
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+:::::::::::::::::::::::::::::::::::::::::::: виклик
 
-## Exploring the Math Module
+## Дослідження модуля математики
 
-1. What function from the `math` module can you use to calculate a square root
-   _without_ using `sqrt`?
-2. Since the library contains this function, why does `sqrt` exist?
+1. Яку функцію з модуля `math` можна використовувати для розрахунку квадратного кореня
+   _без використання_ за допомогою `sqrt`?
+2. Оскільки в бібліотеці є ця функція, чому існує `sqrt`?
 
-:::::::::::::::  solution
+:::::::::::::::::::: Рішення
 
-## Solution
+## Розв'язок
 
-1. Using `help(math)` we see that we've got `pow(x,y)` in addition to `sqrt(x)`,
-   so we could use `pow(x, 0.5)` to find a square root.
+1. Використовуючи `help(math)`, ми бачимо, що у нас є `pow(x,y)` на додаванні до `sqrt(x)`,
+   , тож ми можемо використати `pow(x, 0.5)`, щоб знайти квадратний корінь.
 
-2. The `sqrt(x)` function is arguably more readable than `pow(x, 0.5)` when
-   implementing equations. Readability is a cornerstone of good programming, so it
+2. Функція `sqrt(x)` ймовірно більш читабельна за `pow(x, 0.5)`, коли
+   виконуються рівняння. Readability is a cornerstone of good programming, so it
    makes sense to provide a special function for this specific common case.
 
-Also, the design of Python's `math` library has its origin in the C standard,
-which includes both `sqrt(x)` and `pow(x,y)`, so a little bit of the history
-of programming is showing in Python's function names.
+Крім того, дизайн бібліотеки Python's має джерело у стандарті C,
+який включає і `sqrt(x)` і `pow(x, x, )`, так трохи історії
+програмування показується в іменах функцій Python.
 
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+:::::::::::::::::::::::::::::::::::::::::::: виклик
 
-## Locating the Right Module
+## Розташування правого модуля
 
-You want to select a random character from a string:
+Ви хочете вибрати випадковий символ з рядка:
 
 ```python
 bases = 'ACTTGCTTGAC'
 ```
 
 1. Which [standard library][stdlib] module could help you?
-2. Which function would you select from that module? Are there alternatives?
-3. Try to write a program that uses the function.
+2. Яку функцію Ви вибираєте з цього модулю? Чи є альтернативи?
+3. Спробуйте написати програму, яка використовує функцію.
 
-:::::::::::::::  solution
+:::::::::::::::::::: Рішення
 
-## Solution
+## Розв'язок
 
 The [random module][randommod] seems like it could help.
 
-The string has 11 characters, each having a positional index from 0 to 10.
-You could use the [`random.randrange`](https://docs.python.org/3/library/random.html#random.randrange)
-or [`random.randint`](https://docs.python.org/3/library/random.html#random.randint) functions
-to get a random integer between 0 and 10, and then select the `bases` character at that index:
+Рядок має 11 символів, кожен з яких є позиційним індексом від 0 до 10.
+Ви можете використовувати [`random.випадковий діапазон`](https://docs.python.org/3/library/random.html#.randrange)
+або [`random.randint`](https\://docs.python. rg/3/library/random.html#random.randint) функції
+щоб отримати випадкове число від 0 до 10, а потім вибрати символ "bases" в цьому індексі:
 
 ```python
-from random import randrange
+від випадкового діапазону імпорту
 
-random_index = randrange(len(bases))
-print(bases[random_index])
+random_index = випадковий діапазон (len(bases))
+друк (бази[random_index])
 ```
 
-or more compactly:
+або більш компактно:
 
 ```python
 from random import randrange
@@ -198,23 +198,23 @@ from random import randrange
 print(bases[randrange(len(bases))])
 ```
 
-Perhaps you found the [`random.sample`](https://docs.python.org/3/library/random.html#random.sample) function?
-It allows for slightly less typing but might be a bit harder to understand just by reading:
+Можливо, ви знайшли [`random.sample`](https://docs.python.org/3/library/random.html#random.sample) функцію?
+Це дозволяє трохи менше друкувати але може бути трохи складніше зрозуміти лише шляхом читання:
 
 ```python
-from random import sample
+від випадкового зразка імпорту
 
-print(sample(bases, 1)[0])
+print(sample(bass, 1)[0])
 ```
 
-Note that this function returns a list of values. We will learn about
-lists in [episode 11](11-lists.md).
+Зверніть увагу, що ця функція повертає список значень. Ми дізнаємося про списки
+у [епізод 11](11-lists.md).
 
-The simplest and shortest solution is the [`random.choice`](https://docs.python.org/3/library/random.html#random.choice)
-function that does exactly what we want:
+Найпростіше і найкоротше рішення - це [`random.choice`](https://docs.python.org/3/library/random.html#choice)
+функція, яка виконує саме те, чого ми хочемо:
 
 ```python
-from random import choice
+від випадкового імпорту
 
 print(choice(bases))
 ```
@@ -223,14 +223,14 @@ print(choice(bases))
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+:::::::::::::::::::::::::::::::::::::::::::: виклик
 
-## Jigsaw Puzzle (Parson's Problem) Programming Example
+## Джігвівський головоломка (проблема парсона) Приклад
 
-Rearrange the following statements so that a random
-DNA base is printed and its index in the string.
-Not all statements may be needed.  Feel free to use/add
-intermediate variables.
+Перемістіть наступні вирази так, щоб випадкова
+база ДНК надрукована і її індекс у рядку.
+Можливо, не всі команди потрібні.  Ви можете використовувати/додати
+проміжні змінні.
 
 ```python
 bases="ACTTGCTTGAC"
@@ -241,125 +241,125 @@ ___ = len(bases)
 print("random base ", bases[___], "base index", ___)
 ```
 
-:::::::::::::::  solution
+:::::::::::::::::::: Рішення
 
-## Solution
+## Розв'язок
 
 ```python
-import math 
-import random
-bases = "ACTTGCTTGAC" 
+імпорт математики 
+імпортувати випадкові бази
+= "ACTTGAC" 
 n_bases = len(bases)
-idx = random.randrange(n_bases)
-print("random base", bases[idx], "base index", idx)
+idx = випадково. andrange(n_bases)
+print("випадкова база", база[idx], "базовий індекс", idx)
 ```
 
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+:::::::::::::::::::::::::::::::::::::::::::: виклик
 
-## When Is Help Available?
+## Коли допомога доступна?
 
-When a colleague of yours types `help(math)`,
-Python reports an error:
+Коли колега ваших типів `help(math)`,
+Python повідомляє про помилку:
 
 ```error
-NameError: name 'math' is not defined
+NameError: name 'math' не визначено
 ```
 
-What has your colleague forgotten to do?
+Яка ваша колега забута?
 
-:::::::::::::::  solution
+:::::::::::::::::::: Рішення
 
-## Solution
+## Розв'язок
 
-Importing the math module (`import math`)
+Імпорт модуля математики (`імпорт`)
 
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+:::::::::::::::::::::::::::::::::::::::::::: виклик
 
-## Importing With Aliases
+## Імпорт з псевдонімами
 
-1. Fill in the blanks so that the program below prints `90.0`.
-2. Rewrite the program so that it uses `import` _without_ `as`.
-3. Which form do you find easier to read?
+1. Заповніть пропуски так, щоб програма була нижче надрукована на сайті `90.0`.
+2. Перезаписати програму, щоб вона використовувала `import` _without_ `as`.
+3. Яку форму ви знайдете простіше читати?
 
 ```python
-import math as m
-angle = ____.degrees(____.pi / 2)
-print(____)
+імпортувати математику як m
+кут = __.degrees(__.pi / 2)
+print(__)
 ```
 
-:::::::::::::::  solution
+:::::::::::::::::::: Рішення
 
-## Solution
+## Розв'язок
 
 ```python
-import math as m
-angle = m.degrees(m.pi / 2)
-print(angle)
+імпортувати математику як m
+кут = m.degrees(m.pi / 2)
+print(кут)
 ```
 
-can be written as
+можна записати як
 
 ```python
-import math
-angle = math.degrees(math.pi / 2)
-print(angle)
+імпорт математики
+кут = math.degrees(math.pi / 2)
+print(кут)
 ```
 
 Since you just wrote the code and are familiar with it, you might actually
-find the first version easier to read. But when trying to read a huge piece
-of code written by someone else, or when getting back to your own huge piece
-of code after several months, non-abbreviated names are often easier, except
-where there are clear abbreviation conventions.
+find the first version easier to read. Але коли ми намагаємося прочитати величезний шматочок
+від коду, написаного кимось іншим, або при поверненні до власного величезного фрагменту
+коду через кілька місяців, нескорочені імена часто простіші, крім
+, де є чіткі конвенції абревіатури.
 
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+:::::::::::::::::::::::::::::::::::::::::::: виклик
 
-## There Are Many Ways To Import Libraries!
+## Є багато шляхів для імпортування бібліотек!
 
-Match the following print statements with the appropriate library calls.
+Встанови відповідність наступних друкованих операторів з відповідними бібліотечними викликами.
 
-Print commands:
+Друкувати команди:
 
 1. `print("sin(pi/2) =", sin(pi/2))`
 2. `print("sin(pi/2) =", m.sin(m.pi/2))`
 3. `print("sin(pi/2) =", math.sin(math.pi/2))`
 
-Library calls:
+Виклики бібліотеки:
 
-1. `from math import sin, pi`
-2. `import math`
-3. `import math as m`
-4. `from math import *`
+1. `з імпорту гріхів, pi`
+2. `імпортувати математику`
+3. `імпортувати математику як m`
+4. `з імпорту математики *`
 
-:::::::::::::::  solution
+:::::::::::::::::::: Рішення
 
-## Solution
+## Розв'язок
 
-1. Library calls 1 and 4. In order to directly refer to `sin` and `pi` without
-   the library name as prefix, you need to use the `from ... import ...`
-   statement. Whereas library call 1 specifically imports the two functions
-   `sin` and `pi`, library call 4 imports all functions in the `math` module.
-2. Library call 3. Here `sin` and `pi` are referred to with a shortened library
-   name `m` instead of `math`. Library call 3 does exactly that using the
-   `import ... as ...` syntax - it creates an alias for `math` in the form of
-   the shortened name `m`.
-3. Library call 2. Here `sin` and `pi` are referred to with the regular library
-   name `math`, so the regular `import ...` call suffices.
+1. Бібліотека викликів 1 і 4. Для того, щоб безпосередньо посилатися на `sin` і `pi` без
+   назву бібліотеки як префікс, потрібно використати `from ... імпорт ...`
+   оператор. У той час як бібліотека викличе 1 спеціально імпортує два функції
+   `sin` і `pi`, бібліотека називає 4 імпортами всіх функцій в модуль `math`.
+2. Бібліотека зателефонуватиме 3. Here `sin` and `pi` are referred to with a shortened library
+   name `m` instead of `math`. Виклик бібліотеки 3 робить те саме що за допомогою
+   `імпорт... як синтаксис ...`- він створює псевдонім для `math` у вигляді
+   скорочене ім'я `m`.
+3. Бібліотека дзвонить 2. Тут `sin` та `pi` посилаються на звичайну бібліотеку
+   ім'я `math`, тому регулярні `import ...` викликають достатньо.
 
-**Note:** although library call 4 works, importing all names from a module using a wildcard
-import is [not recommended][pep8-imports] as it makes it unclear which names from the module
-are used in the code. In general it is best to make your imports as specific as possible and to
+**Примітка:** хоча б виклик бібліотеки 4 роботи, імпорт всіх імен модуля за допомогою шаблона
+імпорт [не рекомендовано][pep8-imports] тому, що він не очищає, які імена з модуля
+використовуються в коді. In general it is best to make your imports as specific as possible and to
 only import what your code uses. In library call 1, the `import` statement explicitly tells us
 that the `sin` function is imported from the `math` module, but library call 4 does not
 convey this information.
@@ -368,32 +368,32 @@ convey this information.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+:::::::::::::::::::::::::::::::::::::::::::: виклик
 
-## Importing Specific Items
+## Імпорт певних елементів
 
-1. Fill in the blanks so that the program below prints `90.0`.
-2. Do you find this version easier to read than preceding ones?
-3. Why _wouldn't_ programmers always use this form of `import`?
-
-```python
-____ math import ____, ____
-angle = degrees(pi / 2)
-print(angle)
-```
-
-:::::::::::::::  solution
-
-## Solution
+1. Заповніть пропуски так, щоб програма була нижче надрукована на сайті `90.0`.
+2. Вам ця версія простіше читати, ніж попередні?
+3. Чому саме програмісти не використовують таку форму `import`?
 
 ```python
-from math import degrees, pi
-angle = degrees(pi / 2)
-print(angle)
+____ імпорту математики __, ____
+кут = degrees(pi / 2)
+print(кут)
 ```
 
-Most likely you find this version easier to read since it's less dense.
-The main reason not to use this form of import is to avoid name clashes.
+:::::::::::::::::::: Рішення
+
+## Розв'язок
+
+```python
+від градусів імпорту математики, pi
+кут = градуси(pi / 2)
+друк (кут)
+```
+
+Швидше за все, ця версія легше читати, оскільки вона менш щільна.
+Основна причина не використання цієї форми імпорту - уникати зіткнень з іменами.
 For instance, you wouldn't import `degrees` this way if you also wanted to
 use the name `degrees` for a variable or function of your own. Or if you
 were to also import a function named `degrees` from another library.
@@ -402,21 +402,21 @@ were to also import a function named `degrees` from another library.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+:::::::::::::::::::::::::::::::::::::::::::: виклик
 
-## Reading Error Messages
+## Повідомлення про помилку
 
-1. Read the code below and try to identify what the errors are without running it.
-2. Run the code, and read the error message. What type of error is it?
+1. Прочитайте наведений нижче код та спробуйте визначити, чого не запускають помилки.
+2. Запустіть код та прочитайте повідомлення про помилку. Який тип помилки?
 
 ```python
-from math import log
-log(0)
+з математичного імпортування журналу
+лог (0)
 ```
 
-:::::::::::::::  solution
+:::::::::::::::::::: Рішення
 
-## Solution
+## Розв'язок
 
 ```output
 ---------------------------------------------------------------------------
@@ -431,9 +431,9 @@ ValueError: math domain error
 1. The logarithm of `x` is only defined for `x > 0`, so 0 is outside the
    domain of the function.
 
-2. You get an error of type `ValueError`, indicating that the function
-   received an inappropriate argument value. The additional message
-   "math domain error" makes it clearer what the problem is.
+2. Ви отримуєте помилку типу `ValueError`, яка вказує, що функція
+   отримала неприпустиме значення аргументу. Додаткове повідомлення
+   "помилка у вигляді математичного домену" дозволяє зрозуміти в чому проблема.
 
 :::::::::::::::::::::::::
 
@@ -445,14 +445,14 @@ ValueError: math domain error
 
 [randommod]: https://docs.python.org/3/library/random.html
 
-[pep8-imports]: https://pep8.org/#imports
+[pep8-imports]: https://pep8.org/#імпорт
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- Most of the power of a programming language is in its libraries.
-- A program must import a library module in order to use it.
-- Use `help` to learn about the contents of a library module.
-- Import specific items from a library to shorten programs.
-- Create an alias for a library when importing it to shorten programs.
+- Більша частина сили мови програмування полягає в її бібліотеках.
+- Програма повинна імпортувати модуль бібліотеки для того, щоб використовувати її.
+- Використовуйте `help`, щоб дізнатися більше про вміст бібліотечного модуля.
+- Імпортувати спеціальні елементи з бібліотеки для скорочення програм.
+- Створити псевдонім для бібліотеки для імпортування її до скорочення програм.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
