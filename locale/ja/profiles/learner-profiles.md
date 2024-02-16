@@ -2,4 +2,4 @@
 title: FIXME
 ---
 
-This is a placeholder file. Please add content here.
+これはプレースホルダー ファイルです。 ここにコンテンツを追加してください。
