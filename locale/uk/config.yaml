@@ -9,20 +9,20 @@
 #incubator: The Carpentries Incubator
 carpentry: 'swc'
 #Overall title for pages.
-title: 'Plotting and Programming in Python'
+title: 'Побудова та програмування у Python'
 #Date the lesson was created (YYYY-MM-DD, this is empty by default)
 created: '2016-01-07'
 #Comma-separated list of keywords for the lesson
-keywords: 'software, data, lesson, The Carpentries'
+keywords: 'програмне забезпечення, дані, урок, решітка'
 #Life cycle stage of the lesson
 #possible values: pre-alpha, alpha, beta, stable
-life_cycle: 'stable'
+life_cycle: 'стабільний'
 #License of the lesson materials (recommended CC-BY 4.0)
-license: 'CC-BY 4.0'
+license: 'РК-ВР 4.0'
 #Link to the source repository for this lesson
 source: 'https://github.com/swcarpentry/python-novice-gapminder'
 #Default branch of your lesson
-branch: 'main'
+branch: 'основний'
 #Who to contact if there are any issues
 contact: 'team@carpentries.org'
 #Navigation ------------------------------------------------
@@ -43,24 +43,24 @@ contact: 'team@carpentries.org'
 #Order of episodes in your lesson
 episodes:
   - 01-run-quit.md
-  - 02-variables.md
-  - 03-types-conversion.md
-  - 04-built-in.md
-  - 05-coffee.md
-  - 06-libraries.md
-  - 07-reading-tabular.md
+  - 02-змінні md
+  - 03-типізація
+  - 04-вбудований у md
+  - 05 Кава.мд
+  - 06-бібліотека.md
+  - 07-читань-табулар.мд
   - 08-data-frames.md
-  - 09-plotting.md
-  - 10-lunch.md
+  - '09: plotting.md'
+  - 10-місячний м.д
   - 11-lists.md
   - 12-for-loops.md
-  - 13-conditionals.md
+  - 13-умова.мд
   - 14-looping-data-sets.md
-  - 15-coffee.md
-  - 16-writing-functions.md
-  - 17-scope.md
-  - 18-style.md
-  - 19-wrap.md
+  - 15 кави
+  - 16-письмові функції
+  - 17-область.мд
+  - 18-стиль
+  - 19 wrap.md
   - 20-feedback.md
 #Information for Learners
 learners:
@@ -72,5 +72,5 @@ profiles:
 #This space below is where custom yaml items (e.g. pinning
 #sandpaper and varnish versions) should live
 url: 'https://swcarpentry.github.io/python-novice-gapminder'
-analytics: carpentries
+analytics: кирки
 lang: en
