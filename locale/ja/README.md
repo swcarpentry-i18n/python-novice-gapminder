@@ -4,14 +4,14 @@
 
 # python-novice-gapminder
 
-Introduction to Python for non-programmers with a focus on plotting and data analysis.
+プロットとデータ分析に焦点を当てた非プログラマー向けのPython入門。
 Please see [https://swcarpentry.github.io/python-novice-gapminder/](https://swcarpentry.github.io/python-novice-gapminder/)
 for a rendered version of this material,
 [the lesson template documentation][lesson-example]
 for instructions on formatting, building, and submitting material,
 or run `make` in this directory for a list of helpful commands.
 
-Maintainer(s):
+メンテナ:
 
 - [Allen Lee][lee-allen]
 - [Nathan Moore][moore-nathan]
