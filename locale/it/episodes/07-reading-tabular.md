@@ -1,73 +1,73 @@
 ---
-title: Reading Tabular Data into DataFrames
+title: Lettura dei dati tabulari nei DataFrame
 teaching: 10
 exercises: 10
 ---
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- Import the Pandas library.
-- Use Pandas to load a simple CSV data set.
-- Get some basic information about a Pandas DataFrame.
+- Importa la libreria Pandas.
+- Usa Panda per caricare un semplice set di dati CSV.
+- Ottieni alcune informazioni di base su un DataFrame.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::: questions
+:::::::::::::::::::::::::::::::::::::::::::::::: domande
 
-- How can I read tabular data?
+- Come posso leggere i dati delle tabelle?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Use the Pandas library to do statistics on tabular data.
+## Utilizzare la libreria di Pandas per fare statistiche sui dati tabellari.
 
-- [Pandas](https://pandas.pydata.org/) is a widely-used Python library for statistics, particularly on tabular data.
-- Borrows many features from R's dataframes.
-  - A 2-dimensional table whose columns have names
-    and potentially have different data types.
-- Load Pandas with `import pandas as pd`. The alias `pd` is commonly used to refer to the Pandas library in code.
-- Read a Comma Separated Values (CSV) data file with `pd.read_csv`.
-  - Argument is the name of the file to be read.
-  - Returns a dataframe that you can assign to a variable
+- [Pandas](https://pandas.pydata.org/) è una libreria Python ampiamente utilizzata per le statistiche, in particolare sui dati tabulari.
+- Prende in prestito molte caratteristiche dai dataframes di R.
+  - Una tabella bidimensionale le cui colonne hanno nomi
+    e potenzialmente hanno diversi tipi di dati.
+- Carica Panda con `import pandas come pd`. L'alias `pd` è comunemente usato per fare riferimento alla libreria di Pandas nel codice.
+- Leggi un file di dati Comma Separated Values (CSV) con `pd.read_csv`.
+  - Argomento è il nome del file da leggere.
+  - Restituisce un dataframe che puoi assegnare a una variabile
 
 ```python
-import pandas as pd
+import panda as pd
 
 data_oceania = pd.read_csv('data/gapminder_gdp_oceania.csv')
 print(data_oceania)
 ```
 
 ```output
-       country  gdpPercap_1952  gdpPercap_1957  gdpPercap_1962  \
-0    Australia     10039.59564     10949.64959     12217.22686
-1  New Zealand     10556.57566     12247.39532     13175.67800
+       country gdpPercap_1952 gdpPercap_1957 gdpPercap_1962 \
+0 Australia 10039. 9564 10949.64959 12217. 2686
+1 Nuova Zelanda 10556.57566 12247. 9532 13175. 7800
 
-   gdpPercap_1967  gdpPercap_1972  gdpPercap_1977  gdpPercap_1982  \
-0     14526.12465     16788.62948     18334.19751     19477.00928
-1     14463.91893     16046.03728     16233.71770     17632.41040
+   gdpPercap_1967 gdpPercap_1972 gdpPercap_1977 gdpPercap_1982 \
+0 14526. 2465 16788.62948 18334.19751 19477.00928
+1 14463. 1893 16046.03728 16233.71770 17632. 1040
 
-   gdpPercap_1987  gdpPercap_1992  gdpPercap_1997  gdpPercap_2002  \
-0     21888.88903     23424.76683     26997.93657     30687.75473
-1     19007.19129     18363.32494     21050.41377     23189.80135
+   gdpPercap_1987 gdpPercap_1992 gdpPercap_1997 gdpPercap_2002 \
+0 21888. 8903 23424,76683 26997. 3657 30687.75473
+1 19007. 9129 18363.32494 21050.41377 23189. 0135
 
    gdpPercap_2007
-0     34435.36744
-1     25185.00911
+0 34435.36744
+1 25185.00911
 ```
 
-- The columns in a dataframe are the observed variables, and the rows are the observations.
-- Pandas uses backslash `\` to show wrapped lines when output is too wide to fit the screen.
-- Using descriptive dataframe names helps us distinguish between multiple dataframes so we won't accidentally overwrite a dataframe or read from the wrong one.
+- Le colonne in un dataframe sono le variabili osservate e le righe sono le osservazioni.
+- Pandas utilizza backslash `\` per mostrare le linee a capo quando l'output è troppo largo per adattarsi allo schermo.
+- L'utilizzo di nomi descrittivi di dataframe ci aiuta a distinguere tra più dataframe in modo da non sovrascrivere accidentalmente un dataframe o leggere da quello sbagliato.
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## File Not Found
+## File Non Trovato
 
-Our lessons store their data files in a `data` sub-directory,
-which is why the path to the file is `data/gapminder_gdp_oceania.csv`.
-If you forget to include `data/`,
-or if you include it but your copy of the file is somewhere else,
-you will get a [runtime error](04-built-in.md)
-that ends with a line like this:
+Le nostre lezioni memorizzano i loro file di dati in una sottodirectory `data`,
+ed è per questo che il percorso del file è `data/gapminder_gdp_oceania.csv`.
+Se dimentichi di includere `data/`,
+o se lo includi, ma la tua copia del file è altrove,
+otterrai un [errore di runtime](04-built-in. d)
+che termina con una riga come questa:
 
 ```error
 FileNotFoundError: [Errno 2] No such file or directory: 'data/gapminder_gdp_oceania.csv'
@@ -75,12 +75,12 @@ FileNotFoundError: [Errno 2] No such file or directory: 'data/gapminder_gdp_ocea
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Use `index_col` to specify that a column's values should be used as row headings.
+## Usa `index_col` per specificare che i valori di una colonna devono essere usati come intestazioni di riga.
 
-- Row headings are numbers (0 and 1 in this case).
-- Really want to index by country.
-- Pass the name of the column to `read_csv` as its `index_col` parameter to do this.
-- Naming the dataframe `data_oceania_country` tells us which region the data includes (`oceania`) and how it is indexed (`country`).
+- Le voci della riga sono numeri (0 e 1 in questo caso).
+- Davvero vuole indicizzare per paese.
+- Passa il nome della colonna a `read_csv` come parametro `index_col` per farlo.
+- Naming the dataframe `data_oceania_country` ci dice quale regione i dati includono (`oceania`) e come sono indicizzati (`country`).
 
 ```python
 data_oceania_country = pd.read_csv('data/gapminder_gdp_oceania.csv', index_col='country')
@@ -88,26 +88,26 @@ print(data_oceania_country)
 ```
 
 ```output
-             gdpPercap_1952  gdpPercap_1957  gdpPercap_1962  gdpPercap_1967  \
+             gdpPercap_1952 gdpPercap_1957 gdpPercap_1962 gdpPercap_1967 \
 country
-Australia       10039.59564     10949.64959     12217.22686     14526.12465
-New Zealand     10556.57566     12247.39532     13175.67800     14463.91893
+Australia 10039. 9564 10949.64959 12217.22686 14526.12465
+Nuova Zelanda 10556. 7566 12247.39532 13175.67800 14463. 1893
 
-             gdpPercap_1972  gdpPercap_1977  gdpPercap_1982  gdpPercap_1987  \
+             gdpPercap_1972 gdpPercap_1977 gdpPercap_1982 gdpPercap_1987 \
 country
-Australia       16788.62948     18334.19751     19477.00928     21888.88903
-New Zealand     16046.03728     16233.71770     17632.41040     19007.19129
+Australia 16788. 2948 18334.19751 19477.00928 21888.88903
+Nuova Zelanda 16046. 3728 16233.71770 17632.41040 19007. 9129
 
-             gdpPercap_1992  gdpPercap_1997  gdpPercap_2002  gdpPercap_2007
+             gdpPercap_1992 gdpPercap_1997 gdpPercap_2002 gdpPercap_2007
 country
-Australia       23424.76683     26997.93657     30687.75473     34435.36744
-New Zealand     18363.32494     21050.41377     23189.80135     25185.00911
+Australia 23424. 6683 26997.93657 30687.75473 34435.36744
+Nuova Zelanda 18363. 2494 21050.41377 23189.80135 25185.00911
 ```
 
-## Use the `DataFrame.info()` method to find out more about a dataframe.
+## Usa il metodo `DataFrame.info()` per saperne di più su un dataframe.
 
 ```python
-data_oceania_country.info()
+data_oceania_country
 ```
 
 ```output
@@ -130,116 +130,116 @@ dtypes: float64(12)
 memory usage: 208.0+ bytes
 ```
 
-- This is a `DataFrame`
-- Two rows named `'Australia'` and `'New Zealand'`
-- Twelve columns, each of which has two actual 64-bit floating point values.
-  - We will talk later about null values, which are used to represent missing observations.
-- Uses 208 bytes of memory.
+- Questo è un `DataFrame`
+- Due righe denominate `'Australia'` e `'Nuova Zelanda'`
+- Dodici colonne, ognuna delle quali ha due valori reali in virgola mobile a 64 bit.
+  - Parleremo più tardi di valori nulli, che sono usati per rappresentare le osservazioni mancanti.
+- Utilizza 208 byte di memoria.
 
-## The `DataFrame.columns` variable stores information about the dataframe's columns.
+## La variabile `DataFrame.columns` memorizza informazioni sulle colonne del dataframe.
 
-- Note that this is data, _not_ a method.  (It doesn't have parentheses.)
-  - Like `math.pi`.
-  - So do not use `()` to try to call it.
-- Called a _member variable_, or just _member_.
+- Si noti che questo è un dato _non_ un metodo.  (Non ha parentesi.)
+  - Come `math.pi`.
+  - Quindi non usare `()` per provare a chiamarlo.
+- Chiamato un _membro variabile_, o semplicemente _membro_.
 
 ```python
 print(data_oceania_country.columns)
 ```
 
 ```output
-Index(['gdpPercap_1952', 'gdpPercap_1957', 'gdpPercap_1962', 'gdpPercap_1967',
+Indice(['gdpPercap_1952', 'gdpPercap_1957', 'gdpPercap_1962', 'gdpPercap_1967',
        'gdpPercap_1972', 'gdpPercap_1977', 'gdpPercap_1982', 'gdpPercap_1987',
        'gdpPercap_1992', 'gdpPercap_1997', 'gdpPercap_2002', 'gdpPercap_2007'],
       dtype='object')
 ```
 
-## Use `DataFrame.T` to transpose a dataframe.
+## Usa `DataFrame.T` per trasporre un dataframe.
 
-- Sometimes want to treat columns as rows and vice versa.
-- Transpose (written `.T`) doesn't copy the data, just changes the program's view of it.
-- Like `columns`, it is a member variable.
+- A volte vogliono trattare le colonne come righe e viceversa.
+- Transpose (scritto `.T`) non copia i dati, ma cambia la vista del programma.
+- Come `columns`, è una variabile membro.
 
 ```python
 print(data_oceania_country.T)
 ```
 
 ```output
-country           Australia  New Zealand
-gdpPercap_1952  10039.59564  10556.57566
-gdpPercap_1957  10949.64959  12247.39532
-gdpPercap_1962  12217.22686  13175.67800
-gdpPercap_1967  14526.12465  14463.91893
-gdpPercap_1972  16788.62948  16046.03728
-gdpPercap_1977  18334.19751  16233.71770
-gdpPercap_1982  19477.00928  17632.41040
-gdpPercap_1987  21888.88903  19007.19129
-gdpPercap_1992  23424.76683  18363.32494
-gdpPercap_1997  26997.93657  21050.41377
-gdpPercap_2002  30687.75473  23189.80135
-gdpPercap_2007  34435.36744  25185.00911
+paese Australia Nuova Zelanda
+gdpPercap_1952 10039.59564 10556. 7566
+gdpPercap_1957 10949.64959 12247.39532
+gdpPercap_1962 12217. 2686 13175.67800
+gdpPercap_1967 14526.12465 14463.91893
+gdpPercap_1972 16788.62948 16046.03728
+gdpPercap_1977 18334. 9751 16233.71770
+gdpPercap_1982 19477.00928 17632.41040
+gdpPercap_1987 21888.88903 19007.19129
+gdpPercap_1992 23424.76683 18363. 2494
+gdpPercap_1997 26997.93657 21050.41377
+gdpPercap_2002 30687.75473 23189.80135
+gdpPercap_2007 34435.36744 25185.00911
 ```
 
-## Use `DataFrame.describe()` to get summary statistics about data.
+## Usa `DataFrame.describe()` per ottenere statistiche sommarie sui dati.
 
-`DataFrame.describe()` gets the summary statistics of only the columns that have numerical data.
-All other columns are ignored, unless you use the argument `include='all'`.
+`DataFrame.describe()` ottiene le statistiche di sintesi solo delle colonne che hanno dati numerici.
+Tutte le altre colonne vengono ignorate, a meno che non si utilizzi l'argomento `include='all'`.
 
 ```python
 print(data_oceania_country.describe())
 ```
 
 ```output
-       gdpPercap_1952  gdpPercap_1957  gdpPercap_1962  gdpPercap_1967  \
-count        2.000000        2.000000        2.000000        2.000000
-mean     10298.085650    11598.522455    12696.452430    14495.021790
-std        365.560078      917.644806      677.727301       43.986086
-min      10039.595640    10949.649590    12217.226860    14463.918930
-25%      10168.840645    11274.086022    12456.839645    14479.470360
-50%      10298.085650    11598.522455    12696.452430    14495.021790
-75%      10427.330655    11922.958888    12936.065215    14510.573220
-max      10556.575660    12247.395320    13175.678000    14526.124650
+       gdpPercap_1952 gdpPercap_1957 gdpPercap_1962 gdpPercap_1967 \
+count 2. 00000 2.000000 2. 00000 2.000000
+media 10298.085650 11598.522455 12696. 52430 14495.021790
+std 365.560078 917. 44806 677,727301 43. 86086
+min 10039.595640 10949. 49590 12217.226860 14463.918930
+25% 10168. 40645 11274.086022 12456.839645 14479.470360
+50% 10298. 85650 11598.522455 12696.452430 14495. 21790
+75% 10427.330655 11922.958888 12936.065215 14510. 73220
+max 10556,575660 12247,395320 13175. 78000 14526. 24650
 
-       gdpPercap_1972  gdpPercap_1977  gdpPercap_1982  gdpPercap_1987  \
-count         2.00000        2.000000        2.000000        2.000000
-mean      16417.33338    17283.957605    18554.709840    20448.040160
-std         525.09198     1485.263517     1304.328377     2037.668013
-min       16046.03728    16233.717700    17632.410400    19007.191290
-25%       16231.68533    16758.837652    18093.560120    19727.615725
-50%       16417.33338    17283.957605    18554.709840    20448.040160
-75%       16602.98143    17809.077557    19015.859560    21168.464595
-max       16788.62948    18334.197510    19477.009280    21888.889030
+       gdpPercap_1972 gdpPercap_1977 gdpPercap_1982 gdpPercap_1987 \
+count 2. 0000 2.000000 2.000000 2. 00000
+media 16417. 3338 17283.957605 18554.709840 20448. 40160
+std 525.09198 1485.263517 1304. 28377 2037.668013
+min 16046.03728 16233. 17700 17632.410400 19007.191290
+25% 16231.68533 16758. 37652 18093.560120 19727.615725
+50% 16417. 3338 17283.957605 18554.709840 20448.040160
+75% 16602. 8143 17809.077557 19015.859560 21168. 64595
+max 16788.62948 18334.197510 19477.009280 21888. 89030
 
-       gdpPercap_1992  gdpPercap_1997  gdpPercap_2002  gdpPercap_2007
-count        2.000000        2.000000        2.000000        2.000000
-mean     20894.045885    24024.175170    26938.778040    29810.188275
-std       3578.979883     4205.533703     5301.853680     6540.991104
-min      18363.324940    21050.413770    23189.801350    25185.009110
-25%      19628.685413    22537.294470    25064.289695    27497.598692
-50%      20894.045885    24024.175170    26938.778040    29810.188275
-75%      22159.406358    25511.055870    28813.266385    32122.777857
-max      23424.766830    26997.936570    30687.754730    34435.367440
+       gdpPercap_1992 gdpPercap_1997 gdpPercap_2002 gdpPercap_2007
+count 2. 00000 2.000000 2.000000 2. 00000
+media 20894. 45885 24024.175170 26938.778040 29810.188275
+std 3578. 79883 4205.533703 5301.853680 6540. 91104
+min 18363.324940 21050.413770 23189.801350 25185. 09110
+25% 19628.685413 22537.294470 25064. 89695 27497.598692
+50% 20894.045885 24024. 75170 26938.778040 29810.188275
+75% 22159. 06358 25511.055870 28813.266385 32122.777857
+max 23424. 66830 26997.936570 30687.754730 34435.367440
 ```
 
-- Not particularly useful with just two records,
-  but very helpful when there are thousands.
+- Non particolarmente utile con solo due record,
+  ma molto utile quando ci sono migliaia.
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::::::::: challenge
 
-## Reading Other Data
+## Lettura Altri Dati
 
-Read the data in `gapminder_gdp_americas.csv`
-(which should be in the same directory as `gapminder_gdp_oceania.csv`)
-into a variable called `data_americas`
-and display its summary statistics.
+Leggi i dati in `gapminder_gdp_americas.csv`
+(che dovrebbero essere nella stessa directory di `gapminder_gdp_oceania. sv`)
+in una variabile chiamata `data_americas`
+e visualizza le statistiche sommarie.
 
-:::::::::::::::  solution
+::::::::::::::: soluzione
 
-## Solution
+## Soluzione
 
-To read in a CSV, we use `pd.read_csv` and pass the filename `'data/gapminder_gdp_americas.csv'` to it.
-We also once again pass the column name `'country'` to the parameter `index_col` in order to index by country.
-The summary statistics can be displayed with the `DataFrame.describe()` method.
+Per leggere in un CSV, usiamo `pd.read_csv` e passiamo il file `'data/gapminder_gdp_americas.csv'` ad esso.
+Anche noi passiamo nuovamente il nome della colonna `'country'` al parametro `index_col` per indicizzare per paese.
+Le statistiche di riepilogo possono essere visualizzate con il metodo `DataFrame.describe()`.
 
 ```python
 data_americas = pd.read_csv('data/gapminder_gdp_americas.csv', index_col='country')
@@ -250,103 +250,103 @@ data_americas.describe()
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::::::::: challenge
 
-## Inspecting Data
+## Dati Di Ispezione
 
-After reading the data for the Americas,
-use `help(data_americas.head)` and `help(data_americas.tail)`
-to find out what `DataFrame.head` and `DataFrame.tail` do.
+Dopo aver letto i dati per le Americhe,
+usa `help(data_americas.head)` e `help(data_americas.tail)`
+per scoprire cosa fanno `DataFrame.head` e `DataFrame.tail`.
 
-1. What method call will display the first three rows of this data?
-2. What method call will display the last three columns of this data?
-   (Hint: you may need to change your view of the data.)
+1. Quale metodo di chiamata mostrerà le prime tre righe di questi dati?
+2. Quale metodo di chiamata mostrerà le ultime tre colonne di questi dati?
+   (Hint: potrebbe essere necessario modificare la tua opinione dei dati.)
 
-:::::::::::::::  solution
+::::::::::::::: soluzione
 
-## Solution
+## Soluzione
 
-1. We can check out the first five rows of `data_americas` by executing `data_americas.head()`
-   which lets us view the beginning of the DataFrame. We can specify the number of rows we wish
-   to see by specifying the parameter `n` in our call to `data_americas.head()`.
-   To view the first three rows, execute:
+1. Possiamo controllare le prime cinque righe di `data_americas` eseguendo `data_americas.head()`
+   che ci permette di visualizzare l'inizio del DataFrame. Possiamo specificare il numero di righe che desideriamo vedere
+   specificando il parametro `n` nella nostra chiamata a `data_americas.head()`.
+   Per visualizzare le prime tre righe, eseguire:
 
 ```python
 data_americas.head(n=3)
 ```
 
 ```output
-          continent  gdpPercap_1952  gdpPercap_1957  gdpPercap_1962  \
+          continente gdpPercap_1952 gdpPercap_1957 gdpPercap_1962 \
 country
-Argentina  Americas     5911.315053     6856.856212     7133.166023
-Bolivia    Americas     2677.326347     2127.686326     2180.972546
-Brazil     Americas     2108.944355     2487.365989     3336.585802
+Argentina Americas 5911. 15053 6856. 56212 7133.166023
+Bolivia Americas 2677.326347 2127. 86326 2180.972546
+Brasile Americas 2108.944355 2487. 65989 3336. 85802
 
-          gdpPercap_1967  gdpPercap_1972  gdpPercap_1977  gdpPercap_1982  \
+          gdpPercap_1967 gdpPercap_1972 gdpPercap_1977 gdpPercap_1982 \
 country
-Argentina     8052.953021     9443.038526    10079.026740     8997.897412
-Bolivia       2586.886053     2980.331339     3548.097832     3156.510452
-Brazil        3429.864357     4985.711467     6660.118654     7030.835878
+Argentina 8052. 53021 9443.038526 10079.026740 8997.897412
+Bolivia 2586. 86053 2980.331339 3548.097832 3156. 10452
+Brasile 3429. 64357 4985.711467 6660.118654 7030. 35878
 
-           gdpPercap_1987  gdpPercap_1992  gdpPercap_1997  gdpPercap_2002  \
+           gdpPercap_1987 gdpPercap_1992 gdpPercap_1997 gdpPercap_2002 \
 country
-Argentina     9139.671389     9308.418710    10967.281950     8797.640716
-Bolivia       2753.691490     2961.699694     3326.143191     3413.262690
-Brazil        7807.095818     6950.283021     7957.980824     8131.212843
+Argentina 9139. 71389 9308.418710 10967.281950 8797.640716
+Bolivia 2753. 91490 2961.699694 3326.143191 3413. 62690
+Brasile 7807. 95818 6950.283021 7957.980824 8131. 12843
 
            gdpPercap_2007
-country
-Argentina    12779.379640
-Bolivia       3822.137084
-Brazil        9065.800825
+paese
+Argentina 12779. 79640
+Bolivia 3822.137084
+Brasile 9065.800825
 ```
 
-2. To check out the last three rows of `data_americas`, we would use the command,
-   `americas.tail(n=3)`, analogous to `head()` used above. However, here we want to look at
-   the last three columns so we need to change our view and then use `tail()`. To do so, we
-   create a new DataFrame in which rows and columns are switched:
+2. Per controllare le ultime tre righe di `data_americas`, useremmo il comando,
+   `americas.tail(n=3)`, analogo a `head()` usato sopra. Tuttavia, qui vogliamo guardare
+   le ultime tre colonne quindi dobbiamo cambiare la nostra vista e quindi utilizzare `tail()`. Per farlo,
+   creiamo un nuovo DataFrame in cui sono commutate righe e colonne:
 
 ```python
 americas_flipped = data_americas.T
 ```
 
-We can then view the last three columns of `americas` by viewing the last three rows
-of `americas_flipped`:
+Possiamo quindi visualizzare le ultime tre colonne di `americas` visualizzando le ultime tre righe
+di `americas_flipped`:
 
 ```python
 americas_flipped.tail(n=3)
 ```
 
 ```output
-country        Argentina  Bolivia   Brazil   Canada    Chile Colombia  \
-gdpPercap_1997   10967.3  3326.14  7957.98  28954.9  10118.1  6117.36
-gdpPercap_2002   8797.64  3413.26  8131.21    33329  10778.8  5755.26
-gdpPercap_2007   12779.4  3822.14   9065.8  36319.2  13171.6  7006.58
+paese Argentina Bolivia Brasile Canada Cile Colombia \
+gdpPercap_1997 10967. 3326,14 7957,98 28954,9 10118,1 6117. 6
+gdpPercap_2002 8797,64 3413,26 8131,21 33329 10778,8 5755. 6
+gdpPercap_2007 12779,4 3822,14 9065,8 36319,2 13171,6 7006. 8
 
-country        Costa Rica     Cuba Dominican Republic  Ecuador    ...     \
-gdpPercap_1997    6677.05  5431.99             3614.1  7429.46    ...
-gdpPercap_2002    7723.45  6340.65            4563.81  5773.04    ...
-gdpPercap_2007    9645.06   8948.1            6025.37  6873.26    ...
+paese Costa Rica Cuba Repubblica Dominicana Ecuador ... \
+gdpPercap_1997 6677. 5 5431.99 3614.1 7429.46 . .
+gdpPercap_2002 7723,45 6340. 5 4563.81 5773.04 ...
+gdpPercap_2007 9645.06 8948. 6025.37 6873.26 ...
 
-country          Mexico Nicaragua   Panama Paraguay     Peru Puerto Rico  \
-gdpPercap_1997   9767.3   2253.02  7113.69   4247.4  5838.35     16999.4
-gdpPercap_2002  10742.4   2474.55  7356.03  3783.67  5909.02     18855.6
-gdpPercap_2007  11977.6   2749.32  9809.19  4172.84  7408.91     19328.7
+Paese Messico Nicaragua Panama Paraguay Perù Portorico \
+gdpPercap_1997 9767. 2253,02 7113,69 4247,4 5838,35 16999.
+gdpPercap_2002 10742,4 2474,55 7356,03 3783,67 5909,02 18855.
+gdpPercap_2007 11977,6 2749,32 9809,19 4172,84 7408. 1 19328.
 
-country        Trinidad and Tobago United States  Uruguay Venezuela
-gdpPercap_1997             8792.57       35767.4  9230.24   10165.5
-gdpPercap_2002             11460.6       39097.1     7727   8605.05
-gdpPercap_2007             18008.5       42951.7  10611.5   11415.8
+paese Trinidad e Tobago Stati Uniti Uruguay Venezuela
+gdpPercap_1997 8792. 7 35767,4 9230,24 10165.
+gdpPercap_2002 11460. 39097.1 7727 8605. 5
+gdpPercap_2007 18008. 42951,7 10611,5 11415,8
 ```
 
-This shows the data that we want, but we may prefer to display three columns instead of three rows,
-so we can flip it back:
+Questo mostra i dati che vogliamo, ma potremmo preferire visualizzare tre colonne invece di tre righe,
+così possiamo capovolgerlo indietro:
 
 ```python
 americas_flipped.tail(n=3).T    
 ```
 
-**Note:** we could have done the above in a single line of code by 'chaining' the commands:
+**Nota:** avremmo potuto fare quanto sopra in una singola riga di codice con 'chaining' i comandi:
 
 ```python
 data_americas.T.tail(n=3).T
@@ -356,32 +356,32 @@ data_americas.T.tail(n=3).T
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::::::::: challenge
 
-## Reading Files in Other Directories
+## Lettura di file in altre directory
 
-The data for your current project is stored in a file called `microbes.csv`,
-which is located in a folder called `field_data`.
-You are doing analysis in a notebook called `analysis.ipynb`
-in a sibling folder called `thesis`:
+I dati del progetto corrente sono memorizzati in un file chiamato `microbes.csv`,
+che si trova in una cartella chiamata `field_data`.
+Stai facendo analisi in un notebook chiamato `analysis.ipynb`
+in una cartella sorella chiamata `thesis`:
 
 ```output
 your_home_directory
 +-- field_data/
-|   +-- microbes.csv
+<unk> +-- microbes.csv
 +-- thesis/
     +-- analysis.ipynb
 ```
 
-What value(s) should you pass to `read_csv` to read `microbes.csv` in `analysis.ipynb`?
+Quali valori dovresti passare a `read_csv` per leggere `microbes.csv` in `analysis.ipynb`?
 
-:::::::::::::::  solution
+::::::::::::::: soluzione
 
-## Solution
+## Soluzione
 
-We need to specify the path to the file of interest in the call to `pd.read_csv`. We first need to 'jump' out of
-the folder `thesis` using '../' and then into the folder `field_data` using 'field_data/'. Then we can specify the filename \`microbes.csv.
-The result is as follows:
+Dobbiamo specificare il percorso del file di interesse nella chiamata a `pd.read_csv`. Abbiamo prima bisogno di 'saltare' fuori da
+la cartella `thesis` usando '../' e poi nella cartella `field_data` usando 'field_data/'. Quindi possiamo specificare il nome del file \`microbes.csv.
+Il risultato è il seguente:
 
 ```python
 data_microbes = pd.read_csv('../field_data/microbes.csv')
@@ -391,36 +391,36 @@ data_microbes = pd.read_csv('../field_data/microbes.csv')
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::::::::: challenge
 
-## Writing Data
+## Scrittura Dati
 
-As well as the `read_csv` function for reading data from a file,
-Pandas provides a `to_csv` function to write dataframes to files.
-Applying what you've learned about reading from files,
-write one of your dataframes to a file called `processed.csv`.
-You can use `help` to get information on how to use `to_csv`.
+Oltre alla funzione `read_csv` per leggere i dati da un file,
+Pandas fornisce una funzione `to_csv` per scrivere i dataframe sui file.
+Applicando ciò che hai imparato a leggere dai file,
+scrive uno dei tuoi dataframe in un file chiamato `processed.csv`.
+Puoi usare `help` per ottenere informazioni su come usare `to_csv`.
 
-:::::::::::::::  solution
+::::::::::::::: soluzione
 
-## Solution
+## Soluzione
 
-In order to write the DataFrame `data_americas` to a file called `processed.csv`, execute the following command:
+Per scrivere il file `data_americas` DataFrame in un file chiamato `processed.csv`, eseguire il seguente comando:
 
 ```python
 data_americas.to_csv('processed.csv')
 ```
 
-For help on `read_csv` or `to_csv`, you could execute, for example:
+Per aiuto su `read_csv` o `to_csv`, puoi eseguire, per esempio:
 
 ```python
 help(data_americas.to_csv)
 help(pd.read_csv)
 ```
 
-Note that `help(to_csv)` or `help(pd.to_csv)` throws an error! This is due to the fact that `to_csv` is not a global Pandas function, but
-a member function of DataFrames. This means you can only call it on an instance of a DataFrame
-e.g., `data_americas.to_csv` or `data_oceania.to_csv`
+Nota che `help(to_csv)` o `help(pd.to_csv)` genera un errore! Ciò è dovuto al fatto che `to_csv` non è una funzione globale di Pandas, ma
+una funzione membro di DataFrames. Questo significa che puoi chiamarlo solo su un'istanza di DataFrame
+ad esempio, `data_americas.to_csv` o `data_oceania.to_csv`
 
 :::::::::::::::::::::::::
 
@@ -428,11 +428,11 @@ e.g., `data_americas.to_csv` or `data_oceania.to_csv`
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- Use the Pandas library to get basic statistics out of tabular data.
-- Use `index_col` to specify that a column's values should be used as row headings.
-- Use `DataFrame.info` to find out more about a dataframe.
-- The `DataFrame.columns` variable stores information about the dataframe's columns.
-- Use `DataFrame.T` to transpose a dataframe.
-- Use `DataFrame.describe` to get summary statistics about data.
+- Utilizzare la libreria di Panda per ottenere statistiche di base dai dati tabulari.
+- Usa `index_col` per specificare che i valori di una colonna devono essere usati come intestazioni di riga.
+- Usa `DataFrame.info` per saperne di più su un dataframe.
+- La variabile `DataFrame.columns` memorizza informazioni sulle colonne del dataframe.
+- Usa `DataFrame.T` per trasporre un dataframe.
+- Usa `DataFrame.describe` per ottenere statistiche sommarie sui dati.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
