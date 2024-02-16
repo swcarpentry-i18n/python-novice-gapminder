@@ -1,38 +1,38 @@
 ---
-title: Libraries
+title: ライブラリ
 teaching: 10
 exercises: 10
 ---
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- Explain what software libraries are and why programmers create and use them.
-- Write programs that import and use modules from Python's standard library.
-- Find and read documentation for the standard library interactively (in the interpreter) and online.
+- ソフトウェアライブラリとは何か、プログラマーがそれらを作成して使用する理由を説明します。
+- Pythonの標準ライブラリからモジュールをインポートして使用するプログラムを書く。
+- 標準ライブラリのドキュメントをインタラクティブに(通訳で)見つけて読んでください。
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::: questions
+::::::::::::::::::::::::::::::::::
 
-- How can I use software that other people have written?
-- How can I find out what that software does?
+- 他の人が書いたソフトウェアをどのように使用できますか?
+- そのソフトウェアが何をしているのかを調べるにはどうすればいいですか?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Most of the power of a programming language is in its libraries.
+## プログラミング言語の力のほとんどはライブラリにあります。
 
-- A _library_ is a collection of files (called _modules_) that contains
-  functions for use by other programs.
-  - May also contain data values (e.g., numerical constants) and other things.
-  - Library's contents are supposed to be related, but there's no way to enforce that.
-- The Python [standard library][stdlib] is an extensive suite of modules that comes
-  with Python itself.
-- Many additional libraries are available from [PyPI][pypi] (the Python Package Index).
-- We will see later how to write new libraries.
+- _library_ は、他のプログラムで使用するための
+  関数を含むファイル(_modules_ と呼ばれる)のコレクションです。
+  - データ値(数値定数など)なども含めることができます。
+  - 図書館の内容は関連するはずですが、それを強制する方法はありません。
+- Python [standard library][stdlib] は、Python 自体に
+  付属のモジュール群です。
+- 多くの追加ライブラリは [PyPI][pypi] (Python Package Index) から入手できます。
+- 後で新しいライブラリの作成方法を見ていきます。
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Libraries and modules
+## ライブラリとモジュール
 
 A library is a collection of modules, but the terms are often used
 interchangeably, especially since many libraries only consist of a single
@@ -40,12 +40,12 @@ module, so don't worry if you mix them.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## A program must import a library module before using it.
+## プログラムはライブラリモジュールを使用する前にインポートする必要があります。
 
-- Use `import` to load a library module into a program's memory.
-- Then refer to things from the module as `module_name.thing_name`.
-  - Python uses `.` to mean "part of".
-- Using `math`, one of the modules in the standard library:
+- プログラムのメモリにライブラリモジュールをロードするには、 `import` を使います。
+- 次に、モジュール内のものを `module_name.thing_name` として参照します。
+  - Python は `.` を使って「の一部」を意味します。
+- 標準ライブラリのモジュールの一つである `math` を使用します。
 
 ```python
 import math
@@ -55,20 +55,20 @@ print('cos(pi) is', math.cos(math.pi))
 ```
 
 ```output
-pi is 3.141592653589793
-cos(pi) is -1.0
+pi は 3.141592653589793
+cos(pi) は -1.0
 ```
 
-- Have to refer to each item with the module's name.
-  - `math.cos(pi)` won't work: the reference to `pi`
-    doesn't somehow "inherit" the function's reference to `math`.
+- モジュールの名前で各項目を参照する必要があります。
+  - `math.cos(pi)`は動作しません: `pi`
+    への参照は何らかの形で`math`への関数の参照を"継承"しません。
 
-## Use `help` to learn about the contents of a library module.
+## ライブラリモジュールの内容については、 `help` を使います。
 
-- Works just like help for a function.
+- 関数のヘルプのように動作します。
 
 ```python
-help(math)
+help(数学)
 ```
 
 ```output
@@ -96,10 +96,10 @@ FUNCTIONS
 ⋮ ⋮ ⋮
 ```
 
-## Import specific items from a library module to shorten programs.
+## プログラムを短縮するためにライブラリモジュールから特定の項目をインポートします。
 
-- Use `from ... import ...` to load only specific items from a library module.
-- Then refer to them directly without library name as prefix.
+- `from ... import ...` to load only specific items from a library module.
+- 次に、ライブラリ名なしで直接プレフィックスとして参照します。
 
 ```python
 from math import cos, pi
@@ -108,13 +108,13 @@ print('cos(pi) is', cos(pi))
 ```
 
 ```output
-cos(pi) is -1.0
+cos(pi) は -1.0
 ```
 
-## Create an alias for a library module when importing it to shorten programs.
+## プログラムを短縮するためにインポートするときにライブラリモジュールのエイリアスを作成します。
 
-- Use `import ... as ...` to give a library a short _alias_ while importing it.
-- Then refer to items in the library using that shortened name.
+- `import を使用... として...`ライブラリにインポート中に短い_エイリアス_を与えます。
+- その後、短縮した名前を使用してライブラリ内の項目を参照してください。
 
 ```python
 import math as m
@@ -123,32 +123,32 @@ print('cos(pi) is', m.cos(m.pi))
 ```
 
 ```output
-cos(pi) is -1.0
+cos(pi) は -1.0
 ```
 
-- Commonly used for libraries that are frequently used or have long names.
-  - E.g., the `matplotlib` plotting library is often aliased as `mpl`.
-- But can make programs harder to understand,
-  since readers must learn your program's aliases.
+- 頻繁に使用される、または長い名前のライブラリのために一般的に使用されます。
+  - 例えば、`matplotlib`プロットライブラリはしばしば`mpl`としてエイリアスされます。
+- しかし、
+  はあなたのプログラムのエイリアスを学ばなければならないので、プログラムを理解しにくくすることができます。
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::: チャレンジ
 
-## Exploring the Math Module
+## 数学モジュールの探索
 
-1. What function from the `math` module can you use to calculate a square root
-   _without_ using `sqrt`?
-2. Since the library contains this function, why does `sqrt` exist?
+1. `math`モジュールのどの関数を使って、`sqrt`を使って、平方根
+   _ない_を計算できますか？
+2. ライブラリにはこの関数が含まれているので、なぜ`sqrt`が存在するのでしょうか？
 
-:::::::::::::::  solution
+::::::::::::::::: solution
 
-## Solution
+## 解決策
 
 1. Using `help(math)` we see that we've got `pow(x,y)` in addition to `sqrt(x)`,
    so we could use `pow(x, 0.5)` to find a square root.
 
-2. The `sqrt(x)` function is arguably more readable than `pow(x, 0.5)` when
-   implementing equations. Readability is a cornerstone of good programming, so it
-   makes sense to provide a special function for this specific common case.
+2. `sqrt(x)`関数は、
+   が方程式を実装した場合、間違いなく`pow(x, 0.5)`より読みやすいです。 読みやすさは良いプログラミングの土台であるため、
+   はこの特定の一般的なケースに特別な関数を提供することは理にかなっています。
 
 Also, the design of Python's `math` library has its origin in the C standard,
 which includes both `sqrt(x)` and `pow(x,y)`, so a little bit of the history
@@ -158,27 +158,27 @@ of programming is showing in Python's function names.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::: チャレンジ
 
-## Locating the Right Module
+## 右モジュールの位置
 
-You want to select a random character from a string:
+文字列からランダムな文字を選択します。
 
 ```python
 bases = 'ACTTGCTTGAC'
 ```
 
-1. Which [standard library][stdlib] module could help you?
-2. Which function would you select from that module? Are there alternatives?
-3. Try to write a program that uses the function.
+1. どの[standard library][stdlib] モジュールが役に立ちますか？
+2. そのモジュールからどの関数を選択しますか？ 選択肢はありますか？
+3. 関数を使うプログラムを書いてみてください。
 
-:::::::::::::::  solution
+::::::::::::::::: solution
 
-## Solution
+## 解決策
 
-The [random module][randommod] seems like it could help.
+[random module][randommod] は役に立つかもしれません。
 
-The string has 11 characters, each having a positional index from 0 to 10.
+文字列は 11 文字で、それぞれは 0 から 10 までの位置指数を持ちます。
 You could use the [`random.randrange`](https://docs.python.org/3/library/random.html#random.randrange)
 or [`random.randint`](https://docs.python.org/3/library/random.html#random.randint) functions
 to get a random integer between 0 and 10, and then select the `bases` character at that index:
@@ -190,7 +190,7 @@ random_index = randrange(len(bases))
 print(bases[random_index])
 ```
 
-or more compactly:
+もっとコンパクトに
 
 ```python
 from random import randrange
@@ -198,8 +198,8 @@ from random import randrange
 print(bases[randrange(len(bases))])
 ```
 
-Perhaps you found the [`random.sample`](https://docs.python.org/3/library/random.html#random.sample) function?
-It allows for slightly less typing but might be a bit harder to understand just by reading:
+[`random.sample`](https://docs.python.org/3/library/random.html#random.sample) 関数が見つかりましたか？
+これにより、少しタイピングが少なくなりますが、読むだけで理解が少し難しいかもしれません。
 
 ```python
 from random import sample
@@ -207,11 +207,11 @@ from random import sample
 print(sample(bases, 1)[0])
 ```
 
-Note that this function returns a list of values. We will learn about
-lists in [episode 11](11-lists.md).
+この関数は値のリストを返すことに注意してください。 [エピソード 11](11-lists.md) の
+リストについて学びます。
 
-The simplest and shortest solution is the [`random.choice`](https://docs.python.org/3/library/random.html#random.choice)
-function that does exactly what we want:
+最もシンプルで短い解は、[`random.choice`](https://docs.python.org/3/library/random.html#random.choice)
+関数で、これを正確に実行します。
 
 ```python
 from random import choice
@@ -223,27 +223,27 @@ print(choice(bases))
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::: チャレンジ
 
-## Jigsaw Puzzle (Parson's Problem) Programming Example
+## ジグソーパズル (Parsonの問題) プログラミング例
 
-Rearrange the following statements so that a random
-DNA base is printed and its index in the string.
-Not all statements may be needed.  Feel free to use/add
-intermediate variables.
+以下の文を並べ替えて、ランダムな
+DNA ベースが出力され、そのインデックスが文字列中に出力されるようにします。
+すべての文が必要とは限りません。\
+中間変数を使用/追加してください。
 
 ```python
-bases="ACTTGCTTGAC"
+bases="ACTGCTTGAC"
 import math
 import random
-___ = random.randrange(n_bases)
-___ = len(bases)
-print("random base ", bases[___], "base index", ___)
+____ = random.range(n_bases)
+____ = len(bases)
+print("random base ", bases[___], "base index", ____
 ```
 
-:::::::::::::::  solution
+::::::::::::::::: solution
 
-## Solution
+## 解決策
 
 ```python
 import math 
@@ -258,36 +258,36 @@ print("random base", bases[idx], "base index", idx)
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::: チャレンジ
 
-## When Is Help Available?
+## ヘルプはいつ利用できますか?
 
-When a colleague of yours types `help(math)`,
-Python reports an error:
+あなたの同僚が`help(math)`をタイプすると、
+Pythonはエラーを報告します。
 
 ```error
 NameError: name 'math' is not defined
 ```
 
-What has your colleague forgotten to do?
+あなたの同僚は何を忘れてしまったのですか?
 
-:::::::::::::::  solution
+::::::::::::::::: solution
 
-## Solution
+## 解決策
 
-Importing the math module (`import math`)
+算術モジュールのインポート (`import math`)
 
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::: チャレンジ
 
-## Importing With Aliases
+## エイリアスでインポートする
 
-1. Fill in the blanks so that the program below prints `90.0`.
-2. Rewrite the program so that it uses `import` _without_ `as`.
-3. Which form do you find easier to read?
+1. 以下のプログラムが `90.0` に出力されるように空白を埋めてください。
+2. `import` \*without \* `as` を使うようにプログラムを書き直します。
+3. どちらのフォームが読みやすいと思いますか。
 
 ```python
 import math as m
@@ -295,9 +295,9 @@ angle = ____.degrees(____.pi / 2)
 print(____)
 ```
 
-:::::::::::::::  solution
+::::::::::::::::: solution
 
-## Solution
+## 解決策
 
 ```python
 import math as m
@@ -305,7 +305,7 @@ angle = m.degrees(m.pi / 2)
 print(angle)
 ```
 
-can be written as
+次のように書くことができます
 
 ```python
 import math
@@ -313,8 +313,8 @@ angle = math.degrees(math.pi / 2)
 print(angle)
 ```
 
-Since you just wrote the code and are familiar with it, you might actually
-find the first version easier to read. But when trying to read a huge piece
+コードを書いたばかりで慣れているので、実際には
+最初のバージョンが読みやすいと思うかもしれません。 But when trying to read a huge piece
 of code written by someone else, or when getting back to your own huge piece
 of code after several months, non-abbreviated names are often easier, except
 where there are clear abbreviation conventions.
@@ -323,44 +323,44 @@ where there are clear abbreviation conventions.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::: チャレンジ
 
-## There Are Many Ways To Import Libraries!
+## ライブラリをインポートする方法はたくさんあります!
 
-Match the following print statements with the appropriate library calls.
+次の印刷文を適切なライブラリ呼び出しと一致させます。
 
-Print commands:
+コマンドを印刷:
 
 1. `print("sin(pi/2) =", sin(pi/2))`
 2. `print("sin(pi/2) =", m.sin(m.pi/2))`
 3. `print("sin(pi/2) =", math.sin(math.pi/2))`
 
-Library calls:
+ライブラリ通話:
 
 1. `from math import sin, pi`
 2. `import math`
 3. `import math as m`
 4. `from math import *`
 
-:::::::::::::::  solution
+::::::::::::::::: solution
 
-## Solution
+## 解決策
 
-1. Library calls 1 and 4. In order to directly refer to `sin` and `pi` without
-   the library name as prefix, you need to use the `from ... import ...`
-   statement. Whereas library call 1 specifically imports the two functions
-   `sin` and `pi`, library call 4 imports all functions in the `math` module.
-2. Library call 3. Here `sin` and `pi` are referred to with a shortened library
-   name `m` instead of `math`. Library call 3 does exactly that using the
-   `import ... as ...` syntax - it creates an alias for `math` in the form of
+1. ライブラリから1と4を呼び出します。 ライブラリ名を
+   をプレフィックスとせずに `sin` と `pi` を直接参照するには、 `from ... import ...`
+   ステートメント ライブラリ1は特に2つの関数
+   `sin` と `pi` をインポートしますが、ライブラリ4は`math` モジュール内のすべての関数をインポートします。
+2. ライブラリ通話 3. ここでは、`sin`と`pi`は、`math`の代わりに、短縮ライブラリ
+   の名前で参照されます。 ライブラリコール3は、
+   `import ... を使用してまさにそれを行います。 as ...` syntax - it creates an alias for `math` in the form of
    the shortened name `m`.
-3. Library call 2. Here `sin` and `pi` are referred to with the regular library
-   name `math`, so the regular `import ...` call suffices.
+3. ライブラリ通話 2. ここでは、`sin`と`pi`は通常のライブラリ
+   の名前で参照されるので、通常の`import ...`を呼び出すだけで十分です。
 
 **Note:** although library call 4 works, importing all names from a module using a wildcard
 import is [not recommended][pep8-imports] as it makes it unclear which names from the module
-are used in the code. In general it is best to make your imports as specific as possible and to
-only import what your code uses. In library call 1, the `import` statement explicitly tells us
+are used in the code. 一般的には、インポートを可能な限り具体的にし、
+コードが使うものだけをインポートすることをお勧めします。 In library call 1, the `import` statement explicitly tells us
 that the `sin` function is imported from the `math` module, but library call 4 does not
 convey this information.
 
@@ -368,13 +368,13 @@ convey this information.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::: チャレンジ
 
-## Importing Specific Items
+## 特定のアイテムをインポートしています
 
-1. Fill in the blanks so that the program below prints `90.0`.
-2. Do you find this version easier to read than preceding ones?
-3. Why _wouldn't_ programmers always use this form of `import`?
+1. 以下のプログラムが `90.0` に出力されるように空白を埋めてください。
+2. このバージョンは先行バージョンより読みやすいですか?
+3. なぜプログラマーは常に `import` を使わないのでしょうか？
 
 ```python
 ____ math import ____, ____
@@ -382,18 +382,18 @@ angle = degrees(pi / 2)
 print(angle)
 ```
 
-:::::::::::::::  solution
+::::::::::::::::: solution
 
-## Solution
+## 解決策
 
 ```python
-from math import degrees, pi
+from math import degree, pi
 angle = degrees(pi / 2)
 print(angle)
 ```
 
-Most likely you find this version easier to read since it's less dense.
-The main reason not to use this form of import is to avoid name clashes.
+それは密度が低いので、ほとんどの場合、このバージョンは読みやすいです。
+このフォームを使用しない主な理由は、名前の衝突を避けるためです。
 For instance, you wouldn't import `degrees` this way if you also wanted to
 use the name `degrees` for a variable or function of your own. Or if you
 were to also import a function named `degrees` from another library.
@@ -402,21 +402,21 @@ were to also import a function named `degrees` from another library.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::: チャレンジ
 
-## Reading Error Messages
+## エラー メッセージの読み取り
 
-1. Read the code below and try to identify what the errors are without running it.
-2. Run the code, and read the error message. What type of error is it?
+1. 以下のコードを読んで、実行せずにエラーを特定してみてください。
+2. コードを実行し、エラーメッセージを読みます。 どのようなタイプのエラーですか?
 
 ```python
 from math import log
 log(0)
 ```
 
-:::::::::::::::  solution
+::::::::::::::::: solution
 
-## Solution
+## 解決策
 
 ```output
 ---------------------------------------------------------------------------
@@ -428,12 +428,12 @@ ValueError                                Traceback (most recent call last)
 ValueError: math domain error
 ```
 
-1. The logarithm of `x` is only defined for `x > 0`, so 0 is outside the
-   domain of the function.
+1. `x` の対数は `x > 0` にのみ定義されているため、0 は関数の
+   ドメイン外です。
 
-2. You get an error of type `ValueError`, indicating that the function
-   received an inappropriate argument value. The additional message
-   "math domain error" makes it clearer what the problem is.
+2. 関数
+   が不適切な引数値を受け取ったことを示す、型 `ValueError` のエラーが表示されます。 追加のメッセージ
+   「数学領域エラー」は、問題が何であるかをより明確にします。
 
 :::::::::::::::::::::::::
 
@@ -445,14 +445,14 @@ ValueError: math domain error
 
 [randommod]: https://docs.python.org/3/library/random.html
 
-[pep8-imports]: https://pep8.org/#imports
+[pep8-imports]: https://pep8.org/#import
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- Most of the power of a programming language is in its libraries.
-- A program must import a library module in order to use it.
-- Use `help` to learn about the contents of a library module.
-- Import specific items from a library to shorten programs.
-- Create an alias for a library when importing it to shorten programs.
+- プログラミング言語の力のほとんどはライブラリにあります。
+- プログラムはライブラリモジュールをインポートする必要があります。
+- ライブラリモジュールの内容については、 `help` を使います。
+- 特定のアイテムをライブラリからインポートしてプログラムを短縮します。
+- プログラムを短縮するためにインポートするときに、ライブラリのエイリアスを作成します。
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
