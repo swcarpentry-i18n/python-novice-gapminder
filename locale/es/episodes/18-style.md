@@ -1,143 +1,143 @@
 ---
-title: Programming Style
+title: Estilo de programación
 teaching: 15
 exercises: 15
 ---
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- Provide sound justifications for basic rules of coding style.
-- Refactor one-page programs to make them more readable and justify the changes.
-- Use Python community coding standards (PEP-8).
+- Proporcionar justificaciones sólidas para las reglas básicas del estilo de codificación.
+- Refactar programas de una página para hacerlos más legibles y justificar los cambios.
+- Usar estándares de codificación comunitaria de Python (PEP-8).
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::: questions
+:::::::::::::::::::::::::::::::::::::::::::::::::: preguntas
 
-- How can I make my programs more readable?
-- How do most programmers format their code?
-- How can programs check their own operation?
+- ¿Cómo puedo hacer mis programas más legibles?
+- ¿Cómo formatean la mayoría de programadores su código?
+- ¿Cómo pueden los programas comprobar su propia operación?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Coding style
 
-A consistent coding style helps others (including our future selves) read and understand code more easily. Code is read much more often than it is written, and as the [Zen of Python](https://www.python.org/dev/peps/pep-0020) states, "Readability counts".
-Python proposed a standard style through one of its first Python Enhancement Proposals (PEP), [PEP8](https://www.python.org/dev/peps/pep-0008).
+Un estilo de codificación consistente ayuda a otros (incluyendo nuestro futuro a sí mismos) a leer y entender código más fácilmente. El código se lee mucho más a menudo de lo que está escrito, y como dice el [Zen de Python](https://www.python.org/dev/peps/pep-0020), "Readability cuenta".
+Python propuso un estilo estándar a través de una de sus primeras propuestas de mejora de Python (PEP), [PEP8](https://www.python.org/dev/peps/pep-0008).
 
-Some points worth highlighting:
+Algunos puntos que vale la pena destacar:
 
-- document your code and ensure that assumptions, internal algorithms, expected inputs, expected outputs, etc., are clear
-- use clear, semantically meaningful variable names
-- use white-space, _not_ tabs, to indent lines (tabs can cause problems across different text editors, operating systems, and version control systems)
+- documentar su código y asegurarse de que los supuestos, algoritmos internos, entradas esperadas, salidas esperadas, etc., sean claros
+- usar nombres de variables claros y semánticamente significativos
+- usar espacio en blanco, _no_ pestañas para sangrar líneas (las pestañas pueden causar problemas en diferentes editores de texto, sistemas operativos y sistemas de control de versiones)
 
-## Follow standard Python style in your code.
+## Sigue el estilo estándar de Python en tu código.
 
-- [PEP8](https://www.python.org/dev/peps/pep-0008):
-  a style guide for Python that discusses topics such as how to name variables,
-  how to indent your code,
-  how to structure your `import` statements,
-  etc.
-  Adhering to PEP8 makes it easier for other Python developers to read and understand your code, and to understand what their contributions should look like.
-- To check your code for compliance with PEP8, you can use the [pycodestyle application](https://pypi.org/project/pycodestyle/) and tools like the [black code formatter](https://github.com/psf/black) can automatically format your code to conform to PEP8 and pycodestyle (a Jupyter notebook formatter also exists [nb_black](https://github.com/dnanhkhoa/nb_black)).
-- Some groups and organizations follow different style guidelines besides PEP8. For example, the [Google style guide on Python](https://google.github.io/styleguide/pyguide.html) makes slightly different recommendations. Google wrote an application that can help you format your code in either their style or PEP8 called [yapf](https://github.com/google/yapf/).
-- With respect to coding style, the key is _consistency_. Choose a style for your project be it PEP8, the Google style, or something else and do your best to ensure that you and anyone else you are collaborating with sticks to it. Consistency within a project is often more impactful than the particular style used. A consistent style will make your software easier to read and understand for others and for your future self.
+- [PEP8](https\://www\.python. rg/dev/peps/pep-0008):
+  una guía de estilo para Python que discute temas tales como cómo nombrar variables,
+  cómo sangrar tu código,
+  cómo estructurar tus declaraciones `import`,
+  , etc.
+  Adherir a PEP8 hace más fácil que otros desarrolladores de Python lean y entiendan tu código, y para entender cómo deberían ser sus contribuciones.
+- Para comprobar el cumplimiento de tu código PEP8, puedes usar la [aplicación pycodesty](https://pypi.org/project/pycodestyle/) y herramientas como el [formateador de código negro](https\://github. om/psf/black) puede formatear automáticamente tu código para que se ajuste a PEP8 y pycodestyle (un formateador de notebook de Jupyter también existe [Text_black](https://github.com/dnanhkhoa/nb_black)).
+- Algunos grupos y organizaciones siguen diferentes pautas de estilo además de PEP8. Por ejemplo, la [guía de estilo de Google en Python](https://google.github.io/styleguide/pyguide.html) hace recomendaciones ligeramente diferentes. Google escribió una aplicación que puede ayudarte a formatear tu código en su estilo o en PEP8 llamado [yapf](https://github.com/google/yapf/).
+- Con respecto al estilo de codificación, la clave es _consistencia_. Elige un estilo para tu proyecto PEP8, el estilo de Google, o cualquier otra cosa y hacer todo lo que esté en su mano para asegurarse de que usted y cualquier otra persona con la que esté colaborando con la adherencia. La coherencia dentro de un proyecto es a menudo más impactante que el estilo utilizado en particular. Un estilo consistente hará que su software sea más fácil de leer y entender para los demás y para su yo futuro.
 
-## Use assertions to check for internal errors.
+## Utilice las afirmaciones para comprobar si hay errores internos.
 
-Assertions are a simple but powerful method for making sure that the context in which your code is executing is as you expect.
+Las afirmaciones son un método simple pero poderoso para asegurarse de que el contexto en el que se está ejecutando el código es el que espera.
 
 ```python
-def calc_bulk_density(mass, volume):
-    '''Return dry bulk density = powder mass / powder volume.'''
-    assert volume > 0
-    return mass / volume
+def calc_bulk_density(masa, volumen):
+    '''Regresa densidad a granel seco = masa de polvo / volumen de polvo.'''
+    afirmar volumen > 0
+    devolver masa / volumen
 ```
 
-If the assertion is `False`, the Python interpreter raises an `AssertionError` runtime exception. The source code for the expression that failed will be displayed as part of the error message. To ignore assertions in your code run the interpreter with the '-O' (optimize) switch. Assertions should contain only simple checks and never change the state of the program. For example, an assertion should never contain an assignment.
+Si la afirmación es `False`, el intérprete de Python plantea una excepción al tiempo de ejecución `AssertionError`. El código fuente de la expresión que falló se mostrará como parte del mensaje de error. Para ignorar las afirmaciones en su código, ejecute el intérprete con el interruptor '-O' (optimizar). Las afirmaciones deben contener sólo comprobaciones simples y nunca cambiar el estado del programa. Por ejemplo, una afirmación nunca debería contener una asignación.
 
-## Use docstrings to provide builtin help.
+## Utilice docstrings para proporcionar ayuda incorporada.
 
-If the first thing in a function is a character string that is not assigned directly to a variable, Python attaches it to the function, accessible via the builtin help function. This string that provides documentation is also known as a _docstring_.
+Si la primera cosa de una función es una cadena de caracteres que no está asignada directamente a una variable, Python lo adjunta a la función, accesible a través de la función de ayuda incorporada. Esta cadena que proporciona documentación también es conocida como _docstring_.
 
 ```python
-def average(values):
-    "Return average of values, or None if no values are supplied."
+Promedio def (valores):
+    "Devuelve el promedio de valores, o Ninguno si no se proporcionan valores.
 
-    if len(values) == 0:
+    si len(valores) == 0:
         return None
-    return sum(values) / len(values)
+    return sum(valores) / len(valores)
 
-help(average)
+ayuda (promedio)
 ```
 
 ```output
-Help on function average in module __main__:
+Ayuda sobre el promedio de la función en el módulo __main__:
 
-average(values)
-    Return average of values, or None if no values are supplied.
+promedio (valores)
+    Devuelve el promedio de los valores, o ninguno si no se proporcionan valores.
 ```
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Multiline Strings
+## Cadenas múltiples
 
-Often use _multiline strings_ for documentation.
-These start and end with three quote characters (either single or double)
-and end with three matching characters.
+A menudo usa _cadenas multilíneas_ para documentación.
+Estos caracteres comienzan y terminan con tres comillas (individuales o dobles)
+y terminan con tres caracteres coincidentes.
 
 ```python
-"""This string spans
-multiple lines.
+"""Esta cadena abarca
+múltiples líneas.
 
-Blank lines are allowed."""
+Las líneas en blanco están permitidas."""
 ```
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::::::::::::::: desafío
 
-## What Will Be Shown?
+## ¿Qué se mostrará?
 
-Highlight the lines in the code below that will be available as online help.
-Are there lines that should be made available, but won't be?
-Will any lines produce a syntax error or a runtime error?
+Destaca las líneas en el código de abajo que estarán disponibles como ayuda en línea.
+¿Hay líneas que deberían estar disponibles, pero no lo estará?
+¿Alguna línea producirá un error de sintaxis o un error de ejecución?
 
 ```python
-"Find maximum edit distance between multiple sequences."
-# This finds the maximum distance between all sequences.
+"Encuentra la distancia máxima de edición entre varias secuencias."
+# Esto encuentra la distancia máxima entre todas las secuencias.
 
 def overall_max(sequences):
-    '''Determine overall maximum edit distance.'''
+    ''''Determinar la distancia total máxima de edición. ''
 
-    highest = 0
-    for left in sequences:
-        for right in sequences:
-            '''Avoid checking sequence against itself.'''
-            if left != right:
-                this = edit_distance(left, right)
-                highest = max(highest, this)
+    más alto = 0
+    para la izquierda en secuencias:
+        para la derecha en secuencias:
+            ''Evitar la secuencia de comprobación contra sí misma. ''
+            si se ha ido ! derecha:
+                esto = edit_distance(izquierda, derecha)
+                más alto = máximo (más alto, esto)
 
-    # Report.
-    return highest
+    # Reporte.
+    retorno más alto
 ```
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::::::::::::::: desafío
 
-## Document This
+## Documentar esto
 
-Use comments to describe and help others understand potentially unintuitive
-sections or individual lines of code. They are especially useful to whoever
+Utiliza los comentarios para describir y ayudar a otros a entender las secciones
+potencialmente poco intuitivas o líneas individuales de código. They are especially useful to whoever
 may need to understand and edit your code in the future, including yourself.
 
-Use docstrings to document the acceptable inputs and expected outputs of a method
-or class, its purpose, assumptions and intended behavior. Docstrings are displayed
-when a user invokes the builtin `help` method on your method or class.
+Utilice docstrings para documentar las entradas aceptables y las salidas esperadas de un método
+o clase, su propósito, suposiciones y comportamiento previsto. Los documentos se muestran
+cuando un usuario invoca el método integrado `help` en tu método o clase.
 
-Turn the comment in the following function into a docstring
-and check that `help` displays it properly.
+Convierte el comentario en la siguiente función en una docstring
+y comprueba que `help` lo muestre correctamente.
 
 ```python
 def middle(a, b, c):
@@ -148,9 +148,9 @@ def middle(a, b, c):
     return values[1]
 ```
 
-:::::::::::::::  solution
+::::::::::::::::: solución
 
-## Solution
+## Solución
 
 ```python
 def middle(a, b, c):
@@ -165,17 +165,17 @@ def middle(a, b, c):
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::::::::::::::: desafío
 
-## Clean Up This Code
+## Limpiar este código
 
-1. Read this short program and try to predict what it does.
-2. Run it: how accurate was your prediction?
-3. Refactor the program to make it more readable.
-   Remember to run it after each change to ensure its behavior hasn't changed.
-4. Compare your rewrite with your neighbor's.
-   What did you do the same?
-   What did you do differently, and why?
+1. Lea este breve programa e intente predecir lo que hace.
+2. Ejecutarlo: ¿con qué precisión fue su predicción?
+3. Actualice el programa para hacerlo más legible.
+   Recuerde ejecutarlo después de cada cambio para asegurarse de que su comportamiento no ha cambiado.
+4. Compara tu reescritura con la de tu vecino.
+   ¿Qué hizo usted?
+   ¿Qué hiciste de otra manera, y por qué?
 
 ```python
 n = 10
@@ -195,36 +195,36 @@ while i < n:
     i += 1
 ```
 
-:::::::::::::::  solution
+::::::::::::::::: solución
 
-## Solution
+## Solución
 
-Here's one solution.
+Esta es una solución.
 
 ```python
-def string_machine(input_string, iterations):
+cadena def (entrada_cadena, iteraciones):
     """
-    Takes input_string and generates a new string with -'s and *'s
-    corresponding to characters that have identical adjacent characters
-    or not, respectively.  Iterates through this procedure with the resultant
-    strings for the supplied number of iterations.
+    toma input_string y genera una nueva cadena con -'s y *'s
+    correspondiente a caracteres que tienen caracteres idénticos adyacentes
+    o no. respectivamente. Itera a través de este procedimiento con las cadenas
+    resultantes para el número de iteraciones proporcionadas.
     """
     print(input_string)
     input_string_length = len(input_string)
     old = input_string
     for i in range(iterations):
         new = ''
-        # iterate through characters in previous string
+        # iterar a través de caracteres en la anterior cadena
         for j in range(input_string_length):
             left = j-1
-            right = (j+1) % input_string_length  # ensure right index wraps around
+            right = (j+1) % input_string_length # asegurarse de que el índice derecho se envuelve alrededor de
             if old[left] == old[right]:
                 new = new + '-'
             else:
                 new = new + '*'
         print(new)
-        # store new string as old
-        old = new     
+        # almacenar nueva cadena como antigua
+        viejos = new     
 
 string_machine('et cetera', 10)
 ```
@@ -249,7 +249,7 @@ et cetera
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- Follow standard Python style in your code.
-- Use docstrings to provide builtin help.
+- Sigue el estilo estándar de Python en tu código.
+- Utilice docstrings para proporcionar ayuda incorporada.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
