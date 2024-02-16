@@ -1,75 +1,75 @@
 ---
-title: Licenses
+title: Licenze
 ---
 
-## Instructional Material
+## Materiale Didattico
 
-All Carpentries (Software Carpentry, Data Carpentry, and Library Carpentry)
-instructional material is made available under the [Creative Commons
-Attribution license][cc-by-human]. The following is a human-readable summary of
-(and not a substitute for) the [full legal text of the CC BY 4.0
-license][cc-by-legal].
+Tutti i Carpentieri (Software Carpenteria, Carpenteria dati e Carpenteria biblioteca) Il materiale didattico
+è disponibile sotto la [licenza Creative Commons
+Attribuzione][cc-by-human]. Di seguito è riportato un riassunto leggibile dal punto di vista umano di
+(e non un sostituto) del [testo legale completo del CC BY 4.
+licenza][cc-by-legal].
 
-You are free:
+Sei libero:
 
-- to **Share**---copy and redistribute the material in any medium or format
-- to **Adapt**---remix, transform, and build upon the material
+- per **Condividi**---copia e ridistribuire il materiale in qualsiasi supporto o formato
+- per **Adapt**---remix, trasformare, e costruire sul materiale
 
-for any purpose, even commercially.
+a qualsiasi scopo, anche commercialmente.
 
-The licensor cannot revoke these freedoms as long as you follow the license
-terms.
+Il licenziante non può revocare queste libertà finché segui i termini della licenza
+.
 
-Under the following terms:
+Secondo i seguenti termini:
 
-- **Attribution**---You must give appropriate credit (mentioning that your work
-  is derived from work that is Copyright (c) The Carpentries and, where
-  practical, linking to https\://carpentries.org/), provide a [link to the
-  license][cc-by-human], and indicate if changes were made. You may do so in
-  any reasonable manner, but not in any way that suggests the licensor endorses
-  you or your use.
+- **Attribuzione**---Devi dare un credito appropriato (menzionando che il tuo lavoro
+  deriva dal lavoro che è Copyright (c) The Carpentries e, dove
+  pratico, collegandosi a https\://carpentries.org/), fornire un [link alla licenza
+  ][cc-by-human]e indicare se sono state apportate modifiche. Puoi farlo in modo ragionevole in
+  ma non in alcun modo che suggerisca al licenziante di avallare
+  tu o il tuo utilizzo.
 
-- **No additional restrictions**---You may not apply legal terms or
-  technological measures that legally restrict others from doing anything the
-  license permits.  With the understanding that:
+- **Nessuna restrizione aggiuntiva**---Non è possibile applicare termini legali o misure tecnologiche
+  che limitano legalmente gli altri a fare qualsiasi cosa la licenza
+  permetta.  Con la consapevolezza che:
 
-Notices:
+Avvisi:
 
-- You do not have to comply with the license for elements of the material in
-  the public domain or where your use is permitted by an applicable exception
-  or limitation.
-- No warranties are given. The license may not give you all of the permissions
-  necessary for your intended use. For example, other rights such as publicity,
-  privacy, or moral rights may limit how you use the material.
+- Non è necessario rispettare la licenza per gli elementi del materiale di dominio pubblico
+  o quando il vostro uso è consentito da un'eccezione
+  o una limitazione applicabile.
+- Non sono fornite garanzie. La licenza non può darti tutti i permessi
+  necessari per l'uso previsto. Ad esempio, altri diritti come la pubblicità, la privacy
+  o i diritti morali possono limitare il modo in cui si utilizza il materiale.
 
 ## Software
 
-Except where otherwise noted, the example programs and other software provided
-by The Carpentries are made available under the [OSI][osi]-approved [MIT
-license][mit-license].
+Salvo diversa indicazione, i programmi di esempio e altri software forniti
+da The Carpentries sono resi disponibili sotto la licenza [OSI][osi]approvata \[MIT
+[mit-license]4.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of
-this software and associated documentation files (the "Software"), to deal in
-the Software without restriction, including without limitation the rights to
-use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
-of the Software, and to permit persons to whom the Software is furnished to do
-so, subject to the following conditions:
+L'autorizzazione è concessa, gratuitamente, a chiunque ottenga una copia di
+di questo software e dei relativi file di documentazione (il "Software"), per trattare in
+il Software senza restrizioni, inclusi, senza limitazioni, i diritti di
+utilizzo, copia, modifica, fusione, pubblica, distribuisce, sublicenza e/o vende copie
+del Software, e consentire alle persone alle quali il Software è fornito di fare
+così, alle seguenti condizioni:
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+La suddetta comunicazione sul diritto d'autore e la presente notifica di autorizzazione sono incluse in tutte le copie
+o parti sostanziali del Software.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+IL SOFTWARE È FORNITO "COME SONO", SENZA GARANZIA DI QUALSIASI KIND, EXPRESS O
+IMPLIED, COMPRESA MA NON LIMITATA ALLE GARANZIE DI COMMERCIABILITÀ,
+APPLICABILITÀ PER UNO SCOPO PARTICOLARE E NONINFRINGEMENT. IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-## Trademark
+## Marchio
 
-"The Carpentries", "Software Carpentry", "Data Carpentry", and "Library
-Carpentry" and their respective logos are registered trademarks of [Community
+"The Carpentries", "Carpenteria software", "Carpenteria dati" e "Carpenteria
+biblioteca" e i loro rispettivi loghi sono marchi registrati di [Community
 Initiatives][ci].
 
 [cc-by-human]: https://creativecommons.org/licenses/by/4.0/
