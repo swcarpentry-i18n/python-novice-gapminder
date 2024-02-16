@@ -181,78 +181,78 @@ la barra laterale sinistra predefinita è fornita di seguito.
 La barra laterale sinistra può essere ridotta o espansa selezionando "Mostra barra laterale sinistra" nel menu Visualizza o
 facendo clic sulla scheda della barra laterale attiva.
 
-### Main Work Area
+### Area Di Lavoro Principale
 
-The main work area in JupyterLab enables you to arrange documents (notebooks, text files, etc.)
-and other activities (terminals, code consoles, etc.) into panels of tabs that can be resized or
-subdivided. A screenshot of the default Main Work Area is provided below.
+L'area di lavoro principale in JupyterLab consente di organizzare documenti (notebook, file di testo, ecc.)
+e altre attività (terminali, console di codice, ecc.) in pannelli di schede che possono essere ridimensionati o
+suddivisi. Di seguito viene fornita una schermata dell'area di lavoro principale predefinita.
 
-If you do not see the Launcher tab, click the blue plus sign under the "File" and "Edit" menus and it will appear.
+Se non vedi la scheda Launcher, fai clic sul segno più blu sotto i menu "File" e "Modifica" e apparirà.
 
 <p align='center'>   <img alt="JupyterLab Main Work Area" src="fig/0_jupyterlab_main_work_area.png" width="750"/>
 </p>
 
-Drag a tab to the center of a tab panel to move the tab to the panel. Subdivide a tab panel by
-dragging a tab to the left, right, top, or bottom of the panel. The work area has a single current
-activity. The tab for the current activity is marked with a colored top border (blue by default).
+Trascina una scheda al centro di un pannello delle schede per spostare la scheda al pannello. Suddividi un pannello di schede per
+trascinando una scheda a sinistra, a destra, in alto o in basso del pannello. L'area di lavoro ha una singola attività corrente
+. La scheda per l'attività corrente è contrassegnata con un bordo superiore colorato (blu per impostazione predefinita).
 
-## Creating a Python script
+## Creazione di uno script Python
 
-- To start writing a new Python program click the Text File icon under the _Other_ header in the Launcher tab of the Main Work Area.
-  - You can also create a new plain text file by selecting the _New -> Text File_ from the _File_ menu in the Menu Bar.
-- To convert this plain text file to a Python program, select the _Save File As_ action from the _File_ menu in the Menu Bar and give your new text file a name that ends with the `.py` extension.
-  - The `.py` extension lets everyone (including the operating system) know that this text file is a Python program.
-  - This is convention, not a requirement.
+- Per iniziare a scrivere un nuovo programma Python, fare clic sull'icona File di testo sotto l'intestazione _Altro_ nella scheda Launcher dell'area di lavoro principale.
+  - È inoltre possibile creare un nuovo file di testo semplice selezionando il _Nuovo -> File di testo_ dal menu _File_ nella barra dei menu.
+- Per convertire questo file di testo semplice in un software Python, selezionare l'azione _Salva file come_ dal menu _File_ nella barra dei menu e dare al nuovo file di testo un nome che termina con il `. y` estensione.
+  - L'estensione `.py` permette a tutti (compreso il sistema operativo) di sapere che questo file di testo è un programma Python.
+  - Si tratta di una convenzione, non di un requisito.
 
-## Creating a Jupyter Notebook
+## Creare un taccuino di Jupyter
 
-To open a new notebook click the Python 3 icon under the _Notebook_ header in the Launcher tab in
-the main work area. You can also create a new notebook by selecting _New -> Notebook_ from the _File_ menu in the Menu Bar.
+Per aprire un nuovo taccuino fare clic sull'icona Python 3 sotto l'intestazione _Notebook_ nella scheda Launcher in
+l'area di lavoro principale. Puoi anche creare un nuovo taccuino selezionando _Nuovo -> Notebook_ dal menu _File_ nella barra dei menu.
 
-Additional notes on Jupyter notebooks.
+Note aggiuntive sui taccuini di Giove.
 
-- Notebook files have the extension `.ipynb` to distinguish them from plain-text Python programs.
-- Notebooks can be exported as Python scripts that can be run from the command line.
+- I file notebook hanno l'estensione `.ipynb` per distinguerli dai programmi Python di testo semplice.
+- I notebook possono essere esportati come script Python che possono essere eseguiti dalla riga di comando.
 
-Below is a screenshot of a Jupyter notebook running inside JupyterLab. If you are interested in
-more details, then see the [official notebook documentation][jupyterlab-notebook-docs].
+Di seguito è riportata una schermata di un notebook di Jupyter in esecuzione all'interno di JupyterLab. Se siete interessati a
+più dettagli, quindi vedere la [documentazione ufficiale taccuino][jupyterlab-notebook-docs].
 
 <p align='center'>   <img alt="Example Jupyter Notebook" src="fig/0_jupyterlab_notebook_screenshot.png" width="750"/>
 </p>
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## How It's Stored
+## Come È Conservato
 
-- The notebook file is stored in a format called JSON.
-- Just like a webpage, what's saved looks different from what you see in your browser.
-- But this format allows Jupyter to mix source code, text, and images, all in one file.
+- Il file del notebook è memorizzato in un formato chiamato JSON.
+- Proprio come una pagina web, ciò che è salvato sembra diverso da quello che vedi nel tuo browser.
+- Ma questo formato permette a Jupyter di mescolare codice sorgente, testo e immagini, tutto in un unico file.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::::::::: challenge
 
-## Arranging Documents into Panels of Tabs
+## Organizzare documenti in gruppi di schede
 
-In the JupyterLab Main Work Area you can arrange documents into panels of tabs. Here is an
-example from the [official documentation][jupyterlab].
+Nell'area di lavoro principale di JupyterLab è possibile organizzare i documenti in pannelli di schede. Ecco un esempio
+della [documentazione ufficiale][jupyterlab].
 
 <p align='center'>   <img alt="Multi-panel JupyterLab" src="fig/0_multipanel_jupyterlab_screenshot.png" width="750"/>
 </p>
 
-First, create a text file, Python console, and terminal window and arrange them into three
-panels in the main work area. Next, create a notebook, terminal window, and text file and
-arrange them into three panels in the main work area. Finally, create your own combination of
-panels and tabs. What combination of panels and tabs do you think will be most useful for your
-workflow?
+Innanzitutto, crea un file di testo, una console Python e una finestra di terminale e li organizza in tre pannelli
+nell'area di lavoro principale. Successivamente, creare un notebook, finestra del terminale e file di testo e
+organizzarli in tre pannelli nell'area di lavoro principale. Infine, crea la tua combinazione di pannelli
+e schede. Quale combinazione di pannelli e schede pensi sarà più utile per il tuo flusso di lavoro
+?
 
-:::::::::::::::  solution
+::::::::::::::: soluzione
 
-## Solution
+## Soluzione
 
-After creating the necessary tabs, you can drag one of the tabs to the center of a panel to
-move the tab to the panel; next you can subdivide a tab panel by dragging a tab to the left,
-right, top, or bottom of the panel.
+Dopo aver creato le schede necessarie, puoi trascinare una delle schede al centro di un pannello in
+spostare la scheda nel pannello; accanto puoi suddividere un pannello di schede trascinando una scheda a sinistra,
+a destra, in alto o in basso del pannello.
 
 :::::::::::::::::::::::::
 
@@ -260,95 +260,95 @@ right, top, or bottom of the panel.
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Code vs. Text
+## Codice vs. Testo
 
-Jupyter mixes code and text in different types of blocks, called cells. We often use the term
-"code" to mean "the source code of software written in a language such as Python".
-A "code cell" in a Notebook is a cell that contains software;
-a "text cell" is one that contains ordinary prose written for human beings.
+Jupyter mescola codice e testo in diversi tipi di blocchi, chiamati celle. Spesso usiamo il termine
+"codice" per significare "il codice sorgente del software scritto in una lingua come Python".
+Una "cella di codice" in un notebook è una cella che contiene software;
+una "cella di testo" è quella che contiene la prosa ordinaria scritta per gli esseri umani.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## The Notebook has Command and Edit modes.
+## Il notebook ha modalità di comando e modifica.
 
-- If you press <kbd>Esc</kbd> and <kbd>Return</kbd> alternately, the outer border of your code cell will change from gray to blue.
-- These are the **Command** (gray) and **Edit** (blue) modes of your notebook.
-- Command mode allows you to edit notebook-level features, and Edit mode changes the content of cells.
-- When in Command mode (esc/gray),
-  - The <kbd>b</kbd> key will make a new cell below the currently selected cell.
-  - The <kbd>a</kbd> key will make one above.
-  - The <kbd>x</kbd> key will delete the current cell.
-  - The <kbd>z</kbd> key will undo your last cell operation (which could be a deletion, creation, etc).
-- All actions can be done using the menus, but there are lots of keyboard shortcuts to speed things up.
+- Se premi alternativamente <kbd>Esc</kbd> e <kbd>Restituzione</kbd> , il bordo esterno della cella del codice cambierà da grigio a blu.
+- Queste sono le modalità **Comando** (grigio) e **Modifica** (blu) del tuo taccuino.
+- La modalità di comando consente di modificare le funzionalità a livello notebook, e la modalità di modifica cambia il contenuto delle celle.
+- Quando in modalità comando (esc/grigio),
+  - Il tasto <kbd>b</kbd> farà una nuova cella sotto la cella attualmente selezionata.
+  - La chiave <kbd>a</kbd> ne farà una sopra.
+  - La chiave <kbd>x</kbd> eliminerà la cella corrente.
+  - La chiave <kbd>z</kbd> annullerà la tua ultima operazione di cella (che potrebbe essere una cancellazione, creazione, ecc).
+- Tutte le azioni possono essere fatte usando i menu, ma ci sono un sacco di scorciatoie da tastiera per velocizzare le cose.
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::::::::: challenge
 
-## Command Vs. Edit
+## Comando Vs. Modifica
 
-In the Jupyter notebook page are you currently in Command or Edit mode?\
-Switch between the modes.
-Use the shortcuts to generate a new cell.
-Use the shortcuts to delete a cell.
-Use the shortcuts to undo the last cell operation you performed.
+Nella pagina del notebook di Jupyter sei attualmente in modalità Comando o Modifica?\
+Passa tra le modalità.
+Usa le scorciatoie per generare una nuova cella.
+Utilizzare le scorciatoie per eliminare una cella.
+Utilizzare le scorciatoie per annullare l'ultima operazione di cella eseguita.
 
-:::::::::::::::  solution
+::::::::::::::: soluzione
 
-## Solution
+## Soluzione
 
-Command mode has a grey border and Edit mode has a blue border.
-Use <kbd>Esc</kbd> and <kbd>Return</kbd> to switch between modes.
-You need to be in Command mode (Press <kbd>Esc</kbd> if your cell is blue).  Type <kbd>b</kbd> or <kbd>a</kbd>.
-You need to be in Command mode (Press <kbd>Esc</kbd> if your cell is blue).  Type <kbd>x</kbd>.
-You need to be in Command mode (Press <kbd>Esc</kbd> if your cell is blue).  Type <kbd>z</kbd>.
+La modalità comando ha un bordo grigio e la modalità Modifica ha un bordo blu.
+Usa <kbd>Esc</kbd> e <kbd>Return</kbd> per passare da una modalità all'altra.
+Devi essere in modalità Comando (Invia <kbd>Esc</kbd> se la tua cella è blu).  Digita <kbd>b</kbd> or <kbd>a</kbd>.
+Devi essere in modalità Comando (Invia <kbd>Esc</kbd> se la tua cella è blu).  Type <kbd>x</kbd>.
+Devi essere in modalità Comando (Invia <kbd>Esc</kbd> se la tua cella è blu).  Type <kbd>z</kbd>.
 
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-### Use the keyboard and mouse to select and edit cells.
+### Utilizzare la tastiera e il mouse per selezionare e modificare le celle.
 
-- Pressing the <kbd>Return</kbd> key turns the border blue and engages Edit mode, which allows
-  you to type within the cell.
-- Because we want to be able to write many lines of code in a single cell,
-  pressing the <kbd>Return</kbd> key when in Edit mode (blue) moves the cursor to the next line
-  in the cell just like in a text editor.
-- We need some other way to tell the Notebook we want to run what's in the cell.
-- Pressing <kbd>Shift</kbd>+<kbd>Return</kbd> together will execute the contents of the cell.
-- Notice that the <kbd>Return</kbd> and <kbd>Shift</kbd> keys on the right of the keyboard are
-  right next to each other.
+- Premendo il tasto <kbd>Invio</kbd> si trasforma il bordo blu e si attiva la modalità di modifica, che consente a
+  di digitare all'interno della cella.
+- Perché vogliamo essere in grado di scrivere molte righe di codice in una singola cella,
+  premendo il tasto <kbd>Restituisce</kbd> quando in modalità Modifica (blu) sposta il cursore alla riga
+  successiva nella cella come in un editor di testo.
+- Abbiamo bisogno di un altro modo per dire al notebook che vogliamo eseguire ciò che è nella cella.
+- Premendo <kbd>Maiusc</kbd>+<kbd>Restituzione</kbd> insieme eseguirà il contenuto della cella.
+- Notate che i tasti <kbd>Return</kbd> e <kbd>Shift</kbd> sulla destra della tastiera sono
+  proprio accanto all'altro.
 
-### The Notebook will turn Markdown into pretty-printed documentation.
+### Il notebook trasformerà Markdown in una bella documentazione stampata.
 
-- Notebooks can also render [Markdown][markdown].
-  - A simple plain-text format for writing lists, links,
-    and other things that might go into a web page.
-  - Equivalently, a subset of HTML that looks like what you'd send in an old-fashioned email.
-- Turn the current cell into a Markdown cell by entering the Command mode (<kbd>Esc</kbd>/gray)
-  and press the <kbd>M</kbd> key.
-- `In [ ]:` will disappear to show it is no longer a code cell and you will be able to write in
+- I taccuini possono anche rendere [Markdown][markdown].
+  - Un semplice formato di testo semplice per scrivere elenchi, link,
+    e altre cose che potrebbero entrare in una pagina web.
+  - Allo stesso modo, un sottoinsieme di HTML che assomiglia a quello che invii in un vecchio stile di email.
+- Trasforma la cella corrente in una cella Markdown entrando nella modalità Comando (<kbd>Esc</kbd>/gray)
+  e premi il tasto <kbd>M</kbd>.
+- `In [ ]:` scomparirà per mostrare che non è più una cella di codice e sarai in grado di scrivere in
   Markdown.
-- Turn the current cell into a Code cell by entering the Command mode (<kbd>Esc</kbd>/gray) and
-  press the <kbd>y</kbd> key.
+- Trasforma la cella corrente in una cella Codice entrando nella modalità Comando (<kbd>Esc</kbd>/gray) e
+  premi il tasto <kbd>y</kbd>.
 
-### Markdown does most of what HTML does.
+### Markdown fa la maggior parte di ciò che fa HTML.
 
 <div class="row">
 
   <div class="col-md-6" markdown="1">
 
 ```
-*   Use asterisks
-*   to create
-*   bullet lists.
+* Usa gli asterischi
+* per creare
+* liste proiettili.
 ```
 
   
 
   <div class="col-md-6" markdown="1">
 
-- Use asterisks
-- to create
-- bullet lists.
+- Usa asterischi
+- per creare
+- elenchi di proiettili.
 
   </div>
 
@@ -359,18 +359,18 @@ You need to be in Command mode (Press <kbd>Esc</kbd> if your cell is blue).  Typ
   <div class="col-md-6" markdown="1">
 
 ```
-1.  Use numbers
-1.  to create
-1.  numbered lists.
+1. Usa i numeri
+1. per creare
+1. elenchi numerati.
 ```
 
   
 
   <div class="col-md-6" markdown="1">
 
-1. Use numbers
-2. to create
-3. numbered lists.
+1. Usa numeri
+2. per creare
+3. liste numerate.
 
   
 
@@ -381,25 +381,25 @@ You need to be in Command mode (Press <kbd>Esc</kbd> if your cell is blue).  Typ
   <div class="col-md-6" markdown="1">
 
 ```
-*  You can use indents
-	*  To create sublists 
-	*  of the same type
-*  Or sublists
-	1. Of different
-	1. types
+* È possibile utilizzare i indenti
+	<unk> * Per creare sublisti 
+	<unk> * dello stesso tipo
+* O sublisti
+	<unk> 1. Di diversi tipi di
+	<unk> 1.
 ```
 
   
 
   <div class="col-md-6" markdown="1">
 
-- You can use indents
-  - To create sublists
-  - of the same type
-- Or sublists
+- È possibile utilizzare i rientri
+  - Per creare sublist
+  - dello stesso tipo
+- O sublisti
 
-  1. Of different
-  2. types
+  1. Di diverse
+  2. tipi
 
   </div>
 
@@ -410,14 +410,14 @@ You need to be in Command mode (Press <kbd>Esc</kbd> if your cell is blue).  Typ
   <div class="col-md-6" markdown="1">
 
 ```
-# A Level-1 Heading
+# Intestazione Livello -1
 ```
 
   
 
   <div class="col-md-6" markdown="1">
 
-## A Level-1 Heading
+## A Livello-1 Titolo
 
   
 
@@ -428,14 +428,14 @@ You need to be in Command mode (Press <kbd>Esc</kbd> if your cell is blue).  Typ
   <div class="col-md-6" markdown="1">
 
 ```
-## A Level-2 Heading (etc.)
+## Intestazione A Livello 2 (ecc.)
 ```
 
   
 
   <div class="col-md-6" markdown="1">
 
-## A Level-2 Heading (etc.)
+## Titolo A Livello 2 (ecc.)
 
   
 
@@ -457,11 +457,11 @@ create new paragraphs.
 
   <div class="col-md-6" markdown="1">
 
-Line breaks
-don't matter.
+Le interruzioni di linea
+non importano.
 
-But blank lines
-create new paragraphs.
+Ma le righe vuote
+creano nuovi paragrafi.
 
   
 
@@ -472,8 +472,8 @@ create new paragraphs.
   <div class="col-md-6" markdown="1">
 
 ```
-[Create links](http://software-carpentry.org) with `[...](...)`.
-Or use [named links][data_carpentry].
+[Crea collegamenti](http://software-carpentry.org) con `[...](...)`.
+Oppure usa [named links][data_carpentry].
 
 [data_carpentry]: http://datacarpentry.org
 ```
@@ -482,68 +482,68 @@ Or use [named links][data_carpentry].
 
   <div class="col-md-6" markdown="1">
 
-[Create links](https://software-carpentry.org) with `[...](...)`.
-Or use [named links][data_carpentry].
+[Crea collegamenti](https://software-carpentry.org) con `[...](...)`.
+Oppure usa [link nominati][data_carpentry].
 
   
 
 </div>
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::::::::: challenge
 
-## Creating Lists in Markdown
+## Creare liste in Markdown
 
-Create a nested list in a Markdown cell in a notebook that looks like this:
+Crea un elenco annidato in una cella Markdown in un taccuino che assomiglia a questo:
 
-1. Get funding.
-2. Do work.
+1. Ricevi finanziamenti.
+2. Fate lavoro.
 
-- Design experiment.
-- Collect data.
-- Analyze.
+- Esperimento di design.
+- Raccogliere dati.
+- Analizza.
 
-3. Write up.
-4. Publish.
+3. Scrivetela.
+4. Pubblica.
 
-:::::::::::::::  solution
+::::::::::::::: soluzione
 
-## Solution
+## Soluzione
 
-This challenge integrates both the numbered list and bullet list.
-Note that the bullet list is indented 2 spaces so that it is inline with the items of the numbered list.
+Questa sfida integra sia la lista numerata che la lista proiettile.
+Si noti che l'elenco dei proiettili è indentato 2 spazi in modo che sia in linea con gli elementi dell'elenco numerato.
 
 ```
-1.  Get funding.
-2.  Do work.
-    *   Design experiment.
-    *   Collect data.
-    *   Analyze.
-3.  Write up.
-4.  Publish.
+1. Ottieni finanziamenti.
+2. Fai lavoro.
+    * Esperimento design.
+    * Raccogliere dati.
+    * Analizza.
+3. Scrivere
+4. Pubblica.
 ```
 
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::::::::: challenge
 
-## More Math
+## Più Matematica
 
-What is displayed when a Python cell in a notebook
-that contains several calculations is executed?
-For example, what happens when this cell is executed?
+Cosa viene visualizzato quando viene eseguita una cella Python in un taccuino
+che contiene diversi calcoli?
+Ad esempio, cosa succede quando questa cella viene eseguita?
 
 ```python
 7 * 3
 2 + 1
 ```
 
-:::::::::::::::  solution
+::::::::::::::: soluzione
 
-## Solution
+## Soluzione
 
-Python returns the output of the last calculation.
+Python restituisce l'output dell'ultimo calcolo.
 
 ```python
 3
@@ -553,32 +553,32 @@ Python returns the output of the last calculation.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::::::::: challenge
 
-## Change an Existing Cell from Code to Markdown
+## Cambia una cella esistente da codice a Markdown
 
-What happens if you write some Python in a code cell
-and then you switch it to a Markdown cell?
-For example,
-put the following in a code cell:
+Cosa succede se scrivi un po' di Python in una cella di codice
+e poi lo passi a una cella Markdown?
+Ad esempio,
+mette quanto segue in una cella di codice:
 
 ```python
 x = 6 * 7 + 12
 print(x)
 ```
 
-And then run it with <kbd>Shift</kbd>+<kbd>Return</kbd> to be sure that it works as a code cell.
-Now go back to the cell and use <kbd>Esc</kbd> then <kbd>m</kbd> to switch the cell to Markdown
-and "run" it with <kbd>Shift</kbd>+<kbd>Return</kbd>.
-What happened and how might this be useful?
+E poi eseguilo con <kbd>Shift</kbd>+<kbd>Return</kbd> per essere sicuro che funzioni come una cella di codice.
+Ora torna alla cella e usa <kbd>Esc</kbd> quindi <kbd>m</kbd> per cambiare la cella su Markdown
+e "eseguirla" con <kbd>Maiusc</kbd>+<kbd>Restituzione</kbd>.
+Cosa è successo e come potrebbe essere utile?
 
-:::::::::::::::  solution
+::::::::::::::: soluzione
 
-## Solution
+## Soluzione
 
-The Python code gets treated like Markdown text.
-The lines appear as if they are part of one contiguous paragraph.
-This could be useful to temporarily turn on and off cells in notebooks that get used for multiple purposes.
+Il codice Python viene trattato come testo Markdown.
+Le righe appaiono come se facessero parte di un paragrafo contiguo.
+Questo potrebbe essere utile per attivare temporaneamente e disattivare le celle nei notebook che vengono utilizzati per molteplici scopi.
 
 ```python
 x = 6 * 7 + 12 print(x)
@@ -588,52 +588,52 @@ x = 6 * 7 + 12 print(x)
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::::::::: challenge
 
-## Equations
+## Equazioni
 
-Standard Markdown (such as we're using for these notes) won't render equations,
-but the Notebook will.
-Create a new Markdown cell
-and enter the following:
+Markdown standard (come stiamo usando per queste note) non visualizzerà le equazioni,
+ma il notebook lo farà.
+Crea una nuova cella Markdown
+e inserisci quanto segue:
 
 ```
 $\sum_{i=1}^{N} 2^{-i} \approx 1$
 ```
 
-(It's probably easier to copy and paste.)
-What does it display?
-What do you think the underscore, `_`, circumflex, `^`, and dollar sign, `$`, do?
+(Probabilmente è più facile copiare e incollare.)
+Che cosa mostra?
+Che cosa pensi che il underscore, `_`, circumflex, `^`, e il segno del dollaro, `$`, fa?
 
-:::::::::::::::  solution
+::::::::::::::: soluzione
 
-## Solution
+## Soluzione
 
-The notebook shows the equation as it would be rendered from LaTeX equation syntax.
-The dollar sign, `$`, is used to tell Markdown that the text in between is a LaTeX equation.
-If you're not familiar with LaTeX,  underscore, `_`, is used for subscripts and circumflex, `^`, is used for superscripts.
-A pair of curly braces, `{` and `}`, is used to group text together so that the statement `i=1` becomes the subscript and `N` becomes the superscript.
-Similarly, `-i` is in curly braces to make the whole statement the superscript for `2`.
-`\sum` and `\approx` are LaTeX commands for "sum over" and "approximate" symbols.
+Il notebook mostra l'equazione come sarebbe resa dalla sintassi di equazione LaTeX.
+Il segno del dollaro, `$`, è usato per dire Markdown che il testo in mezzo è una equazione LaTeX.
+Se non hai familiarità con LaTeX, underscore, `_`, è usato per gli abbonamenti e circumflex, `^`, è usato per gli superscript.
+Un paio di parentesi graffe, `{` e `}`, è usato per raggruppare il testo insieme in modo che l'espressione `i=1` diventi il pedice e `N` diventi il superscript.
+Allo stesso modo, `-i` è nelle parentesi graffe per rendere l'intera dichiarazione l'apice per `2`.
+`\sum` e `\approx` sono comandi LaTeX per i simboli "sum over" e "approximate".
 
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Closing JupyterLab
+## Chiusura JupyterLab
 
-- From the Menu Bar select the "File" menu and then choose "Shut Down" at the bottom of the dropdown menu. You will be prompted to confirm that you wish to shutdown the JupyterLab server (don't forget to save your work!). Click "Shut Down" to shutdown the JupyterLab server.
-- To restart the JupyterLab server you will need to re-run the following command from a shell.
+- Dalla barra dei menu selezionare il menu "File" e quindi scegliere "Shut Down" nella parte inferiore del menu a discesa. Ti verrà chiesto di confermare che desideri spegnere il server JupyterLab (non dimenticare di salvare il tuo lavoro!). Fare clic su "Shut Down" per spegnere il server di JupyterLab.
+- Per riavviare il server JupyterLab è necessario eseguire nuovamente il seguente comando da una shell.
 
 ```
 $ jupyter lab
 ```
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::::::::: challenge
 
-## Closing JupyterLab
+## Chiusura JupyterLab
 
-Practice closing and restarting the JupyterLab server.
+Pratica la chiusura e il riavvio del server di JupyterLab.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -649,11 +649,11 @@ Practice closing and restarting the JupyterLab server.
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- Python scripts are plain text files.
-- Use the Jupyter Notebook for editing and running Python.
-- The Notebook has Command and Edit modes.
-- Use the keyboard and mouse to select and edit cells.
-- The Notebook will turn Markdown into pretty-printed documentation.
-- Markdown does most of what HTML does.
+- Gli script Python sono file di testo semplice.
+- Usa il notebook Jupyter per modificare ed eseguire Python.
+- Il notebook ha modalità di comando e modifica.
+- Utilizzare la tastiera e il mouse per selezionare e modificare le celle.
+- Il notebook trasformerà Markdown in una bella documentazione stampata.
+- Markdown fa la maggior parte di ciò che fa HTML.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
