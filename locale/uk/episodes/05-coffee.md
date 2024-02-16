@@ -1,14 +1,14 @@
 ---
-title: Morning Coffee
+title: Ранкова кави
 teaching: 0
 exercises: 0
 break: 15
 ---
 
-## Reflection exercise
+## Відбиття
 
-Over coffee, reflect on and discuss the following:
+Понад кавою, роздумувати та обговорювати наступне:
 
-- What are the different kinds of errors Python will report?
-- Did the code always produce the results you expected? If not, why?
-- Is there something we can do to prevent errors when we write code?
+- Якими є різні типи помилок в Python?
+- Чи код завжди отримував результати, на які ви очікували? Якщо ні, то чому?
+- Чи є щось, що ми можемо зробити для запобігання помилкам під час написання коду?
