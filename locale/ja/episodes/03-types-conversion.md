@@ -1,38 +1,38 @@
 ---
-title: Data Types and Type Conversion
+title: データ型と型変換
 teaching: 10
 exercises: 10
 ---
 
-::::::::::::::::::::::::::::::::::::::: objectives
+::::::::::::::::::::::::::::::::::
 
-- Explain key differences between integers and floating point numbers.
-- Explain key differences between numbers and character strings.
-- Use built-in functions to convert between integers, floating point numbers, and strings.
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
-
-:::::::::::::::::::::::::::::::::::::::: questions
-
-- What kinds of data do programs store?
-- How can I convert one type to another?
+- 整数と浮動小数点数のキー差を説明します。
+- 数字と文字列のキー差を説明します。
+- 整数、浮動小数点数、文字列を変換するには、組み込み関数を使用します。
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Every value has a type.
+::::::::::::::::::::::::::::::::::
 
-- Every value in a program has a specific type.
-- Integer (`int`): represents positive or negative whole numbers like 3 or -512.
-- Floating point number (`float`): represents real numbers like 3.14159 or -2.5.
-- Character string (usually called "string", `str`): text.
-  - Written in either single quotes or double quotes (as long as they match).
-  - The quote marks aren't printed when the string is displayed.
+- プログラムはどのようなデータを保存しますか?
+- ある型を別の型に変換するにはどうすればよいですか?
 
-## Use the built-in function `type` to find the type of a value.
+::::::::::::::::::::::::::::::::::::::::::::::::::
 
-- Use the built-in function `type` to find out what type a value has.
-- Works on variables as well.
-  - But remember: the _value_ has the type --- the _variable_ is just a label.
+## すべての値には型があります。
+
+- プログラムのすべての値には、特定の型があります。
+- 整数(`int`): 3 や -512 のような正または負の整数を表します。
+- 浮動小数点数 (`float`): 3.14159や-2.5のような実数を表します。
+- 文字列(通常は "string", `str`):テキスト。
+  - (一致する限り) シングルクォートまたはダブルクォートのいずれかで書かれています。
+  - 文字列を表示すると、引用符は印刷されません。
+
+## 組み込み関数 `type` を使用して、値の型を見つけます。
+
+- 組み込み関数 `type` を使って、値の型を調べましょう。
+- 変数でも動作します。
+  - しかし、覚えておいてください: _value_ は --- _variable_ という型を持っています。
 
 ```python
 print(type(52))
@@ -51,9 +51,9 @@ print(type(fitness))
 <class 'str'>
 ```
 
-## Types control what operations (or methods) can be performed on a given value.
+## 型は、与えられた値に対してどの操作(またはメソッド)を実行できるかを制御します。
 
-- A value's type determines what the program can do to it.
+- 値の型はプログラムに何ができるかを決定します。
 
 ```python
 print(5 - 3)
@@ -76,9 +76,9 @@ TypeError                                 Traceback (most recent call last)
 TypeError: unsupported operand type(s) for -: 'str' and 'str'
 ```
 
-## You can use the "+" and "\*" operators on strings.
+## 文字列に "+" と "\*" 演算子を使用できます。
 
-- "Adding" character strings concatenates them.
+- "Adding" 文字列を連結します。
 
 ```python
 full_name = 'Ahmed' + ' ' + 'Walsh'
@@ -89,8 +89,8 @@ print(full_name)
 Ahmed Walsh
 ```
 
-- Multiplying a character string by an integer _N_ creates a new string that consists of that character string repeated  _N_ times.
-  - Since multiplication is repeated addition.
+- 整数_N_で文字列を掛けると、その文字列が繰り返された _N_ 回からなる新しい文字列が生成されます。
+  - 乗算が繰り返されるため、乗算が繰り返されます。
 
 ```python
 separator = '=' * 10
@@ -101,9 +101,9 @@ print(separator)
 ==========
 ```
 
-## Strings have a length (but numbers don't).
+## 文字列には長さがあります(数字はありません)。
 
-- The built-in function `len` counts the number of characters in a string.
+- 組み込み関数 `len` は文字列内の文字数をカウントします。
 
 ```python
 print(len(full_name))
@@ -113,7 +113,7 @@ print(len(full_name))
 11
 ```
 
-- But numbers don't have a length (not even zero).
+- しかし、数字には長さがありません(ゼロでさえありません)。
 
 ```python
 print(len(52))
@@ -128,9 +128,9 @@ TypeError                                 Traceback (most recent call last)
 TypeError: object of type 'int' has no len()
 ```
 
-## Must convert numbers to strings or vice versa when operating on them. {#convert-numbers-and-strings}
+## 数値を文字列に、またはその逆に変換する必要があります。 {#convert-numbers-and-strings}
 
-- Cannot add numbers and strings.
+- 数字と文字列を追加できません。
 
 ```python
 print(1 + '2')
@@ -145,8 +145,8 @@ TypeError                                 Traceback (most recent call last)
 TypeError: unsupported operand type(s) for +: 'int' and 'str'
 ```
 
-- Not allowed because it's ambiguous: should `1 + '2'` be `3` or `'12'`?
-- Some types can be converted to other types by using the type name as a function.
+- 曖昧さがあるため許可されていません: `1 + '2'` は `3` か `12` でなければなりませんか？
+- 型名を関数として使用することで、型を他の型に変換することができます。
 
 ```python
 print(1 + int('2'))
@@ -158,10 +158,10 @@ print(str(1) + '2')
 12
 ```
 
-## Can mix integers and floats freely in operations.
+## 整数と浮動小数点を自由に組み合わせることができます。
 
-- Integers and floating-point numbers can be mixed in arithmetic.
-  - Python 3 automatically converts integers to floats as needed.
+- 整数と浮動小数点数は算術式で混在させることができます。
+  - Python 3 は必要に応じて整数を浮動小数点数に自動的に変換します。
 
 ```python
 print('half is', 1 / 2.0)
@@ -169,16 +169,16 @@ print('three squared is', 3.0 ** 2)
 ```
 
 ```output
-half is 0.5
-three squared is 9.0
+半分は 0.5
+三乗は 9.0
 ```
 
-## Variables only change value when something is assigned to them.
+## 変数は、何かがそれらに割り当てられたときにのみ値を変更します。
 
 - If we make one cell in a spreadsheet depend on another,
   and update the latter,
   the former updates automatically.
-- This does **not** happen in programming languages.
+- これはプログラミング言語で **起こりません**。
 
 ```python
 variable_one = 1
@@ -188,27 +188,26 @@ print('first is', variable_one, 'and second is', variable_two)
 ```
 
 ```output
-first is 2 and second is 5
+1つ目は2つ目と2つ目は5です
 ```
 
-- The computer reads the value of `variable_one` when doing the multiplication,
-  creates a new value, and assigns it to `variable_two`.
-- Afterwards, the value of `variable_two` is set to the new value and _not dependent on `variable_one`_ so its value
-  does not automatically change when `variable_one` changes.
+- は新しい値を生成し、それを `variable_one` に代入します。
+- 後 `variable_two`の値は新しい値に設定され、\*variable_one`に依存しないので、変数
+    は`variable_one\`が変更されたときに自動的に変化しません。
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::: チャレンジ
 
-## Fractions
+## 分数
 
-What type of value is 3.4?
-How can you find out?
+3.4とはどのような値ですか?
+どうやって見つけることができますか?
 
-:::::::::::::::  solution
+::::::::::::::::: solution
 
-## Solution
+## 解決策
 
-It is a floating-point number (often abbreviated "float").
-It is possible to find out by using the built-in function `type()`.
+これは浮動小数点数です(しばしば「float」と略されます)。
+組み込み関数 `type()` を使うことで見つけることができます。
 
 ```python
 print(type(3.4))
@@ -222,18 +221,17 @@ print(type(3.4))
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::: チャレンジ
 
-## Automatic Type Conversion
+## 自動型変換
 
-What type of value is 3.25 + 4?
+3.25 + 4の値はどのようなタイプですか?
 
-:::::::::::::::  solution
+::::::::::::::::: solution
 
-## Solution
+## 解決策
 
-It is a float:
-integers are automatically converted to floats as necessary.
+整数は、必要に応じて自動的にフロートに変換されます。
 
 ```python
 result = 3.25 + 4
@@ -248,48 +246,48 @@ print(result, 'is', type(result))
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::: チャレンジ
 
-## Choose a Type
+## タイプを選択
 
-What type of value (integer, floating point number, or character string)
-would you use to represent each of the following?  Try to come up with more than one good answer for each problem.  For example, in  # 1, when would counting days with a floating point variable make more sense than using an integer?
+値(整数、浮動小数点数、文字列)の種類
+は、以下のそれぞれを表すために使用しますか?  各問題について複数の良い答えを考え出してみてください。  例えば、# 1 では、浮動小数点変数で日数を数えると、整数を使うよりも意味があります。
 
-1. Number of days since the start of the year.
-2. Time elapsed from the start of the year until now in days.
-3. Serial number of a piece of lab equipment.
-4. A lab specimen's age
-5. Current population of a city.
-6. Average population of a city over time.
+1. 年の開始からの日数。
+2. 年の初めから今までの日数の経過時間。
+3. ラボ機器のシリアル番号。
+4. 研究所の標本の年齢
+5. 都市の現在の人口。
+6. 時間の経過とともに都市の平均人口。
 
-:::::::::::::::  solution
+::::::::::::::::: solution
 
-## Solution
+## 解決策
 
-The answers to the questions are:
+質問に対する答えは次のとおりです。
 
-1. Integer, since the number of days would lie between 1 and 365.
+1. 整数は、日数が1から365の間にあるので。
 
-2. Floating point, since fractional days are required
+2. 浮動小数点以下の日数が必要です
 
-3. Character string if serial number contains letters and numbers, otherwise integer if the serial number consists only of numerals
+3. シリアル番号が文字と数字を含む場合の文字列。それ以外の場合は、シリアル番号が数字のみである場合の整数。
 
-4. This will vary! How do you define a specimen's age? whole days since collection (integer)? date and time (string)?
+4. これは異なります! 標本の年齢はどのように定義しますか? コレクションから丸一日(整数)? 日付と時刻(弦)は?
 
-5. Choose floating point to represent population as large aggregates (eg millions), or integer to represent population in units of individuals.
+5. 個体単位で人口を表すための大きな集計(例えば百万円)、または整数として人口を表すために浮動小数点を選択してください。
 
-6. Floating point number, since an average is likely to have a fractional part.
+6. 浮動小数点数は、平均が小数部を持つ可能性があるためです。
 
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::: チャレンジ
 
-## Division Types
+## 分割タイプ
 
-In Python 3, the `//` operator performs integer (whole-number) floor division, the `/` operator performs floating-point
-division, and the `%` (or _modulo_) operator calculates and returns the remainder from integer division:
+Python 3 では、`//` 演算子は整数(全体番号)のフロア除算を実行します。`/` 演算子は浮動小数点
+除算を実行します。 そして、 `%` (または _modulo_) 演算子は、整数の除算から余りを計算して返します。
 
 ```python
 print('5 // 3:', 5 // 3)
@@ -299,7 +297,7 @@ print('5 % 3:', 5 % 3)
 
 ```output
 5 // 3: 1
-5 / 3: 1.6666666666666667
+5 / 3: 1.6666666667
 5 % 3: 2
 ```
 
@@ -308,15 +306,15 @@ and `num_per_survey` is the number that can take part in a single survey,
 write an expression that calculates the number of surveys needed
 to reach everyone once.
 
-:::::::::::::::  solution
+::::::::::::::::: solution
 
-## Solution
+## 解決策
 
 We want the minimum number of surveys that reaches everyone once, which is
-the rounded up value of `num_subjects/ num_per_survey`. This is
-equivalent to performing a floor division with `//` and adding 1. Before
-the division we need to subtract 1 from the number of subjects to deal with
-the case where `num_subjects` is evenly divisible by `num_per_survey`.
+the rounded up value of `num_subjects/ num_per_survey`.
+は床の除算を`//`で行い、1を足すのと同じです。
+の前に、
+を扱う対象の数から 1 を引く必要があります。この場合、`num_subjects` は `num_per_survey` で均等に割り当てられます。
 
 ```python
 num_subjects = 600
@@ -327,19 +325,19 @@ print(num_subjects, 'subjects,', num_per_survey, 'per survey:', num_surveys)
 ```
 
 ```output
-600 subjects, 42 per survey: 15
+600件の被験者、42件の被験者:15
 ```
 
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::: チャレンジ
 
-## Strings to Numbers
+## 文字列から数字へ
 
-Where reasonable, `float()` will convert a string to a floating point number,
-and `int()` will convert a floating point number to an integer:
+合理的な場合、`float()`は文字列を浮動小数点数に変換します。
+と`int()`は浮動小数点数を整数に変換します。
 
 ```python
 print("string to float:", float("3.4"))
@@ -351,10 +349,10 @@ string to float: 3.4
 float to int: 3
 ```
 
-If the conversion doesn't make sense, however, an error message will occur.
+しかし、変換が意味をなさない場合は、エラーメッセージが発生します。
 
 ```python
-print("string to float:", float("Hello world!"))
+print("string to float:", float("Hello world!))
 ```
 
 ```error
@@ -366,23 +364,23 @@ ValueError                                Traceback (most recent call last)
 ValueError: could not convert string to float: 'Hello world!'
 ```
 
-Given this information, what do you expect the following program to do?
+この情報を考えると、次のプログラムがどうなると思いますか?
 
-What does it actually do?
+実際に何をするのか？
 
-Why do you think it does that?
+なぜそうすると思いますか？
 
 ```python
-print("fractional string to int:", int("3.4"))
+print("fracional string to int:", int("3.4"))
 ```
 
-:::::::::::::::  solution
+::::::::::::::::: solution
 
-## Solution
+## 解決策
 
-What do you expect this program to do? It would not be so unreasonable to expect the Python 3 `int` command to
-convert the string "3.4" to 3.4 and an additional type conversion to 3. After all, Python 3 performs a lot of other
-magic - isn't that part of its charm?
+このプログラムで何ができると思いますか？ Python 3 の `int` コマンドを
+に変換するのはそれほど不合理ではありません。 " から 3.4 へ、そして 3 への追加型変換。 結局のところ、Python 3は他の多くの
+マジックを実行します。それはその魅力の一部ではありませんか？
 
 ```python
 int("3.4")
@@ -396,8 +394,8 @@ ValueError                                Traceback (most recent call last)
 ValueError: invalid literal for int() with base 10: '3.4'
 ```
 
-However, Python 3 throws an error. Why? To be consistent, possibly. If you ask Python to perform two consecutive
-typecasts, you must convert it explicitly in code.
+しかし、Python 3 はエラーを投げます。 なぜでしょう？ 一貫性を持つために、おそらく。 2つ連続した
+型キャストを実行するようPythonに求める場合は、コード内で明示的に変換する必要があります。
 
 ```python
 int(float("3.4"))
@@ -411,12 +409,12 @@ int(float("3.4"))
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::: チャレンジ
 
-## Arithmetic with Different Types
+## 異なる種類の算術演算を行う
 
-Which of the following will return the floating point number `2.0`?
-Note: there may be more than one right answer.
+浮動小数点数`2.0`を返すのは、次のうちどれですか？
+注意: 正解が複数ある場合があります。
 
 ```python
 first = 1.0
@@ -431,25 +429,25 @@ third = "1.1"
 5. `int(first) + int(float(third))`
 6. `2.0 * second`
 
-:::::::::::::::  solution
+::::::::::::::::: solution
 
-## Solution
+## 解決策
 
-Answer: 1 and 4
+答え: 1 と 4
 
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::: チャレンジ
 
-## Complex Numbers
+## 複素番号
 
-Python provides complex numbers,
-which are written as `1.0+2.0j`.
-If `val` is a complex number,
-its real and imaginary parts can be accessed using _dot notation_
-as `val.real` and `val.imag`.
+Pythonには複雑な数字
+が用意されており、これは`1.0+2.0j`として記述されています。
+`val`が複雑な数字の場合、
+実数と虚数の部分は`val.real`と`val.imag`として_dot notation_
+を使用してアクセスできます。
 
 ```python
 a_complex_number = 6 + 2j
@@ -462,23 +460,23 @@ print(a_complex_number.imag)
 2.0
 ```
 
-1. Why do you think Python uses `j` instead of `i` for the imaginary part?
-2. What do you expect `1 + 2j + 3` to produce?
-3. What do you expect `4j` to be?  What about `4 j` or `4 + j`?
+1. なぜPythonは架空の部分に`i`の代わりに`j`を使用していると思いますか？
+2. `1 + 2j + 3` の生産量は？
+3. `4j`は何を期待しますか？  `4 j`または`4 + j`については？
 
-:::::::::::::::  solution
+::::::::::::::::: solution
 
-## Solution
+## 解決策
 
-1. Standard mathematics treatments typically use `i` to denote an imaginary number. However, from media reports it
-   was an early convention established from electrical engineering that now presents a technically expensive area to
-   change. Stack Overflow provides additional explanation and
+1. 標準的な数学治療では、通常、虚数を表すために `i` を使用します。 しかし、メディアからの報告では、
+   は電気工学から設立された初期の大会であり、今や技術的に高価な領域を
+   変化にもたらします。 Stack Overflow は追加の説明と
    discussion.
 
 2. `(4+2j)`
 
-3. `4j` and `Syntax Error: invalid syntax`. In the latter cases, `j` is considered a variable and the statement
-   depends on if `j` is defined and if so, its assigned value.
+3. `4j` と `Syntax Error: invalid syntax` 後者の場合、`j`は変数と見なされ、
+   文は`j`が定義されているかどうかに依存します。
 
 :::::::::::::::::::::::::
 
@@ -486,13 +484,13 @@ print(a_complex_number.imag)
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- Every value has a type.
-- Use the built-in function `type` to find the type of a value.
-- Types control what operations can be done on values.
-- Strings can be added and multiplied.
-- Strings have a length (but numbers don't).
-- Must convert numbers to strings or vice versa when operating on them.
-- Can mix integers and floats freely in operations.
-- Variables only change value when something is assigned to them.
+- すべての値には型があります。
+- 組み込み関数 `type` を使用して、値の型を見つけます。
+- 型は、値に対して行うことができる操作を制御します。
+- 文字列を追加し、掛けることができます。
+- 文字列には長さがあります(数字はありません)。
+- 数値を文字列に、またはその逆に変換する必要があります。
+- 整数と浮動小数点を自由に組み合わせることができます。
+- 変数は、何かがそれらに割り当てられたときにのみ値を変更します。
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
