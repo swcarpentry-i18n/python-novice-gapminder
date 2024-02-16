@@ -1,38 +1,38 @@
 ---
-title: Reading Tabular Data into DataFrames
+title: データフレームへの表形式データの読み込み中
 teaching: 10
 exercises: 10
 ---
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- Import the Pandas library.
-- Use Pandas to load a simple CSV data set.
-- Get some basic information about a Pandas DataFrame.
+- パンダライブラリをインポートします。
+- Pandasを使用して単純なCSVデータセットをロードします。
+- パンダデータフレームに関する基本情報を取得します。
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::: questions
+::::::::::::::::::::::::::::::::::
 
-- How can I read tabular data?
+- 表形式のデータはどのように読み取れますか?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Use the Pandas library to do statistics on tabular data.
+## 表形式のデータに関する統計を行うには、Pandasライブラリを使用します。
 
-- [Pandas](https://pandas.pydata.org/) is a widely-used Python library for statistics, particularly on tabular data.
-- Borrows many features from R's dataframes.
-  - A 2-dimensional table whose columns have names
-    and potentially have different data types.
-- Load Pandas with `import pandas as pd`. The alias `pd` is commonly used to refer to the Pandas library in code.
-- Read a Comma Separated Values (CSV) data file with `pd.read_csv`.
-  - Argument is the name of the file to be read.
-  - Returns a dataframe that you can assign to a variable
+- [Pandas](https://pandas.pydata.org/) は統計のために広く使われているPythonライブラリで、特に表形式のデータです。
+- Rのデータフローから多くの機能を生成します。
+  - 列名が
+    で、異なるデータ型を持つ可能性がある2次元テーブル。
+- `import pandas as pd` で Pandas をロードします。 エイリアスの`pd`は、コード内でパンダのライブラリを参照するために一般的に使用されます。
+- `pd.read_csv` でカンマ区切りの値(CSV)データファイルを読み込みます。
+  - 引数は、読み込まれるファイルの名前です。
+  - 変数に割り当てられるデータフローを返します。
 
 ```python
-import pandas as pd
+import pandas pd
 
-data_oceania = pd.read_csv('data/gapminder_gdp_oceania.csv')
+data_oceania = pd.read_csv('data/gapminder_gdp_occsv')
 print(data_oceania)
 ```
 
@@ -54,33 +54,33 @@ print(data_oceania)
 1     25185.00911
 ```
 
-- The columns in a dataframe are the observed variables, and the rows are the observations.
-- Pandas uses backslash `\` to show wrapped lines when output is too wide to fit the screen.
-- Using descriptive dataframe names helps us distinguish between multiple dataframes so we won't accidentally overwrite a dataframe or read from the wrong one.
+- データフローの列は観測された変数で、行は観測結果です。
+- Pandasはバックスラッシュ`\`を使用して、出力が幅が広すぎて画面に合わない場合にラップされた行を表示します。
+- 記述的なデータフレーム名を使用すると、複数のデータフレームを区別するのに役立ちます。そのため、誤ってデータフレームを上書きしたり、間違ったデータから読み取ったりすることはありません。
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## File Not Found
+## ファイルが見つかりません
 
-Our lessons store their data files in a `data` sub-directory,
-which is why the path to the file is `data/gapminder_gdp_oceania.csv`.
+私たちのレッスンでは、データファイルを `data` サブディレクトリ
+に格納しています。このため、ファイルへのパスは `data/gapminder_gdp_occsv` です。
 If you forget to include `data/`,
 or if you include it but your copy of the file is somewhere else,
 you will get a [runtime error](04-built-in.md)
 that ends with a line like this:
 
 ```error
-FileNotFoundError: [Errno 2] No such file or directory: 'data/gapminder_gdp_oceania.csv'
+FileNotFoundError: [Errno 2] そのようなファイルまたはディレクトリがありません: 'data/gapminder_gdp_occsv'
 ```
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Use `index_col` to specify that a column's values should be used as row headings.
+## 行の見出しとして使用する列の値を指定するには、 `index_col` を使用します。
 
-- Row headings are numbers (0 and 1 in this case).
-- Really want to index by country.
-- Pass the name of the column to `read_csv` as its `index_col` parameter to do this.
-- Naming the dataframe `data_oceania_country` tells us which region the data includes (`oceania`) and how it is indexed (`country`).
+- 行の見出しは数字（この場合は0と1）です。
+- 本当に国別にインデックスを作成します。
+- カラムの名前を `index_col` パラメータとして `read_csv` に渡します。
+- data_oceania_countryという名前は、データに含まれる領域(`oceania`)とインデックス(`country`)を示します。
 
 ```python
 data_oceania_country = pd.read_csv('data/gapminder_gdp_oceania.csv', index_col='country')
@@ -104,7 +104,7 @@ Australia       23424.76683     26997.93657     30687.75473     34435.36744
 New Zealand     18363.32494     21050.41377     23189.80135     25185.00911
 ```
 
-## Use the `DataFrame.info()` method to find out more about a dataframe.
+## `DataFrame.info()`メソッドを使用して、データフローの詳細を調べます。
 
 ```python
 data_oceania_country.info()
@@ -130,18 +130,18 @@ dtypes: float64(12)
 memory usage: 208.0+ bytes
 ```
 
-- This is a `DataFrame`
-- Two rows named `'Australia'` and `'New Zealand'`
-- Twelve columns, each of which has two actual 64-bit floating point values.
-  - We will talk later about null values, which are used to represent missing observations.
-- Uses 208 bytes of memory.
+- これは「DataFrame」です
+- `オーストラリア'`と\`ニュージーランド'という2つの行
+- 12 列には、それぞれ 2 つの実際の 64 ビット浮動小数点値があります。
+  - 欠落している観察記録を表すために使用される null 値については後で説明します。
+- 208バイトのメモリを使用します。
 
-## The `DataFrame.columns` variable stores information about the dataframe's columns.
+## 変数`DataFrame.columns`は、データフローの列に関する情報を格納します。
 
-- Note that this is data, _not_ a method.  (It doesn't have parentheses.)
-  - Like `math.pi`.
-  - So do not use `()` to try to call it.
-- Called a _member variable_, or just _member_.
+- これはデータ、_not_ メソッドであることに注意してください。  （括弧はありません）
+  - `math.pi`のように。
+  - ですから、`()`を呼び出そうとしないでください。
+- _メンバー変数_または_メンバー_と呼ばれます。
 
 ```python
 print(data_oceania_country.columns)
@@ -154,11 +154,11 @@ Index(['gdpPercap_1952', 'gdpPercap_1957', 'gdpPercap_1962', 'gdpPercap_1967',
       dtype='object')
 ```
 
-## Use `DataFrame.T` to transpose a dataframe.
+## データフローを移調するには、`DataFrame.T` を使用します。
 
-- Sometimes want to treat columns as rows and vice versa.
-- Transpose (written `.T`) doesn't copy the data, just changes the program's view of it.
-- Like `columns`, it is a member variable.
+- 列を行として扱いたい場合とその逆を扱いたい場合があります。
+- Transpose (`.T`と書かれた) はデータをコピーせず、プログラムのビューを変更するだけです。
+- `columns` と同様に、メンバ変数です。
 
 ```python
 print(data_oceania_country.T)
@@ -180,10 +180,10 @@ gdpPercap_2002  30687.75473  23189.80135
 gdpPercap_2007  34435.36744  25185.00911
 ```
 
-## Use `DataFrame.describe()` to get summary statistics about data.
+## データに関するサマリ統計を取得するには、`DataFrame.describe()`を使用してください。
 
-`DataFrame.describe()` gets the summary statistics of only the columns that have numerical data.
-All other columns are ignored, unless you use the argument `include='all'`.
+`DataFrame.describe()` は、数値データを持つ列のみの要約統計量を取得します。
+引数`include='all'`を使用しない限り、他のカラムはすべて無視されます。
 
 ```python
 print(data_oceania_country.describe())
@@ -221,25 +221,24 @@ min      18363.324940    21050.413770    23189.801350    25185.009110
 max      23424.766830    26997.936570    30687.754730    34435.367440
 ```
 
-- Not particularly useful with just two records,
-  but very helpful when there are thousands.
+- 2つのレコードだけでは特に有用ではありませんが、何千ものレコードがある場合に非常に役立ちます。
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::: チャレンジ
 
-## Reading Other Data
+## 他のデータの読み取り
 
 Read the data in `gapminder_gdp_americas.csv`
 (which should be in the same directory as `gapminder_gdp_oceania.csv`)
 into a variable called `data_americas`
 and display its summary statistics.
 
-:::::::::::::::  solution
+::::::::::::::::: solution
 
-## Solution
+## 解決策
 
-To read in a CSV, we use `pd.read_csv` and pass the filename `'data/gapminder_gdp_americas.csv'` to it.
-We also once again pass the column name `'country'` to the parameter `index_col` in order to index by country.
-The summary statistics can be displayed with the `DataFrame.describe()` method.
+CSV で読み込むには、 `pd.read_csv` を使い、ファイル名 `'data/gapminder_gdp_americas.csv'` を渡します。
+また、国ごとにインデックスを作成するために、 `index_col` パラメータに `'country'` というカラム名を再度渡します。
+要約統計量は `DataFrame.describe()` メソッドで表示できます。
 
 ```python
 data_americas = pd.read_csv('data/gapminder_gdp_americas.csv', index_col='country')
@@ -250,26 +249,26 @@ data_americas.describe()
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::: チャレンジ
 
-## Inspecting Data
+## データの検査
 
-After reading the data for the Americas,
-use `help(data_americas.head)` and `help(data_americas.tail)`
-to find out what `DataFrame.head` and `DataFrame.tail` do.
+アメリカ大陸のデータを読み取った後、
+`help(data_americas.head)` と `help(data_americas.tail)`
+を使用して、`DataFrame.head` と `DataFrame.tail` の動作を確認します。
 
-1. What method call will display the first three rows of this data?
-2. What method call will display the last three columns of this data?
-   (Hint: you may need to change your view of the data.)
+1. どのメソッドの呼び出しでこのデータの最初の3行を表示しますか？
+2. このデータの最後の3列を表示するメソッドの呼び出しは何ですか？
+   (ヒント:データのビューを変更する必要がある場合があります。
 
-:::::::::::::::  solution
+::::::::::::::::: solution
 
-## Solution
+## 解決策
 
-1. We can check out the first five rows of `data_americas` by executing `data_americas.head()`
-   which lets us view the beginning of the DataFrame. We can specify the number of rows we wish
-   to see by specifying the parameter `n` in our call to `data_americas.head()`.
-   To view the first three rows, execute:
+1. DataFrameの始まりを見ることができる`data_americas`
+   を実行することで、 `data_americas` の最初の5行を確認することができます。 `data_americas.head()`への呼び出しでパラメータ`n`を指定することで、
+   の行数を指定することができます。
+   最初の3行を表示するには、次を実行します。
 
 ```python
 data_americas.head(n=3)
@@ -301,17 +300,17 @@ Bolivia       3822.137084
 Brazil        9065.800825
 ```
 
-2. To check out the last three rows of `data_americas`, we would use the command,
-   `americas.tail(n=3)`, analogous to `head()` used above. However, here we want to look at
-   the last three columns so we need to change our view and then use `tail()`. To do so, we
-   create a new DataFrame in which rows and columns are switched:
+2. `data_americas` の最後の3行を調べるには、
+   `americas.tail(n=3)`というコマンドを使います。 しかし、ここでは最後の3つの列を
+   見てみたいので、ビューを変更し、`tail()`を使用します。 これを行うには、
+   行と列が切り替わる新しいDataFrameを作成します。
 
 ```python
 americas_flipped = data_americas.T
 ```
 
-We can then view the last three columns of `americas` by viewing the last three rows
-of `americas_flipped`:
+`americas_flipped`の最後の3つの列
+を見て、`americas`の最後の3つの列を見ることができます。
 
 ```python
 americas_flipped.tail(n=3)
@@ -339,49 +338,49 @@ gdpPercap_2002             11460.6       39097.1     7727   8605.05
 gdpPercap_2007             18008.5       42951.7  10611.5   11415.8
 ```
 
-This shows the data that we want, but we may prefer to display three columns instead of three rows,
-so we can flip it back:
+これは私たちが望むデータを示していますが、3行ではなく3列を表示することを好むかもしれません。
+を反転できるようにします:
 
 ```python
-americas_flipped.tail(n=3).T    
+americas_flipped.tail(n=3)。    
 ```
 
-**Note:** we could have done the above in a single line of code by 'chaining' the commands:
+**注意：** コマンドを「チェーン」することで、上記のコードを1行で実行できます。
 
 ```python
-data_americas.T.tail(n=3).T
+data_Americas.T.tail(n=3).T
 ```
 
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::: チャレンジ
 
-## Reading Files in Other Directories
+## 他のディレクトリ内のファイルを読み込み中
 
 The data for your current project is stored in a file called `microbes.csv`,
 which is located in a folder called `field_data`.
-You are doing analysis in a notebook called `analysis.ipynb`
-in a sibling folder called `thesis`:
+`thesis`と呼ばれる兄弟フォルダの`analysis.ipynb`
+というノートブックで解析を行っています:
 
 ```output
 your_home_directory
 +-- field_data/
-|   +-- microbes.csv
+| +-- microbes.csv
 +-- thesis/
     +-- analysis.ipynb
 ```
 
-What value(s) should you pass to `read_csv` to read `microbes.csv` in `analysis.ipynb`?
+`analysis.ipynb`で`microbes.csv`を読み取るには、どのような値を`read_csv`に渡すべきですか？
 
-:::::::::::::::  solution
+::::::::::::::::: solution
 
-## Solution
+## 解決策
 
-We need to specify the path to the file of interest in the call to `pd.read_csv`. We first need to 'jump' out of
-the folder `thesis` using '../' and then into the folder `field_data` using 'field_data/'. Then we can specify the filename \`microbes.csv.
-The result is as follows:
+`pd.read_csv` を呼び出す際に、関心のあるファイルへのパスを指定する必要があります。 We first need to 'jump' out of
+the folder `thesis` using '../' and then into the folder `field_data` using 'field_data/'. 次に、filename \`microbes.csv を指定します。
+結果は以下のとおりです。
 
 ```python
 data_microbes = pd.read_csv('../field_data/microbes.csv')
@@ -391,36 +390,35 @@ data_microbes = pd.read_csv('../field_data/microbes.csv')
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::: チャレンジ
 
-## Writing Data
+## データの書き込み
 
-As well as the `read_csv` function for reading data from a file,
-Pandas provides a `to_csv` function to write dataframes to files.
-Applying what you've learned about reading from files,
-write one of your dataframes to a file called `processed.csv`.
-You can use `help` to get information on how to use `to_csv`.
+Pandasはファイルからデータを読み込むための`read_csv`関数と同様に、データをファイルに書き込むための`to_csv`関数を提供します。
+ファイルから読み取ることについて学んだことを適用すると、
+は `processed.csv` という名前のファイルにデータフレームを書き込みます。
+`to_csv` の使い方については、 `help` を使うことができます。
 
-:::::::::::::::  solution
+::::::::::::::::: solution
 
-## Solution
+## 解決策
 
-In order to write the DataFrame `data_americas` to a file called `processed.csv`, execute the following command:
+`processed.csv`というファイルにDataFrame`data_americas`を書き込むには、次のコマンドを実行します。
 
 ```python
 data_americas.to_csv('processed.csv')
 ```
 
-For help on `read_csv` or `to_csv`, you could execute, for example:
+`read_csv` または `to_csv` のヘルプについては、次のように実行できます。
 
 ```python
 help(data_americas.to_csv)
 help(pd.read_csv)
 ```
 
-Note that `help(to_csv)` or `help(pd.to_csv)` throws an error! This is due to the fact that `to_csv` is not a global Pandas function, but
-a member function of DataFrames. This means you can only call it on an instance of a DataFrame
-e.g., `data_americas.to_csv` or `data_oceania.to_csv`
+`help(to_csv)` または `help(pd.to_csv)` はエラーを投げます。 これは、`to_csv` がグローバルパンダ関数ではなく、DataFrameのメンバ関数である
+が原因です。 これは、DataFrame
+のインスタンス上でのみ呼び出すことができることを意味します。例えば、 `data_americas.to_csv` や `data_occsv`
 
 :::::::::::::::::::::::::
 
@@ -428,11 +426,11 @@ e.g., `data_americas.to_csv` or `data_oceania.to_csv`
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- Use the Pandas library to get basic statistics out of tabular data.
-- Use `index_col` to specify that a column's values should be used as row headings.
-- Use `DataFrame.info` to find out more about a dataframe.
-- The `DataFrame.columns` variable stores information about the dataframe's columns.
-- Use `DataFrame.T` to transpose a dataframe.
-- Use `DataFrame.describe` to get summary statistics about data.
+- 表形式のデータから基本的な統計を取得するには、Pandasライブラリを使用します。
+- 行の見出しとして使用する列の値を指定するには、 `index_col` を使用します。
+- `DataFrame.info` を使用して、データフローについての詳細を調べます。
+- 変数`DataFrame.columns`は、データフローの列に関する情報を格納します。
+- データフローを移調するには、`DataFrame.T` を使用します。
+- データに関するサマリ統計を取得するには、`DataFrame.describe` を使用してください。
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
