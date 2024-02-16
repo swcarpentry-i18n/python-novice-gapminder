@@ -1,5 +1,5 @@
 ---
-title: Further Exercises
+title: Додаткові вправи
 ---
 
-FIXME: exercises that don't fit into the regular schedule.
+FIXME: вправ, які не вписуються у регулярний графік.
