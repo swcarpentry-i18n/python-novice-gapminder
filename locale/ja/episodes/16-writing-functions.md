@@ -1,43 +1,43 @@
 ---
-title: Writing Functions
+title: 書き込み関数
 teaching: 10
 exercises: 15
 ---
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- Explain and identify the difference between function definition and function call.
-- Write a function that takes a small, fixed number of arguments and produces a single result.
+- 関数定義と関数呼び出しの違いを説明し、特定します。
+- 定数の引数を取って単一の結果を生成する関数を書く。
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::: questions
+::::::::::::::::::::::::::::::::::
 
-- How can I create my own functions?
+- 自分の関数を作成するにはどうすればいいですか?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Break programs down into functions to make them easier to understand.
+## プログラムを関数に分解すると、理解しやすくなります。
 
-- Human beings can only keep a few items in working memory at a time.
-- Understand larger/more complicated ideas by understanding and combining pieces.
-  - Components in a machine.
-  - Lemmas when proving theorems.
-- Functions serve the same purpose in programs.
-  - _Encapsulate_ complexity so that we can treat it as a single "thing".
-- Also enables _re-use_.
-  - Write one time, use many times.
+- 人間は一度に作業記憶に少数の項目しか残せない。
+- 作品を理解し、組み合わせることで、より大きな/より複雑なアイデアを理解します。
+  - 機械のコンポーネント。
+  - 定理を証明するときのレマ.
+- 関数はプログラムでも同じ目的を果たします。
+  - _単一の「もの」として扱うことができるように、複雑さ_をカプセル化します。
+- _再使用_ も有効にします。
+  - 一度書いて、何度も使ってください。
 
-## Define a function using `def` with a name, parameters, and a block of code.
+## 名前、パラメータ、コードのブロックで `def` を使って関数を定義します。
 
-- Begin the definition of a new function with `def`.
-- Followed by the name of the function.
-  - Must obey the same rules as variable names.
-- Then _parameters_ in parentheses.
-  - Empty parentheses if the function doesn't take any inputs.
-  - We will discuss this in detail in a moment.
-- Then a colon.
-- Then an indented block of code.
+- `def` で新しい関数の定義を開始します。
+- 関数の名前が続きます。
+  - 変数名と同じルールに従わなければなりません。
+- 次に、括弧内の _パラメータ_ です。
+  - 関数が入力を受け取らない場合は、空の括弧を使用します。
+  - これについては後ほど詳しくご説明します。
+- それからコロン。
+- 次に、コードのインデントされたブロック。
 
 ```python
 def print_greeting():
@@ -46,32 +46,32 @@ def print_greeting():
     print('Right?')
 ```
 
-## Defining a function does not run it.
+## 関数を定義しても、実行されません。
 
-- Defining a function does not run it.
-  - Like assigning a value to a variable.
-- Must call the function to execute the code it contains.
+- 関数を定義しても、実行されません。
+  - 変数に値を割り当てるのと同じです。
+- コードを実行するためには関数を呼び出さなければなりません。
 
 ```python
 print_greeting()
 ```
 
 ```output
-Hello!
+こんにちは！
 ```
 
-## Arguments in a function call are matched to its defined parameters.
+## 関数呼び出し中の引数は、定義されたパラメータにマッチします。
 
-- Functions are most useful when they can operate on different data.
-- Specify _parameters_ when defining a function.
-  - These become variables when the function is executed.
-  - Are assigned the arguments in the call (i.e., the values passed to the function).
-  - If you don't name the arguments when using them in the call, the arguments will be matched to
-    parameters in the order the parameters are defined in the function.
+- 関数は、異なるデータで操作できる場合に最も便利です。
+- 関数を定義する際に _パラメータ_ を指定します。
+  - これらは関数が実行されると変数になります。
+  - 呼び出しで引数が割り当てられます (つまり、関数に渡された値)。
+  - 呼び出し時に引数に名前を付けない場合。 引数は、関数内でパラメータが定義される順序で、
+    パラメータにマッチします。
 
 ```python
 def print_date(year, month, day):
-    joined = str(year) + '/' + str(month) + '/' + str(day)
+    joined = str(year) + '/' + str(month) + '/' + str(d)
     print(joined)
 
 print_date(1871, 3, 19)
@@ -98,13 +98,13 @@ print_date(month=3, day=19, year=1871)
   `()` contains the ingredients for the function
   while the body contains the recipe.
 
-## Functions may return a result to their caller using `return`.
+## 関数は `return` を使って結果を呼び出すことができます。
 
-- Use `return ...` to give a value back to the caller.
-- May occur anywhere in the function.
-- But functions are easier to understand if `return` occurs:
-  - At the start to handle special cases.
-  - At the very end, with a final result.
+- 呼び出し元に戻すには、`return ...` を使います。
+- 関数内のどこにでも発生する可能性があります。
+- 関数は `return` が起きるとわかりやすくなります。
+  - 特別なケースを処理する開始時に。
+  - 最後に、最終的な結果を持つ。
 
 ```python
 def average(values):
@@ -115,11 +115,11 @@ def average(values):
 
 ```python
 a = average([1, 3, 4])
-print('average of actual values:', a)
+print('実際の値の平均:', a)
 ```
 
 ```output
-average of actual values: 2.6666666666666665
+実際の値の平均：2.666666666665
 ```
 
 ```python
@@ -127,11 +127,11 @@ print('average of empty list:', average([]))
 ```
 
 ```output
-average of empty list: None
+空のリストの平均: なし
 ```
 
-- Remember: [every function returns something](04-built-in.md).
-- A function that doesn't explicitly `return` a value automatically returns `None`.
+- 忘れないでください: format@@0(04-built-in.md)
+- 値を明示的に `return` しない関数は、自動的に `None` を返します。
 
 ```python
 result = print_date(1871, 3, 19)
@@ -140,19 +140,19 @@ print('result of call is:', result)
 
 ```output
 1871/3/19
-result of call is: None
+呼び出しの結果: なし
 ```
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::: チャレンジ
 
-## Identifying Syntax Errors
+## 構文エラーの特定
 
-1. Read the code below and try to identify what the errors are
-   _without_ running it.
-2. Run the code and read the error message.
-   Is it a `SyntaxError` or an `IndentationError`?
-3. Fix the error.
-4. Repeat steps 2 and 3 until you have fixed all the errors.
+1. 以下のコードを読んで、
+   _実行しない_エラーを特定してみてください。
+2. コードを実行し、エラーメッセージを読みます。
+   `SyntaxError` か `IndentationError` ですか？
+3. エラーを修正します。
+4. すべてのエラーを修正するまで、ステップ2と3を繰り返します。
 
 ```python
 def another_function
@@ -161,9 +161,9 @@ def another_function
   print("So they are usually not too hard to fix.")
 ```
 
-:::::::::::::::  solution
+::::::::::::::::: solution
 
-## Solution
+## 解決策
 
 ```python
 def another_function():
@@ -176,28 +176,28 @@ def another_function():
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::: チャレンジ
 
-## Definition and Use
+## 定義と使用
 
-What does the following program print?
+以下のプログラムは何を印刷しますか?
 
 ```python
 def report(pressure):
-    print('pressure is', pressure)
+    print('pression', pressure)
 
 print('calling', report, 22.5)
 ```
 
-:::::::::::::::  solution
+::::::::::::::::: solution
 
-## Solution
+## 解決策
 
 ```output
-calling <function report at 0x7fd128ff1bf8> 22.5
+<function report at 0x7fd128ff1bf8> 22.5 の呼び出し中
 ```
 
-A function call always needs parenthesis, otherwise you get memory address of the function object. So, if we wanted to call the function named report, and give it the value 22.5 to report on, we could have our function call as follows
+関数呼び出しには常に括弧が必要です。そうでなければ、関数オブジェクトのメモリアドレスを取得します。 そのため、reportという名前の関数を呼び出して、値を22にします。 報告するには、次のような関数呼び出しをすることができます
 
 ```python
 print("calling")
@@ -205,84 +205,84 @@ report(22.5)
 ```
 
 ```output
-calling
-pressure is 22.5
+呼び出し元の
+圧力は22.5です
 ```
 
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::: チャレンジ
 
-## Order of Operations
+## 操作順
 
-1. What's wrong in this example?
+1. この例では何が間違っていますか?
 
 ```python
 result = print_time(11, 37, 59)
 
-def print_time(hour, minute, second):
+def print_time(hur, minut, second):
    time_string = str(hour) + ':' + str(minute) + ':' + str(second)
    print(time_string)
 ```
 
-2. After fixing the problem above, explain why running this example code:
+2. 上記の問題を解決した後、このサンプルコードを実行する理由を説明します:
 
 ```python
 result = print_time(11, 37, 59)
 print('result of call is:', result)
 ```
 
-gives this output:
+は、この出力を返します。
 
 ```output
 11:37:59
-result of call is: None
+呼び出しの結果は: なし
 ```
 
-3. Why is the result of the call `None`?
+3. `None` の呼び出しの結果はなぜですか？
 
-:::::::::::::::  solution
+::::::::::::::::: solution
 
-## Solution
+## 解決策
 
-1. The problem with the example is that the function `print_time()` is defined _after_ the call to the function is made. Python
+1. この例の問題は、関数 `print_time()` が関数の呼び出しが行われた後に\*定義されていることです。 Python
    doesn't know how to resolve the name `print_time` since it hasn't been defined yet and will raise a `NameError` e.g.,
    `NameError: name 'print_time' is not defined`
 
-2. The first line of output `11:37:59` is printed by the first line of code, `result = print_time(11, 37, 59)` that binds the value
-   returned by invoking `print_time` to the variable `result`. The second line is from the second print call to print the contents
-   of the `result` variable.
+2. `11:37:59`の最初の行は、`result = print_time(11, 37) のコードの最初の行で表示されます。 59)` 変数`result` に `print_time` を呼び出して返される値
+   をバインドします。 2行目は、`result`変数の内容
+   を出力するための2行目です。
 
-3. `print_time()` does not explicitly `return` a value, so it automatically returns `None`.
+3. `print_time()`は明示的に値を返さないため、自動的に`None`を返します。
 
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::: チャレンジ
 
-## Encapsulation
+## カプセル化
 
-Fill in the blanks to create a function that takes a single filename as an argument,
-loads the data in the file named by the argument,
-and returns the minimum value in that data.
+空白を埋めて、引数としてファイル名を1つだけ取る関数を作りましょう。
+は引数
+で指定されたファイルにデータをロードし、そのデータの最小値を返します。
 
 ```python
-import pandas as pd
+import pandas pd
 
 def min_in_data(____):
     data = ____
     return ____
 ```
 
-:::::::::::::::  solution
+::::::::::::::::: solution
 
-## Solution
+## 解決策
 
 ```python
-import pandas as pd
+import pandas pd
 
 def min_in_data(filename):
     data = pd.read_csv(filename)
@@ -293,24 +293,24 @@ def min_in_data(filename):
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::: チャレンジ
 
-## Find the First
+## 最初を見つける
 
-Fill in the blanks to create a function that takes a list of numbers as an argument
-and returns the first negative value in the list.
-What does your function do if the list is empty? What if the list has no negative numbers?
+空白を入力して、引数
+として数値のリストを取得し、リストの最初の負の値を返す関数を作成します。
+リストが空の場合、関数はどうしますか? 負の数がリストにない場合はどうなりますか?
 
 ```python
 def first_negative(values):
     for v in ____:
-        if ____:
+        if __:
             return ____
 ```
 
-:::::::::::::::  solution
+::::::::::::::::: solution
 
-## Solution
+## 解決策
 
 ```python
 def first_negative(values):
@@ -319,7 +319,7 @@ def first_negative(values):
             return v
 ```
 
-If an empty list or a list with all positive values is passed to this function, it returns `None`:
+空のリストや正の値を持つリストがこの関数に渡されると、 `None` を返します:
 
 ```python
 my_list = []
@@ -327,59 +327,59 @@ print(first_negative(my_list))
 ```
 
 ```output
-None
+なし
 ```
 
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::: チャレンジ
 
-## Calling by Name
+## 名前で通話
 
-Earlier we saw this function:
+以前にこの関数を見ました：
 
 ```python
 def print_date(year, month, day):
-    joined = str(year) + '/' + str(month) + '/' + str(day)
+    joined = str(year) + '/' + str(month) + '/' + str(d)
     print(joined)
 ```
 
-We saw that we can call the function using _named arguments_, like this:
+以下のように、_nameed arguments_ を使って関数を呼び出すことができます。
 
 ```python
 print_date(day=1, month=2, year=2003)
 ```
 
-1. What does `print_date(day=1, month=2, year=2003)` print?
-2. When have you seen a function call like this before?
-3. When and why is it useful to call functions this way?
+1. `print_date(day=1, month=2, year=2003)` は何を印刷しますか？
+2. このような呼び出しを見たことがありますか?
+3. いつ、なぜ関数を呼び出すのが役に立つのか。
 
-:::::::::::::::  solution
+::::::::::::::::: solution
 
-## Solution
+## 解決策
 
 1. `2003/2/1`
 
-2. We saw examples of using _named arguments_ when working with the pandas library. For example, when reading in a dataset
-   using `data = pd.read_csv('data/gapminder_gdp_europe.csv', index_col='country')`, the last argument `index_col` is a
-   named argument.
+2. pandasライブラリを使用する際に、_named@@0引数_を使用する例を見ました。 例えば、`data = pd.read_csv('data/gapminder_gdp_europe.csv', index_col='country')`を使用してデータセット
+   を読み込む場合、最後の引数 `index_col` は
+   という名前の引数です。
 
-3. Using named arguments can make code more readable since one can see from the function call what name the different arguments
-   have inside the function. It can also reduce the chances of passing arguments in the wrong order, since by using named arguments
-   the order doesn't matter.
+3. 名前付き引数を使用すると、関数が関数内で異なる引数
+   が持つ名前を呼び出すことで、コードを読みやすくすることができます。 また、名前付き引数
+   を使用することで、順序が間違った順序で引数を渡す可能性を減らすこともできます。
 
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::: チャレンジ
 
-## Encapsulation of an If/Print Block
+## If/Print Block のカプセル化
 
-The code below will run on a label-printer for chicken eggs.  A digital scale will report a chicken egg mass (in grams)
-to the computer and then the computer will print a label.
+以下のコードは、鶏卵のラベルプリンタで実行されます。  デジタルスケールでは、鶏卵の質量(グラム単位)
+がコンピュータに報告され、コンピュータがラベルを印刷します。
 
 ```python
 import random
@@ -402,9 +402,9 @@ for i in range(10):
         print("small")
 ```
 
-The if-block that classifies the eggs might be useful in other situations,
-so to avoid repeating it, we could fold it into a function, `get_egg_label()`.
-Revising the program to use the function would give us this:
+卵を分類するifブロックは他の状況で役に立つかもしれません
+は繰り返しを避けるため、関数 `get_egg_label()` に折りたたみます。
+関数を使うプログラムを変更すると次のようになります。
 
 ```python
 # revised version
@@ -419,12 +419,12 @@ for i in range(10):
 
 ```
 
-1. Create a function definition for `get_egg_label()` that will work with the revised program above.  Note that the `get_egg_label()` function's return value will be important. Sample output from the above program would be `71.23 large`.
-2. A dirty egg might have a mass of more than 90 grams, and a spoiled or broken egg will probably have a mass that's less than 50 grams.  Modify your `get_egg_label()` function to account for these error conditions. Sample output could be `25 too light, probably spoiled`.
+1. 上記の修正プログラムで動作する `get_egg_label()` 関数定義を作成します。  `get_egg_label()` 関数の戻り値は重要です。 上記のプログラムからのサンプル出力は `71.23 large` です。
+2. 汚れた卵は90グラム以上の質量を持っているかもしれません。 甘やかされた卵や折れた卵はおそらく50グラム以下の質量を持つでしょう  これらのエラー状態を考慮して、 `get_egg_label()` 関数を変更します。 サンプル出力は `25 あまりに軽すぎる、おそらく台無しにされる` かもしれません。
 
-:::::::::::::::  solution
+::::::::::::::::: solution
 
-## Solution
+## 解決策
 
 ```python
 def get_egg_label(mass):
@@ -449,17 +449,17 @@ def get_egg_label(mass):
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::: チャレンジ
 
 ## Encapsulating Data Analysis
 
-Assume that the following code has been executed:
+次のコードが実行されたと仮定します:
 
 ```python
-import pandas as pd
+import pandas pd
 
 data_asia = pd.read_csv('data/gapminder_gdp_asia.csv', index_col=0)
-japan = data_asia.loc['Japan']
+japan = data_asia.loc[']
 ```
 
 1. Complete the statements below to obtain the average GDP for Japan
@@ -467,40 +467,40 @@ japan = data_asia.loc['Japan']
 
 ```python
 year = 1983
-gdp_decade = 'gdpPercap_' + str(year // ____)
-avg = (japan.loc[gdp_decade + ___] + japan.loc[gdp_decade + ___]) / 2
+gdp_decade= 'gdpPercap_' + stra(// ____)
+avg = (japan.loc[gdp_decade+ ___] + japan.loc[gdp_decade+ ___]) / 2
 ```
 
-2. Abstract the code above into a single function.
+2. 上記のコードを単一の関数にまとめます。
 
 ```python
-def avg_gdp_in_decade(country, continent, year):
-    data_countries = pd.read_csv('data/gapminder_gdp_'+___+'.csv',delimiter=',',index_col=0)
+def avg_gdp_in_decade(country, cs, year):
+    data_countities = pd.read_csv('data/gapminder_gdp_'+___+'.csv',delimiter=',',index_col=0)
     ____
     ____
     ____
     return avg
 ```
 
-3. How would you generalize this function
-   if you did not know beforehand which specific years occurred as columns in the data?
-   For instance, what if we also had data from years ending in 1 and 9 for each decade?
-   (Hint: use the columns to filter out the ones that correspond to the decade,
-   instead of enumerating them in the code.)
+3. この関数
+   を、データの列としてどの年が起きたか分からない場合、どのように一般化しますか?
+   たとえば、10年ごとに1と9で終わる年数のデータがあるとしたらどうでしょうか?
+   (ヒント:列を使って、コード内で列挙するのではなく、10年、
+   に対応する列を除外してください。
 
-:::::::::::::::  solution
+::::::::::::::::: solution
 
-## Solution
+## 解決策
 
-1. The average GDP for Japan across the years reported for the 1980s is computed with:
+1. 1980年代に報告された日本の平均GDPは、次のように計算されます。
 
 ```python
 year = 1983
-gdp_decade = 'gdpPercap_' + str(year // 10)
-avg = (japan.loc[gdp_decade + '2'] + japan.loc[gdp_decade + '7']) / 2
+gdp_decade= 'gdpPercap_' + stra(// 10)
+avg = (japan.loc[gdp_10 + '2'] + japan.loc[gdp_10 + '7']) / 2
 ```
 
-2. That code as a function is:
+2. 関数としてのコードは次のとおりです:
 
 ```python
 def avg_gdp_in_decade(country, continent, year):
@@ -511,7 +511,7 @@ def avg_gdp_in_decade(country, continent, year):
     return avg
 ```
 
-3. To obtain the average for the relevant years, we need to loop over them:
+3. 関連年数の平均を取得するには、それらをループさせる必要があります。
 
 ```python
 def avg_gdp_in_decade(country, continent, year):
@@ -527,7 +527,7 @@ def avg_gdp_in_decade(country, continent, year):
     return total/num_years
 ```
 
-The function can now be called by:
+関数を呼び出すことができます:
 
 ```python
 avg_gdp_in_decade('Japan','asia',1983)
@@ -541,37 +541,37 @@ avg_gdp_in_decade('Japan','asia',1983)
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::: チャレンジ
 
-## Simulating a dynamical system
+## 動的システムのシミュレーション
 
 In mathematics, a [dynamical system](https://en.wikipedia.org/wiki/Dynamical_system) is a system
 in which a function describes the time dependence of a point in a geometrical space. A canonical
 example of a dynamical system is the [logistic map](https://en.wikipedia.org/wiki/Logistic_map),
 a growth model that computes a new population density (between  0 and 1) based on the current
-density. In the model, time takes discrete values 0, 1, 2, ...
+density. モデルでは、ディスクリート値 0, 1, 2, ...
 
-1. Define a function called `logistic_map` that takes two inputs: `x`, representing the current
-   population (at time `t`), and a parameter `r = 1`. This function should return a value
-   representing the state of the system (population) at time `t + 1`, using the mapping function:
+1. `logistic_map`と呼ばれる関数を定義します。`x`は現在の
+   個の人口を表し、`r = 1`パラメータを表します。 この関数は、マッピング関数を使用して、 `t + 1` 時にシステムの状態を表す
+   値を返す必要があります:
 
 `f(t+1) = r * f(t) * [1 - f(t)]`
 
-2. Using a `for` or `while` loop, iterate the `logistic_map` function defined in part 1, starting
-   from an initial population of 0.5, for a period of time `t_final = 10`. Store the intermediate
-   results in a list so that after the loop terminates you have accumulated a sequence of values
-   representing the state of the logistic map at times `t = [0,1,...,t_final]` (11 values in total).
-   Print this list to see the evolution of the population.
+2. `まつ` または `while` を使って、第 1 部で定義された `logistic_map` 関数を繰り返し、最初の人口から
+   を開始します。 は、`t_final = 10` 期間です。 中間の
+   をリストに格納し、ループが終了した後、`t = [0,1,, 時点での物流マップの状態を表す
+     値のシーケンスを蓄積します。 .,t_final]` (合計11個)。
+   このリストを印刷すると、人口の進化を確認できます。
 
 3. Encapsulate the logic of your loop into a function called `iterate` that takes the initial
    population as its first input, the parameter `t_final` as its second input and the parameter
-   `r` as its third input. The function should return the list of values representing the state of
-   the logistic map at times `t = [0,1,...,t_final]`. Run this function for periods `t_final = 100`
-   and `1000` and print some of the values. Is the population trending toward a steady state?
+   `r` as its third input. 関数は、`t = [0,1,...,t_final]`の時点で、
+   ロジスティックマップの状態を表す値のリストを返します。 ピリオド`t_final = 100`
+   と`1000`でこの関数を実行し、値の一部を表示します。 人口は、着実な状態に向かって傾いているのでしょうか?
 
-:::::::::::::::  solution
+::::::::::::::::: solution
 
-## Solution
+## 解決策
 
 1. ```python
    ```
@@ -600,7 +600,7 @@ population.append( logistic_map(population[t], r) )
 return population
 
 for period in (10, 100, 1000):
-population = iterate(0.5, period, 1)
+native = iterate(0.5, period, 1)
 print(population[-1])
 
 ````
@@ -611,7 +611,7 @@ print(population[-1])
 0.0009913908614406382
 ````
 
-The population seems to be approaching zero.
+人口はゼロに近づいているようです。
 
 :::::::::::::::::::::::::
 
@@ -619,11 +619,11 @@ The population seems to be approaching zero.
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Using Functions With Conditionals in Pandas
+## 条件付きの関数を Pandas で使用する
 
-Functions will often contain conditionals.  Here is a short example that
-will indicate which quartile the argument is in based on hand-coded values
-for the quartile cut points.
+関数には多くの場合条件が含まれます。  ここでは、
+が、四分位点の手書きの値
+に基づいて、引数がどの四分位数になっているかを示す短い例を示します。
 
 ```python
 def calculate_life_quartile(exp):
@@ -652,17 +652,17 @@ calculate_life_quartile(62.5)
 
 That function would typically be used within a `for` loop, but Pandas has
 a different, more efficient way of doing the same thing, and that is by
-_applying_ a function to a dataframe or a portion of a dataframe.  Here
-is an example, using the definition above.
+_applying_ a function to a dataframe or a portion of a dataframe.  ここで
+は、上記の定義を使用して例です。
 
 ```python
 data = pd.read_csv('data/gapminder_all.csv')
 data['life_qrtl'] = data['lifeExp_1952'].apply(calculate_life_quartile)
 ```
 
-There is a lot in that second line, so let's take it piece by piece.
-On the right side of the `=` we start with `data['lifeExp']`, which is the
-column in the dataframe called `data` labeled `lifExp`.  We use the
+２行目にはたくさんありますので少しずつ見てみましょう
+`=`の右側には、`data['lifeExp']`で始まります。これは、`data`というラベルの付いた`lifExp`というデータファームの
+カラムです。  We use the
 `apply()` to do what it says, apply the `calculate_life_quartile` to the
 value of this column for every row in the dataframe.
 
@@ -670,10 +670,10 @@ value of this column for every row in the dataframe.
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- Break programs down into functions to make them easier to understand.
-- Define a function using `def` with a name, parameters, and a block of code.
-- Defining a function does not run it.
-- Arguments in a function call are matched to its defined parameters.
-- Functions may return a result to their caller using `return`.
+- プログラムを関数に分解すると、理解しやすくなります。
+- 名前、パラメータ、コードのブロックで `def` を使って関数を定義します。
+- 関数を定義しても、実行されません。
+- 関数呼び出し中の引数は、定義されたパラメータにマッチします。
+- 関数は `return` を使って結果を呼び出すことができます。
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
