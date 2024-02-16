@@ -1,31 +1,31 @@
 ---
-title: Lesson Design
+title: Проектування уроків
 ---
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Help Wanted
+## Допомога розшукується
 
-**We are filling in the exercises [below](#stage-3-learning-plan)
-in order to make the lesson plan more concrete.
+**Ми заповнюємо вправи [below](#stage-3-learning-plan)
+для того, щоб зробити план уроку більш конкретним.
 Contributions (both in the form of pull requests with filled-in exercises,
 and comments on specific exercises, ordering, and timings) are greatly appreciated.**
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Process Used
+## Використовується в процесі
 
-> Michael Pollan's advice if he taught R or Python programming:
+> Порада Майкла Поллана, якщо він викладав R чи Python-програмування:
 >
-> 1. Write code.
-> 2. Not too much.
-> 3. Mostly plots.
+> 1. Напиши код.
+> 2. Не забагато.
+> 3. Переважно сюжети.
 >
 > — [Michael Koontz](https://twitter.com/_mikoontz/status/758021742078025728)
 > {: .quotation}
 
-This lesson was developed using a slimmed-down variant of the "Understanding by Design" process.
-The main sections are:
+Цей урок був розроблений за допомогою ефекту "Розуміння дизайном".
+Основними розділами:
 
 1. Assumptions about audience, time, etc.
    (The current draft also includes some conclusions and decisions in this
@@ -40,318 +40,318 @@ The main sections are:
    then estimates time that will be spent on teaching and on exercises,
    while the exercises are given as bullet points.
 
-## Stage 1: Assumptions
+## Етап 1: Припущення
 
-- Audience
-  - Graduate students in numerate disciplines from cosmology to archaeology
-  - Who have manipulated data in spreadsheets and with interactive tools like SAS
-  - But have _not_ programmed beyond CPD (copy-paste-despair)
-- Constraints
-  - One full day 09:00-16:30
-    - 06:15 class time
-    - 0:45 lunch
-    - 0:30 total for two coffee breaks
-  - Learners use native installs on their own machines
-    - May use VMs or cloud resources at instructor's discretion
-    - But must keep native local install as an option
-  - No dependence on other Carpentry modules
-    - In particular, does not require knowledge of shell or version control
-  - Use the Jupyter Notebook
-    - Authentic tool used by many instructors
-    - There isn't really an alternative
+- Аудиторія
+  - Вирішуйте учнів у чисельних дисциплінах від космології до археології
+  - Який маніпулювали даними у електронних таблицях та з інтерактивними інструментами, такими як SAS
+  - Але _не_ запрограмовані поза CPD (відчай копіювання - пасток)
+- Обмеження
+  - 1 день 09:00 - 16:30
+    - 06:15 час класу
+    - 0:45 ланч
+    - Всього за дві перерви з кавою 0:30
+  - Навчальні заклади використовують власні інсталяції на власних машинах
+    - Може використовувати ресурси VM, а також хмарки на розсуд інструкторів
+    - Але повинна зберегти нативну локальну установку в якості варіанту
+  - Немає залежності від інших модулів тесалону
+    - Зокрема, не вимагає знань про контроль оболонки чи версій
+  - Використовувати блокнот Jupyter
+    - Автентичний інструмент, який використовується багатьма інструкторами
+    - Немає насправді альтернативи
     - And means that even people who have seen a bit of Python before
       will probably learn something
-- Motivating Example
-  - Creating 2D plots suitable for inclusion in papers
-  - Appeals to almost everyone
-  - Makes lesson usable by both Carpentries
+- Приклад мотивації
+  - Створення 2D графіків, відповідних для включення до паперу
+  - Звернення майже всім
+  - Зробити урок придатним для використання обох теслярів
     - And means that even people who have seen a bit of Python before
       will probably learn something
-- Data
-  - Use the gapminder data throughout
-  - But break into multiple files by continent
-    - To make display of output from examples tidier
-      (e.g., use Australia/New Zealand, which is only two lines)
-    - And allow examples showing use of multiple data sets
-- Focus on Pandas instead of NumPy
-  - Makes lesson usable by both Data Carpentry and Software Carpentry
-  - Genuine novices are likely to want data analysis
-  - And people with some prior experience:
-    - will accept data analysis as an authentic task,
-    - and are unlikely to have encountered Pandas,
-      so they'll still get something useful out of the lesson
-- Challenges will mostly _not_ be "write this code from scratch"
-  - Want lots of short exercises that can reliably be finished in allotted time
-  - So use MCQs, fill-in-the-blanks, Parsons Problems, "tweak this code", etc.
+- Дані
+  - Використовувати дані gapminder протягом
+  - Але починається на кілька файлів континентом
+    - Для відображення виходу із прикладів тигра
+      (наприклад, використай Австралію / Нова Зеландія, тобто лише два рядки)
+    - І дозволити прикладам використовувати декілька наборів даних
+- Сфокусуватися на Пандасі замість NumPy
+  - Робить урок, який можна використовувати як Carpentry так і Software Carpentry
+  - Генуїнові нови, ймовірно, захочуть аналіз даних
+  - І люди з деяким попереднім досвідом:
+    - погодиться на аналіз даних як на справжнє завдання,
+    - і навряд чи виникнуть Панди,
+      тому вони все одно отримають щось корисне з уроку
+- Виклики в основному _не_ будуть "писати цей код з нуля"
+  - Хочете багато коротких вправ, які можна надійно закінчити за розкладом
+  - Тому використовуйте проблеми MCQ, fill-in-blanks, Parsons - "налаштувати цей код" і т.д.
 
-## Stage 2: Desired Results
+## Етап 2: Бажані результати
 
-### Questions
+### Питання
 
-How do I...
+Як є...
 
-- ...read tabular data?
-- ...plot a single vector of values?
-- ...create a time series plot?
-- ...create one plot for each of several data sets?
-- ...get extra data from a single data set for plotting?
-- ...write programs I can read and re-use in future?
+- ...читати табулярні дані?
+- ...намалювати один вектор значень?
+- ...створити графік часової серії?
+- ...створити один графік для кожного з декількох наборів даних?
+- ...отримати додаткові дані від одностороннього набору даних для відображення?
+- ...писати програми я можу читати і повторно використовувати в майбутньому?
 
-### Skills
+### Навики
 
-I can...
+Я можу...
 
-- ...write short scripts using loops and conditionals.
-- ...write functions with a fixed number of parameters that return a single result.
-- ...import libraries using aliases and refer to those libraries' contents.
-- ...do simple data extraction and formatting using Pandas.
+- ...запишіть короткі скрипти використовуючи цикли та умови.
+- ...запишіть функції з фіксованою кількістю параметрів, які повертають один результат.
+- ...імпортуйте бібліотеки, використовуючи псевдоніми та зверніться до вмісту цих бібліотек.
+- ... робити простий видобуток даних та форматування за допомогою Pandas.
 
-### Concepts
+### Ідеї
 
-I know\...
+Я знаю...
 
-- ...that a program is a piece of lab equipment that implements an analysis
-  - Needs to be validated/calibrated before/during use
-  - Makes analysis reproducible, reviewable, shareable
-- ...that programs are written for people, not for computers
-  - Meaningful variable names
-  - Modularity for readability as well as re-use
-  - No duplication
-  - Document purpose and use
+- ...що програма - це частина лабораторного обладнання, яке реалізує аналіз
+  - Потрібно перевіряти/відкалібровано раніше/під час використання
+  - Робить аналіз репродукційним, доступним для спільного перегляду
+- ...програми пишуться для людей, а не для комп'ютерів
+  - Значні імена змінних
+  - Модулярність для читання, а також повторне використання
+  - Без дублювання
+  - Призначення і використання документа
 - ...that there is no magic: the programs they use are no different
   in principle from those they build
-- ...how to assign values to variables
-- ...what integers, floats, strings, NumPy arrays, and Pandas dataframes are
-- ...how to trace the execution of a `for` loop
-- ...how to trace the execution of `if`/`else` statements
-- ...how to create and index lists
-- ...how to create and index NumPy arrays
-- ...how to create and index Pandas dataframes
-- ...how to create time series plots
-- ...the difference between defining and calling a function
-- ...where to find documentation on standard libraries
-- ...how to find out what else scientific Python offers
+- ...як призначити значення змінним
+- ...які цілі числа, мотузки, числові масиви та Пандас датарами
+- ...як відслідковувати виконання циклу `for`
+- ...як відслідковувати виконання команд `if`/`else`
+- ...як створити та індексувати списки
+- ...як створити та індексувати масиви числових чисел
+- ...як створити та індексувати дані
+- ... як створити графік часу
+- ...різниця між визначенням і викликом функції
+- ...Де знайти документацію по стандартних бібліотеках
+- ...як дізнатися що ще пропонує науковий Python
 
-## Stage 3: Learning Plan
+## Етап 3: План навчання
 
-### Summative Assessment
+### Сума оцінок
 
-- Midpoint: create time-series plot for each file in a directory.
-- Final: extract data from Pandas dataframe
-  and create comparative multi-line time series plot.
+- Середня точка: створити графік часових подій для кожного файлу у папці.
+- Фінал: витягувати дані з діаграми Pandas datame
+  і створити порівняльну багатострокову діаграму часу.
 
-### [Running and Quitting Interactively](../episodes/01-run-quit.md) (9:00)
+### [Запуск та вихід з Інтерактивності](../episodes/01-run-quit.md) (9:00)
 
-- Teaching: 15 min (because setup issues)
-  - Launch the Jupyter Notebook, create new notebooks, and exit the Notebook.
-  - Create Markdown cells in a notebook.
-  - Create and run Python cells in a notebook.
-- Challenges: 0 min (accounted for in teaching time - no separate exercise)
-  - Creating lists in Markdown
-  - What is displayed when several expressions are put in a single cell?
-  - Change an existing cell from code to Markdown
-  - Rendering LaTeX-style equations
+- Виклад: 15 хв (через проблеми з налаштуваннями)
+  - Запустіть Jupyter Notebook, створіть нові блокноти і вийдіть із записника.
+  - Створення клітин Markdown в зошиті.
+  - Створюйте і запускайте Python клітини в блокноті.
+- Завдання: 0 хв (рахунковий час навчання - без окремих вправ)
+  - Створення списків у Markdown
+  - Що відображається, коли декілька виразів покладено в одну клітинку?
+  - Змінити існуючу клітинку з коду на Markdown
+  - Відображення рівнянь типу LaTeX-
 
-### [Variables and Assignment](../episodes/02-variables.md) (9:15)
+### [Змінні та призначення](../episodes/02-variables.md) (9:15)
 
-- Teaching: 10 min
-  - Write programs that assign scalar values to variables and perform calculations with those values.
-  - Correctly trace value changes in programs that use scalar assignment.
-- Challenges: 10 min
-  - Trace execution of code swapping two values using an intermediate variable.
-  - Predict final values of variables after several assignments.
-  - What happens if you try to index a number?
-  - Which is a better variable name, `m`, `min`, or `minutes`?
-  - What do the following slice expressions produce?
+- Виклад: 10 хв
+  - Записувати програми, які призначають значення скалярних змінних і виконують обчислення з цими значеннями.
+  - Правильно сліди змін значення у програмах, що використовують призначення скаляр.
+- Виклики: 10 хв
+  - Відстеження виконання коду заміни двох значень використовуючи проміжну змінну.
+  - Передбачити остаточні значення змінних після декількох завдань.
+  - Що станеться, якщо ви спробуєте індексувати номер?
+  - Що є кращим ім'ям змінної `м`, `хв`, або `хвилин`?
+  - Що виготовляють такі вирази з шматком?
 
-### [Data Types and Type Conversion](../episodes/03-types-conversion.md) (09:35)
+### [Конверсія даних і типів](../episodes/03-types-conversion.md) (09:35)
 
-- Teaching: 10 min
-  - Explain key differences between integers and floating point numbers.
-  - Explain key differences between numbers and character strings.
-  - Use built-in functions to convert between integers, floating point numbers, and strings.
-- Challenges: 10 min
-  - What type of value is 3.4?
-  - What type of value is 3.25 + 4?
-  - What type of value would you use to represent:
-    - Number of days since the start of the year.
-    - Time elapsed since the start of the year.
-    - Etc.
-  - How can you use `//` (integer division) and `%` (modulo)?
-  - What does `int("3.4")` do?
-  - Given these float, int, and string values, which expressions will print a particular result?
-  - What do you expect `1+2j + 3` to produce?
+- Виклад: 10 хв
+  - Поясніть ключові відмінності між цілими і плаваючими точками чисел.
+  - Поясніть ключові відмінності між числами та символьними рядками.
+  - Використовуйте вбудовані функції для перетворення між цілими числами, десятковими значеннями та рядками.
+- Виклики: 10 хв
+  - Який тип значення дорівнює 3.4?
+  - Який тип значення є 3.25 + 4?
+  - Який тип значення ви використаєте, щоб представляти:
+    - Кількість днів з початку року.
+    - Час минув з початку року.
+    - І тому подібне.
+  - Як ви можете використовувати `///` (цілочисельний розділ) та `%` (модуль)?
+  - Що робити `int("3.4")`?
+  - Враховуючи ці плаваючі, внутрішні та рядкові значення, які вирази вивів певний результат?
+  - Що ви очікуєте `1+2j + 3` щоб виробити?
 
-### [Built-in Functions and Help](../episodes/04-built-in.md) (09:55)
+### [Вбудовані функції та допомога](../episodes/04-built-in.md) (09:55)
 
-- Teaching: 15 min
-  - Explain the purpose of functions.
-  - Correctly call built-in Python functions.
-  - Correctly nest calls to built-in functions.
-  - Use help to display documentation for built-in functions.
-  - Correctly describe situations in which SyntaxError and NameError occur.
-- Challenges: 10 min
-  - Explain the order of operations in the following complex expression.
-  - What will each nested combination of `min` and `max` calls produce?
-  - Why don't `max` and `min` return `None` when given no arguments?
-  - Given what we have seen so far,
-    what index expression will get the last character in a string?
+- Виклад: 15 хв
+  - Поясни призначення функцій.
+  - Правильно дзвонити вбудовані функції Python.
+  - Правильно гніздні виклики для вбудованих функцій.
+  - Використовуйте довідку для відображення документації для вбудованих функцій.
+  - Правильно описувати ситуації, в яких відбувається синтаксична помилка та назва помилок.
+- Виклики: 10 хв
+  - Поясни порядок операцій у наступному складному виразі.
+  - Що буде кожна вкладена комбінація `min` і `max` викликаються?
+  - Чому б не перевищувати `max` і `min` повернутись `None `, коли немає аргументів?
+  - З огляду на те, що ми бачили до цих пір,
+    який індексний вираз отримає останній символ в рядку?
 
-### [Coffee](../episodes/05-coffee.md): 15 min (10:20)
+### [Coffee](../episodes/05-coffee.md): 15 хв (10:20)
 
 ### [Libraries](../episodes/06-libraries.md) (10:35)
 
-- Teaching: 10 min
-  - Explain what software libraries are and why programmers create and use them.
-  - Write programs that import and use libraries from Python's standard library.
-  - Find and read documentation for standard libraries interactively (in the interpreter) and online.
-- Challenges: 10 min
-  - Which function from the standard math library could you use to calculate a square root?
-  - What library would you use to select a random value from data?
-  - If `help(math)` produces an error, what have you forgotten to do?
-  - Fill in the blanks in code below so that the import statement and program run.
+- Виклад: 10 хв
+  - Поясніть, якими є програмні бібліотеки, і чому програмісти створюють та використовують їх.
+  - Написати програми, що імпортують і використовують бібліотеки зі стандартної бібліотеки Python.
+  - Знайти та прочитати документацію для стандартних бібліотек інтерактивно (в інтерпретаторі) та онлайн.
+- Виклики: 10 хв
+  - Яку функцію зі стандартної бібліотеки математики ви можете використовувати для підрахунку кореня квадратного?
+  - Яку бібліотеку ви використовували для вибору випадкового значення з даних?
+  - Якщо `help(math)` повертає помилку, що ви забули зробити?
+  - Заповніть розписки в коді нижче так, щоб виконання запиту на імпорт та програми.
 
-### [Reading Tabular Data](../episodes/07-reading-tabular.md) (10:55)
+### [Читання табулярних даних](../episodes/07-reading-tabular.md) (10:55)
 
-- Teaching: 10 min
-  - Import the Pandas library.
-  - Use Pandas to load a simple CSV data set.
-  - Get some basic information about a Pandas DataFrame.
-- Challenges: 10 min
-  - Read the data for the Americas and display its summary statistics.
-  - What do `.head` and `.tail` do?
-  - What string(s) should you pass to `read_csv` to read files from other directories?
-  - How can you _write_ CSV data?
+- Виклад: 10 хв
+  - Імпортувати бібліотеку Pandas .
+  - Використовуйте Pandas для завантаження простого набору даних CSV.
+  - Отримайте основну інформацію про дані Пандаса DataFrame.
+- Виклики: 10 хв
+  - Прочитайте дані для Америк та покажіть їх підсумкову статистику.
+  - Що робити `.head` та `.tail` ?
+  - Який рядок вам слід передати `read_csv` для читання файлів з інших директорій?
+  - Як можна \*записати дані CSV?
 
 ### [DataFrames](../episodes/08-data-frames.md) (11:15)
 
-- Teaching: 15 min
-  - Select individual values from a Pandas dataframe.
-  - Select entire rows or entire columns from a dataframe.
-  - Select a subset of both rows and columns from a dataframe in a single operation.
-  - Select a subset of a dataframe by a single Boolean criterion.
-- Challenges: 15 min
-  - Write an expression to find the Per Capita GDP of Serbia in 2007.
-  - What rule governs what is (or isn't) included in numerical and named slices in Pandas?
-  - What does each line in the following short program do?
-  - What do `idxmin` and `idxmax` do?
-  - Write expressions to get the GDP per capita for all countries in 1982,
-    for all countries _after_ 1985,
-    etc.
+- Виклад: 15 хв
+  - Вибір індивідуальних значень з діапазону «Пандас».
+  - Обрати цілі рядки або цілі колонки з головоломки.
+  - Виберіть підмножину рядків і стовпців з діаграми в одній операції.
+  - Виберіть підмножину дати інформацію по одному логічному критерію.
+- Виклики: 15 хв
+  - Напишіть вираз, щоб знайти за показник ВВП Сербії в 2007 році.
+  - Яке правило регулює те, що (або не є) включено до чисельних та названих шматків у Пандасі?
+  - Що робить кожен рядок у цій короткостроковій програмі?
+  - Що робити `idxmin` та `idxmax`?
+  - Списати вирази для отримання ВВП на душу населення у всіх країнах 1982,
+    для всіх країн _після_ 1985,
+    і т. д.
   - Given the way its borders have changed since 1900,
     what would you do if asked to create a table of GDP per capita for Poland
     for the Twentieth Century?
 
 ### [Plotting](../episodes/09-plotting.md) (11:45)
 
-- Teaching: 15 min
-  - Create a time series plot showing a single data set.
-  - Create a scatter plot showing relationship between two data sets.
-- Exercise: 15 min
-  - Fill in the blanks to plot the minimum GDP per capita over time for European countries.
-  - Modify the example to create a scatter plot of GDP per capita in Asian countries.
-  - Explain what each argument to `plot` does in the following example.
+- Виклад: 15 хв
+  - Створити часовий графік з окремим набором даних.
+  - Створити графік розсіювання, що показує відношення між двома наборами даних.
+- Вправа 15 хв
+  - Заповніть пропуски, щоб скласти мінімальний ВВП на душу населення з часом для європейських країн.
+  - Змініть приклад, щоб створити розсіяний графік ВВП на душу населення в азіатських країнах.
+  - Поясніть, що робить кожен аргумент з «побудови» в наступному прикладі.
 
-### [Lunch](../episodes/10-lunch.md) (12:15): 45 min
+### [Lunch](../episodes/10-lunch.md) (12:15): 45 хв
 
 ### [Lists](../episodes/11-lists.md) (13:00)
 
-- Teaching: 10 min
-  - Explain why programs need collections of values.
-  - Write programs that create flat lists, index them, slice them, and modify them through assignment and method calls.
-- Challenges: 10 min
-  - Fill in the blanks so that the program produces the output shown.
-  - How large are the following slices?
-  - What do negative index expressions print?
-  - What does a "stride" in a slice do?
-  - How do slices treat out-of-range bounds?
-  - What are the differences between sorting these two ways?
-  - What is the difference between `new = old` and `new = old[:]`?
+- Виклад: 10 хв
+  - Пояснити, чому програми потрібні колекції значень.
+  - Писати програми, що створюють пласкі списки, індексувати їх, розрізають і змінюють їх через присвоєння і методи.
+- Виклики: 10 хв
+  - Заповніть пропуски так, щоб програма виробляла вихідні дані.
+  - Скільки усього усього мені?
+  - Що робити від'ємні індекси виразом з друком?
+  - Що робить "страйк" на скибці?
+  - Як розрізняти межі поза діапазоном?
+  - В чому різниця між тим, щоб сортувати ці два шляхи?
+  - Яка різниця між `new = старими і `new = старими[:]\`?
 
 ### [Loops](../episodes/12-for-loops.md) (13:20)
 
-- Teaching: 10 min
-  - Explain what for loops are normally used for.
-  - Trace the execution of a simple (unnested) loop and correctly state the values of variables in each iteration.
-  - Write for loops that use the Accumulator pattern to aggregate values.
-- Challenges: 15 min
-  - Is an indentation error a syntax error or a runtime error?
-  - Trace which lines of this program are executed in what order.
-  - Fill in the blanks in this program so that it reverses a string.
-  - Fill in the blanks in this series of examples to get practice accumulating values.
-  - Reorder and indent these lines to calculate the cumulative sum of the list values.
+- Виклад: 10 хв
+  - Пояснити, що для циклів зазвичай використовуються.
+  - Спостерігати за виконанням простого (невкладеного) циклу і правильно визначати значення змінних в кожній ітерації.
+  - Запис циклів, які використовують шаблон Акумулятора для сукупних значень.
+- Виклики: 15 хв
+  - Чи є помилка відступів синтаксичною помилкою або помилкою runtime ?
+  - Простежуйте, які рядки цієї програми виконуються в якому порядку.
+  - Заповніть пропуски в цій програмі для того, щоб вона розвернула рядок.
+  - Заповніть прогалини в цій серії прикладів, щоб отримати практику накопичувати значення.
+  - Перевпорядкуйте та відступайте ці лінії, щоб обчислити сукупну суму значень списку.
 
-### [Looping Over Data Sets](13-looping-data-sets) (13:45)
+### [Зациклення над наборами даних](13-looping-data-sets) (13:45)
 
-- Teaching: 5 min
-  - Be able to read and write globbing expressions that match sets of files.
-  - Use glob to create lists of files.
-  - Write for loops to perform operations on files given their names in a list.
-- Challenges: 10 min
-  - Which filenames are _not_ matched by this glob expression?
-  - Modify this program so that it prints the number of records in the shortest file.
-  - Write a program that reads and plots all of the regional data sets.
+- Виклад: 5 хв
+  - Можна читати та записувати глобальні вирази що відповідають наборам файлів.
+  - Використовуйте glob для створення списків файлів.
+  - Записуйте цикли для виконання операцій з файлами з вказаними іменами списку.
+- Виклики: 10 хв
+  - Які імена файлів _не_ відповідають цьому глобальному виразу?
+  - Змініть цю програму, щоб вона надрукувала кількість записів у найкоротшому файлі.
+  - Написати програму, яка зчитує та розміщує всі регіональні набори даних.
 
-### [Writing Functions](14-writing-functions) (14:00)
+### [Написання функцій](14-writing-функцій) (14:00)
 
-- Teaching: 10 min
-  - Explain and identify the difference between function definition and function call.
-  - Write a function that takes a small, fixed number of arguments and produces a single result.
-- Challenges: 15 min
-  - This code defines and calls a function - what does it print when run?
-  - Explain why this short program prints things in the order it does.
-  - Fill in the blanks to create a function that finds the minimum value in a data file.
-  - Fill in the blanks to create a function that finds the first negative value in a list.
-    What does your function do if the list is empty?
-  - Why is it sometimes useful to pass arguments by naming the corresponding parameters?
-  - Fill in the blanks and turn this short piece of code into a function.
+- Виклад: 10 хв
+  - Поясни різницю між визначенням функції та викликом функції.
+  - Напишіть функцію, яка бере невеличку фіксовану кількість аргументів і видає єдиний результат.
+- Виклики: 15 хв
+  - Цей код визначає і викликає функцію - що він друкує під час роботи?
+  - Поясніть, чому ця коротка програма друкує речі у порядку.
+  - Заповніть пропуски для створення функції, яка знаходить мінімальне значення у файлі даних.
+  - Заповніть пропуски, щоб створити функцію, яка знаходить перше від'ємне значення у списку.
+    Що робить функція, якщо список пустий?
+  - Чому іноді корисно приймати аргументи, іменуючи відповідні параметри?
+  - Заповніть пропуски та перетворіть на функцію.
 
-### [Variable Scope](15-scope) (14:25)
+### [Змінний скоп](15-обсяг) (14:25)
 
-- Teaching: 10 min
-  - Identify local and global variables.
-  - Identify parameters as local variables.
-  - Read a traceback and determine the file, function, and line number on which the error occurred.
-- Challenges: 10 min
-  - Trace the changes to the values in this program,
-    being careful to distinguish local from global values.
+- Виклад: 10 хв
+  - Визначити локальні та глобальні змінні.
+  - Визначити параметри як локальні змінні.
+  - Прочитайте слідкування і визначте файл, функцію та номер рядку, з яким відбулася помилка.
+- Виклики: 10 хв
+  - Простежуйте зміни до значень у цій програмі,
+    обережно відрізняти їх від глобальних значень.
 
-### [Coffee](16-coffee) (14:45): 15 min
+### [Coffee](16-кава) (14:45): 15 хв
 
-### [Conditionals](17-conditionals) (15:00)
+### [Conditionals](17-умови) (15:00)
 
-- Teaching: 10 min
-  - Correctly write programs that use if and else statements and simple Boolean expressions (without logical operators).
-  - Trace the execution of unnested conditionals and conditionals inside loops.
-- Challenges: 15 min
-  - Trace the execution of this conditional statement.
-  - Fill in the blanks so that this function replaces negative values with zeroes.
-  - Modify this program so that it only processes files with fewer than 50 records.
-  - Modify this program so that it always finds the largest and smallest values in a list
-    no matter what the list's values are.
+- Виклад: 10 хв
+  - Правильно писати програми, які використовують, якщо та інші вирази та прості булеві вирази (без логічних операторів).
+  - Відстежувати виконання незакритих умов і умов, що знаходяться всередині циклів.
+- Виклики: 15 хв
+  - Простежуйте виконання умовного виразу.
+  - Заповніть пропуски, щоб дана функція замінила від'ємні значення нулями.
+  - Змініть цю програму для обробки лише файлів з меншою кількістю 50 записів.
+  - Змініть цю програму так, щоб вона завжди знайшла найбільші і найменші значення у списку
+    незалежно від значень списку.
 
-### [Programming Style](../episodes/18-style.md) (15:25)
+### [Програмування стилю](../episodes/18-style.md) (15:25)
 
-- Teaching: 15 min
-  - How can I make my programs more readable?
-  - How do most programmers format their code?
-  - How can programs check their own operation?
-- Challenges: 15 min
-  - Which lines in this code will be available as online help?
-  - Turn the comments in this program into docstrings.
-  - Rewrite this short program to be more readable.
+- Виклад: 15 хв
+  - Як я можу зробити програми більш розбірливими?
+  - Як більшість програмістів форматують свій код?
+  - Як можуть програми перевірити власну операцію?
+- Виклики: 15 хв
+  - Які рядки у цьому коді будуть доступні як онлайн допомога?
+  - Перетворіть коментарі в цій програмі в докторській програмі.
+  - Перезаписати цю коротку програму, щоб бути більш читабельною.
 
 ### [Wrap-Up](../episodes/19-wrap.md) (15:55)
 
-- Teaching: 20 min
-  - Name and locate scientific Python community sites for software, workshops, and help.
-- Challenges: 0 min
-  - None.
+- Виклад: 20 хв
+  - Введіть назву та знайдіть наукові сайти спільноти Python для програмного забезпечення, семінарів та допомоги.
+- Виклики: 0 хв
+  - Жодного.
 
 ### [Feedback](../episodes/20-feedback.md) (16:15)
 
-- Teaching: 0 min
-- Challenges: 15 min
-  - Collect feedback
+- Виклад: 0 хв
+- Виклики: 15 хв
+  - Зібрати відгук
 
-### Finish (16:30)
+### Завершення (16:30)
