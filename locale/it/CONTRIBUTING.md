@@ -1,105 +1,105 @@
-## Contributing
+## Contribuire
 
-[The Carpentries][cp-site] ([Software Carpentry][swc-site], [Data
-Carpentry][dc-site], and [Library Carpentry][lc-site]) are open source
-projects, and we welcome contributions of all kinds: new lessons, fixes to
-existing material, bug reports, and reviews of proposed changes are all
-welcome.
+[The Carpentries][cp-site] ([Carpenteria software][swc-site], [Carpenteria dati
+][dc-site]e [Carpenteria biblioteca][lc-site]) sono progetti open source
+, e accogliamo con favore i contributi di tutti i tipi: nuove lezioni, correzioni al materiale esistente
+, segnalazioni di bug, e recensioni delle modifiche proposte sono tutti
+benvenuti.
 
-### Contributor Agreement
+### Accordo Collaboratore
 
-By contributing, you agree that we may redistribute your work under our
-license. In exchange, we will address your issues and/or assess
-your change proposal as promptly as we can, and help you become a member of our
-community. Everyone involved in [The Carpentries][cp-site] agrees to abide by
-our [code of conduct](CODE_OF_CONDUCT.md).
+Contribuendo, accetti che possiamo ridistribuire il tuo lavoro sotto la nostra licenza
+. In cambio, affronteremo i tuoi problemi e/o valuteremo quanto prima la tua proposta di modifica
+e ti aiuta a diventare un membro della nostra community
+. Chiunque sia coinvolto in [The Carpentries][cp-site] accetta di rispettare
+il nostro [codice di condotta](CODE_OF_CONDUCT.md).
 
-### How to Contribute
+### Come Contribuire
 
-The easiest way to get started is to file an issue to tell us about a spelling
-mistake, some awkward wording, or a factual error. This is a good way to
-introduce yourself and to meet some of our community members.
+Il modo più semplice per iniziare è archiviare un problema per dirci di un errore di ortografia
+, qualche formulazione imbarazzante, o un errore di fatto. Questo è un buon modo per
+presentarsi e incontrare alcuni dei membri della nostra comunità.
 
-1. If you do not have a [GitHub][github] account, you can [send us comments by
-   email][contact]. However, we will be able to respond more quickly if you use
-   one of the other methods described below.
+1. Se non hai un account [GitHub][github] , puoi [inviarci commenti via
+   email][contact]. Tuttavia, saremo in grado di rispondere più rapidamente se si utilizza
+   uno degli altri metodi descritti di seguito.
 
-2. If you have a [GitHub][github] account, or are willing to [create
-   one][github-join], but do not know how to use Git, you can report problems
-   or suggest improvements by [creating an issue][repo-issues]. This allows us
-   to assign the item to someone and to respond to it in a threaded discussion.
+2. Se hai un account [GitHub][github] o sei disposto a [creare
+   uno][github-join], ma non sai come usare Git, puoi segnalare i problemi
+   o suggerire miglioramenti [creando un problema][repo-issues]. Questo ci permette
+   di assegnare l'articolo a qualcuno e di rispondere ad esso in una discussione filettata.
 
-3. If you are comfortable with Git, and would like to add or change material,
-   you can submit a pull request (PR). Instructions for doing this are
-   [included below](#using-github). For inspiration about changes that need to
-   be made, check out the [list of open issues][issues] across the Carpentries.
+3. Se sei a tuo agio con Git, e vuoi aggiungere o cambiare materiale,
+   puoi inviare una pull request (PR). Le istruzioni per farlo sono
+   [incluse qui sotto](#using-github). Per ispirare i cambiamenti che devono essere apportati ad
+   , consulta la [lista dei problemi aperti][issues] attraverso i Carpentieri.
 
-Note: if you want to build the website locally, please refer to [The Workbench
-documentation][template-doc].
+Nota: se si desidera costruire il sito web localmente, si prega di fare riferimento a \[Documentazione Workbench
+[template-doc].
 
-### Where to Contribute
+### Dove contribuire
 
-1. If you wish to change this lesson, add issues and pull requests here.
-2. If you wish to change the template used for workshop websites, please refer
-   to [The Workbench documentation][template-doc].
+1. Se si desidera modificare questa lezione, aggiungere problemi e richieste di pull qui.
+2. Se si desidera modificare il modello utilizzato per i siti web del laboratorio, si prega di fare riferimento
+   a [Documentazione del banco di lavoro][template-doc].
 
-### What to Contribute
+### Cosa contribuire
 
-There are many ways to contribute, from writing new exercises and improving
-existing ones to updating or filling in the documentation and submitting [bug
-reports][issues] about things that do not work, are not clear, or are missing.
-If you are looking for ideas, please see [the list of issues for this
-repository][repo-issues], or the issues for [Data Carpentry][dc-issues],
-[Library Carpentry][lc-issues], and [Software Carpentry][swc-issues] projects.
+Ci sono molti modi per contribuire, dalla scrittura di nuovi esercizi e dal miglioramento di quelli esistenti
+all'aggiornamento o compilazione della documentazione e all'invio di [bug
+reports][issues] su cose che non funzionano, non sono chiare, o manca.
+Se stai cercando delle idee, consulta [l'elenco dei problemi per questo repository
+][repo-issues], o i problemi per i progetti [Carpenteria dati][dc-issues],
+[Carpenteria biblioteca][lc-issues]e [Carpenteria software][swc-issues].
 
-Comments on issues and reviews of pull requests are just as welcome: we are
-smarter together than we are on our own. **Reviews from novices and newcomers
-are particularly valuable**: it's easy for people who have been using these
-lessons for a while to forget how impenetrable some of this material can be, so
-fresh eyes are always welcome.
+I commenti sui problemi e le recensioni delle richieste di pull sono i benvenuti: siamo
+più intelligenti di quanto siamo da soli. **Le recensioni dei novizi e dei nuovi arrivati
+sono particolarmente preziose**: è facile per le persone che hanno usato queste lezioni
+per un po 'dimenticare quanto impenetrabili alcuni di questo materiale possono essere, così
+occhi freschi sono sempre i benvenuti.
 
-### What _Not_ to Contribute
+### Cosa _non_ da contribuire
 
-Our lessons already contain more material than we can cover in a typical
-workshop, so we are usually _not_ looking for more concepts or tools to add to
-them. As a rule, if you want to introduce a new idea, you must (a) estimate how
+Le nostre lezioni contengono già più materiale di quello che possiamo coprire in un tipico laboratorio
+, quindi di solito _non_ cerchiamo più concetti o strumenti da aggiungere a
+. As a rule, if you want to introduce a new idea, you must (a) estimate how
 long it will take to teach and (b) explain what you would take out to make room
-for it. The first encourages contributors to be honest about requirements; the
-second, to think hard about priorities.
+for it. La prima incoraggia i contributori ad essere onesti sui requisiti; la
+seconda, a pensare duramente alle priorità.
 
-We are also not looking for exercises or other material that only run on one
-platform. Our workshops typically contain a mixture of Windows, macOS, and
-Linux users; in order to be usable, our lessons must run equally well on all
-three.
+Inoltre, non stiamo cercando esercizi o altro materiale che funziona solo su una piattaforma
+. Le nostre officine contengono tipicamente una miscela di utenti Windows, macOS e
+Linux; per essere utilizzabili, le nostre lezioni devono funzionare altrettanto bene su tutte e tre le
+.
 
 ### Using GitHub
 
-If you choose to contribute via GitHub, you may want to look at [How to
-Contribute to an Open Source Project on GitHub][how-contribute]. In brief, we
-use [GitHub flow][github-flow] to manage changes:
+Se scegli di contribuire tramite GitHub, si consiglia di guardare a [Come
+Contribuire a un progetto Open Source su GitHub][how-contribute]. In breve,
+usiamo [GitHub flow][github-flow] per gestire le modifiche:
 
-1. Create a new branch in your desktop copy of this repository for each
-   significant change.
-2. Commit the change in that branch.
-3. Push that branch to your fork of this repository on GitHub.
-4. Submit a pull request from that branch to the [upstream repository][repo].
-5. If you receive feedback, make changes on your desktop and push to your
-   branch on GitHub: the pull request will update automatically.
+1. Crea un nuovo ramo nella copia desktop di questo repository per ogni cambiamento significativo di
+   .
+2. Commit la modifica in quel ramo.
+3. Invia quel ramo al tuo fork di questo repository su GitHub.
+4. Invia una richiesta pull da quel ramo al [repository upstream][repo].
+5. Se ricevi un feedback, apporti modifiche sul tuo desktop e invia al ramo
+   su GitHub: la pull request si aggiornerà automaticamente.
 
-NB: The published copy of the lesson is usually in the `main` branch.
+NB: La copia pubblicata della lezione è solitamente nel ramo `main`.
 
-Each lesson has a team of maintainers who review issues and pull requests or
-encourage others to do so. The maintainers are community volunteers, and have
-final say over what gets merged into the lesson.
+Ogni lezione ha un team di manutentori che esaminano i problemi e le richieste di pull o
+incoraggiano gli altri a farlo. I manutentori sono volontari della comunità e hanno
+finale dire su ciò che viene unito nella lezione.
 
-### Other Resources
+### Altre Risorse
 
 The Carpentries is a global organisation with volunteers and learners all over
-the world. We share values of inclusivity and a passion for sharing knowledge,
-teaching and learning. There are several ways to connect with The Carpentries
-community listed at https\://carpentries.org/connect/ including via social
-media, slack, newsletters, and email lists. You can also [reach us by
-email][contact].
+the world. Condividiamo valori di inclusività e passione per la condivisione delle conoscenze, l'insegnamento e l'apprendimento
+. Ci sono diversi modi per connettersi con la comunità Carpentries
+elencata su https\://carpentries.org/connect/ tra cui tramite social
+media, slack, newsletter ed elenchi di posta elettronica. Puoi anche [raggiungerci via email
+][contact].
 
 [repo]: https://github.com/swcarpentry/python-novice-gapminder
 
@@ -111,7 +111,7 @@ email][contact].
 
 [dc-issues]: https://github.com/issues?q=user%3Adatacarpentry
 
-[dc-lessons]: https://datacarpentry.org/lessons/
+[dc-lessons]: https://datacarpentry.org/lezioni/
 
 [dc-site]: https://datacarpentry.org/
 
@@ -119,7 +119,7 @@ email][contact].
 
 [github]: https://github.com
 
-[github-flow]: https://guides.github.com/introduction/flow/
+[github-flow]: https://guides.github.com/introduzione/flow/
 
 [github-join]: https://github.com/join
 
@@ -131,7 +131,7 @@ email][contact].
 
 [swc-issues]: https://github.com/issues?q=user%3Aswcarpentry
 
-[swc-lessons]: https://software-carpentry.org/lessons/
+[swc-lessons]: https://software-carpentry.org/lezioni/
 
 [swc-site]: https://software-carpentry.org/
 
