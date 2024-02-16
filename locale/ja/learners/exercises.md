@@ -1,5 +1,5 @@
 ---
-title: Further Exercises
+title: さらなる演習
 ---
 
-FIXME: exercises that don't fit into the regular schedule.
+FIXME: 通常のスケジュールに合わない演習。
