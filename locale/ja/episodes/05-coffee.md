@@ -1,14 +1,14 @@
 ---
-title: Morning Coffee
+title: モーニングコーヒー
 teaching: 0
 exercises: 0
 break: 15
 ---
 
-## Reflection exercise
+## リフレクション運動
 
-Over coffee, reflect on and discuss the following:
+コーヒーを飲みながら、以下のことを考え、議論しましょう。
 
-- What are the different kinds of errors Python will report?
-- Did the code always produce the results you expected? If not, why?
-- Is there something we can do to prevent errors when we write code?
+- Pythonが報告するエラーの種類は何ですか?
+- コードは常に期待した結果を生成しましたか? そうでなければ、なぜですか?
+- コードを書くときにエラーを防ぐためにできることはありますか?
