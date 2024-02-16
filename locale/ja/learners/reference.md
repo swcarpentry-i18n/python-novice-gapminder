@@ -1,104 +1,104 @@
 ---
-title: Reference
+title: 参照
 ---
 
-## Reference
+## 参照
 
-## [Running and Quitting](episodes/01-run-quit.md)
+## format@@0(episodes/01-run-quit.md)
 
-- Python files have the `.py` extension.
-- Can be written in a text file or a [Jupyter Notebook][jupyter].
-  - Jupyter notebooks have the extension `.ipynb`
-  - Jupyter notebooks can be opened from [Anaconda](https://docs.continuum.io/anaconda/install) or through the command line by entering `$ jupyter notebook`
-    - Markdown and HTML are allowed in markdown cells for documenting code.
+- Python ファイルは `.py` 拡張子を持っています。
+- テキストファイルや[Jupyter Notebook][jupyter] に書き込めます。
+  - Jupyter notebook は `.ipynb` という拡張子を持っています。
+  - Jupyter notebook は [Anaconda](https://docs.continuum.io/anaconda/install) から、またはコマンドラインで `$ jupyter notebook` を入力して開くことができます。
+    - Markdown と HTML は、コードを文書化するためにマークダウンセルに許可されています。
 
-## [Variables and Assignment](episodes/02-variables.md)
+## format@@0(episodes/02-variables.md)
 
-- Variables are stored using `=`.
-  - Strings are defined in quotations `'...'`.
-  - Integers and floating point numbers are defined without quotations.
-- Variables can contain letters, digits, and underscores `_`.
-  - Cannot start with a digit.
-  - Variables that start with underscores should be avoided.
-- Use `print(...)` to display values as text.
-- Can use indexing on strings.
-  - Indexing starts at 0.
-  - Position is given in square brackets `[position]` following the variable name.
-  - Take a slice using `[start:stop]`. This makes a copy of part of the original string.
-    - `start` is the index of the first element.
-    - `stop` is the index of the element after the last desired element.
-- Use `len(...)` to find the length of a variable or string.
+- 変数は `=` を使用して保存されます。
+  - 文字列は引用符`'...'`で定義されます。
+  - 整数と浮動小数点数は引用符なしで定義されます。
+- 変数には、文字、数字、アンダースコアを含めることができます。
+  - 数字で開始することはできません。
+  - アンダースコアで始まる変数は避けるべきです。
+- 値をテキストとして表示するには、`print(...)` を使用します。
+- 文字列のインデックスを使用できます。
+  - インデックスは0から始まります。
+  - 変数名の後に、角括弧`[position]`で位置を指定します。
+  - `[start:stop]`を使ってスライスを取りましょう。 これは、元の文字列の一部をコピーします。
+    - `start` は最初の要素のインデックスです。
+    - `stop` は最後の要素の後の要素のインデックスです。
+- 変数または文字列の長さを求めるには、`len(...)`を使います。
 
-## [Data Types and Type Conversion](episodes/03-types-conversion.md)
+## format@@0(episodes/03-types-conversion.md)
 
-- Each value has a type. This controls what can be done with it.
-  - `int` represents an integer
-  - `float` represents a floating point number.
-  - `str` represents a string.
-- To determine a variables type, use the built-in function `type(...)`, including the variable name in the parenthesis.
-- Modifying strings:
-  - Use `+` to concatenate strings.
-  - Use `*` to repeat a string.
-  - Numbers and strings cannot be added to on another.
-    - Convert string to integer: `int(...)`.
-    - Convert integer to string: `str(...)`.
+- 各値には型があります。 これにより、何ができるかが制御されます。
+  - `int` は整数を表します
+  - `float` は浮動小数点数を表します。
+  - `str`は文字列を表します。
+- 変数型を決定するには、括弧内に変数名を含む組み込み関数 `type(...)` を使用します。
+- 文字列の変更:
+  - 文字列を連結するには `+` を使用します。
+  - `*`で文字列を繰り返します。
+  - 数値と文字列は別のものには追加できません。
+    - 文字列を整数に変換する: `int(...)` 。
+    - 整数を文字列に変換する: `str(...)` 。
 
-## [Built-in Functions and Help](episodes/04-built-in.md)
+## format@@0(episodes/04-built-in.md)
 
-- To add a comment, place `#` before the thing you do not with to be executed.
-- Commonly used built-in functions:
-  - `min()` finds the smallest value.
-  - `max()` finds the largest value.
-  - `round()` rounds off a floating point number.
-  - `help()` displays documentation for the function in the parenthesis.
-    - Other ways to get help include holding down `shift` and pressing `tab` in Jupyter Notebooks.
+- コメントを追加するには、実行されないものの前に `#` を置いてください。
+- 一般的に使用される組み込み関数:
+  - `min()` は最小値を見つけます。
+  - `max()`は最大値を検索します。
+  - `round()` は浮動小数点数を四捨五入します。
+  - `help()` は括弧内の関数のドキュメントを表示します。
+    - ヘルプを得る他の方法としては、Jupyter Notebookで`shift`を押しながら`tab`を押します。
 
 ## [Libraries](episodes/06-libraries.md)
 
-- Importing a library:
-  - Use `import ...` to load a library.
-  - Refer to this library by using `module_name.thing_name`.
-    - `.` indicates 'part of'.
-- To import a specific item from a library: `from ... import ...`
-- To import a library using an alias: `import ... as ...`
-- Importing the math library: `import math`
-  - Example of referring to an item with the module's name: `math.cos(math.pi)`.
-- Importing the plotting library as an alias: `import matplotlib as mpl`
+- ライブラリのインポート:
+  - ライブラリをロードするには `import ...` を使います。
+  - `module_name.thing_name` を使用して、このライブラリを参照してください。
+    - `.`は'の一部'を示します。
+- ライブラリから特定のアイテムをインポートするには: `from ... import ...`
+- エイリアスを使用してライブラリをインポートするには: `import ... as ...`
+- 数学ライブラリのインポート: `import math`
+  - モジュール名の項目を参照する例: `math.cos(math.pi)` 。
+- プロットライブラリを別名としてインポートします: `import matplotlib as mpl`
 
-## [Reading Tabular Data into DataFrames](episodes/07-reading-tabular.md)
+## format@@0(episodes/07-reading-tabular.md)
 
-- Use the pandas library to do statistics on tabular data. Load with `import pandas as pd`.
-  - To read in a csv: `pd.read_csv()`, including the path name in the parenthesis.
-    - To specify a column's values should be used as row headings: `pd.read_csv('path', index_col='column name')`, where path and column name should be replaced with the relevant values.
-- To get more information about a DataFrame, use `DataFrame.info`, replacing `DataFrame` with the variable name of your DataFrame.
-- Use `DataFrame.columns` to view the column names.
-- Use `DataFrame.T` to transpose a DataFrame.
-- Use `DataFrame.describe` to get summary statistics about your data.
+- pandas ライブラリを使用して、表形式のデータに関する統計を行います。 `import pandas pd` で読み込みます。
+  - csv で読み込むには: `pd.read_csv()` 括弧内のパス名を含む。
+    - カラムの値を指定するには、行見出しとして使用する必要があります: `pd. ead_csv('path', index_col='column name')` パスと列名を関連する値に置き換える必要があります。
+- DataFrameに関する詳細な情報を得るには、`DataFrame.info`を使用します。`DataFrame` をDataFrameの変数名に置き換えます。
+- 列名を表示するには、`DataFrame.columns` を使用します。
+- DataFrame.Tを移調するには、`DataFrame.T`を使用します。
+- データに関するサマリ統計を取得するには、`DataFrame.describe`を使用してください。
 
-## [Pandas DataFrames](episodes/08-data-frames.md)
+## format@@0(episodes/08-data-frames.md)
 
-- Select data using `[i,j]`
-  - To select by entry position: `DataFrame.iloc[..., ...]`
-    - This is inclusive of everything except the final index.
-  - To select by entry label: `DataFrame.loc[..., ...]`
-    - Can select multiple rows or columns by listing labels.
-    - This is inclusive to both ends.
-  - Use `:` to select all rows or columns.
-- Can also select data based on values using `True` and `False`. This is a Boolean mask.
+- `[i,j]` を使用してデータを選択
+  - エントリの位置で選択するには、`DataFrame.iloc[..., ...]`
+    - これは、最終的な指数以外のすべてのものが含まれています。
+  - エントリラベルで選択するには、`DataFrame.loc[..., ...]`
+    - ラベルを一覧表示することで複数の行または列を選択できます。
+    - これは両方の目的に含まれています。
+  - すべての行または列を選択するには `:` を使用します。
+- TrueとFalseを使用して値に基づいてデータを選択することもできます。 これはブールマスクです。
   - `mask = subset > 10000`
-  - We can then use this to select values.
-- To use a select-apply-combine operation we use `data.apply(lambda x: x > x.mean())` where `mean()` can be any operation the user would like to be applied to x.
+  - これを使用して値を選択できます。
+- select-apply-combin操作を使用するには、 `data.apply(lambda x: x > x. `mean()\`は、ユーザーがxに適用したい任意の操作になります。
 
-## [Plotting](episodes/09-plotting.md)
+## [Plotting](エピソード/09-ploting.md)
 
-- The most widely used plotting library is `matplotlib`.
-  - Usually imported using `import matplotlib.pyplot as plt`.
-  - To plot we use the command `plt.plot(time, position)`.
-  - To create a legend use `plt.legend(['label1', 'label2'], loc='upper left')`
-    - Can also define labels within the plot statements by using `plt.plot(time, position, label='label')`. To make the legend show up, use `plt.legend()`
-  - To label x and y axis `plt.xlabel('label')` and `plt.ylabel('label')` are used.
-- Pandas DataFrames can be used to plot by using `DataFrame.plot()`. Any operations that can be used on a DataFrame can be applied while plotting.
-  - To plot a bar plot `data.plot(kind='bar')`
+- 最も広く使用されているプロットライブラリは `matplotlib` です。
+  - 通常は、`import matplotlib.pyplot を plt` としてインポートします。
+  - 図を描くには、 `plt.plot(time, position)` を使います。
+  - 凡例を作成するには `plt.legend(['label1', 'label2'], loc='upper left')` を使います。
+    - また、 `plt.plot(time, position, label='label')` を使って、プロット文内でラベルを定義することもできます。 凡例を表示するには、 `plt.legend()` を使用します。
+  - x軸とy軸に`plt.xlabel('label')`と`plt.ylabel('label')`を使用します。
+- Pandas DataFrame は、 `DataFrame.plot()` を使用してプロットすることができます。 DataFrameで使用できる操作は、プロット中に適用できます。
+  - 棒グラフをプロットする `data.plot(kind='bar')`
 
 ```python
 import matplotlib.puplot as plot
@@ -110,42 +110,42 @@ plt.legend()
 
 ## [Lists](episodes/11-lists.md)
 
-- Defined within `[...]` and separated by `,`.
-  - An empty list can be created by using `[]`.
-- Can use `len(...)` to determine how many values are in a list.
-- Can index just as done in previous lessons.
-  - Indexing can be used to reassign values `list_name[0] = newvalue`.
-- To add an item to a list use `list_name.append()`, with the item to append in the parenthesis.
-- To combine two lists use `list_name_1.extend(list_name_2)`.
-- To remove an item from a list use `del list_name[index]`.
+- `[...]`内で定義され、`,`で区切られています。
+  - `[]`を使えば、空のリストを作成できます。
+- `len(...)`を使って、リスト内の値の数を決めることができます。
+- 以前のレッスンと同様にインデックスを作成できます。
+  - インデックス作成は、 `list_name[0] = newvalue` の値を再割り当てするために使用できます。
+- リストに項目を追加するには、 `list_name.append()` を使用し、括弧内に項目を追加します。
+- 2つのリストを組み合わせるには、 `list_name_1.extend(list_name_2)` を使います。
+- リストから項目を削除するには、`del list_name[index] ` を使用します。
 
-## [For Loops](episodes/12-for-loops.md)
+## format@@0(episodes/12-for-loops.md)
 
-- Start a for loop with `for number in [1, 2, 3]:`, with the following lines indented.
-  - `[1, 2, 3]` is considered the collection.
-  - `number` is the loop variable.
-  - The action following the collection is the body.
-- To iterate over a sequence of numbers use `range(start, end)`
+- forループは、`for number in [1, 2, 3]:`で始まり、次の行をインデントします。
+  - `[1, 2, 3]` はコレクションとみなされます。
+  - `number` はループ変数です。
+  - コレクションに続くアクションが本文です。
+- 連続した数字を繰り返すには、 `range(start, end)` を使います。
 
 ```python
 for number in range(0,5):
     print(number)
 ```
 
-## [Conditionals](episodes/13-conditionals.md)
+## [Conditionals](episode / 13conditionals.md)
 
-- Defined similarly to a loop, using `if variable conditional value:`.
-  - For example, `if variable > 5:`.
-- Use `elif:` for additional tests.
-- Use `else:` for when if statement is not true.
-- Can combine more than one conditional by using `and` or `or`.
-- Often used in combination with for loops.
-- Conditions that can be used:
-  - `==` equal to.
-  - `>=` greater than or equal to.
-  - `<=` less than or equal to.
-  - `>` greater than.
-  - `<` less than.
+- `if variable conditional value:`を使用して、ループと同じように定義します。
+  - 例えば、 `if variable > 5:` です。
+- 追加のテストには`elif:`を使います。
+- if文が真でないときは、`else:`を使ってください。
+- `and`または`or`を使って複数の条件を組み合わせることができます。
+- for ループと組み合わせてよく使用されます。
+- 使用可能な条件
+  - `==`は等しくなります。
+  - `>=` 以上。
+  - `<=` 以下。
+  - `>` より大きい。
+  - `<`より小さい。
 
 ```python
 for m in [3, 6, 7, 2, 8]:
@@ -157,26 +157,26 @@ for m in [3, 6, 7, 2, 8]:
         print(m, 'is small')
 ```
 
-## [Looping Over Data Sets](episodes/14-looping-data-sets.md)
+## format@@0(episodes/14-looping-data-sets.md)
 
-- Use a for loop: `for filename in [file1, file2]:`
-- To find a set of files using a pattern use `glob.glob`
-  - Must import first using `import glob`.
-  - `*` indicates "match zero or more characters"
-  - `?` indicates "match exactly one character"
-    - For example: `glob.glob(*.txt)` will find all files that end with `.txt` in the current directory.
-- Combine these by writing a loop using: `for filename in glob.glob(*.txt):`
+- for ループを使ってください: `for filename in [file1, file2]:`
+- パターンを使用して一連のファイルを見つけるには、 `glob.glob` を使用します。
+  - `import glob` を使ってインポートする必要があります。
+  - `*` は「ゼロ以上の文字に一致する」を示します
+  - `?` は「一致する文字」を示します。
+    - 例: `glob.glob(*.txt)` はカレントディレクトリに`.txt`で終わるすべてのファイルを検索します。
+- `for filename in glob.glob.glob(*.txt):` を使って、これらを組み合わせましょう。
 
 ```python
 for filename in glob.glob(*.txt):
   data = pd.read_csv(filename)
 ```
 
-## [Writing Functions](episodes/16-writing-functions.md)
+## format@@0(episodes/16-writing-functions.md)
 
-- Define a function using `def function_name(parameters):`. Replace `parameters` with the variables to use when the function is executed.
-- Run by using `function_name(parameters)`.
-- To return a result to the caller use `return ...` in the function.
+- `def function_name(parameters):` を使って関数を定義します。 関数を実行するときに使用する変数に `parameters` を置き換えます。
+- `function_name(parameters)` を使用して実行します。
+- 呼び出し元に結果を返すには、関数で `return ...` を使います。
 
 ```python
 def add_numbers(a, b):
@@ -186,71 +186,71 @@ def add_numbers(a, b):
 add_numbers(1, 4)
 ```
 
-## [Variable Scope](episodes/17-scope.md)
+## format@@0(episodes/17-scope.md)
 
-- A local variable is defined in a function and can only be seen and used within that function.
-- A global variable is defined outside of a function and can be seen or used anywhere after definition.
+- ローカル変数は関数内で定義され、その関数内でのみ見ることができます。
+- グローバル変数は関数の外側で定義され、定義後の任意の場所で見ることができます。
 
-## [Programming Style](episodes/18-style.md)
+## format@@0(episodes/18-style.md)
 
-- Document your code.
-- Use clear and meaningful variable names.
-- Follow [the PEP8 style guide](https://www.python.org/dev/peps/pep-0008) when setting up your code.
-- Use assertions to check for internal errors.
-- Use docstrings to provide help.
+- コードを文書化します。
+- 明確で意味のある変数名を使用してください。
+- コードを設定するときは、format@@0(https\://www\.python.org/dev/peps/pep-0008)に従ってください。
+- アサーションを使用して内部エラーを確認します。
+- ヘルプを提供するには、docstringsを使用してください。
 
 ## Glossary
 
-Arguments
-:     Values passed to functions.
+引数
+: 関数に渡される値。
 
-Array
-:     A container holding elements of the same type.
+配列
+: 同じ型の要素を保持するコンテナ。
 
 Boolean
-:     An object composed of `True` and `False`.
+: `True` と `False` で構成されたオブジェクト。
 
 DataFrame
-:     The way Pandas represents a table; a collection of series.
+: Pandasが表; 系列のコレクションを表す方法。
 
-Element
-:     An item in a list or an array. For a string, these are the individual characters.
+要素
+: リストまたは配列の項目。 文字列の場合、これらは個々の文字です。
 
-Function
-:     A block of code that can be called and re-used elsewhere.
+関数
+: 他の場所で呼び出して再利用できるコードブロック。
 
-Global variable
-:     A variable defined outside of a function that can be used anywhere.
+グローバル変数
+: 関数の外部で使用できる変数。
 
-Index
-:     The position of a given element.
+インデックス
+: 指定された要素の位置。
 
 Jupyter Notebook
-:     Interactive coding environment allowing a combination of code and markdown.
+: コードとマークダウンの組み合わせを可能にするインタラクティブなコーディング環境。
 
-Library
-:     A collection of files containing functions used by other programs.
+ライブラリ
+: 他のプログラムで使用される関数を含むファイルの集合。
 
-Local Variable
-:     A variable defined inside of a function that can only be used inside of that function.
+ローカル変数
+: 関数の内部でのみ使用できる変数。
 
-Mask
-:     A boolean object used for selecting data from another object.
+マスク
+: 別のオブジェクトからデータを選択するために使用されるブール型オブジェクト。
 
-Method
-:     An action tied to a particular object. Called by using `object.method`.
+メソッド
+: 特定のオブジェクトに関連付けられたアクション。 `object.method` を使用して呼び出されます。
 
-Modules
-:     The files within a library containing functions used by other programs.
+モジュール
+: 他のプログラムで使用されている関数を含むライブラリ内のファイル。
 
-Parameters
-:     Variables used when executing a function.
+パラメータ
+: 関数の実行時に使用する変数。
 
-Series
-:     A Pandas data structure to represent a column.
+シリーズ
+: 列を表すパンダデータ構造。
 
 Substring
-:     A part of a string.
+: 文字列の一部。
 
-Variables
-:     Names for values.
+変数
+: 値の名前。
