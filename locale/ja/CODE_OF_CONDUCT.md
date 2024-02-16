@@ -1,13 +1,12 @@
 ---
-title: Contributor Code of Conduct
+title: 貢献者の行動基準
 ---
 
-As contributors and maintainers of this project,
-we pledge to follow the [The Carpentries Code of Conduct][coc].
+は、このプロジェクトの貢献者と管理者として、[The Carpentries Code of Conduct][coc]に従うことを誓います。
 
 Instances of abusive, harassing, or otherwise unacceptable behavior
 may be reported by following our [reporting guidelines][coc-reporting].
 
 [coc-reporting]: https://docs.carpentries.org/topic_folders/policies/incident-reporting.html
 
-[coc]: https://docs.carpentries.org/topic_folders/policies/code-of-conduct.html
+[coc]: https://docs.carpentries.org/topic_folders/policies/codeof-conduct.html
