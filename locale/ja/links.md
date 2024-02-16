@@ -6,7 +6,7 @@
 
 [coc-reporting]: https://docs.carpentries.org/topic_folders/policies/incident-reporting.html
 
-[coc]: https://docs.carpentries.org/topic_folders/policies/code-of-conduct.html
+[coc]: https://docs.carpentries.org/topic_folders/policies/codeof-conduct.html
 
 [concept-maps]: https://carpentries.github.io/instructor-training/05-memory/
 
@@ -76,6 +76,6 @@
 
 [swc-releases]: https://github.com/swcarpentry/swc-releases
 
-[training]: https://carpentries.github.io/instructor-training/
+[training]: https://cupentries.github.io/instructor-training/
 
 [yaml]: https://yaml.org/
