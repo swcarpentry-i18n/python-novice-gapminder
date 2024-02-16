@@ -1,30 +1,30 @@
 ---
-title: Looping Over Data Sets
+title: Bucle sobre conjuntos de datos
 teaching: 5
 exercises: 10
 ---
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- Be able to read and write globbing expressions that match sets of files.
-- Use glob to create lists of files.
-- Write for loops to perform operations on files given their names in a list.
+- Ser capaz de leer y escribir expresiones de globo que coincidan con conjuntos de archivos.
+- Utilice glob para crear listas de archivos.
+- Escribe los bucles para realizar operaciones sobre archivos dados sus nombres en una lista.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::: questions
+:::::::::::::::::::::::::::::::::::::::::::::::::: preguntas
 
-- How can I process many data sets with a single command?
+- ¿Cómo puedo procesar muchos conjuntos de datos con un solo comando?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Use a `for` loop to process files given a list of their names.
+## Usa un bucle `for` para procesar archivos dados una lista de sus nombres.
 
-- A filename is a character string.
-- And lists can contain character strings.
+- Un nombre de archivo es una cadena de caracteres.
+- Y las listas pueden contener cadenas de caracteres.
 
 ```python
-import pandas as pd
+import pandas as as pd
 for filename in ['data/gapminder_gdp_africa.csv', 'data/gapminder_gdp_asia.csv']:
     data = pd.read_csv(filename, index_col='country')
     print(filename, data.min())
@@ -51,41 +51,41 @@ gdpPercap_2007    944
 dtype: float64
 ```
 
-## Use [`glob.glob`](https://docs.python.org/3/library/glob.html#glob.glob) to find sets of files whose names match a pattern.
+## Usa [`glob.glob`](https://docs.python.org/3/library/glob.html#glob.glob) para encontrar conjuntos de archivos cuyos nombres coinciden con un patrón.
 
-- In Unix, the term "globbing" means "matching a set of files with a pattern".
-- The most common patterns are:
-  - `*` meaning "match zero or more characters"
-  - `?` meaning "match exactly one character"
-- Python's standard library contains the [`glob`](https://docs.python.org/3/library/glob.html) module to provide pattern matching functionality
-- The [`glob`](https://docs.python.org/3/library/glob.html) module contains a function also called `glob` to match file patterns
-- E.g., `glob.glob('*.txt')` matches all files in the current directory
-  whose names end with `.txt`.
-- Result is a (possibly empty) list of character strings.
+- En Unix, el término "globbing" significa "emparejar un conjunto de archivos con un patrón".
+- Los patrones más comunes son:
+  - `*` significa "coincidir cero o más caracteres"
+  - `?` significa "coincidir exactamente con un carácter"
+- La biblioteca estándar de Python contiene el módulo [`glob`](https://docs.python.org/3/library/glob.html) para proporcionar funcionalidad de patrón
+- El módulo [`glob`](https://docs.python.org/3/library/glob.html) contiene una función también llamada `glob` para que coincida con los patrones de archivo
+- Por ejemplo, `glob.glob('*.txt')` coincide con todos los archivos en el directorio actual
+  cuyos nombres terminan con `.txt`.
+- El resultado es una lista (posiblemente vacía) de cadenas de caracteres.
 
 ```python
 import glob
-print('all csv files in data directory:', glob.glob('data/*.csv'))
+print('todos los archivos csv en el directorio de datos:', glob.glob('data/*.csv'))
 ```
 
 ```output
-all csv files in data directory: ['data/gapminder_all.csv', 'data/gapminder_gdp_africa.csv', \
+todos los archivos csv en el directorio de datos: ['data/gapminder_all.csv', 'data/gapminder_gdp_africa.csv', \
 'data/gapminder_gdp_americas.csv', 'data/gapminder_gdp_asia.csv', 'data/gapminder_gdp_europe.csv', \
 'data/gapminder_gdp_oceania.csv']
 ```
 
 ```python
-print('all PDB files:', glob.glob('*.pdb'))
+print('todos los archivos PDB:', glob.glob('*.pdb'))
 ```
 
 ```output
-all PDB files: []
+todos los archivos PDB: []
 ```
 
-## Use `glob` and `for` to process batches of files.
+## Usa `glob` y `for` para procesar lotes de archivos.
 
-- Helps a lot if the files are named and stored systematically and consistently
-  so that simple patterns will find the right data.
+- Ayuda mucho si los archivos son nombrados y almacenados sistemáticamente
+  para que los patrones simples encuentren los datos correctos.
 
 ```python
 for filename in glob.glob('data/gapminder_*.csv'):
@@ -102,102 +102,102 @@ data/gapminder_gdp_europe.csv 973.5331948
 data/gapminder_gdp_oceania.csv 10039.59564
 ```
 
-- This includes all data, as well as per-region data.
-- Use a more specific pattern in the exercises to exclude the whole data set.
-- But note that the minimum of the entire data set is also the minimum of one of the data sets,
-  which is a nice check on correctness.
+- Esto incluye todos los datos, así como los datos por región.
+- Utilice un patrón más específico en los ejercicios para excluir todo el conjunto de datos.
+- Pero tenga en cuenta que el mínimo de todo el conjunto de datos es también el mínimo de uno de los conjuntos de datos,
+  que es una buena comprobación de la exactitud.
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::::::::::::::: desafío
 
-## Determining Matches
+## Determinar partidas
 
-Which of these files is _not_ matched by the expression `glob.glob('data/*as*.csv')`?
+¿Cuál de estos archivos _no_ coincide con la expresión `glob.glob('data/*as*.csv')`?
 
 1. `data/gapminder_gdp_africa.csv`
 2. `data/gapminder_gdp_americas.csv`
 3. `data/gapminder_gdp_asia.csv`
 
-:::::::::::::::  solution
+::::::::::::::::: solución
 
-## Solution
+## Solución
 
-1 is not matched by the glob.
+1 no coincide con el globo.
 
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::::::::::::::: desafío
 
-## Minimum File Size
+## Tamaño mínimo del archivo
 
-Modify this program so that it prints the number of records in
-the file that has the fewest records.
+Modifique este programa para que imprima el número de registros en
+el archivo que tiene menos registros.
 
 ```python
 import glob
-import pandas as pd
+import pandas as as pd
 fewest = ____
-for filename in glob.glob('data/*.csv'):
-    dataframe = pd.____(filename)
-    fewest = min(____, dataframe.shape[0])
-print('smallest file has', fewest, 'records')
+para el nombre de archivo en glob.glob('data/*.csv'):
+    datsalario = pd. ___(nombre de archivo)
+    menos = min(____, dataframe.shape[0])
+print('archivo más pequeño tiene', menos 'registros')
 ```
 
-Note that the [`DataFrame.shape()` method][shape-method]
-returns a tuple with the number of rows and columns of the data frame.
+Tenga en cuenta que el [`DataFrame.shape()` método][shape-method]
+devuelve una tupla con el número de filas y columnas del marco de datos.
 
-:::::::::::::::  solution
+::::::::::::::::: solución
 
-## Solution
+## Solución
 
 ```python
 import glob
-import pandas as pd
+import pandas as as pd
 fewest = float('Inf')
-for filename in glob.glob('data/*.csv'):
-    dataframe = pd.read_csv(filename)
-    fewest = min(fewest, dataframe.shape[0])
-print('smallest file has', fewest, 'records')
+para el nombre de archivo en glob.glob('data/*.csv'):
+    datsalario = pd. ead_csv(nombre de archivo)
+    menor = min(menos, dataframe.shape[0])
+print('el archivo más pequeño tiene', menos, 'registros')
 ```
 
-You might have chosen to initialize the `fewest` variable with a number greater than the numbers
-you're dealing with, but that could lead to trouble if you reuse the code with bigger numbers.
-Python lets you use positive infinity, which will work no matter how big your numbers are.
-What other special strings does the [`float` function][float-function] recognize?
+Puede que hayas elegido inicializar la variable `fewest` con un número mayor que los números
+que estás tratando, pero eso podría causar problemas si reutilizas el código con números más grandes.
+Python te permite usar infinidad positiva, que funcionará sin importar lo grandes que sean tus números.
+¿Qué otras cadenas especiales reconoce la [función 'float'][float-function]?
 
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::::::::::::::: desafío
 
-## Comparing Data
+## Comparando datos
 
-Write a program that reads in the regional data sets
-and plots the average GDP per capita for each region over time
-in a single chart.
+Escribe un programa que lea en los datos regionales establece
+y grafica el PIB promedio per cápita para cada región a lo largo del tiempo
+en un solo gráfico.
 
-:::::::::::::::  solution
+::::::::::::::::: solución
 
-## Solution
+## Solución
 
-This solution builds a useful legend by using the [string `split` method][split-method] to
-extract the `region` from the path 'data/gapminder\_gdp\_a\_specific\_region.csv'.
+Esta solución construye una leyenda útil usando el [método `split`][split-method] a
+extrae `region` de la ruta 'data/gapminder\_gdp\_a\_specific\_region.csv'.
 
 ```python
 import glob
-import pandas as pd
-import matplotlib.pyplot as plt
+import pandas as as pd
+import matplotlib.pyplot as plotlib.pyplot as plt
 fig, ax = plt.subplots(1,1)
-for filename in glob.glob('data/gapminder_gdp*.csv'):
-    dataframe = pd.read_csv(filename)
-    # extract <region> from the filename, expected to be in the format 'data/gapminder_gdp_<region>.csv'.
-    # we will split the string using the split method and `_` as our separator,
-    # retrieve the last string in the list that split returns (`<region>.csv`), 
-    # and then remove the `.csv` extension from that string.
+for filename in glob.glob('data/gapminder_gdp*. sv'):
+    datos de nombre = pd. ead_csv(filename)
+    # extrae <region> del nombre de archivo, se espera que esté en el formato 'data/gapminder_gdp_<region>.csv'.
+    # dividiremos la cadena usando el método dividido y `_` como nuestro separador,
+    # recupera la última cadena de la lista que retorna (`<region>. sv`), 
+    # y luego eliminar el `. sv` extensión de esa cadena.
     region = filename.split('_')[-1][:-4] 
-    dataframe.mean().plot(ax=ax, label=region)
+    nombre de datos. ean().plot(ax=ax, label=region)
 plt.legend()
 plt.show()
 ```
@@ -208,11 +208,11 @@ plt.show()
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Dealing with File Paths
+## Tratando rutas de archivos
 
-The [`pathlib` module][pathlib-module] provides useful abstractions for file and path manipulation like
-returning the name of a file without the file extension. This is very useful when looping over files and
-directories. In the example below, we create a `Path` object and inspect its attributes.
+El [`pathlib` module][pathlib-module] proporciona abstracciones útiles para la manipulación de archivos y rutas como
+devolviendo el nombre de un archivo sin la extensión del archivo. Esto es muy útil al hacer bucle sobre archivos y directorios
+. En el ejemplo siguiente, creamos un objeto `Path` e inspeccionamos sus atributos.
 
 ```python
 from pathlib import Path
@@ -222,13 +222,13 @@ print(p.parent), print(p.stem), print(p.suffix)
 ```
 
 ```output
-data
-gapminder_gdp_africa
+datos
+gapminder_gdp_Physica
 .csv
 ```
 
-**Hint:** It is possible to check all available attributes and methods on the `Path` object with the `dir()`
-function!
+**Pista:** ¡Es posible comprobar todos los atributos y métodos disponibles en el objeto `Ruta` con la función `dir()`
+!
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -242,8 +242,8 @@ function!
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- Use a `for` loop to process files given a list of their names.
-- Use `glob.glob` to find sets of files whose names match a pattern.
-- Use `glob` and `for` to process batches of files.
+- Usa un bucle `for` para procesar archivos dados una lista de sus nombres.
+- Usa `glob.glob` para encontrar conjuntos de archivos cuyos nombres coinciden con un patrón.
+- Usa `glob` y `for` para procesar lotes de archivos.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
