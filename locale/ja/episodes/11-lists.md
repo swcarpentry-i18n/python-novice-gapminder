@@ -1,30 +1,30 @@
 ---
-title: Lists
+title: リスト
 teaching: 10
 exercises: 10
 ---
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- Explain why programs need collections of values.
-- Write programs that create flat lists, index them, slice them, and modify them through assignment and method calls.
+- プログラムがなぜ価値観のコレクションを必要とするかを説明してください。
+- フラットリストを作成したり、インデックスを作成したり、スライスしたり、割り当てやメソッド呼び出しで変更したりするプログラムを記述します。
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::: questions
+::::::::::::::::::::::::::::::::::
 
-- How can I store multiple values?
+- 複数の値を保存するにはどうすればよいですか?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## A list stores many values in a single structure.
+## リストは多くの値を単一の構造体に格納します。
 
-- Doing calculations with a hundred variables called `pressure_001`, `pressure_002`, etc.,
-  would be at least as slow as doing them by hand.
-- Use a _list_ to store many values together.
-  - Contained within square brackets `[...]`.
-  - Values separated by commas `,`.
-- Use `len` to find out how many values are in a list.
+- `pressure_001`、`pressure_002`などと呼ばれる100個の変数を使って計算すると、
+  は少なくとも手作業で計算するのと同じくらい遅いでしょう。
+- _list_ を使用して、多くの値をまとめて格納します。
+  - 角括弧`[...]`内に含まれています。
+  - 値はコンマ`,`で区切られます。
+- リスト内の値の数を調べるには、`len`を使います。
 
 ```python
 pressures = [0.273, 0.275, 0.277, 0.275, 0.276]
@@ -33,60 +33,60 @@ print('length:', len(pressures))
 ```
 
 ```output
-pressures: [0.273, 0.275, 0.277, 0.275, 0.276]
-length: 5
+圧力: [0.273, 0.275, 0.277, 0.275, 0.276]
+長: 5
 ```
 
-## Use an item's index to fetch it from a list.
+## リストから取得するには、項目のインデックスを使用します。
 
-- Just like strings.
+- 文字列のように。
 
 ```python
-print('zeroth item of pressures:', pressures[0])
-print('fourth item of pressures:', pressures[4])
+print('圧力のゼロ項目:', 圧力[0])
+print('圧力の4番目の項目:', 圧力[4])
 ```
 
 ```output
-zeroth item of pressures: 0.273
-fourth item of pressures: 0.276
+圧力のゼロ項目: 0.273
+4番目の圧力: 0.276
 ```
 
-## Lists' values can be replaced by assigning to them.
+## リストの値はそれらに割り当てることによって置き換えることができる。
 
-- Use an index expression on the left of assignment to replace a value.
+- 代入の左側にあるインデックス式を使用して、値を置き換えます。
 
 ```python
-pressures[0] = 0.265
-print('pressures is now:', pressures)
+圧力[0] = 0.265
+print('圧力は今:', 圧力)
 ```
 
 ```output
-pressures is now: [0.265, 0.275, 0.277, 0.275, 0.276]
+圧力は現在0.265、0.275、0.277、0.275、0.276です
 ```
 
-## Appending items to a list lengthens it.
+## リストに項目を追加すると長くなります。
 
-- Use `list_name.append` to add items to the end of a list.
+- リストの最後に項目を追加するには、`list_name.append` を使用します。
 
 ```python
-primes = [2, 3, 5]
-print('primes is initially:', primes)
+prime = [2, 3, 5]
+print('prime is initially:', primes)
 primes.append(7)
-print('primes has become:', primes)
+print('prime has become', primes)
 ```
 
 ```output
-primes is initially: [2, 3, 5]
-primes has become: [2, 3, 5, 7]
+素数は最初は: [2, 3, 5]
+素数は: [2, 3, 5, 7]
 ```
 
-- `append` is a _method_ of lists.
-  - Like a function, but tied to a particular object.
-- Use `object_name.method_name` to call methods.
-  - Deliberately resembles the way we refer to things in a library.
-- We will meet other methods of lists as we go along.
-  - Use `help(list)` for a preview.
-- `extend` is similar to `append`, but it allows you to combine two lists.  For example:
+- `append` はリストの _メソッド_ です。
+  - 関数のように、特定のオブジェクトに関連付けられています。
+- メソッドを呼び出すには `object_name.method_name` を使用します。
+  - 故意にライブラリ内のものを参照するように似ています。
+- 私たちは進むにつれて他のリストの方法を満たします。
+  - プレビューには `help(list)` を使います。
+- `extend` は `append` と似ていますが、2つのリストを組み合わせることができます。  例:
 
 ```python
 teen_primes = [11, 13, 17, 19]
@@ -99,119 +99,119 @@ print('primes has finally become:', primes)
 ```
 
 ```output
-primes is currently: [2, 3, 5, 7]
-primes has now become: [2, 3, 5, 7, 11, 13, 17, 19]
-primes has finally become: [2, 3, 5, 7, 11, 13, 17, 19, [37, 41, 43, 47]]
+素数は現在のところ: [2, 3, 5, 7]
+素数は: [2, 3, 5, 7, 11, 13, 17, 19] 
+
+素数はついに次のようになりました: [2, 3, 5, 7, 11, 13, 17, 19, [37, 41, 43, 47]]
 ```
 
-Note that while `extend` maintains the "flat" structure of the list, appending a list to a list means
-the last element in `primes` will itself be a list, not an integer. Lists can contain values of any
-type; therefore, lists of lists are possible.
+`extend` はリストの「フラット」構造を維持しています。 リストにリストを追加すると、
+`primes` の最後の要素はリストであり、整数ではありません。 リストには
+タイプの値を含めることができます。したがって、リストのリストは可能です。
 
-## Use `del` to remove items from a list entirely.
+## リストから項目を完全に削除するには、`del`を使用します。
 
-- We use `del list_name[index]` to remove an element from a list (in the example, 9 is not a prime number) and thus shorten it.
-- `del` is not a function or a method, but a statement in the language.
+- リストから要素を削除するには、 `del list_name[index]` を使います(例: 9は素数ではないので、それを短くします。
+- `del`は関数やメソッドではなく、言語の文です。
 
 ```python
 primes = [2, 3, 5, 7, 9]
 print('primes before removing last item:', primes)
 del primes[4]
-print('primes after removing last item:', primes)
+print('remove last item:', primes)
 ```
 
 ```output
-primes before removing last item: [2, 3, 5, 7, 9]
-primes after removing last item: [2, 3, 5, 7]
+最後の項目を削除する前の素数: [2, 3, 5, 7, 9]
+最後の項目を削除した後の素数: [2, 3, 5, 7]
 ```
 
-## The empty list contains no values.
+## 空のリストには値がありません。
 
-- Use `[]` on its own to represent a list that doesn't contain any values.
-  - "The zero of lists."
-- Helpful as a starting point for collecting values
-  (which we will see in the [next episode](12-for-loops.md)).
+- 値を含まないリストを表現するには、 `[]` を使います。
+  - 「リストのゼロ」です
+- 値を集めるための出発点として役立ちます（format@@1(12-for-loops.md)）。
 
-## Lists may contain values of different types.
+## リストには異なる型の値が含まれている可能性があります。
 
-- A single list may contain numbers, strings, and anything else.
+- 単一のリストには、数字、文字列、および他の何でも含めることができます。
 
 ```python
-goals = [1, 'Create lists.', 2, 'Extract items from lists.', 3, 'Modify lists.']
+goals = [1, 'Create lists.', 2, 'Extract items from lists.', 3, 'Modify lists.');
 ```
 
-## Character strings can be indexed like lists.
+## 文字列はリストのようにインデックスすることができます。
 
-- Get single characters from a character string using indexes in square brackets.
+- 角括弧内の索引を使用して文字列から単一の文字を取得します。
 
 ```python
 element = 'carbon'
-print('zeroth character:', element[0])
+print('ゼロ文字:', element[0])
 print('third character:', element[3])
 ```
 
 ```output
-zeroth character: c
-third character: b
+ゼロ文字: c
+3番目の文字: b
 ```
 
-## Character strings are immutable.
+## 文字列は変更不能です。
 
-- Cannot change the characters in a string after it has been created.
-  - _Immutable_: can't be changed after creation.
-  - In contrast, lists are _mutable_: they can be modified in place.
-- Python considers the string to be a single value with parts,
-  not a collection of values.
+- 文字列を作成した後は文字列内の文字を変更できません。
+  - _不変_: 作成後は変更できません。
+  - 対照的に、リストは _mutable_: それらは場所で変更することができます。
+- Pythonは文字列を部分を持つ単一の値であると考えています。
+  値のコレクションではありません。
 
 ```python
-element[0] = 'C'
+要素[0] = 'C'
 ```
 
 ```error
-TypeError: 'str' object does not support item assignment
+TypeError: 'str' オブジェクトはアイテムの割り当てをサポートしていません
 ```
 
-- Lists and character strings are both _collections_.
+- リストと文字列はどちらも _コレクション_ です。
 
-## Indexing beyond the end of the collection is an error.
+## コレクションの終わりを超えたインデックス作成はエラーです。
 
-- Python reports an `IndexError` if we attempt to access a value that doesn't exist.
-  - This is a kind of [runtime error](04-built-in.md).
+- Pythonは存在しない値にアクセスしようとすると、 `IndexError` を報告します。
+  - これは一種のformat@@0(04-built-in.md)です。
   - Cannot be detected as the code is parsed
     because the index might be calculated based on data.
 
 ```python
-print('99th element of element is:', element[99])
+print('要素の99番目の要素は:', 要素[99])
 ```
 
 ```output
-IndexError: string index out of range
+インデックスエラー: 文字列インデックスが範囲外です
 ```
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::: チャレンジ
 
-## Fill in the Blanks
+## 空白を埋めよう
 
-Fill in the blanks so that the program below produces the output shown.
+以下のプログラムが表示される出力を生成するように空白を埋めます。
 
 ```python
-values = ____
+value = ____
 values.____(1)
 values.____(3)
 values.____(5)
 print('first time:', values)
-values = values[____]
+values = value[____]
 print('second time:', values)
 ```
 
 ```output
-first time: [1, 3, 5]
-second time: [3, 5]
+1回目:[1, 3, 5]
+2回目:[3, 5]
 ```
 
-:::::::::::::::  solution
+::::::::::::::::: solution
 
-## Solution
+## 解決策
 
 ```python
 values = []
@@ -227,20 +227,20 @@ print('second time:', values)
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::: チャレンジ
 
-## How Large is a Slice?
+## スライスの大きさは？
 
-If `start` and `stop` are both non-negative integers,
-how long is the list `values[start:stop]`?
+`start` と `stop` が両方とも負の整数でない場合、
+リストの `values[start:stop]` はどれくらいですか?
 
-:::::::::::::::  solution
+::::::::::::::::: solution
 
-## Solution
+## 解決策
 
-The list `values[start:stop]` has up to `stop - start` elements.  For example,
-`values[1:4]` has the 3 elements `values[1]`, `values[2]`, and `values[3]`.
-Why 'up to'? As we saw in [episode 2](02-variables.md),
+`values[start:stop]`のリストには、`stop - start` 要素があります。  例えば、
+`values[1:4]`には、`values[1]`、`values[2]`、`values[3] `の3つの要素があります。
+なぜ「アップ」するのか？ As we saw in [episode 2](02-variables.md),
 if `stop` is greater than the total length of the list `values`,
 we will still get a list back but it will be shorter than expected.
 
@@ -248,11 +248,11 @@ we will still get a list back but it will be shorter than expected.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::: チャレンジ
 
-## From Strings to Lists and Back
+## 文字列からリストおよび戻る
 
-Given this:
+与えられたもの
 
 ```python
 print('string to list:', list('tin'))
@@ -260,59 +260,59 @@ print('list to string:', ''.join(['g', 'o', 'l', 'd']))
 ```
 
 ```output
-string to list: ['t', 'i', 'n']
-list to string: gold
+string: ['t', 'i', 'n'
+string: gold
 ```
 
-1. What does `list('some string')` do?
-2. What does `'-'.join(['x', 'y', 'z'])` generate?
+1. `list('some string')` は何をしますか？
+2. `-'.join(['x', 'y', 'z'])`は何を生成しますか？
 
-:::::::::::::::  solution
+::::::::::::::::: solution
 
-## Solution
+## 解決策
 
-1. [`list('some string')`](https://docs.python.org/3/library/stdtypes.html#list) converts a string into a list containing all of its characters.
+1. [`list('some string')`](https://docs.python.org/3/library/stdtypes.html#list) は文字列をすべての文字を含むリストに変換します。
 
-2. [`join`](https://docs.python.org/3/library/stdtypes.html#str.join) returns a string that is the _concatenation_
-   of each string element in the list and adds the separator between each element in the list. This results in
-   `x-y-z`. The separator between the elements is the string that provides this method.
+2. [`join`](https://docs.python.org/3/library/stdtypes.html#str) oin) はリスト内の各string要素の_連結_
+   である文字列を返し、リスト内の各要素の間に区切り文字を追加します。 これは
+   `x-y-z` になります。 要素間の区切り文字は、このメソッドを提供する文字列です。
 
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::: チャレンジ
 
-## Working With the End
+## エンドユーザーとの作業
 
-What does the following program print?
+以下のプログラムは何を印刷しますか?
 
 ```python
 element = 'helium'
 print(element[-1])
 ```
 
-1. How does Python interpret a negative index?
+1. Pythonは負のインデックスをどのように解釈しますか?
 2. If a list or string has N elements,
    what is the most negative index that can safely be used with it,
    and what location does that index represent?
-3. If `values` is a list, what does `del values[-1]` do?
-4. How can you display all elements but the last one without changing `values`?
-   (Hint: you will need to combine slicing and negative indexing.)
+3. `values`がリストの場合、`del values[-1]`は何をしますか？
+4. `values`を変更せずに、最後の要素以外の要素をどのように表示できますか？
+   (ヒント:スライスと負のインデックスを組み合わせる必要があります。
 
-:::::::::::::::  solution
+::::::::::::::::: solution
 
-## Solution
+## 解決策
 
-The program prints `m`.
+プログラムは `m` を出力します。
 
 1. Python interprets a negative index as starting from the end (as opposed to
-   starting from the beginning).  The last element is `-1`.
+   starting from the beginning).  最後の要素は `-1` です。
 
-2. The last index that can safely be used with a list of N elements is element
-   `-N`, which represents the first element.
+2. N 要素のリストで安全に使用できる最後のインデックスは、要素
+   `-N` で、最初の要素を表します。
 
-3. `del values[-1]` removes the last element from the list.
+3. `del values[-1]` はリストから最後の要素を削除します。
 
 4. `values[:-1]`
 
@@ -320,11 +320,11 @@ The program prints `m`.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::: チャレンジ
 
-## Stepping Through a List
+## リストをステッピングする
 
-What does the following program print?
+以下のプログラムは何を印刷しますか?
 
 ```python
 element = 'fluorine'
@@ -332,21 +332,21 @@ print(element[::2])
 print(element[::-1])
 ```
 
-1. If we write a slice as `low:high:stride`, what does `stride` do?
-2. What expression would select all of the even-numbered items from a collection?
+1. `low:high:stride`と書くと、`stride`は何をしますか？
+2. コレクションから偶数番号のすべてのアイテムを選択する式は何ですか?
 
-:::::::::::::::  solution
+::::::::::::::::: solution
 
-## Solution
+## 解決策
 
-The program prints
+プログラム印刷
 
 ```python
 furn
 eniroulf
 ```
 
-1. `stride` is the step size of the slice.
+1. `stride`はスライスのステップサイズです。
 
 2. The slice `1::2` selects all even-numbered items from a collection: it starts
    with element `1` (which is the second element, since indexing starts at `0`),
@@ -357,46 +357,46 @@ eniroulf
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::: チャレンジ
 
-## Slice Bounds
+## スライスの範囲
 
-What does the following program print?
+以下のプログラムは何を印刷しますか?
 
 ```python
-element = 'lithium'
+element = 'リチウム'
 print(element[0:20])
 print(element[-1:3])
 ```
 
-:::::::::::::::  solution
+::::::::::::::::: solution
 
-## Solution
+## 解決策
 
 ```output
 lithium
 
 ```
 
-The first statement prints the whole string, since the slice goes beyond the total length of the string.
-The second statement returns an empty string, because the slice goes "out of bounds" of the string.
+スライスは文字列の全長を超えるため、最初の文は文字列全体を出力します。
+2番目の文は、スライスが文字列の範囲外になるため、空の文字列を返します。
 
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::: チャレンジ
 
-## Sort and Sorted
+## 並べ替えと並べ替え
 
-What do these two programs print?
-In simple terms, explain the difference between `sorted(letters)` and `letters.sort()`.
+この２つのプログラムは何を印刷しますか？
+簡単に言うと、`sorted(letters)` と `letters.sort()` の違いを説明します。
 
 ```python
 # Program A
 letters = list('gold')
 result = sorted(letters)
-print('letters is', letters, 'and result is', result)
+print('letters is', letters, 'and result', result)
 ```
 
 ```python
@@ -406,17 +406,17 @@ result = letters.sort()
 print('letters is', letters, 'and result is', result)
 ```
 
-:::::::::::::::  solution
+::::::::::::::::: solution
 
-## Solution
+## 解決策
 
-Program A prints
+プログラム A プリント
 
 ```output
 letters is ['g', 'o', 'l', 'd'] and result is ['d', 'g', 'l', 'o']
 ```
 
-Program B prints
+プログラム B 印刷
 
 ```output
 letters is ['d', 'g', 'l', 'o'] and result is None
@@ -430,50 +430,50 @@ list `letters` remains unchanged), while `letters.sort()` sorts the list
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::: チャレンジ
 
-## Copying (or Not)
+## コピー中 (またはコピーしない)
 
-What do these two programs print?
-In simple terms, explain the difference between `new = old` and `new = old[:]`.
+この２つのプログラムは何を印刷しますか？
+簡単に言うと、`new = old`と`new = old[:]`の違いを説明します。
 
 ```python
 # Program A
 old = list('gold')
-new = old      # simple assignment
+new = old # simple assign
 new[0] = 'D'
-print('new is', new, 'and old is', old)
+print('new is', 新旧、旧）
 ```
 
 ```python
 # Program B
 old = list('gold')
-new = old[:]   # assigning a slice
+new = old[:] # スライス
 new[0] = 'D'
-print('new is', new, 'and old is', old)
+print('new is', 新旧、旧）
 ```
 
-:::::::::::::::  solution
+::::::::::::::::: solution
 
-## Solution
+## 解決策
 
-Program A prints
+プログラム A プリント
 
 ```output
 new is ['D', 'o', 'l', 'd'] and old is ['D', 'o', 'l', 'd']
 ```
 
-Program B prints
+プログラム B 印刷
 
 ```output
 new is ['D', 'o', 'l', 'd'] and old is ['g', 'o', 'l', 'd']
 ```
 
-`new = old` makes `new` a reference to the list `old`; `new` and `old` point
-towards the same object.
+`new = old` は、`new` を同じオブジェクトに向かって`new`と`old` 点
+のリストへの参照にします。
 
-`new = old[:]` however creates a new list object `new` containing all elements
-from the list `old`; `new` and `old` are different objects.
+`new = old[:]` は、`old`リストからすべての要素
+を含む新しいリストオブジェクト`new`を作成します。`new`と`old`は異なるオブジェクトです。
 
 :::::::::::::::::::::::::
 
@@ -481,15 +481,15 @@ from the list `old`; `new` and `old` are different objects.
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- A list stores many values in a single structure.
-- Use an item's index to fetch it from a list.
-- Lists' values can be replaced by assigning to them.
-- Appending items to a list lengthens it.
-- Use `del` to remove items from a list entirely.
-- The empty list contains no values.
-- Lists may contain values of different types.
-- Character strings can be indexed like lists.
-- Character strings are immutable.
-- Indexing beyond the end of the collection is an error.
+- リストは多くの値を単一の構造体に格納します。
+- リストから取得するには、項目のインデックスを使用します。
+- リストの値はそれらに割り当てることによって置き換えることができる。
+- リストに項目を追加すると長くなります。
+- リストから項目を完全に削除するには、`del`を使用します。
+- 空のリストには値がありません。
+- リストには異なる型の値が含まれている可能性があります。
+- 文字列はリストのようにインデックスすることができます。
+- 文字列は変更不能です。
+- コレクションの終わりを超えたインデックス作成はエラーです。
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
