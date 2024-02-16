@@ -1,27 +1,27 @@
 ---
-title: Instructors' Guide
+title: Guía de instructores
 ---
 
-## General Notes
+## Notas generales
 
-It's all right not to get through the whole lesson.
-:   This lesson is designed for people who have never programmed before,
-but any given class may include people with a wide range of prior experience.
-We have therefore included enough material to fill a full day if need be,
-but expect that many offerings will only get as far as the introduction to Pandas.
+Está bien no pasar toda la lección.
+: Esta lección está diseñada para personas que nunca han programado antes
+pero cualquier clase puede incluir personas con una amplia gama de experiencia previa.
+Por lo tanto, hemos incluido suficiente material para llenar un día completo si es necesario,
+pero espera que muchas ofertas solo llegarán hasta la introducción a Pandas.
 
-Don't tell people to Google things.
-:   One of the goals of this lesson is
-to help novices build a workable mental model of how programming works.
-Until they have that model,
-they will not know what to search for or how to recognize a helpful answer.
-Telling them to Google can also give the impression that we think their problem is trivial.
-(That said, if learners have done enough programming before to be past these issues,
-having them search for solutions online can help them solidify their understanding.)
-It's also worth quoting
-[Trevor King]([https://github.com/swcarpentry/python-novice-](https://github.com/swcarpentry/python-novice-)
+No le digas a la gente cosas a Google.
+: Una de las metas de esta lección es
+para ayudar a los principiantes a construir un modelo mental viable de cómo funciona la programación.
+Hasta que no tengan ese modelo,
+no sabrán qué buscar ni cómo reconocer una respuesta útil.
+Decirles a Google también puede dar la impresión de que creemos que su problema es trivial.
+(Dicho esto, si los estudiantes han hecho suficiente programación antes de estar más allá de estos temas,
+tenerlos buscando soluciones en línea puede ayudarles a solidificar su entendimiento.)
+También vale la pena citar
+[Trevor King]([https\://github.com/swcarpentry/python-novice-](https\://github. om/swcarpentry/python-novice-)
 gapminder/issues/22#issuecomment-182573516)'s
-comment about online search:
-"If you find anything,
-other folks were confused enough to bother with a blog or Stack Overflow post,
-so it's probably not trivial."
+comentario sobre búsqueda en línea:
+"Si encuentras algo,
+otras personas estaban lo suficientemente confundidas como para molestarse con un blog o un post Stack Overflow,
+así que probablemente no sea trivial."
