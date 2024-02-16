@@ -1,23 +1,23 @@
 ---
-title: Instructors' Guide
+title: Guida Degli Insegnanti
 ---
 
-## General Notes
+## Note Generali
 
-It's all right not to get through the whole lesson.
-:   This lesson is designed for people who have never programmed before,
-but any given class may include people with a wide range of prior experience.
-We have therefore included enough material to fill a full day if need be,
-but expect that many offerings will only get as far as the introduction to Pandas.
+Va bene non passare attraverso tutta la lezione.
+: Questa lezione è pensata per persone che non hanno mai programmato prima,
+ma qualsiasi classe può includere persone con una vasta gamma di esperienze precedenti.
+Abbiamo quindi incluso abbastanza materiale per riempire una giornata intera, se necessario,
+ma si aspettano che molte offerte arriveranno solo fino all'introduzione a Pandas.
 
-Don't tell people to Google things.
-:   One of the goals of this lesson is
-to help novices build a workable mental model of how programming works.
-Until they have that model,
-they will not know what to search for or how to recognize a helpful answer.
-Telling them to Google can also give the impression that we think their problem is trivial.
-(That said, if learners have done enough programming before to be past these issues,
-having them search for solutions online can help them solidify their understanding.)
+Non dire alla gente le cose di Google.
+: Uno degli obiettivi di questa lezione è
+per aiutare i novizi a costruire un modello mentale praticabile di come funziona la programmazione.
+Fino a quando non avranno quel modello,
+non sapranno cosa cercare o come riconoscere una risposta utile.
+Raccontare loro a Google può anche dare l'impressione che pensiamo che il loro problema è banale.
+(Detto questo, se gli studenti hanno fatto abbastanza programmazione prima di essere passati questi temi,
+facendoli cercare soluzioni online può aiutarli a solidificare la loro comprensione.)
 It's also worth quoting
 [Trevor King]([https://github.com/swcarpentry/python-novice-](https://github.com/swcarpentry/python-novice-)
 gapminder/issues/22#issuecomment-182573516)'s
