@@ -2,4 +2,4 @@
 title: FIXME
 ---
 
-This is a placeholder file. Please add content here.
+Este es un archivo de marcador de posición. Por favor, añade contenido aquí.
