@@ -1,35 +1,35 @@
 ---
-title: Lists
+title: Listas
 teaching: 10
 exercises: 10
 ---
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- Explain why programs need collections of values.
-- Write programs that create flat lists, index them, slice them, and modify them through assignment and method calls.
+- Explicar por qué los programas necesitan colecciones de valores.
+- Escribe programas que crean listas planas, los indizan, los rebanan y los modifican mediante llamadas de asignación y métodos.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::: questions
+:::::::::::::::::::::::::::::::::::::::::::::::::: preguntas
 
-- How can I store multiple values?
+- ¿Cómo puedo almacenar múltiples valores?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## A list stores many values in a single structure.
+## Una lista almacena muchos valores en una sola estructura.
 
-- Doing calculations with a hundred variables called `pressure_001`, `pressure_002`, etc.,
-  would be at least as slow as doing them by hand.
-- Use a _list_ to store many values together.
-  - Contained within square brackets `[...]`.
-  - Values separated by commas `,`.
-- Use `len` to find out how many values are in a list.
+- Hacer cálculos con un centenar de variables llamadas `pressure_001`, `pressure_002`, etc.,
+  sería al menos tan lento como hacerlo a mano.
+- Utilice una _lista_ para almacenar muchos valores juntos.
+  - Contenidos dentro de corchetes `[...]`.
+  - Valores separados por comas `,`.
+- Usa `len` para averiguar cuántos valores hay en una lista.
 
 ```python
 pressures = [0.273, 0.275, 0.277, 0.275, 0.276]
-print('pressures:', pressures)
-print('length:', len(pressures))
+print('presures:', pressures)
+print('longitud:', len(pressures))
 ```
 
 ```output
@@ -37,112 +37,112 @@ pressures: [0.273, 0.275, 0.277, 0.275, 0.276]
 length: 5
 ```
 
-## Use an item's index to fetch it from a list.
+## Utilice el índice de un elemento para obtenerlo de una lista.
 
-- Just like strings.
+- Al igual que las cadenas.
 
 ```python
-print('zeroth item of pressures:', pressures[0])
-print('fourth item of pressures:', pressures[4])
+print('Elemento zeroth de presiones:', presiona[0])
+print('cuarto elemento de presiones:', presiona[4])
 ```
 
 ```output
-zeroth item of pressures: 0.273
-fourth item of pressures: 0.276
+Objeto de presiones cero: 0.273
+cuarto objeto de presiones: 0.276
 ```
 
-## Lists' values can be replaced by assigning to them.
+## Los valores de las listas se pueden reemplazar asignándolas.
 
-- Use an index expression on the left of assignment to replace a value.
+- Utilice una expresión de índice a la izquierda de la asignación para reemplazar un valor.
 
 ```python
-pressures[0] = 0.265
-print('pressures is now:', pressures)
+presiones[0] = 0.265
+print('presiones es ahora:', presiones)
 ```
 
 ```output
-pressures is now: [0.265, 0.275, 0.277, 0.275, 0.276]
+pressures es ahora: [0.265, 0.275, 0.277, 0.275, 0.276]
 ```
 
-## Appending items to a list lengthens it.
+## Añadir elementos a una lista lo alarga.
 
-- Use `list_name.append` to add items to the end of a list.
+- Usa `list_name.append` para añadir elementos al final de una lista.
 
 ```python
 primes = [2, 3, 5]
-print('primes is initially:', primes)
+print('primes es inicialmente:', primes)
 primes.append(7)
-print('primes has become:', primes)
+print('primes se ha convertido:', primes)
 ```
 
 ```output
-primes is initially: [2, 3, 5]
-primes has become: [2, 3, 5, 7]
+primes es inicialmente: [2, 3, 5]
+primos se han convertido: [2, 3, 5, 7]
 ```
 
-- `append` is a _method_ of lists.
-  - Like a function, but tied to a particular object.
-- Use `object_name.method_name` to call methods.
-  - Deliberately resembles the way we refer to things in a library.
-- We will meet other methods of lists as we go along.
-  - Use `help(list)` for a preview.
-- `extend` is similar to `append`, but it allows you to combine two lists.  For example:
+- `append` es un _método_ de listas.
+  - Como una función, pero atada a un objeto en particular.
+- Usa `object_name.method_name` para llamar a métodos.
+  - Deliberamente se asemeja a la forma en que nos referimos a las cosas en una biblioteca.
+- Nos encontraremos con otros métodos de listas a medida que vayamos.
+  - Use `help(list)` para una vista previa.
+- `extend` es similar a `append`, pero te permite combinar dos listas.  Por ejemplo:
 
 ```python
 teen_primes = [11, 13, 17, 19]
 middle_aged_primes = [37, 41, 43, 47]
-print('primes is currently:', primes)
-primes.extend(teen_primes)
-print('primes has now become:', primes)
+print('primes es actualmente:', primes)
+primes. xtend(teen_primes)
+print('primes se ha convertido:', primes)
 primes.append(middle_aged_primes)
-print('primes has finally become:', primes)
+print('primes se ha convertido por fin:', primes)
 ```
 
 ```output
-primes is currently: [2, 3, 5, 7]
-primes has now become: [2, 3, 5, 7, 11, 13, 17, 19]
-primes has finally become: [2, 3, 5, 7, 11, 13, 17, 19, [37, 41, 43, 47]]
+los primes se están convirtiendo actualmente: [2, 3, 5, 7]
+los primos se han convertido: [2, 3, 5, 7, 11, 13, 17, 19]
+los primos finalmente se han convertido: [2, 3, 5, 7, 11, 13, 17, 19, [37, 41, 43, 47]]
 ```
 
-Note that while `extend` maintains the "flat" structure of the list, appending a list to a list means
-the last element in `primes` will itself be a list, not an integer. Lists can contain values of any
-type; therefore, lists of lists are possible.
+Ten en cuenta que mientras que `extend` mantiene la estructura "plana" de la lista, añadir una lista a una lista significa que
+el último elemento en `primes` será una lista, no un entero. Las listas pueden contener valores de cualquier tipo
+; por lo tanto, las listas de listas son posibles.
 
-## Use `del` to remove items from a list entirely.
+## Usa `del` para eliminar elementos de una lista por completo.
 
-- We use `del list_name[index]` to remove an element from a list (in the example, 9 is not a prime number) and thus shorten it.
-- `del` is not a function or a method, but a statement in the language.
+- Utilizamos `del list_name[index]` para eliminar un elemento de una lista (en el ejemplo, 9 no es un número primo) y así acortarlo.
+- `del` no es una función o un método, sino una sentencia en el idioma.
 
 ```python
 primes = [2, 3, 5, 7, 9]
-print('primes before removing last item:', primes)
+print('primes antes de eliminar el último artículo:', primes)
 del primes[4]
-print('primes after removing last item:', primes)
+print('primes después de eliminar el último artículo:', primes)
 ```
 
 ```output
-primes before removing last item: [2, 3, 5, 7, 9]
-primes after removing last item: [2, 3, 5, 7]
+primes antes de eliminar el último artículo: [2, 3, 5, 7, 9]
+primes después de eliminar el último artículo: [2, 3, 5, 7]
 ```
 
-## The empty list contains no values.
+## La lista vacía no contiene valores.
 
-- Use `[]` on its own to represent a list that doesn't contain any values.
-  - "The zero of lists."
-- Helpful as a starting point for collecting values
-  (which we will see in the [next episode](12-for-loops.md)).
+- Use `[]` por sí solo para representar una lista que no contiene ningún valor.
+  - "El cero de listas".
+- Ayuda como punto de partida para recolectar valores
+  (que veremos en el [próximo episodio](12-for-loops.md)).
 
-## Lists may contain values of different types.
+## Las listas pueden contener valores de diferentes tipos.
 
-- A single list may contain numbers, strings, and anything else.
+- Una sola lista puede contener números, cadenas y cualquier otra cosa.
 
 ```python
-goals = [1, 'Create lists.', 2, 'Extract items from lists.', 3, 'Modify lists.']
+goals = [1, 'Crear listas', 2, 'Extraer elementos de listas', 3, 'Modificar listas']
 ```
 
-## Character strings can be indexed like lists.
+## Las cadenas de caracteres pueden ser indexadas como listas.
 
-- Get single characters from a character string using indexes in square brackets.
+- Obtiene caracteres individuales de una cadena de caracteres usando índices entre corchetes.
 
 ```python
 element = 'carbon'
@@ -151,67 +151,67 @@ print('third character:', element[3])
 ```
 
 ```output
-zeroth character: c
-third character: b
+personaje de cero: c
+tercer personaje: b
 ```
 
-## Character strings are immutable.
+## Las cuerdas de caracteres son inmutables.
 
-- Cannot change the characters in a string after it has been created.
-  - _Immutable_: can't be changed after creation.
-  - In contrast, lists are _mutable_: they can be modified in place.
-- Python considers the string to be a single value with parts,
-  not a collection of values.
+- No se pueden cambiar los caracteres de una cadena después de haber sido creados.
+  - _Inmutable_: no se puede cambiar después de la creación.
+  - En contraste, las listas son _mutables_: pueden ser modificadas en su lugar.
+- Python considera que la cadena es un valor único con partes,
+  no una colección de valores.
 
 ```python
-element[0] = 'C'
+elemento[0] = 'C'
 ```
 
 ```error
-TypeError: 'str' object does not support item assignment
+TipoError: el objeto 'str' no soporta la asignación de elementos
 ```
 
-- Lists and character strings are both _collections_.
+- Las listas y las cadenas de caracteres son ambas _colecciones_.
 
-## Indexing beyond the end of the collection is an error.
+## Indexar más allá del final de la colección es un error.
 
-- Python reports an `IndexError` if we attempt to access a value that doesn't exist.
-  - This is a kind of [runtime error](04-built-in.md).
-  - Cannot be detected as the code is parsed
-    because the index might be calculated based on data.
+- Python reporta un `IndexError` si intentamos acceder a un valor que no existe.
+  - Esto es una especie de [error de runtime](04-built-in.md).
+  - No se puede detectar porque el código es analizado
+    porque el índice podría calcularse basándose en los datos.
 
 ```python
-print('99th element of element is:', element[99])
+print('99 elemento del elemento es:', elemento[99])
 ```
 
 ```output
-IndexError: string index out of range
+IndexError: índice de cadena fuera de rango
 ```
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::::::::::::::: desafío
 
-## Fill in the Blanks
+## Rellena los espacios en blanco
 
-Fill in the blanks so that the program below produces the output shown.
+Rellena los espacios en blanco para que el programa de abajo produzca la salida que se muestra.
 
 ```python
 values = ____
-values.____(1)
-values.____(3)
-values.____(5)
-print('first time:', values)
-values = values[____]
-print('second time:', values)
+valores.____(1)
+valores.____(3)
+valores.____(5)
+print('primera vez:', valores)
+valores = valores[____]
+print('segunda vez:', valores)
 ```
 
 ```output
-first time: [1, 3, 5]
-second time: [3, 5]
+primera vez: [1, 3, 5]
+segunda vez: [3, 5]
 ```
 
-:::::::::::::::  solution
+::::::::::::::::: solución
 
-## Solution
+## Solución
 
 ```python
 values = []
@@ -227,20 +227,20 @@ print('second time:', values)
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::::::::::::::: desafío
 
-## How Large is a Slice?
+## ¿Qué tan grande es una corteza?
 
-If `start` and `stop` are both non-negative integers,
-how long is the list `values[start:stop]`?
+Si `start` y `stop` son ambos enteros no negativos,
+¿cuánto es la lista de `values[start:stop]`?
 
-:::::::::::::::  solution
+::::::::::::::::: solución
 
-## Solution
+## Solución
 
-The list `values[start:stop]` has up to `stop - start` elements.  For example,
-`values[1:4]` has the 3 elements `values[1]`, `values[2]`, and `values[3]`.
-Why 'up to'? As we saw in [episode 2](02-variables.md),
+La lista de `values[start:stop]` tiene hasta `stop - start`.  Por ejemplo,
+`values[1:4]` tiene los 3 elementos `values[1]`, `values[2]`, y `values[3]`.
+¿Por qué "hasta"? As we saw in [episode 2](02-variables.md),
 if `stop` is greater than the total length of the list `values`,
 we will still get a list back but it will be shorter than expected.
 
@@ -248,232 +248,232 @@ we will still get a list back but it will be shorter than expected.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::::::::::::::: desafío
 
-## From Strings to Lists and Back
+## De cadenas a listas y atrás
 
-Given this:
+Dado esto:
 
 ```python
-print('string to list:', list('tin'))
+print('string a lista:', list('tin'))
 print('list to string:', ''.join(['g', 'o', 'l', 'd']))
 ```
 
 ```output
-string to list: ['t', 'i', 'n']
-list to string: gold
+cadena a lista: ['t', 'i', 'n']
+lista a cadena: oro
 ```
 
-1. What does `list('some string')` do?
-2. What does `'-'.join(['x', 'y', 'z'])` generate?
+1. ¿Qué hace `list('alguna cadena')`?
+2. ¿Qué genera `'-'.join(['x', 'y', 'z'])`?
 
-:::::::::::::::  solution
+::::::::::::::::: solución
 
-## Solution
+## Solución
 
-1. [`list('some string')`](https://docs.python.org/3/library/stdtypes.html#list) converts a string into a list containing all of its characters.
+1. [`list('some string')`](https://docs.python.org/3/library/stdtypes.html#list) convierte una cadena en una lista que contiene todos sus caracteres.
 
-2. [`join`](https://docs.python.org/3/library/stdtypes.html#str.join) returns a string that is the _concatenation_
-   of each string element in the list and adds the separator between each element in the list. This results in
-   `x-y-z`. The separator between the elements is the string that provides this method.
+2. [`join`](https\://docs.python.org/3/library/stdtypes.html#str. oin) devuelve una cadena que es la _concatenación_
+   de cada elemento de cadena en la lista y añade el separador entre cada elemento en la lista. Esto resulta en
+   `x-y-z`. El separador entre los elementos es la cadena que proporciona este método.
 
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::::::::::::::: desafío
 
-## Working With the End
+## Trabajando con el final
 
-What does the following program print?
+¿Qué imprime el siguiente programa?
 
 ```python
-element = 'helium'
+elemento = 'helium'
 print(element[-1])
 ```
 
-1. How does Python interpret a negative index?
-2. If a list or string has N elements,
-   what is the most negative index that can safely be used with it,
-   and what location does that index represent?
-3. If `values` is a list, what does `del values[-1]` do?
-4. How can you display all elements but the last one without changing `values`?
-   (Hint: you will need to combine slicing and negative indexing.)
+1. ¿Cómo interpreta Python un índice negativo?
+2. Si una lista o cadena tiene N elementos,
+   cuál es el índice más negativo que puede ser utilizado con seguridad con ella, ¿
+   y qué ubicación representa ese índice?
+3. Si `values` es una lista, ¿qué hace `del values[-1]`?
+4. ¿Cómo se pueden mostrar todos los elementos excepto el último sin cambiar `valores`?
+   (Sugerencia: necesitará combinar cortes e índices negativos.)
 
-:::::::::::::::  solution
+::::::::::::::::: solución
 
-## Solution
+## Solución
 
-The program prints `m`.
+El programa imprime `m`.
 
-1. Python interprets a negative index as starting from the end (as opposed to
-   starting from the beginning).  The last element is `-1`.
+1. Python interpreta un índice negativo como comenzando desde el final (a diferencia de
+   empezando desde el principio).  El último elemento es `-1`.
 
-2. The last index that can safely be used with a list of N elements is element
-   `-N`, which represents the first element.
+2. El último índice que puede utilizarse con seguridad con una lista de elementos N es el elemento
+   `-N`, que representa el primer elemento.
 
-3. `del values[-1]` removes the last element from the list.
+3. `del values[-1]` elimina el último elemento de la lista.
 
-4. `values[:-1]`
-
-:::::::::::::::::::::::::
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
-
-:::::::::::::::::::::::::::::::::::::::  challenge
-
-## Stepping Through a List
-
-What does the following program print?
-
-```python
-element = 'fluorine'
-print(element[::2])
-print(element[::-1])
-```
-
-1. If we write a slice as `low:high:stride`, what does `stride` do?
-2. What expression would select all of the even-numbered items from a collection?
-
-:::::::::::::::  solution
-
-## Solution
-
-The program prints
-
-```python
-furn
-eniroulf
-```
-
-1. `stride` is the step size of the slice.
-
-2. The slice `1::2` selects all even-numbered items from a collection: it starts
-   with element `1` (which is the second element, since indexing starts at `0`),
-   goes on until the end (since no `end` is given), and uses a step size of `2`
-   (i.e., selects every second element).
+4. `valores[:-1]`
 
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::::::::::::::: desafío
 
-## Slice Bounds
+## Pasar a través de una lista
 
-What does the following program print?
+¿Qué imprime el siguiente programa?
 
 ```python
-element = 'lithium'
+elemento = 'fluorine'
+print(element[::2]) Impresión
+(element[::-1])
+```
+
+1. Si escribimos una porción como `low:high:stride`, ¿qué hace `stride`?
+2. ¿Qué expresión seleccionaría todos los elementos numerados pares de una colección?
+
+::::::::::::::::: solución
+
+## Solución
+
+El programa imprime
+
+```python
+pelaje
+eniroulfo
+```
+
+1. `stride` es el tamaño del paso del corte.
+
+2. La porción `1::2` selecciona todos los elementos numerados pares de una colección: comienza
+   con el elemento `1` (que es el segundo elemento, ya que la indexación comienza en `0`),
+   continúa hasta el final (ya que no se da ningún `end`), y usa un tamaño de paso de `2`
+   (i. ., selecciona cada segundo elemento).
+
+:::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::::::::::::::::: desafío
+
+## Límites de corte
+
+¿Qué imprime el siguiente programa?
+
+```python
+elemento = 'lithium'
 print(element[0:20])
 print(element[-1:3])
 ```
 
-:::::::::::::::  solution
+::::::::::::::::: solución
 
-## Solution
+## Solución
 
 ```output
 lithium
 
 ```
 
-The first statement prints the whole string, since the slice goes beyond the total length of the string.
-The second statement returns an empty string, because the slice goes "out of bounds" of the string.
+La primera sentencia imprime toda la cadena, ya que la rebanada sobrepasa la longitud total de la cadena.
+La segunda sentencia devuelve una cadena vacía, porque la porción va "fuera de los límites" de la cadena.
 
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::::::::::::::: desafío
 
-## Sort and Sorted
+## Ordenar y ordenar
 
-What do these two programs print?
-In simple terms, explain the difference between `sorted(letters)` and `letters.sort()`.
-
-```python
-# Program A
-letters = list('gold')
-result = sorted(letters)
-print('letters is', letters, 'and result is', result)
-```
+¿Qué imprimen estos dos programas?
+En términos simples, explica la diferencia entre `sorted(letters)` y `letters.sort()`.
 
 ```python
-# Program B
-letters = list('gold')
-result = letters.sort()
-print('letters is', letters, 'and result is', result)
+# Programa A
+letras = list('oro')
+resultado = ordenado(letras)
+print('letras es', letras, 'y resultado es', resultado)
 ```
 
-:::::::::::::::  solution
+```python
+# Programa B
+letras = list('oro')
+resultado = letters.sort()
+print('letras es', letras, 'y resultado es', resultado)
+```
 
-## Solution
+::::::::::::::::: solución
 
-Program A prints
+## Solución
+
+Programa A Impresiones
 
 ```output
-letters is ['g', 'o', 'l', 'd'] and result is ['d', 'g', 'l', 'o']
+las letras son ['g', 'o', 'l', 'd'] y el resultado es ['d', 'g', 'l', 'o']
 ```
 
-Program B prints
+Impresiones del programa B
 
 ```output
-letters is ['d', 'g', 'l', 'o'] and result is None
+las letras son ['d', 'g', 'l', 'o'] y el resultado no es ninguno
 ```
 
-`sorted(letters)` returns a sorted copy of the list `letters` (the original
-list `letters` remains unchanged), while `letters.sort()` sorts the list
-`letters` in-place and does not return anything.
+`sorted(letras)` devuelve una copia ordenada de la lista `letras` (la
+original lista `letras` permanece sin cambios), mientras que `letras. ort()` ordena la lista
+`letters` en su lugar y no devuelve nada.
 
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::::::::::::::: desafío
 
-## Copying (or Not)
+## Copiando (o no)
 
-What do these two programs print?
-In simple terms, explain the difference between `new = old` and `new = old[:]`.
-
-```python
-# Program A
-old = list('gold')
-new = old      # simple assignment
-new[0] = 'D'
-print('new is', new, 'and old is', old)
-```
+¿Qué imprimen estos dos programas?
+En términos simples, explica la diferencia entre `new = old` y `new = old[:]`.
 
 ```python
-# Program B
-old = list('gold')
-new = old[:]   # assigning a slice
+# Programa A
+viejo = list('oro')
+new = viejo # asignación simple
 new[0] = 'D'
-print('new is', new, 'and old is', old)
+print('new is', nuevo, 'y viejo es', viejo)
 ```
 
-:::::::::::::::  solution
+```python
+# Programa B
+viejo = list('oro')
+new = antiguo[:] # asignar una porción
+new[0] = 'D'
+print('new is', nuevo, 'y viejo es', viejo)
+```
 
-## Solution
+::::::::::::::::: solución
 
-Program A prints
+## Solución
+
+Programa A Impresiones
 
 ```output
-new is ['D', 'o', 'l', 'd'] and old is ['D', 'o', 'l', 'd']
+new es ['D', 'o', 'l', 'd'] y viejo es ['D', 'o', 'l', 'd']
 ```
 
-Program B prints
+Impresiones del programa B
 
 ```output
-new is ['D', 'o', 'l', 'd'] and old is ['g', 'o', 'l', 'd']
+new es ['D', 'o', 'l', 'd'] y viejo es ['g', 'o', 'l', 'd']
 ```
 
-`new = old` makes `new` a reference to the list `old`; `new` and `old` point
-towards the same object.
+`new = old` hace que `new` sea una referencia a la lista `old`; `new` y `old` apuntan
+hacia el mismo objeto.
 
-`new = old[:]` however creates a new list object `new` containing all elements
-from the list `old`; `new` and `old` are different objects.
+`new = old[:]` sin embargo crea un nuevo objeto de lista `new` que contiene todos los elementos
+de la lista `old`; `new` y `old` son objetos diferentes.
 
 :::::::::::::::::::::::::
 
@@ -481,15 +481,15 @@ from the list `old`; `new` and `old` are different objects.
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- A list stores many values in a single structure.
-- Use an item's index to fetch it from a list.
-- Lists' values can be replaced by assigning to them.
-- Appending items to a list lengthens it.
-- Use `del` to remove items from a list entirely.
-- The empty list contains no values.
-- Lists may contain values of different types.
-- Character strings can be indexed like lists.
-- Character strings are immutable.
-- Indexing beyond the end of the collection is an error.
+- Una lista almacena muchos valores en una sola estructura.
+- Utilice el índice de un elemento para obtenerlo de una lista.
+- Los valores de las listas se pueden reemplazar asignándolas.
+- Añadir elementos a una lista lo alarga.
+- Usa `del` para eliminar elementos de una lista por completo.
+- La lista vacía no contiene valores.
+- Las listas pueden contener valores de diferentes tipos.
+- Las cadenas de caracteres pueden ser indexadas como listas.
+- Las cuerdas de caracteres son inmutables.
+- Indexar más allá del final de la colección es un error.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
