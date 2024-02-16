@@ -6,44 +6,44 @@ exercises: 0
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- Name and locate scientific Python community sites for software, workshops, and help.
+- Nome e localizza siti scientifici della comunità Python per software, workshop e aiuto.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::: questions
+:::::::::::::::::::::::::::::::::::::::::::::::: domande
 
-- What have we learned?
-- What else is out there and where do I find it?
+- Che cosa abbiamo imparato?
+- Che altro c'è là fuori e dove trovo?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-Leslie Lamport once said, "Writing is nature's way of showing you how sloppy your thinking is."
-The same is true of programming:
-many things that seem obvious when we're thinking about them
-turn out to be anything but when we have to explain them precisely.
+Leslie Lamport una volta ha detto: "La scrittura è il modo della natura di mostrarvi quanto sciatto il vostro pensiero è."
+Lo stesso vale per la programmazione:
+molte cose che sembrano ovvie quando pensiamo a loro
+risultano essere tutt'altro che quando dobbiamo spiegarle con precisione.
 
-## Python supports a large and diverse community across academia and industry.
+## Python supporta una vasta e diversificata comunità tra mondo accademico e industria.
 
-- The [Python 3 documentation](https://docs.python.org/3/) covers the core language
-  and the standard library.
+- La [documentazione Python 3](https://docs.python.org/3/) copre il linguaggio di base
+  e la libreria standard.
 
-- [PyCon](https://pycon.org/) is the largest annual conference for the Python community.
+- [PyCon](https://pycon.org/) è la più grande conferenza annuale per la comunità Python.
 
-- [SciPy](https://scipy.org) is a rich collection of scientific utilities.
-  It is also the name of [a series of annual conferences](https://conference.scipy.org/).
+- [SciPy](https://scipy.org) è una ricca collezione di servizi scientifici.
+  È anche il nome di [una serie di conferenze annuali](https://conference.scipy.org/).
 
-- [Jupyter](https://jupyter.org) is the home of Project Jupyter.
+- [Jupyter](https://jupyter.org) è la casa del Progetto Jupyter.
 
-- [Pandas](https://pandas.pydata.org) is the home of the Pandas data library.
+- [Pandas](https://pandas.pydata.org) è la sede della libreria dati Pandas.
 
-- Stack Overflow's [general Python section](https://stackoverflow.com/questions/tagged/python?tab=Votes)
-  can be helpful,
-  as well as the sections on [NumPy](https://stackoverflow.com/questions/tagged/numpy?tab=Votes),
-  [SciPy](https://stackoverflow.com/questions/tagged/scipy?tab=Votes), and
-  [Pandas](https://stackoverflow.com/questions/tagged/pandas?tab=Votes).
+- La [sezione generale Python di Stack Overflow](https://stackoverflow.com/questions/tagged/python?tab=votes)
+  può essere utile,
+  e le sezioni su [NumPy](https://stackoverflow.com/questions/tagged/numpy?tab=votes),
+  [SciPy](https://stackoverflow.com/questions/tagged/scipy?tab=votes) e
+  [Pandas](https://stackoverflow.com/questions/tagged/pandas?tab=votes).
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- Python supports a large and diverse community across academia and industry.
+- Python supporta una vasta e diversificata comunità tra mondo accademico e industria.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
