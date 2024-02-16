@@ -1,44 +1,44 @@
 ---
-title: Built-in Functions and Help
+title: Funzioni integrate e aiuto
 teaching: 15
 exercises: 10
 ---
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- Explain the purpose of functions.
-- Correctly call built-in Python functions.
-- Correctly nest calls to built-in functions.
-- Use help to display documentation for built-in functions.
-- Correctly describe situations in which SyntaxError and NameError occur.
+- Spiegare lo scopo delle funzioni.
+- Chiamare correttamente le funzioni Python integrate.
+- Nidi correttamente le chiamate alle funzioni integrate.
+- Utilizzare l'aiuto per visualizzare la documentazione per le funzioni integrate.
+- Descrivere correttamente le situazioni in cui si verificano SyntaxError e NameError.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::: questions
+:::::::::::::::::::::::::::::::::::::::::::::::: domande
 
-- How can I use built-in functions?
-- How can I find out what they do?
-- What kind of errors can occur in programs?
+- Come posso usare le funzioni integrate?
+- Come posso scoprire cosa fanno?
+- Che tipo di errori possono verificarsi nei programmi?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Use comments to add documentation to programs.
+## Utilizzare i commenti per aggiungere documentazione ai programmi.
 
 ```python
-# This sentence isn't executed by Python.
-adjustment = 0.5   # Neither is this - anything after '#' is ignored.
+# Questa frase non è eseguita da Python.
+regolazione = 0.5 # Né è questa - nulla dopo '#' viene ignorato.
 ```
 
-## A function may take zero or more arguments.
+## Una funzione può richiedere zero o più argomenti.
 
-- We have seen some functions already --- now let's take a closer look.
-- An _argument_ is a value passed into a function.
-- `len` takes exactly one.
-- `int`, `str`, and `float` create a new value from an existing one.
-- `print` takes zero or more.
-- `print` with no arguments prints a blank line.
-  - Must always use parentheses, even if they're empty,
-    so that Python knows a function is being called.
+- Abbiamo visto alcune funzioni già --- ora diamo un'occhiata più da vicino.
+- Un _argomento_ è un valore passato in una funzione.
+- `len` ne prende esattamente uno.
+- `int`, `str`, e `float` creano un nuovo valore da uno esistente.
+- `print` richiede zero o più.
+- `print` senza argomenti stampa una riga vuota.
+  - Deve sempre usare parentesi, anche se sono vuote,
+    in modo che Python sappia che una funzione viene chiamata.
 
 ```python
 print('before')
@@ -47,17 +47,17 @@ print('after')
 ```
 
 ```output
-before
+prima di
 
-after
+dopo
 ```
 
-## Every function returns something.
+## Ogni funzione restituisce qualcosa.
 
-- Every function call produces some result.
-- If the function doesn't have a useful result to return,
-  it usually returns the special value `None`. `None` is a Python
-  object that stands in anytime there is no value.
+- Ogni chiamata di funzione produce qualche risultato.
+- Se la funzione non ha un risultato utile per restituire,
+  di solito restituisce il valore speciale `None`. `None` è un oggetto Python
+  che sta in qualsiasi momento non c'è valore.
 
 ```python
 result = print('example')
@@ -65,16 +65,16 @@ print('result of print is', result)
 ```
 
 ```output
-example
-result of print is None
+esempio
+risultato di stampa non è nessuno
 ```
 
-## Commonly-used built-in functions include `max`, `min`, and `round`.
+## Le funzioni integrate comunemente usate includono `max`, `min`, e `round`.
 
-- Use `max` to find the largest value of one or more values.
-- Use `min` to find the smallest.
-- Both work on character strings as well as numbers.
-  - "Larger" and "smaller" use (0-9, A-Z, a-z) to compare letters.
+- Usa `max` per trovare il valore più grande di uno o più valori.
+- Usa `min` per trovare il più piccolo.
+- Entrambi lavorano su stringhe di caratteri così come i numeri.
+  - "Più grandi" e "più piccolo" uso (0-9, A-Z, a-z) per confrontare le lettere.
 
 ```python
 print(max(1, 2, 3))
@@ -86,28 +86,28 @@ print(min('a', 'A', '0'))
 0
 ```
 
-## Functions may only work for certain (combinations of) arguments.
+## Le funzioni possono funzionare solo per alcuni (combinazioni di) argomenti.
 
-- `max` and `min` must be given at least one argument.
-  - "Largest of the empty set" is a meaningless question.
-- And they must be given things that can meaningfully be compared.
+- `max` e `min` devono essere forniti almeno un argomento.
+  - "Più grande del set vuoto" è una domanda senza senso.
+- E devono essere date loro cose che possono essere confrontate in modo significativo.
 
 ```python
 print(max(1, 'a'))
 ```
 
 ```error
-TypeError                                 Traceback (most recent call last)
+TypeError Traceback (ultima chiamata)
 <ipython-input-52-3f049acf3762> in <module>
 ----> 1 print(max(1, 'a'))
 
-TypeError: '>' not supported between instances of 'str' and 'int'
+TypeError: '>' non supportato tra istanze di 'str' e 'int'
 ```
 
-## Functions may have default values for some arguments.
+## Le funzioni possono avere valori predefiniti per alcuni argomenti.
 
-- `round` will round off a floating-point number.
-- By default, rounds to zero decimal places.
+- `round` terminerà un numero in virgola mobile.
+- Per impostazione predefinita, arrotonda a zero decimali.
 
 ```python
 round(3.712)
@@ -117,191 +117,191 @@ round(3.712)
 4
 ```
 
-- We can specify the number of decimal places we want.
+- Possiamo specificare il numero di decimali che vogliamo.
 
 ```python
-round(3.712, 1)
+tondo(3.712, 1)
 ```
 
 ```output
 3.7
 ```
 
-## Functions attached to objects are called methods
+## Le funzioni collegate agli oggetti sono chiamate metodi
 
-- Functions take another form that will be common in the pandas episodes.
-- Methods have parentheses like functions, but come after the variable.
-- Some methods are used for internal Python operations, and are marked with double underlines.
+- Le funzioni assumono un'altra forma che sarà comune negli episodi di panda.
+- I metodi hanno parentesi come funzioni, ma vengono dopo la variabile.
+- Alcuni metodi sono usati per operazioni interne in Python e sono contrassegnati con doppie sottolineature.
 
 ```python
-my_string = 'Hello world!'  # creation of a string object 
+mio_stringa = 'Ciao mondo! # creazione di una stringa object 
 
-print(len(my_string))       # the len function takes a string as an argument and returns the length of the string
+print(len(my_string)) # la funzione len prende una stringa come argomento e restituisce la lunghezza della stringa
 
-print(my_string.swapcase()) # calling the swapcase method on the my_string object
+print(my_string. wapcase()) # chiamare il metodo swapcase sul my_string object
 
-print(my_string.__len__())  # calling the internal __len__ method on the my_string object, used by len(my_string)
+print(my_string.__len__()) # chiamando il metodo interno __len__ sull'oggetto my_string utilizzato da len(my_string)
 
 ```
 
 ```output
 12
-hELLO WORLD!
+HELLO WORLD!
 12
 ```
 
-- You might even see them chained together.  They operate left to right.
+- Potreste persino vederli incatenati assieme.  Operano da sinistra a destra.
 
 ```python
-print(my_string.isupper())          # Not all the letters are uppercase
-print(my_string.upper())            # This capitalizes all the letters
+print(my_string.isupper()) # Non tutte le lettere sono maiuscole
+print(my_string.upper()) # Questo capitalizza tutte le lettere
 
-print(my_string.upper().isupper())  # Now all the letters are uppercase
+print(my_string.upper().isupper()) # Ora tutte le lettere sono maiuscole
 ```
 
 ```output
-False
+Falso
 HELLO WORLD
-True
+Vero
 ```
 
-## Use the built-in function `help` to get help for a function.
+## Usa la funzione `help` integrata per ottenere aiuto per una funzione.
 
-- Every built-in function has online documentation.
+- Ogni funzione integrata ha una documentazione online.
 
 ```python
 help(round)
 ```
 
 ```output
-Help on built-in function round in module builtins:
+Aiuto sulla funzione integrata round nel modulo integrato:
 
-round(number, ndigits=None)
-    Round a number to a given precision in decimal digits.
+round(numero, ndigits=Nessuno)
+    arrotonda un numero a una data precisione in cifre decimali.
     
-    The return value is an integer if ndigits is omitted or None.  Otherwise
-    the return value has the same type as the number.  ndigits may be negative.
+    Il valore di ritorno è un numero intero se ndigits è omesso o Nessuno. Altrimenti
+    il valore restituito ha lo stesso tipo del numero. ndigits può essere negativo.
 ```
 
-## The Jupyter Notebook has two ways to get help.
+## Il notebook Jupyter ha due modi per ottenere aiuto.
 
-- Option 1: Place the cursor near where the function is invoked in a cell
-  (i.e., the function name or its parameters),
-  - Hold down <kbd>Shift</kbd>, and press <kbd>Tab</kbd>.
-  - Do this several times to expand the information returned.
-- Option 2: Type the function name in a cell with a question mark after it. Then run the cell.
+- Opzione 1: posizionare il cursore vicino a dove la funzione è invocata in una cella
+  (cioè, il nome della funzione o i suoi parametri),
+  - Tieni premuto <kbd>Maiusc</kbd>e premi <kbd>Tab</kbd>.
+  - Fare questo più volte per espandere le informazioni restituite.
+- Opzione 2: digitare il nome della funzione in una cella con un punto interrogativo dopo di essa. Quindi eseguire la cella.
 
-## Python reports a syntax error when it can't understand the source of a program.
+## Python segnala un errore di sintassi quando non riesce a capire la fonte di un programma.
 
-- Won't even try to run the program if it can't be parsed.
+- Non cercherà nemmeno di eseguire il programma se non può essere analizzato.
 
 ```python
-# Forgot to close the quote marks around the string.
+# Hai dimenticato di chiudere le virgolette intorno alla stringa.
 name = 'Feng
 ```
 
 ```error
-  File "<ipython-input-56-f42768451d55>", line 2
+  File "<ipython-input-56-f42768451d55>", linea 2
     name = 'Feng
                 ^
-SyntaxError: EOL while scanning string literal
+SyntaxError: EOL durante la scansione della stringa letterale
 ```
 
 ```python
-# An extra '=' in the assignment.
-age = = 52
+# Un extra '=' nell'assegnazione.
+età = = 52
 ```
 
 ```error
-  File "<ipython-input-57-ccc3df3cf902>", line 2
-    age = = 52
+  File "<ipython-input-57-ccc3df3cf902>", linea 2
+    età = = 52
           ^
-SyntaxError: invalid syntax
+SintassoErrore: sintassi non valida
 ```
 
-- Look more closely at the error message:
+- Guarda più da vicino il messaggio di errore:
 
 ```python
-print("hello world"
+print("ciao mondo"
 ```
 
 ```error
-  File "<ipython-input-6-d1cc229bf815>", line 1
-    print ("hello world"
+  File "<ipython-input-6-d1cc229bf815>", linea 1
+    print ("ciao mondo"
                         ^
-SyntaxError: unexpected EOF while parsing
+SyntaxError: unexpected EOF durante l'analisi
 ```
 
-- The message indicates a problem on first line of the input ("line 1").
-  - In this case the "ipython-input" section of the file name tells us that
-    we are working with input into IPython,
-    the Python interpreter used by the Jupyter Notebook.
-- The `-6-` part of the filename indicates that
-  the error occurred in cell 6 of our Notebook.
-- Next is the problematic line of code,
-  indicating the problem with a `^` pointer.
+- Il messaggio indica un problema alla prima riga dell'input ("riga 1").
+  - In questo caso la sezione "ipython-input" del nome del file ci dice che
+    stiamo lavorando con input in IPython,
+    l'interprete Python usato dal Notebook di Giove.
+- La parte `-6-` del nome file indica che
+  l'errore si è verificato nella cella 6 del nostro notebook.
+- Il prossimo è la linea di codice problematica,
+  che indica il problema con un puntatore `^`.
 
-## Python reports a runtime error when something goes wrong while a program is executing. {#runtime-error}
+## Python segnala un errore di esecuzione quando qualcosa va storto mentre un programma è in esecuzione. {#runtime-error}
 
 ```python
 age = 53
-remaining = 100 - aege # mis-spelled 'age'
+rimanente = 100 - aege # mis-spelled 'age'
 ```
 
 ```error
-NameError                                 Traceback (most recent call last)
+NameError Traceback (ultima chiamata)
 <ipython-input-59-1214fb6c55fc> in <module>
-      1 age = 53
-----> 2 remaining = 100 - aege # mis-spelled 'age'
+      1 età = 53
+----> 2 rimanenti = 100 - aege # mis-spelled 'age'
 
-NameError: name 'aege' is not defined
+NameError: name 'aege' non è definito
 ```
 
-- Fix syntax errors by reading the source and runtime errors by tracing execution.
+- Correggere gli errori di sintassi leggendo gli errori di origine e di esecuzione tracciando l'esecuzione.
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::::::::: challenge
 
-## What Happens When
+## Cosa Succede Quando
 
-1. Explain in simple terms the order of operations in the following program:
-   when does the addition happen, when does the subtraction happen,
-   when is each function called, etc.
-2. What is the final value of `radiance`?
+1. Spiega in termini semplici l'ordine delle operazioni nel seguente programma:
+   quando avviene l'aggiunta, quando avviene la sottrazione,
+   quando ogni funzione viene chiamata, ecc.
+2. Qual è il valore finale di `radiance`?
 
 ```python
-radiance = 1.0
-radiance = max(2.1, 2.0 + min(radiance, 1.1 * radiance - 0.5))
+radianza = 1,0
+radianza = max(2.1, 2.0 + min(radianza, 1.1 * radianza - 0.5))
 ```
 
-:::::::::::::::  solution
+::::::::::::::: soluzione
 
-## Solution
+## Soluzione
 
-1. Order of operations:
+1. Ordine delle operazioni:
 
-2. `1.1 * radiance = 1.1`
+2. `1.1 * radianza = 1.1`
 
 3. `1.1 - 0.5 = 0.6`
 
-4. `min(radiance, 0.6) = 0.6`
+4. `min(radianza, 0.6) = 0.6`
 
 5. `2.0 + 0.6 = 2.6`
 
-6. `max(2.1, 2.6) = 2.6`
+6. `max(2.1; 2.6) = 2.6`
 
-7. At the end, `radiance = 2.6`
+7. Alla fine, `radianza = 2.6`
 
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::::::::: challenge
 
-## Spot the Difference
+## Spot la differenza
 
-1. Predict what each of the `print` statements in the program below will print.
-2. Does `max(len(rich), poor)` run or produce an error message?
-   If it runs, does its result make any sense?
+1. Prevedere ciò che ciascuna delle istruzioni `print` nel programma qui sotto stampa.
+2. Il file `max(len(rich), poor)` viene eseguito o produce un messaggio di errore?
+   Se funziona, il suo risultato ha qualche senso?
 
 ```python
 easy_string = "abc"
@@ -312,9 +312,9 @@ print(max(rich, poor))
 print(max(len(rich), len(poor)))
 ```
 
-:::::::::::::::  solution
+::::::::::::::: soluzione
 
-## Solution
+## Soluzione
 
 ```python
 print(max(easy_string))
@@ -325,11 +325,11 @@ c
 ```
 
 ```python
-print(max(rich, poor))
+print(max(ricchi, poveri))
 ```
 
 ```output
-tin
+stagno
 ```
 
 ```python
@@ -340,52 +340,52 @@ print(max(len(rich), len(poor)))
 4
 ```
 
-`max(len(rich), poor)` throws a TypeError. This turns into `max(4, 'tin')` and
-as we discussed earlier a string and integer cannot meaningfully be compared.
+`max(len(rich), povero)` lancia un TypeError. Questo si trasforma in `max(4, 'tin')` e
+come abbiamo discusso in precedenza una stringa e un intero non possono essere significativamente confrontati.
 
 ```error
-TypeError                                 Traceback (most recent call last)
+TypeError Traceback (più recente chiamata ultima)
 <ipython-input-65-bc82ad05177a> in <module>
 ----> 1 max(len(rich), poor)
 
-TypeError: '>' not supported between instances of 'str' and 'int'
+TypeError: '>' non supportato tra istanze di 'str' e 'int'
 ```
 
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::::::::: challenge
 
-## Why Not?
+## Perché No?
 
-Why is it that `max` and `min` do not return `None` when they are called with no arguments?
+Perché `max` e `min` non restituiscono `None` quando vengono chiamati senza argomenti?
 
-:::::::::::::::  solution
+::::::::::::::: soluzione
 
-## Solution
+## Soluzione
 
-`max` and `min` return TypeErrors in this case because the correct number of parameters
-was not supplied. If it just returned `None`, the error would be much harder to trace as it
-would likely be stored into a variable and used later in the program, only to likely throw
-a runtime error.
+`max` e `min` restituiscono TypeErrors in questo caso perché il numero corretto di parametri
+non è stato fornito. Se ha appena restituito `Nessuno`, l'errore sarebbe molto più difficile da rintracciare in quanto
+probabilmente sarebbe memorizzato in una variabile e utilizzato in seguito nel programma, solo per lanciare probabilmente
+un errore di runtime.
 
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::::::::: challenge
 
-## Last Character of a String
+## Ultimo carattere di una stringa
 
-If Python starts counting from zero,
-and `len` returns the number of characters in a string,
-what index expression will get the last character in the string `name`?
-(Note: we will see a simpler way to do this in a later episode.)
+Se Python inizia a contare da zero,
+e `len` restituisce il numero di caratteri in una stringa,
+quale espressione indice otterrà l'ultimo carattere nella stringa `name`?
+(Nota: vedremo un modo più semplice per farlo in un episodio successivo.)
 
-:::::::::::::::  solution
+::::::::::::::: soluzione
 
-## Solution
+## Soluzione
 
 `name[len(name) - 1]`
 
@@ -395,28 +395,28 @@ what index expression will get the last character in the string `name`?
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Explore the Python docs!
+## Esplora i documenti di Python!
 
-The [official Python documentation](https://docs.python.org/3/) is arguably the most complete
-source of information about the language. It is available in different languages and contains a lot of useful
-resources. The [Built-in Functions page](https://docs.python.org/3/library/functions.html) contains a catalogue of
-all of these functions, including the ones that we've covered in this lesson. Some of these are more advanced and
-unnecessary at the moment, but others are very simple and useful.
+La [documentazione ufficiale di Python](https://docs.python.org/3/) è probabilmente la fonte di informazioni
+più completa sulla lingua. È disponibile in diverse lingue e contiene un sacco di risorse utili
+. La [pagina Funzioni integrate](https://docs.python.org/3/library/functions.html) contiene un catalogo di
+tutte queste funzioni, comprese quelle che abbiamo coperto in questa lezione. Alcuni di questi sono più avanzati e
+inutili al momento, ma altri sono molto semplici e utili.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- Use comments to add documentation to programs.
-- A function may take zero or more arguments.
-- Commonly-used built-in functions include `max`, `min`, and `round`.
-- Functions may only work for certain (combinations of) arguments.
-- Functions may have default values for some arguments.
-- Use the built-in function `help` to get help for a function.
-- The Jupyter Notebook has two ways to get help.
-- Every function returns something.
-- Python reports a syntax error when it can't understand the source of a program.
-- Python reports a runtime error when something goes wrong while a program is executing.
-- Fix syntax errors by reading the source code, and runtime errors by tracing the program's execution.
+- Utilizzare i commenti per aggiungere documentazione ai programmi.
+- Una funzione può richiedere zero o più argomenti.
+- Le funzioni integrate comunemente usate includono `max`, `min`, e `round`.
+- Le funzioni possono funzionare solo per alcuni (combinazioni di) argomenti.
+- Le funzioni possono avere valori predefiniti per alcuni argomenti.
+- Usa la funzione `help` integrata per ottenere aiuto per una funzione.
+- Il notebook Jupyter ha due modi per ottenere aiuto.
+- Ogni funzione restituisce qualcosa.
+- Python segnala un errore di sintassi quando non riesce a capire la fonte di un programma.
+- Python segnala un errore di esecuzione quando qualcosa va storto mentre un programma è in esecuzione.
+- Correggere gli errori di sintassi leggendo il codice sorgente e gli errori di esecuzione tracciando l'esecuzione del programma.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
