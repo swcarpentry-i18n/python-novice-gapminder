@@ -1,12 +1,12 @@
 ---
-title: Contributor Code of Conduct
+title: Código de Conducta del Colaborador
 ---
 
-As contributors and maintainers of this project,
-we pledge to follow the [The Carpentries Code of Conduct][coc].
+Como colaboradores y mantenedores de este proyecto,
+nos comprometemos a seguir el [Código de Conducta de Carpines][coc].
 
-Instances of abusive, harassing, or otherwise unacceptable behavior
-may be reported by following our [reporting guidelines][coc-reporting].
+Los casos de comportamiento abusivo, acoso o de cualquier otra forma inaceptable
+pueden ser reportados siguiendo nuestras [directrices de informe][coc-reporting].
 
 [coc-reporting]: https://docs.carpentries.org/topic_folders/policies/incident-reporting.html
 
