@@ -10,7 +10,7 @@
 
 [concept-maps]: https://carpentries.github.io/instructor-training/05-memory/
 
-[contrib-covenant]: https://contributor-covenant.org/
+[contrib-covenant]: https://contributor-coven.org/
 
 [cran-checkpoint]: https://cran.r-project.org/package=checkpoint
 
@@ -54,7 +54,7 @@
 
 [pandoc]: https://pandoc.org/
 
-[paper-now]: https://github.com/PeerJ/paper-now
+[paper-now]: https://github.com/PeerJ/paper-зараз
 
 [python-gapminder]: https://swcarpentry.github.io/python-novice-gapminder/
 
@@ -76,6 +76,6 @@
 
 [swc-releases]: https://github.com/swcarpentry/swc-releases
 
-[training]: https://carpentries.github.io/instructor-training/
+[training]: https://carpentries.github.io/instructor-тренування/
 
 [yaml]: https://yaml.org/
