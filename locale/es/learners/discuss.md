@@ -1,5 +1,5 @@
 ---
-title: Discussion
+title: Discusión
 ---
 
-FIXME: general discussion and further reading for learners.
+FIXME: discusión general y lectura para los estudiantes.
