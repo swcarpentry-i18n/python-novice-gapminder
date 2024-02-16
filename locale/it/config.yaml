@@ -9,20 +9,20 @@
 #incubator: The Carpentries Incubator
 carpentry: 'swc'
 #Overall title for pages.
-title: 'Plotting and Programming in Python'
+title: 'Pianificazione e programmazione in Python'
 #Date the lesson was created (YYYY-MM-DD, this is empty by default)
 created: '2016-01-07'
 #Comma-separated list of keywords for the lesson
-keywords: 'software, data, lesson, The Carpentries'
+keywords: 'software, dati, lezione, The Carpentries'
 #Life cycle stage of the lesson
 #possible values: pre-alpha, alpha, beta, stable
-life_cycle: 'stable'
+life_cycle: 'stabile'
 #License of the lesson materials (recommended CC-BY 4.0)
 license: 'CC-BY 4.0'
 #Link to the source repository for this lesson
 source: 'https://github.com/swcarpentry/python-novice-gapminder'
 #Default branch of your lesson
-branch: 'main'
+branch: 'principale'
 #Who to contact if there are any issues
 contact: 'team@carpentries.org'
 #Navigation ------------------------------------------------
@@ -48,12 +48,12 @@ episodes:
   - 04-built-in.md
   - 05-coffee.md
   - 06-libraries.md
-  - 07-reading-tabular.md
+  - 07-lettura-tabular.md
   - 08-data-frames.md
   - 09-plotting.md
   - 10-lunch.md
   - 11-lists.md
-  - 12-for-loops.md
+  - 12-per-loops.md
   - 13-conditionals.md
   - 14-looping-data-sets.md
   - 15-coffee.md
@@ -72,5 +72,5 @@ profiles:
 #This space below is where custom yaml items (e.g. pinning
 #sandpaper and varnish versions) should live
 url: 'https://swcarpentry.github.io/python-novice-gapminder'
-analytics: carpentries
-lang: en
+analytics: carpenteria
+lang: it
