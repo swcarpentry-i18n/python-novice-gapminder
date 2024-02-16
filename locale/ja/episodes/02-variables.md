@@ -1,72 +1,72 @@
 ---
-title: Variables and Assignment
+title: 変数と割り当て
 teaching: 10
 exercises: 10
 ---
 
-::::::::::::::::::::::::::::::::::::::: objectives
+::::::::::::::::::::::::::::::::::
 
-- Write programs that assign scalar values to variables and perform calculations with those values.
-- Correctly trace value changes in programs that use scalar assignment.
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
-
-:::::::::::::::::::::::::::::::::::::::: questions
-
-- How can I store data in programs?
+- 変数にスカラー値を割り当て、それらの値で計算を行うプログラムを記述します。
+- スカラー代入を使用するプログラムで値の変化を正しく追跡します。
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Use variables to store values.
+::::::::::::::::::::::::::::::::::
 
-- **Variables** are names for values.
+- データをプログラムに保存するにはどうすればよいですか?
 
-- Variable names
+::::::::::::::::::::::::::::::::::::::::::::::::::
 
-  - can **only** contain letters, digits, and underscore `_` (typically used to separate words in long variable names)
-  - cannot start with a digit
-  - are **case sensitive** (age, Age and AGE are three different variables)
+## 値を格納するために変数を使用します。
 
-- The name should also be meaningful so you or another programmer know what it is
+- **変数** は値の名前です。
+
+- 変数名
+
+  - は**のみ** 文字、数字、アンダースコア`_`を含むことができます (通常は長い変数名の単語を分離するために使用します)
+  - は数字で始めることはできません
+  - は**大文字と小文字を区別します** (年齢、年齢、年齢は 3 つの異なる変数です)
+
+- あなたや他のプログラマがそれが何であるかを知っているように、名前も意味があるはずです。
 
 - Variable names that start with underscores like `__alistairs_real_age` have a special meaning
   so we won't do that until we understand the convention.
 
-- In Python the `=` symbol assigns the value on the right to the name on the left.
+- Python では、`=` シンボルは右側の値を左側の名前に割り当てます。
 
-- The variable is created when a value is assigned to it.
+- 変数は値が割り当てられたときに作成されます。
 
-- Here, Python assigns an age to a variable `age`
-  and a name in quotes to a variable `first_name`.
+- ここでPythonは変数`age`
+  に年齢を、引用符で囲まれた名前を変数`first_name`に割り当てます。
 
   ```python
   age = 42
   first_name = 'Ahmed'
   ```
 
-## Use `print` to display values.
+## 値を表示するには `print` を使います。
 
-- Python has a built-in function called `print` that prints things as text.
-- Call the function (i.e., tell Python to run it) by using its name.
-- Provide values to the function (i.e., the things to print) in parentheses.
-- To add a string to the printout, wrap the string in single or double quotes.
-- The values passed to the function are called **arguments**
+- Python には `print` と呼ばれる組み込み関数があり、テキストとして出力されます。
+- 関数を呼び出す(つまり、Pythonに名前を使って実行するように伝えます)。
+- 括弧内の関数(つまり、出力するもの)に値を提供します。
+- 印刷に文字列を追加するには、文字列をシングルクォートまたはダブルクォートで囲みます。
+- 関数に渡された値は **arguments** と呼ばれます。
 
 ```python
-print(first_name, 'is', age, 'years old')
+print(first_name, 'is', age, 'year old')
 ```
 
 ```output
-Ahmed is 42 years old
+Ahmedは42歳です
 ```
 
-- `print` automatically puts a single space between items to separate them.
-- And wraps around to a new line at the end.
+- `print` は自動的にアイテムを区切るために1つのスペースを入れます。
+- そして最後に新しい行に包み込みます。
 
-## Variables must be created before they are used.
+## 変数は使用する前に作成する必要があります。
 
-- If a variable doesn't exist yet, or if the name has been mis-spelled,
-  Python reports an error. (Unlike some languages, which "guess" a default value.)
+- 変数がまだ存在しない場合、または名前が間違っている場合、
+  Pythonはエラーを報告します。 (デフォルト値を「推測」する一部の言語とは異なります。
 
 ```python
 print(last_name)
@@ -81,18 +81,18 @@ NameError                                 Traceback (most recent call last)
 NameError: name 'last_name' is not defined
 ```
 
-- The last line of an error message is usually the most informative.
-- We will look at error messages in detail [later](17-scope.md#reading-error-messages).
+- エラーメッセージの最後の行は、通常、最も有益です。
+- 詳細は [later](17-scope.md#reading-error-messages) のエラーメッセージを見ていきます。
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Variables Persist Between Cells
+## 変数をセル間で保持
 
-Be aware that it is the _order_ of execution of cells that is important in a Jupyter notebook, not the order
-in which they appear. Python will remember _all_ the code that was run previously, including any variables you have
-defined, irrespective of the order in the notebook. Therefore if you define variables lower down the notebook and then
-(re)run cells further up, those defined further down will still be present. As an example, create two cells with the
-following content, in this order:
+Jupyter ノートブックで重要なセルの実行の_順序_であることに注意してください。 表示される順序
+ではありません。 Python は以前に実行されたコードの _all_ を覚えています。これには、ノートブックの順序に関係なく、
+定義された変数が含まれています。 したがって、ノートブックの下に変数を定義し、さらにセルを
+(再)実行すると、さらに下に定義された変数が表示されます。 例として、次の内容に続く
+を持つ2つのセルをこの順序で作成します。
 
 ```python
 print(myval)
@@ -102,38 +102,37 @@ print(myval)
 myval = 1
 ```
 
-If you execute this in order, the first cell will give an error. However, if you run the first cell _after_ the second
-cell it will print out `1`. To prevent confusion, it can be helpful to use the `Kernel` -> `Restart & Run All` option which
-clears the interpreter and runs everything from a clean slate going top to bottom.
+これを順番に実行すると、最初のセルはエラーを返します。 しかし、最初のセルを\*\*後\*実行すると、2番目の
+セルは`1`が出力されます。 混乱を防ぐために
+がインタプリタをクリアし、上から下へときれいなスレートを実行する `Kernel` -> `Restart & Run All` オプションを使用すると便利です。
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Variables can be used in calculations.
+## 変数は計算に使用できます。
 
-- We can use variables in calculations just as if they were values.
-  - Remember, we assigned the value `42` to `age` a few lines ago.
+- 値であるかのように計算で変数を使用できます。
+  - 数行前に、`42`を`age`に割り当てました。
 
 ```python
 age = age + 3
-print('Age in three years:', age)
+print('3 年後の年齢:', age)
 ```
 
 ```output
-Age in three years: 45
+3歳45歳。
 ```
 
-## Use an index to get a single character from a string.
+## 文字列から単一の文字を取得するには、インデックスを使用します。
 
-- The characters (individual letters, numbers, and so on) in a string are
-  ordered. For example, the string `'AB'` is not the same as `'BA'`. Because of
-  this ordering, we can treat the string as a list of characters.
-- Each position in the string (first, second, etc.) is given a number. This
-  number is called an **index** or sometimes a subscript.
-- Indices are numbered from 0.
-- Use the position's index in square brackets to get the character at that
-  position.
+- 文字列の文字 (個々の文字、数字など) は、
+  順に並んでいます。 例えば、`AB'`は`BA'`と同じではありません。
+  の順序により、文字列を文字列のリストとして扱うことができます。
+- 文字列内の各位置 (最初、秒、など) は数字で指定されています。 この
+  番号は**インデックス**またはサブスクリプションと呼ばれます。
+- インデックスは0から番号付けされます。
+- 位置の文字を取得するには、角括弧内の位置の位置のインデックスを使用します。
 
-![A line of Python code, print(atom\_name\[0\]), demonstrates that using the zero index will output just the initial letter, in this case 'h' for helium.](fig/2_indexing.svg)
+![A line of Python code, print(atom_name[0]), ゼロインデックスを使用すると、ヘリウムの「h」の場合、最初の文字だけが出力されることを示しています。 (fig/2_indexing.svg)
 
 ```python
 atom_name = 'helium'
@@ -141,22 +140,22 @@ print(atom_name[0])
 ```
 
 ```output
-h
+時間
 ```
 
-## Use a slice to get a substring.
+## 部分文字列を取得するにはスライスを使用します。
 
-- A part of a string is called a **substring**. A substring can be as short as a
-  single character.
-- An item in a list is called an element. Whenever we treat a string as if it
-  were a list, the string's elements are its individual characters.
-- A slice is a part of a string (or, more generally, a part of any list-like thing).
+- 文字列の一部は **substring** と呼ばれます。 部分文字列は
+  単一文字と同じ短さにすることができます。
+- リスト内の項目は要素と呼ばれます。 文字列を
+  がリストであるかのように扱うたびに、文字列の要素はそれぞれの文字です。
+- スライスは文字列の一部です(一般的には、リストのようなものの一部です)。
 - We take a slice with the notation `[start:stop]`, where `start` is the integer
   index of the first element we want and `stop` is the integer index of
   the element _just after_ the last element we want.
-- The difference between `stop` and `start` is the slice's length.
-- Taking a slice does not change the contents of the original string. Instead,
-  taking a slice returns a copy of part of the original string.
+- `stop` と `start` の違いはスライスの長さです。
+- スライスを取ることは、元の文字列の内容を変更しません。 代わりに、
+  がスライスを取得すると、元の文字列の一部のコピーが返されます。
 
 ```python
 atom_name = 'sodium'
@@ -167,7 +166,7 @@ print(atom_name[0:3])
 sod
 ```
 
-## Use the built-in function `len` to find the length of a string.
+## 組み込み関数 `len` を使用して、文字列の長さを求めます。
 
 ```python
 print(len('helium'))
@@ -177,35 +176,35 @@ print(len('helium'))
 6
 ```
 
-- Nested functions are evaluated from the inside out,
-  like in mathematics.
+- 入れ子関数は、数学のように、
+  内側から評価されます。
 
-## Python is case-sensitive.
+## Python は大文字と小文字を区別します。
 
-- Python thinks that upper- and lower-case letters are different,
-  so `Name` and `name` are different variables.
-- There are conventions for using upper-case letters at the start of variable names so we will use lower-case letters for now.
+- Pythonでは、大文字と小文字が異なるので、
+  `Name` と `name` は異なる変数であると考えています。
+- 変数名の先頭には大文字を使用する規則がありますので、今は小文字を使用します。
 
-## Use meaningful variable names.
+## 意味のある変数名を使用してください。
 
-- Python doesn't care what you call variables as long as they obey the rules
-  (alphanumeric characters and the underscore).
+- Pythonは、ルール
+  (英数字とアンダースコア)に従っている限り、変数と呼ぶものを気にしません。
 
 ```python
 flabadab = 42
 ewr_422_yY = 'Ahmed'
-print(ewr_422_yY, 'is', flabadab, 'years old')
+print(ewr_422_yY, 'is', flabab, 'years old')
 ```
 
-- Use meaningful variable names to help other people understand what the program does.
-- The most important "other person" is your future self.
+- 意味のある変数名を使って、他の人がプログラムが何をするかを理解するのに役立ちます。
+- 最も重要な"他の人"は、あなたの未来の自分です。
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::: チャレンジ
 
-## Swapping Values
+## 値の入れ替え
 
-Fill the table showing the values of the variables in this program
-_after_ each statement is executed.
+このプログラムの
+_after_ 各文が実行される変数の値を示すテーブルを埋めます。
 
 ```python
 # Command  # Value of x   # Value of y   # Value of swap #
@@ -216,9 +215,9 @@ x = y      #              #              #               #
 y = swap   #              #              #               #
 ```
 
-:::::::::::::::  solution
+::::::::::::::::: solution
 
-## Solution
+## 解決策
 
 ```output
 # Command  # Value of x   # Value of y   # Value of swap #
@@ -229,20 +228,20 @@ x = y      # 3.0          # 3.0          # 1.0           #
 y = swap   # 3.0          # 1.0          # 1.0           #
 ```
 
-These three lines exchange the values in `x` and `y` using the `swap`
-variable for temporary storage. This is a fairly common programming idiom.
+これらの3行は、`x`と`y`の値を交換し、`swap`
+変数を使用して一時的に保存します。 これはかなり一般的なプログラミング慣用語です。
 
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::: チャレンジ
 
-## Predicting Values
+## 値の予測
 
-What is the final value of `position` in the program below?
-(Try to predict the value without running the program,
-then check your prediction.)
+`position`の最終値は？
+(プログラムを実行せずに値を予測してみてください。
+そして予測を確認してください。
 
 ```python
 initial = 'left'
@@ -250,43 +249,43 @@ position = initial
 initial = 'right'
 ```
 
-:::::::::::::::  solution
+::::::::::::::::: solution
 
-## Solution
+## 解決策
 
 ```python
 print(position)
 ```
 
 ```output
-left
+左
 ```
 
-The `initial` variable is assigned the value `'left'`.
-In the second line, the `position` variable also receives
-the string value `'left'`. In third line, the `initial` variable is given the
-value `'right'`, but the `position` variable retains its string value
-of `'left'`.
+変数`initial`には、`'left'`の値が割り当てられます。
+2行目では、変数`position`は文字列値`'left'`を
+受け取ります。 3行目では、変数`initial`は
+の値`'right'`を与えますが、`position`変数は`'left'`の文字列値
+を保持します。
 
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::: チャレンジ
 
-## Challenge
+## チャレンジ
 
 If you assign `a = 123`,
 what happens if you try to get the second digit of `a` via `a[1]`?
 
-:::::::::::::::  solution
+::::::::::::::::: solution
 
-## Solution
+## 解決策
 
-Numbers are not strings or sequences and Python will raise an error if you try to perform an index operation on a
-number. In the [next lesson on types and type conversion](03-types-conversion.md)
-we will learn more about types and how to convert between different types. If you want the Nth digit of a number you
-can convert it into a string using the `str` built-in function and then perform an index operation on that string.
+数値は文字列やシーケンスではなく、もし
+数値に対してインデックス操作を行おうとすると、Pythonはエラーになります。 In the [next lesson on types and type conversion](03-types-conversion.md)
+we will learn more about types and how to convert between different types. もし、あなたが
+のN番目の数字が、組み込み関数`str`を使って文字列に変換し、その文字列に対してインデックス操作を行うことができます。
 
 ```python
 a = 123
@@ -294,7 +293,7 @@ print(a[1])
 ```
 
 ```error
-TypeError: 'int' object is not subscriptable
+TypeError: 'int' オブジェクトはサブスクリプションテーブルではありません
 ```
 
 ```python
@@ -310,90 +309,90 @@ print(a[1])
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::: チャレンジ
 
-## Choosing a Name
+## 名前の選択
 
-Which is a better variable name, `m`, `min`, or `minutes`?
-Why?
+`m`と`min`、`min`と`minutes`のどちらが良いですか？
+なぜでしょう？
 Hint: think about which code you would rather inherit
 from someone who is leaving the lab:
 
 1. `ts = m * 60 + s`
-2. `tot_sec = min * 60 + sec`
-3. `total_seconds = minutes * 60 + seconds`
+2. `tot_sec= min * 60 + sec`
+3. `total_seconds = 分* 60 + seconds`
 
-:::::::::::::::  solution
+::::::::::::::::: solution
 
-## Solution
+## 解決策
 
-`minutes` is better because `min` might mean something like "minimum"
-(and actually is an existing built-in function in Python that we will cover later).
+`minutes`は"minimum"
+のような意味を持つかもしれません。（実際にはPythonの組み込み関数ですが、後で説明します）
 
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::: チャレンジ
 
-## Slicing practice
+## スライスの練習
 
-What does the following program print?
+以下のプログラムは何を印刷しますか?
 
 ```python
 atom_name = 'carbon'
 print('atom_name[1:3] is:', atom_name[1:3])
 ```
 
-:::::::::::::::  solution
+::::::::::::::::: solution
 
-## Solution
+## 解決策
 
 ```output
-atom_name[1:3] is: ar
+atom_name[1:3] : ar
 ```
 
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::: チャレンジ
 
-## Slicing concepts
+## スライスのコンセプト
 
-Given the following string:
+以下の文字列が与えられます。
 
 ```python
 species_name = "Acacia buxifolia"
 ```
 
-What would these expressions return?
+これらの表現は何を返すでしょうか?
 
-1. `species_name[2:8]`
-2. `species_name[11:]` (without a value after the colon)
-3. `species_name[:4]` (without a value before the colon)
-4. `species_name[:]` (just a colon)
-5. `species_name[11:-3]`
+1. `種_name[2:8]`
+2. `species_name[11:]` (コロンの後の値なし)
+3. `species_name[:4]` (コロンの前の値なし)
+4. `species_name[:]` (コロンのみ)
+5. `種_name[11:-3]`
 6. `species_name[-5:-3]`
-7. What happens when you choose a `stop` value which is out of range? (i.e., try `species_name[0:20]` or `species_name[:103]`)
+7. 範囲外の `stop` 値を選択した場合はどうなりますか？ (つまり、 `種_name[0:20]` または `種_name[:103]` を試してみてください)
 
-:::::::::::::::  solution
+::::::::::::::::: solution
 
-## Solutions
+## ソリューション
 
-1. `species_name[2:8]` returns the substring `'acia b'`
+1. `species_name[2:8]` は、 `'acia b'` を返します。
 
-2. `species_name[11:]` returns the substring `'folia'`, from position 11 until the end
+2. `species_name[11:]` は、11位置から最後までの部分文字列`'folia'`を返します
 
-3. `species_name[:4]` returns the substring `'Acac'`, from the start up to but not including position 4
+3. `species_name[:4]` は、最初から位置4を含まないまで、部分文字列 `'Acac'` を返します。
 
-4. `species_name[:]` returns the entire string `'Acacia buxifolia'`
+4. `species_name[:]` は文字列 \`'Acacia buxifolia' 全体を返します。
 
-5. `species_name[11:-3]` returns the substring `'fo'`, from the 11th position to the third last position
+5. `species_name[11:-3]` は11番目の位置から最後の3番目の位置までの部分文字列 \`'fo' を返します。
 
-6. `species_name[-5:-3]` also returns the substring `'fo'`, from the fifth last position to the third last
+6. `species_name[-5:-3]`も最後の5番目の位置から最後の3番目の位置までの部分文字列 \`'fo' を返します。
 
-7. If a part of the slice is out of range, the operation does not fail. `species_name[0:20]` gives the same result as `species_name[0:]`, and `species_name[:103]` gives the same result as `species_name[:]`
+7. スライスの一部が範囲外の場合、操作は失敗しません。 `species_name[0:20]`は`species_name[0:]`と同じ結果を与え、`species_name[:103]`は`species_name[:]`と同じ結果を与えます。
 
 :::::::::::::::::::::::::
 
@@ -401,15 +400,15 @@ What would these expressions return?
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- Use variables to store values.
-- Use `print` to display values.
-- Variables persist between cells.
-- Variables must be created before they are used.
-- Variables can be used in calculations.
-- Use an index to get a single character from a string.
-- Use a slice to get a substring.
-- Use the built-in function `len` to find the length of a string.
-- Python is case-sensitive.
-- Use meaningful variable names.
+- 値を格納するために変数を使用します。
+- 値を表示するには `print` を使います。
+- 変数はセル間で持続します。
+- 変数は使用する前に作成する必要があります。
+- 変数は計算に使用できます。
+- 文字列から単一の文字を取得するには、インデックスを使用します。
+- 部分文字列を取得するにはスライスを使用します。
+- 組み込み関数 `len` を使用して、文字列の長さを求めます。
+- Python は大文字と小文字を区別します。
+- 意味のある変数名を使用してください。
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
