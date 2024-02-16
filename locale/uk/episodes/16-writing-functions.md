@@ -1,78 +1,78 @@
 ---
-title: Writing Functions
+title: Написання функції
 teaching: 10
 exercises: 15
 ---
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- Explain and identify the difference between function definition and function call.
-- Write a function that takes a small, fixed number of arguments and produces a single result.
+- Поясни різницю між визначенням функції та викликом функції.
+- Напишіть функцію, яка бере невеличку фіксовану кількість аргументів і видає єдиний результат.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::: questions
+::::::::::::::::::::::::::::::::::::::::::::: питань
 
-- How can I create my own functions?
+- Як я можу створити свої власні функції?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Break programs down into functions to make them easier to understand.
+## Розбийте програми в функції, щоб полегшити їх розуміння.
 
-- Human beings can only keep a few items in working memory at a time.
-- Understand larger/more complicated ideas by understanding and combining pieces.
-  - Components in a machine.
-  - Lemmas when proving theorems.
-- Functions serve the same purpose in programs.
-  - _Encapsulate_ complexity so that we can treat it as a single "thing".
-- Also enables _re-use_.
-  - Write one time, use many times.
+- Люди можуть зберігати тільки кілька елементів в оперативній пам'яті.
+- Розуміння більших/більш складних ідей шляхом розуміння та об'єднання частин.
+  - Компоненти в машині.
+  - Ненависть підтверджує теорії.
+- Функції виконують той самий сенс у програмах.
+  - _Підложено_ складність, щоб ми могли розглядати її як одну "річ".
+- Також дозволяє _повторне використання_.
+  - Напишіть один раз, використовуйте багато разів.
 
-## Define a function using `def` with a name, parameters, and a block of code.
+## Визначте функцію, що використовує `def` з назвою, параметрами та блоком коду.
 
-- Begin the definition of a new function with `def`.
-- Followed by the name of the function.
-  - Must obey the same rules as variable names.
-- Then _parameters_ in parentheses.
-  - Empty parentheses if the function doesn't take any inputs.
-  - We will discuss this in detail in a moment.
-- Then a colon.
-- Then an indented block of code.
+- Почніть визначення нової функції з `def`.
+- Підписаний назвою функції.
+  - Повинен слухатися тих самих правил, що і назви змінних.
+- Тоді _параметри_ в дужках.
+  - Порожні дужки, якщо функція не приймає жодного входу.
+  - Зараз ми обговоримо це докладно.
+- Ось кішка.
+- Потім вкладений блок коду.
 
 ```python
 def print_greeting():
-    print('Hello!')
-    print('The weather is nice today.')
+    print('Привіт!')
+    print('Погода сьогодні гарна.')
     print('Right?')
 ```
 
-## Defining a function does not run it.
+## Визначення функції не запускає його.
 
-- Defining a function does not run it.
-  - Like assigning a value to a variable.
-- Must call the function to execute the code it contains.
+- Визначення функції не запускає його.
+  - Наприклад, присвоєння значення змінній.
+- Треба викликати функцію, щоб виконати код, який вона містить.
 
 ```python
 print_greeting()
 ```
 
 ```output
-Hello!
+Доброго дня!
 ```
 
-## Arguments in a function call are matched to its defined parameters.
+## Аргументи виклику функції відповідають його певним параметрам.
 
-- Functions are most useful when they can operate on different data.
-- Specify _parameters_ when defining a function.
-  - These become variables when the function is executed.
-  - Are assigned the arguments in the call (i.e., the values passed to the function).
-  - If you don't name the arguments when using them in the call, the arguments will be matched to
-    parameters in the order the parameters are defined in the function.
+- Функції найбільш корисні, якщо вони можуть працювати з різними даними.
+- Вкажіть _параметри_ при визначенні функції.
+  - Ці змінні стають після виконання функції.
+  - Присвоюється аргументи виклику (тобто значення, передані функції).
+  - Якщо ви не називаєте аргументи при виклику, аргументи будуть відповідати значенню
+    параметрів в порядку визначені в функції.
 
 ```python
-def print_date(year, month, day):
-    joined = str(year) + '/' + str(month) + '/' + str(day)
-    print(joined)
+def print_date(рік, місяць):
+    joined = str(рік) + '/' + str(місяць) + '/' + str(день)
+    (друковано)
 
 print_date(1871, 3, 19)
 ```
@@ -98,61 +98,61 @@ print_date(month=3, day=19, year=1871)
   `()` contains the ingredients for the function
   while the body contains the recipe.
 
-## Functions may return a result to their caller using `return`.
+## Функції можуть повернути результат виклику за допомогою `return`.
 
-- Use `return ...` to give a value back to the caller.
-- May occur anywhere in the function.
-- But functions are easier to understand if `return` occurs:
-  - At the start to handle special cases.
-  - At the very end, with a final result.
+- Використайте `return ...`, щоб повернути значення зворотному абоненту.
+- Може трапитися будь-де в функції.
+- Але функції легше розуміти, якщо відбудеться `return`:
+  - Спочатку працювати зі спеціальними випадками.
+  - Наприкінці кінцевого результату.
 
 ```python
-def average(values):
-    if len(values) == 0:
-        return None
-    return sum(values) / len(values)
+def average(значень):
+    якщо len(values) == 0:
+        повертати немає
+    сума (значень) / len(values)
 ```
 
 ```python
 a = average([1, 3, 4])
-print('average of actual values:', a)
+print('середні фактичні значення: ', a)
 ```
 
 ```output
-average of actual values: 2.6666666666666665
+в середньому фактичних значень: 2.66666666666665
 ```
 
 ```python
-print('average of empty list:', average([]))
+print('середній список порожній:', average([]))
 ```
 
 ```output
-average of empty list: None
+середнє пустий список: немає
 ```
 
-- Remember: [every function returns something](04-built-in.md).
-- A function that doesn't explicitly `return` a value automatically returns `None`.
+- Запам'ятайте: [кожна функція повертає щось](04-built-in.md).
+- Функція, яка в явному випадку не повертає значення "Немає".
 
 ```python
-result = print_date(1871, 3, 19)
-print('result of call is:', result)
+результат = print_date(1871, 3, 19)
+print('результат виклику: ', результат)
 ```
 
 ```output
-1871/3/19
-result of call is: None
+Результат дзвінка 1871/3/19
+немає
 ```
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+:::::::::::::::::::::::::::::::::::::::::::: виклик
 
-## Identifying Syntax Errors
+## Визначення синтаксичних помилок
 
 1. Read the code below and try to identify what the errors are
    _without_ running it.
-2. Run the code and read the error message.
-   Is it a `SyntaxError` or an `IndentationError`?
-3. Fix the error.
-4. Repeat steps 2 and 3 until you have fixed all the errors.
+2. Запустіть код та прочитайте повідомлення про помилку.
+   Це 'Синтаксист' або "Помилка відступи\`?
+3. Виправ помилку.
+4. Повторюйте кроки 2 і 3, поки не виправите всі помилки.
 
 ```python
 def another_function
@@ -161,43 +161,43 @@ def another_function
   print("So they are usually not too hard to fix.")
 ```
 
-:::::::::::::::  solution
+:::::::::::::::::::: Рішення
 
-## Solution
+## Розв'язок
 
 ```python
 def another_function():
-  print("Syntax errors are annoying.")
-  print("But at least Python tells us about them!")
-  print("So they are usually not too hard to fix.")
+  друкувати ("Синтаксичні помилки дратують. )
+  print("Але принаймні Python розказує нам про це!")
+  print("Отже вони зазвичай не занадто складні для виправлення.")
 ```
 
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+:::::::::::::::::::::::::::::::::::::::::::: виклик
 
-## Definition and Use
+## Визначення та використання
 
-What does the following program print?
+Що робить друк наступної програми?
 
 ```python
-def report(pressure):
+звіт def (тиск):
     print('pressure is', pressure)
 
 print('calling', report, 22.5)
 ```
 
-:::::::::::::::  solution
+:::::::::::::::::::: Рішення
 
-## Solution
+## Розв'язок
 
 ```output
-calling <function report at 0x7fd128ff1bf8> 22.5
+виклик <function report at 0x7fd128ff1bf8> 22.5
 ```
 
-A function call always needs parenthesis, otherwise you get memory address of the function object. So, if we wanted to call the function named report, and give it the value 22.5 to report on, we could have our function call as follows
+Функція виклику завжди потребує круглі дужки, інакше ви отримаєте адресу пам'яті об'єкта функції. Отже, якщо ми хочемо викликати функцію, що називається звіт, і надати їй значення 22. щоб повідомити про на, ми можемо зробити виклик функції наступним чином
 
 ```python
 print("calling")
@@ -205,101 +205,101 @@ report(22.5)
 ```
 
 ```output
-calling
-pressure is 22.5
+виклик
+тиску 22.5
 ```
 
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+:::::::::::::::::::::::::::::::::::::::::::: виклик
 
-## Order of Operations
+## Порядок операцій
 
-1. What's wrong in this example?
+1. Що не так в цьому прикладі?
 
 ```python
-result = print_time(11, 37, 59)
+результат = print_time(11, 37, 59)
 
 def print_time(hour, minute, second):
    time_string = str(hour) + ':' + str(minute) + ':' + str(second)
    print(time_string)
 ```
 
-2. After fixing the problem above, explain why running this example code:
+2. Після виправлення проблеми вище, пояснить, чому виконується цей приклад:
 
 ```python
-result = print_time(11, 37, 59)
-print('result of call is:', result)
+результат = print_time(11, 37, 59)
+print('результат виклику: ', результат)
 ```
 
-gives this output:
+дає цей вивід:
 
 ```output
 11:37:59
-result of call is: None
+результат виклику: None
 ```
 
-3. Why is the result of the call `None`?
+3. Чому викликано виклик "Ні"?
 
-:::::::::::::::  solution
+:::::::::::::::::::: Рішення
 
-## Solution
+## Розв'язок
 
-1. The problem with the example is that the function `print_time()` is defined _after_ the call to the function is made. Python
-   doesn't know how to resolve the name `print_time` since it hasn't been defined yet and will raise a `NameError` e.g.,
-   `NameError: name 'print_time' is not defined`
+1. Проблема з прикладом в тому, що функція `print_time()` визначена _after_ виклик у функції. Python
+   не знає, як вирішити ім'я `print_time` оскільки воно ще не визначено і запустить `NameError` e. .,
+   `NameError: name 'print_time' не визначено`
 
-2. The first line of output `11:37:59` is printed by the first line of code, `result = print_time(11, 37, 59)` that binds the value
-   returned by invoking `print_time` to the variable `result`. The second line is from the second print call to print the contents
-   of the `result` variable.
+2. Перший рядок виводу `11:37:59` надрукований за першим рядком коду, `result = print_time(11, 37, 59)`, який прив'язує значення
+   , повернувшись, викликавши `print_time` до змінної `result`. Другий рядок розташований від другого друкованого виклику до друку виведення вмісту
+   змінної `result`.
 
-3. `print_time()` does not explicitly `return` a value, so it automatically returns `None`.
+3. `print_time()` точно не повертає значення, так що воно автоматично повертає `Немає`.
 
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+:::::::::::::::::::::::::::::::::::::::::::: виклик
 
-## Encapsulation
+## Інкапсуляція
 
-Fill in the blanks to create a function that takes a single filename as an argument,
-loads the data in the file named by the argument,
-and returns the minimum value in that data.
+Заповніть пропуски, щоб створити функцію, яка бере єдине ім'я файлу в якості аргументу,
+завантажує дані у файл з назвою аргумент,
+і повертає мінімальне значення в цих даних.
 
 ```python
-import pandas as pd
+імпорт pandas як pd
 
-def min_in_data(____):
-    data = ____
-    return ____
+def min_in_data(__):
+    дані = ____
+    повернення ____
 ```
 
-:::::::::::::::  solution
+:::::::::::::::::::: Рішення
 
-## Solution
+## Розв'язок
 
 ```python
-import pandas as pd
+імпорт pandas як pd
 
 def min_in_data(filename):
-    data = pd.read_csv(filename)
-    return data.min()
+    дані = pd.read_csv(filename)
+    повертає data.min()
 ```
 
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+:::::::::::::::::::::::::::::::::::::::::::: виклик
 
-## Find the First
+## Знайти перше
 
-Fill in the blanks to create a function that takes a list of numbers as an argument
-and returns the first negative value in the list.
-What does your function do if the list is empty? What if the list has no negative numbers?
+Заповніть пропуски, щоб створити функцію, яка приймає список чисел у вигляді аргументу
+і повертає перше від'ємне значення в списку.
+Що робить функція, якщо список пустий? Що робити, якщо список не має від'ємних чисел?
 
 ```python
 def first_negative(values):
@@ -308,18 +308,18 @@ def first_negative(values):
             return ____
 ```
 
-:::::::::::::::  solution
+:::::::::::::::::::: Рішення
 
-## Solution
+## Розв'язок
 
 ```python
-def first_negative(values):
-    for v in values:
-        if v < 0:
-            return v
+def first_negative(значень):
+    для v у значеннях:
+        якщо v < 0:
+            повертати v
 ```
 
-If an empty list or a list with all positive values is passed to this function, it returns `None`:
+Якщо передано порожній список або список з усіма додатними значеннями цієї функції, функція повертає `Немає`:
 
 ```python
 my_list = []
@@ -327,58 +327,58 @@ print(first_negative(my_list))
 ```
 
 ```output
-None
+Без ефекту
 ```
 
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+:::::::::::::::::::::::::::::::::::::::::::: виклик
 
-## Calling by Name
+## Виклик за іменем
 
-Earlier we saw this function:
-
-```python
-def print_date(year, month, day):
-    joined = str(year) + '/' + str(month) + '/' + str(day)
-    print(joined)
-```
-
-We saw that we can call the function using _named arguments_, like this:
+Раніше ми побачили цю функцію:
 
 ```python
-print_date(day=1, month=2, year=2003)
+def print_date(рік, місяць):
+    joined = str(рік) + '/' + str(місяць) + '/' + str(день)
+
 ```
 
-1. What does `print_date(day=1, month=2, year=2003)` print?
-2. When have you seen a function call like this before?
-3. When and why is it useful to call functions this way?
+Ми побачили, що можна викликати функцію за допомогою \*званих аргументів \*, як тут:
 
-:::::::::::::::  solution
+```python
+print_date(day=1, місяць=2, рік=2003)
+```
 
-## Solution
+1. Що таке `print_date(day=1, month=2, year=2003)` друк?
+2. Коли ти бачив виклик функції на зразок цього раніше?
+3. Коли і чому це корисно називати функції таким чином?
+
+:::::::::::::::::::: Рішення
+
+## Розв'язок
 
 1. `2003/2/1`
 
-2. We saw examples of using _named arguments_ when working with the pandas library. For example, when reading in a dataset
-   using `data = pd.read_csv('data/gapminder_gdp_europe.csv', index_col='country')`, the last argument `index_col` is a
-   named argument.
+2. Ми бачили приклади використання _названих аргументів_ під час роботи з бібліотекою пандас. Наприклад, під час читання в
+   використання `data = pd.read_csv('data/gapminder_gdp_europe.csv', index_col='country')`, останній аргумент `index_col` є аргументом
+   з назвою аргументу.
 
 3. Using named arguments can make code more readable since one can see from the function call what name the different arguments
-   have inside the function. It can also reduce the chances of passing arguments in the wrong order, since by using named arguments
-   the order doesn't matter.
+   have inside the function. Він також може знизити шанси на передавання аргументів у неправильному порядку, оскільки використання іменованих аргументів
+   замовлення не має значення.
 
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+:::::::::::::::::::::::::::::::::::::::::::: виклик
 
-## Encapsulation of an If/Print Block
+## Інкапсуляція If/Print блоку
 
-The code below will run on a label-printer for chicken eggs.  A digital scale will report a chicken egg mass (in grams)
+Для курячого яйця, наведений нижче на принтері мітки.  A digital scale will report a chicken egg mass (in grams)
 to the computer and then the computer will print a label.
 
 ```python
@@ -404,7 +404,7 @@ for i in range(10):
 
 The if-block that classifies the eggs might be useful in other situations,
 so to avoid repeating it, we could fold it into a function, `get_egg_label()`.
-Revising the program to use the function would give us this:
+Перегляд програми використання функції дасть нам це:
 
 ```python
 # revised version
@@ -419,12 +419,12 @@ for i in range(10):
 
 ```
 
-1. Create a function definition for `get_egg_label()` that will work with the revised program above.  Note that the `get_egg_label()` function's return value will be important. Sample output from the above program would be `71.23 large`.
-2. A dirty egg might have a mass of more than 90 grams, and a spoiled or broken egg will probably have a mass that's less than 50 grams.  Modify your `get_egg_label()` function to account for these error conditions. Sample output could be `25 too light, probably spoiled`.
+1. Створіть визначення функції для `get_egg_label()`, яка буде працювати з зміненою програмою вище.  Зверніть увагу, що функція `get_egg_label()` може бути важливою. Зразок виводу вище програми буде `71.23 великий`.
+2. Брудні яйця можуть мати масу більше ніж 90 грам, і зіпсоване або зламане яйце може мати масу, яка становить менше 50 грам.  Змініть функцію `get_egg_label()` для обліку цих умов помилки. Зразок виводу може бути \`25 занадто світла, ймовірно, зіпсованим.
 
-:::::::::::::::  solution
+:::::::::::::::::::: Рішення
 
-## Solution
+## Розв'язок
 
 ```python
 def get_egg_label(mass):
@@ -449,29 +449,29 @@ def get_egg_label(mass):
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+:::::::::::::::::::::::::::::::::::::::::::: виклик
 
-## Encapsulating Data Analysis
+## Аналіз обробки даних
 
-Assume that the following code has been executed:
+Припустимо, що був виконаний наступний код:
 
 ```python
-import pandas as pd
+імпорт pandas як pd
 
 data_asia = pd.read_csv('data/gapminder_gdp_asia.csv', index_col=0)
-japan = data_asia.loc['Japan']
+japan = data_asia.loc['Японія']
 ```
 
-1. Complete the statements below to obtain the average GDP for Japan
-   across the years reported for the 1980s.
+1. Завершіть заяви нижче, щоб отримати середній ВВП для Японії
+   протягом наступних років, повідомлених за 1980-ті роки.
 
 ```python
 year = 1983
-gdp_decade = 'gdpPercap_' + str(year // ____)
+gdp_decade = 'gdpPercap_' + str(рік ____)
 avg = (japan.loc[gdp_decade + ___] + japan.loc[gdp_decade + ___]) / 2
 ```
 
-2. Abstract the code above into a single function.
+2. Абстрактувати код, що наведений вище в одній функції.
 
 ```python
 def avg_gdp_in_decade(country, continent, year):
@@ -484,34 +484,34 @@ def avg_gdp_in_decade(country, continent, year):
 
 3. How would you generalize this function
    if you did not know beforehand which specific years occurred as columns in the data?
-   For instance, what if we also had data from years ending in 1 and 9 for each decade?
-   (Hint: use the columns to filter out the ones that correspond to the decade,
-   instead of enumerating them in the code.)
+   Наприклад, що якщо ми також мали дані від закінчення в 1 та 9 років протягом кожного десятиліття?
+   (Підказка: використовуйте стовпці для відбору тих з даних, які відповідають десятиліттям,
+   замість того, щоб перерахувати їх в коді.)
 
-:::::::::::::::  solution
+:::::::::::::::::::: Рішення
 
-## Solution
+## Розв'язок
 
-1. The average GDP for Japan across the years reported for the 1980s is computed with:
+1. Середній ВВП для Японії протягом багатьох років, про який повідомлялося 1980-х років, обчислений так:
 
 ```python
 year = 1983
-gdp_decade = 'gdpPercap_' + str(year // 10)
+gdp_decade = 'gdpPercap_' + str(рік // 10)
 avg = (japan.loc[gdp_decade + '2'] + japan.loc[gdp_decade + '7']) / 2
 ```
 
-2. That code as a function is:
+2. Цей код як функція:
 
 ```python
-def avg_gdp_in_decade(country, continent, year):
-    data_countries = pd.read_csv('data/gapminder_gdp_' + continent + '.csv', index_col=0)
-    c = data_countries.loc[country]
-    gdp_decade = 'gdpPercap_' + str(year // 10)
-    avg = (c.loc[gdp_decade + '2'] + c.loc[gdp_decade + '7'])/2
-    return avg
+def avg_gdp_in_in_decade(country, континент, рік):
+    data_country = pd.read_csv('data/gapminder_gdp_' + continent + '.csv', index_col=0)
+    = data_countries. oc[country]
+    gdp_decade = 'gdpPercap_' + str(рік // 10)
+    avg = (c. oc[gdp_decade + '2'] + c.loc[gdp_decade + '7'])/2
+    повернути avg
 ```
 
-3. To obtain the average for the relevant years, we need to loop over them:
+3. Щоб отримати середній показник за відповідні роки, нам потрібно розібратись над цим:
 
 ```python
 def avg_gdp_in_decade(country, continent, year):
@@ -527,10 +527,10 @@ def avg_gdp_in_decade(country, continent, year):
     return total/num_years
 ```
 
-The function can now be called by:
+Ця функція тепер може викликатися так:
 
 ```python
-avg_gdp_in_decade('Japan','asia',1983)
+avg_gdp_in_in_decade('Япон','asia',1983)
 ```
 
 ```output
@@ -541,18 +541,18 @@ avg_gdp_in_decade('Japan','asia',1983)
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+:::::::::::::::::::::::::::::::::::::::::::: виклик
 
-## Simulating a dynamical system
+## Симуляція динамічної системи
 
 In mathematics, a [dynamical system](https://en.wikipedia.org/wiki/Dynamical_system) is a system
-in which a function describes the time dependence of a point in a geometrical space. A canonical
-example of a dynamical system is the [logistic map](https://en.wikipedia.org/wiki/Logistic_map),
-a growth model that computes a new population density (between  0 and 1) based on the current
-density. In the model, time takes discrete values 0, 1, 2, ...
+in which a function describes the time dependence of a point in a geometrical space. Канонічна
+приклад динамічної системи - це [логістична карта](https\://en.wikipedia. rg/wiki/Logistic_map),
+модель зростання, яка обчислює нову щільність населення (з 0 до 1) на основі поточної
+щільності. В моделі, час займає дискретні значення 0, 1, 2, ...
 
-1. Define a function called `logistic_map` that takes two inputs: `x`, representing the current
-   population (at time `t`), and a parameter `r = 1`. This function should return a value
+1. Визначте функцію, яка називається `logistic_map`, яка приймає два вхідних значення: `x`, представляючи поточне
+   населення (вчасно `t`), а параметр `r = 1`. This function should return a value
    representing the state of the system (population) at time `t + 1`, using the mapping function:
 
 `f(t+1) = r * f(t) * [1 - f(t)]`
@@ -561,33 +561,33 @@ density. In the model, time takes discrete values 0, 1, 2, ...
    from an initial population of 0.5, for a period of time `t_final = 10`. Store the intermediate
    results in a list so that after the loop terminates you have accumulated a sequence of values
    representing the state of the logistic map at times `t = [0,1,...,t_final]` (11 values in total).
-   Print this list to see the evolution of the population.
+   Надрукуйте цей список, щоб побачити еволюцію населення.
 
-3. Encapsulate the logic of your loop into a function called `iterate` that takes the initial
-   population as its first input, the parameter `t_final` as its second input and the parameter
-   `r` as its third input. The function should return the list of values representing the state of
-   the logistic map at times `t = [0,1,...,t_final]`. Run this function for periods `t_final = 100`
-   and `1000` and print some of the values. Is the population trending toward a steady state?
+3. Перетворити логіку вашого циклу у функцію, яка називається `iterate`, яка приймає початкове значення
+   популяція як першого входу, параметр `t_final` як другий вхід та параметр
+   `r` є третім видом. Функція повинна повернути список значень, що представляють стан
+   логістична карта інколи `t = [0,1,...,t_final]`. Виконай цю функцію для періодів `t_final = 100`
+   і `1000` і надрукуй деякі значення. Чи населення йде до стабільної держави?
 
-:::::::::::::::  solution
+:::::::::::::::::::: Рішення
 
-## Solution
+## Розв'язок
 
 1. ```python
    ```
 
 def logistic_map(x, r):
-return r \* x \* (1 - x)
+повертати r \* x \* (1 - x)
 
 ````
 
 2. ```python
 initial_population = 0.5
 t_final = 10
-r = 1.0
+r = 1.
 population = [initial_population]
-for t in range(t_final):
-    population.append( logistic_map(population[t], r) )
+для t в діапазоні (t_final):
+    популяція.append( logistic_map(population[t], r)
 ````
 
 3. ```python
@@ -595,9 +595,9 @@ for t in range(t_final):
 
 def iterate(initial_population, t_final, r):
 population = [initial_population]
-for t in range(t_final):
-population.append( logistic_map(population[t], r) )
-return population
+for t в range(t_final):
+population.append( logistic_map(population[t], r)
+повертається населення
 
 for period in (10, 100, 1000):
 population = iterate(0.5, period, 1)
@@ -605,13 +605,13 @@ print(population[-1])
 
 ````
 
-```output
+```вивід
 0.06945089389714401
-0.009395779870614648
+0.009395779870614614648
 0.0009913908614406382
 ````
 
-The population seems to be approaching zero.
+Здається, популяція наближається до нуля.
 
 :::::::::::::::::::::::::
 
@@ -619,9 +619,9 @@ The population seems to be approaching zero.
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Using Functions With Conditionals in Pandas
+## Використання функцій з умовами у Пандасі
 
-Functions will often contain conditionals.  Here is a short example that
+Функції часто містять умови.  Here is a short example that
 will indicate which quartile the argument is in based on hand-coded values
 for the quartile cut points.
 
@@ -660,20 +660,20 @@ data = pd.read_csv('data/gapminder_all.csv')
 data['life_qrtl'] = data['lifeExp_1952'].apply(calculate_life_quartile)
 ```
 
-There is a lot in that second line, so let's take it piece by piece.
-On the right side of the `=` we start with `data['lifeExp']`, which is the
-column in the dataframe called `data` labeled `lifExp`.  We use the
-`apply()` to do what it says, apply the `calculate_life_quartile` to the
-value of this column for every row in the dataframe.
+В цій другій прямій, давайте візьмемо її за частиною.
+У правій частині `=` ми починаємо з `data['lifeExp']`, що є символом
+в датарії під назвою `data` позначений `lifExp`.  Ми використовуємо
+`apply()` для того, щоб виконати те, що він говорить, застосовує значення "calculate_life_quartile" до
+для кожного рядка дата.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- Break programs down into functions to make them easier to understand.
-- Define a function using `def` with a name, parameters, and a block of code.
-- Defining a function does not run it.
-- Arguments in a function call are matched to its defined parameters.
-- Functions may return a result to their caller using `return`.
+- Розбийте програми в функції, щоб полегшити їх розуміння.
+- Визначте функцію, що використовує `def` з назвою, параметрами та блоком коду.
+- Визначення функції не запускає його.
+- Аргументи виклику функції відповідають його певним параметрам.
+- Функції можуть повернути результат виклику за допомогою `return`.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
