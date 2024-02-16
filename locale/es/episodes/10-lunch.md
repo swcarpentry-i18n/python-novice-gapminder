@@ -5,8 +5,8 @@ exercises: 0
 break: 45
 ---
 
-Over lunch, reflect on and discuss the following:
+Durante el almuerzo, reflexiona y discute lo siguiente:
 
-- What sort of packages might you use in Python and why would you use them?
-- How would data need to be formatted to be used in Pandas data frames? Would the data you have meet these requirements?
-- What limitations or problems might you run into when thinking about how to apply what we've learned to your own projects or data?
+- ¿Qué tipo de paquetes puedes usar en Python y por qué los usarías?
+- ¿Cómo sería necesario formatear los datos para ser utilizados en los marcos de datos de Pandas? ¿Cumplirían los datos que tiene estos requisitos?
+- ¿Qué limitaciones o problemas podría tener cuando piense en cómo aplicar lo que hemos aprendido a sus propios proyectos o datos?
