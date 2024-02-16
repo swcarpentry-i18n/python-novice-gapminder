@@ -8,7 +8,7 @@ exercises: 0
 
 - JupyterLabサーバーを起動します。
 - Create a new Python script.
-- Create a Jupyter notebook.
+- Jupyter ノートブックを作成します。
 - JupyterLabサーバーをシャットダウンします。
 - PythonスクリプトとJupyterノートブックの違いを理解します。
 - ノートブックにマークダウンセルを作成します。
@@ -18,23 +18,23 @@ exercises: 0
 
 ::::::::::::::::::::::::::::::::::
 
-- How can I run Python programs?
+- Pythonプログラムを実行するにはどうすればいいですか?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 Pythonを実行するには、\[jupyter] [JupyterLab][jupyterlab] を経由してformat@@3 "Jupyter Notebooks" を使用します。 Jupyter notebooks はデータサイエンスや可視化に一般的であり、Pythonコードをインタラクティブに実行するための便利な共通分母体験として、Pythonコードの結果を簡単に表示して共有することができます。
 
-コードの編集、管理、実行には他の方法があります。 ソフトウェア開発者は、 [PyCharm](https://www.jetbrains) のような統合開発環境 (IDE) をよく使用します。 om/pycharm/) または [Visual Studio Code](https://code.visualstudio.com/), または Vim や Emacs のようなテキストエディタを使って Python プログラムを作成し編集します。 Pythonプログラムを編集して保存したら、IDE自体またはコマンドラインで直接これらのプログラムを実行できます。 In contrast, Jupyter notebooks let us execute and view the results of our Python code immediately within the notebook.
+コードの編集、管理、実行には他の方法があります。 ソフトウェア開発者は、 [PyCharm](https://www.jetbrains) のような統合開発環境 (IDE) をよく使用します。 om/pycharm/) または [Visual Studio Code](https://code.visualstudio.com/), または Vim や Emacs のようなテキストエディタを使って Python プログラムを作成し編集します。 Pythonプログラムを編集して保存したら、IDE自体またはコマンドラインで直接これらのプログラムを実行できます。 これとは対照的に、Jupyter notebooks はPythonコードの結果をすぐにノートブック内で見ることができます。
 
 JupyterLabには他にも便利な機能がいくつかあります:
 
-- You can easily type, edit, and copy and paste blocks of code.
+- コードのブロックを簡単に入力、編集、コピー、貼り付けできます。
 - Tab complete allows you to easily access the names of things you are using
   and learn more about them.
 - It allows you to annotate your code with links, different sized text, bullets, etc.
   to make it more accessible to you and your collaborators.
-- It allows you to display figures next to the code that produces them
-  to tell a complete story of the analysis.
+- コードの横に図を表示し、
+  を生成して分析のストーリーを伝えることができます。
 
 各ノートブックには、コード、テキスト、または画像を含む1つ以上のセルが含まれています。
 
@@ -50,20 +50,20 @@ JupyterLab は Anaconda Python ディストリビューションの一部とし�
 installed the Anaconda Python distribution, see [the setup instructions](../learners/setup.md)
 for installation instructions.
 
-In this lesson we will run JupyterLab locally on our own machines so it will not require an internet connection besides
-the initial connection to download and install Anaconda and JupyterLab
+このレッスンではJupyterLabを自分のマシンでローカルで実行するので、
+AnacondaとJupyterLabをダウンロードしてインストールするための最初の接続以外のインターネット接続は必要ありません。
 
-- Start the JupyterLab server on your machine
-- Use a web browser to open a special localhost URL that connects to your JupyterLab server
+- JupyterLabサーバーを起動する
+- JupyterLabサーバーに接続する特別なlocalhostURLを開くには、Webブラウザを使用してください
 - JupyterLabサーバーは作業を行い、Webブラウザは結果をレンダリングします
 - ブラウザにコードを入力し、JupyterLabサーバーがコードの実行を終了した後に結果を確認してください
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## JupyterLab? What about Jupyter notebooks?
+## JupyterLab? Jupyter notebooksはどうですか?
 
-JupyterLab is the [next stage in the evolution of the Jupyter Notebook](https://jupyterlab.readthedocs.io/en/stable/getting_started/overview.html#overview).
-If you have prior experience working with Jupyter notebooks, then you will have a good idea of what to expect from JupyterLab.
+JupyterLab は format@@0(https\://jupyterlab.readthedocs.io/en/stable/getting_started/overview\.html#overview) の進化の次の段階です。
+Jupyterノートブックを使った経験がある方は、JupyterLabに何を期待すべきかをお勧めします。
 
 Experienced users of Jupyter notebooks interested in a more detailed discussion of the similarities and differences
 between the JupyterLab and Jupyter notebook user interfaces can find more information in the
@@ -71,33 +71,33 @@ between the JupyterLab and Jupyter notebook user interfaces can find more inform
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Starting JupyterLab
+## JupyterLabを開始
 
-You can start the JupyterLab server through the command line or through an application called
-`Anaconda Navigator`. Anaconda Navigator is included as part of the Anaconda Python distribution.
+JupyterLabサーバーは、コマンドラインまたは
+`Anaconda Navigator` と呼ばれるアプリケーションから起動できます。 Anaconda Navigatorは、Anaconda Python配布物の一部として含まれています。
 
-### macOS - Command Line
+### macOS - コマンドライン
 
-To start the JupyterLab server you will need to access the command line through the Terminal.
-There are two ways to open Terminal on Mac.
+JupyterLab サーバーを起動するには、ターミナルからコマンドラインにアクセスする必要があります。
+Mac上でターミナルを開くには2つの方法があります。
 
-1. In your Applications folder, open Utilities and double-click on Terminal
-2. Press <kbd>Command</kbd> + <kbd>spacebar</kbd> to launch Spotlight. Type `Terminal` and then
+1. ApplicationsフォルダでUtilitiesを開き、ターミナルをダブルクリックします
+2. <kbd>コマンド</kbd> + <kbd>スペースバー</kbd> を押してSpotlightを起動します。 Type `Terminal` and then
    double-click the search result or hit <kbd>Enter</kbd>
 
-After you have launched Terminal, type the command to launch the JupyterLab server.
+Terminal を起動したら、JupyterLab サーバーを起動するコマンドを入力します。
 
 ```bash
 $ jupyter lab
 ```
 
-### Windows Users - Command Line
+### Windowsユーザー - コマンドライン
 
-To start the JupyterLab server you will need to access the Anaconda Prompt.
+JupyterLab サーバーを起動するには、Anaconda Prompt にアクセスする必要があります。
 
-Press <kbd>Windows Logo Key</kbd> and search for `Anaconda Prompt`, click the result or press enter.
+<kbd>Windowsロゴキー</kbd> を押し、`Anaconda Prompt`を検索し、結果をクリックするか、Enterキーを押します。
 
-After you have launched the Anaconda Prompt, type the command:
+Anaconda Promptを起動したら、次のコマンドを入力します。
 
 ```bash
 $ jupyter lab
@@ -105,13 +105,13 @@ $ jupyter lab
 
 ### Anaconda Navigator
 
-To start a JupyterLab server from Anaconda Navigator you must first [start Anaconda Navigator (click for detailed instructions on macOS, Windows, and Linux)](https://docs.anaconda.com/free/navigator/getting-started/#navigator-starting-navigator). You can search for Anaconda Navigator via Spotlight on macOS (<kbd>Command</kbd> + <kbd>spacebar</kbd>), the Windows search function (<kbd>Windows Logo Key</kbd>) or opening a terminal shell and executing the `anaconda-navigator` executable from the command line.
+JupyterLab サーバーをAnaconda Navigatorから起動するには、まず[Anaconda Navigatorを起動(macOS、Windows、Linuxの詳細な手順についてはクリック)](https://docs.anaconda.com/free/navigator/getting-started/#navigator-starting-navigator)する必要があります。 You can search for Anaconda Navigator via Spotlight on macOS (<kbd>Command</kbd> + <kbd>spacebar</kbd>), the Windows search function (<kbd>Windows Logo Key</kbd>) or opening a terminal shell and executing the `anaconda-navigator` executable from the command line.
 
-After you have launched Anaconda Navigator, click the `Launch` button under JupyterLab. You may need
-to scroll down to find it.
+Anaconda Navigatorを起動したら、JupyterLabの下にある「Launch」ボタンをクリックします。 下にスクロールするには、
+が必要かもしれません。
 
-Here is a screenshot of an Anaconda Navigator page similar to the one that should open on either macOS
-or Windows.
+ここでは、macOS
+またはWindowsのいずれかで開くはずのAnaconda Navigatorページのスクリーンショットを示します。
 
 <p align='center'>
   <img alt="Anaconda Navigator landing page" src="fig/0_anaconda_navigator_landing_page.png" width="750"/>
@@ -124,38 +124,38 @@ default web browser after starting the JupyterLab server on either macOS or Wind
   <img alt="JupyterLab landing page" src="fig/0_jupyterlab_landing_page.png" width="750"/>
 </p>
 
-## The JupyterLab Interface
+## JupyterLabインターフェイス
 
-JupyterLab has many features found in traditional integrated development environments (IDEs) but
-is focused on providing flexible building blocks for interactive, exploratory computing.
+JupyterLabには従来の統合開発環境(IDE)で見られる多くの機能がありますが、
+はインタラクティブで探索的なコンピューティングのための柔軟な構成要素を提供することに焦点を当てています。
 
 The [JupyterLab Interface][jupyterlab-ui]
 consists of the Menu Bar, a collapsable Left Side Bar, and the Main Work Area which contains tabs
 of documents and activities.
 
-### Menu Bar
+### メニューバー
 
-The Menu Bar at the top of JupyterLab has the top-level menus that expose various actions
-available in JupyterLab along with their keyboard shortcuts (where applicable). The following
-menus are included by default.
+JupyterLabの上部にあるメニューバーには、JupyterLabで利用可能なさまざまなアクション
+をキーボードショートカット(該当する場合)とともに公開する最上位メニューがあります。 以下の
+メニューがデフォルトで含まれています。
 
-- **File:** Actions related to files and directories such as _New_, _Open_, _Close_, _Save_, etc. The _File_ menu also includes the _Shut Down_ action used to shutdown the JupyterLab server.
-- **Edit:** Actions related to editing documents and other activities such as _Undo_, _Cut_, _Copy_, _Paste_, etc.
-- **View:** Actions that alter the appearance of JupyterLab.
-- **Run:** Actions for running code in different activities such as notebooks and code consoles (discussed below).
-- **Kernel:** Actions for managing kernels. Kernels in Jupyter will be explained in more detail below.
-- **Tabs:** A list of the open documents and activities in the main work area.
-- **Settings:** Common JupyterLab settings can be configured using this menu. There is also an _Advanced Settings Editor_ option in the dropdown menu that provides more fine-grained control of JupyterLab settings and configuration options.
-- **Help:** A list of JupyterLab and kernel help links.
+- **ファイル:** _新規_、_開く_、_閉じる_、_保存_などのファイルやディレクトリに関連するアクション。 _ファイル_ メニューには、JupyterLab サーバーのシャットダウンに使用する _シャットダウン_ アクションも含まれています。
+- **編集:** _元に戻す_、_切り取り_、_コピー_、_貼り付け_など、ドキュメントの編集やその他のアクティビティに関連するアクション。
+- **View:** JupyterLabの外観を変更するアクション。
+- **実行:** ノートブックやコードコンソールなど、さまざまなアクティビティでコードを実行するためのアクション（以下で説明します）
+- **カーネル:** カーネルを管理するためのアクション。 木星のケルネルについては、以下で詳しく説明します。
+- **タブ:** メインワークエリアで開かれたドキュメントとアクティビティのリストです。
+- **設定:** JupyterLabの共通設定は、このメニューを使用して設定できます。 また、ドロップダウンメニューには、JupyterLabの設定と設定オプションの詳細な制御を提供する_詳細設定エディタ_ オプションもあります。
+- **ヘルプ:** JupyterLabとカーネルヘルプの一覧です。
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Kernels
+## カーネルズ
 
-The JupyterLab [docs](https://jupyterlab.readthedocs.io/en/stable/user/documents_kernels.html)
-define kernels as "separate processes started by the server that runs your code in different programming languages and environments."
-When we open a Jupyter Notebook, that starts a kernel - a process - that is going to run the code.
-In this lesson, we'll be using the Jupyter ipython kernel which lets us run Python 3 code interactively.
+JupyterLab [docs](https://jupyterlab.readthedocs.io/en/stable/user/documents_kernels.html)
+はカーネルを「異なるプログラミング言語と環境でコードを実行するサーバによって開始された別々のプロセス」として定義しています。
+Jupyter Notebookを開くと、コードを実行するプロセスであるカーネルを起動します。
+このレッスンでは、対話的に Python 3 コードを実行できるようにする Jupyter ipyton カーネルを使用します。
 
 Using other Jupyter [kernels for other programming languages](https://github.com/jupyter/jupyter/wiki/Jupyter-kernels) would let us
 write and execute code in other programming languages in the same JupyterLab interface, like R, Java, Julia, Ruby, JavaScript, Fortran,
@@ -163,7 +163,7 @@ etc.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-A screenshot of the default Menu Bar is provided below.
+デフォルトのメニューバーのスクリーンショットは以下に示されています。
 
 <p align='center'>   <img alt="JupyterLab Menu Bar" src="fig/0_jupyterlab_menu_bar.png" width="750"/>
 </p>
@@ -172,83 +172,83 @@ A screenshot of the default Menu Bar is provided below.
 
 The left sidebar contains a number of commonly used tabs, such as a file browser (showing the
 contents of the directory where the JupyterLab server was launched), a list of running kernels
-and terminals, the command palette, and a list of open tabs in the main work area. A screenshot of
-the default Left Side Bar is provided below.
+and terminals, the command palette, and a list of open tabs in the main work area.
+のスクリーンショットは以下に示されています。
 
 <p align='center'>   <img alt="JupyterLab Left Side Bar" src="fig/0_jupyterlab_left_side_bar.png" width="250"/>
 </p>
 
-The left sidebar can be collapsed or expanded by selecting "Show Left Sidebar" in the View menu or
-by clicking on the active sidebar tab.
+左側のサイドバーは、アクティブなサイドバータブをクリックして、ビューメニューの「左側のバーを表示」または
+を選択することで、折りたたみまたは展開することができます。
 
-### Main Work Area
+### 主な作業エリア
 
-The main work area in JupyterLab enables you to arrange documents (notebooks, text files, etc.)
-and other activities (terminals, code consoles, etc.) into panels of tabs that can be resized or
-subdivided. A screenshot of the default Main Work Area is provided below.
+JupyterLabの主な作業領域では、ドキュメント(ノートブック、テキストファイルなど)を配置できます。
+その他のアクティビティ (端末、コードコンソールなど) タブのパネルに切り替えることも、
+が細分されます。 デフォルトのメインワークエリアのスクリーンショットを以下に示します。
 
-If you do not see the Launcher tab, click the blue plus sign under the "File" and "Edit" menus and it will appear.
+Launcherタブが表示されない場合は、「ファイル」と「編集」メニューの下にある青いプラス記号をクリックすると表示されます。
 
 <p align='center'>   <img alt="JupyterLab Main Work Area" src="fig/0_jupyterlab_main_work_area.png" width="750"/>
 </p>
 
-Drag a tab to the center of a tab panel to move the tab to the panel. Subdivide a tab panel by
-dragging a tab to the left, right, top, or bottom of the panel. The work area has a single current
-activity. The tab for the current activity is marked with a colored top border (blue by default).
+タブをタブパネルの中央にドラッグして、タブをパネルに移動します。 タブパネルを、
+パネルの左、右、上、または下にドラッグして分割します。 作業領域には、単一の現在の
+アクティビティがあります。 現在のアクティビティのタブには、上部の枠線が色付きで表示されます (既定では青)。
 
-## Creating a Python script
+## Python スクリプトの作成
 
-- To start writing a new Python program click the Text File icon under the _Other_ header in the Launcher tab of the Main Work Area.
-  - You can also create a new plain text file by selecting the _New -> Text File_ from the _File_ menu in the Menu Bar.
-- To convert this plain text file to a Python program, select the _Save File As_ action from the _File_ menu in the Menu Bar and give your new text file a name that ends with the `.py` extension.
-  - The `.py` extension lets everyone (including the operating system) know that this text file is a Python program.
-  - This is convention, not a requirement.
+- 新しいPythonプログラムを書き始めるには、メインワークエリアのランチャータブの _Other_ ヘッダーの下にあるテキストファイルアイコンをクリックします。
+  - メニューバーの _File_ メニューから _New -> Text File_ を選択することで、新しいプレーンテキストファイルを作成することもできます。
+- このプレーンテキストファイルをPythonプログラムに変換する メニューバーの _File_ メニューから _Save File As_ アクションを選択し、新しいテキストファイルに `で終わる名前を付けます。 y`エクステンション
+  - `.py`拡張子により、誰もがこのテキストファイルがPythonプログラムであることを知ることができます。
+  - これは規則であり、要件ではありません。
 
-## Creating a Jupyter Notebook
+## Jupyter Notebook の作成
 
 To open a new notebook click the Python 3 icon under the _Notebook_ header in the Launcher tab in
-the main work area. You can also create a new notebook by selecting _New -> Notebook_ from the _File_ menu in the Menu Bar.
+the main work area. メニューバーの _ファイル_ メニューから _New -> Notebook_ を選択して、新しいノートブックを作成することもできます。
 
-Additional notes on Jupyter notebooks.
+Jupyter ノートブックの追加ノート。
 
-- Notebook files have the extension `.ipynb` to distinguish them from plain-text Python programs.
-- Notebooks can be exported as Python scripts that can be run from the command line.
+- メモ帳ファイルには、プレーンテキストのPythonプログラムと区別するための拡張子`.ipynb`があります。
+- Notebooks はコマンドラインから実行できる Python スクリプトとしてエクスポートすることができます。
 
-Below is a screenshot of a Jupyter notebook running inside JupyterLab. If you are interested in
-more details, then see the [official notebook documentation][jupyterlab-notebook-docs].
+以下はJupyterLab内で動作するJupyterノートブックのスクリーンショットです。
+の詳細に興味がある場合は、\[公式ノートブックドキュメント[jupyterlab-notebook-docs] を参照してください。
 
 <p align='center'>   <img alt="Example Jupyter Notebook" src="fig/0_jupyterlab_notebook_screenshot.png" width="750"/>
 </p>
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## How It's Stored
+## 保管方法
 
-- The notebook file is stored in a format called JSON.
-- Just like a webpage, what's saved looks different from what you see in your browser.
-- But this format allows Jupyter to mix source code, text, and images, all in one file.
+- メモ帳ファイルは JSON という形式で保存されます。
+- ウェブページのように保存されているものは、ブラウザで表示されるものとは異なります。
+- しかし、この形式はJupyterがソースコード、テキスト、および画像をすべて1つのファイルに混ぜることを可能にします。
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::: チャレンジ
 
-## Arranging Documents into Panels of Tabs
+## タブのパネルにドキュメントを配置
 
-In the JupyterLab Main Work Area you can arrange documents into panels of tabs. Here is an
-example from the [official documentation][jupyterlab].
+JupyterLab メインワークエリアでは、ドキュメントをタブのパネルに配置できます。 こちらは\[公式ドキュメント
+]からの[jupyterlab]例です。
 
 <p align='center'>   <img alt="Multi-panel JupyterLab" src="fig/0_multipanel_jupyterlab_screenshot.png" width="750"/>
 </p>
 
-First, create a text file, Python console, and terminal window and arrange them into three
-panels in the main work area. Next, create a notebook, terminal window, and text file and
-arrange them into three panels in the main work area. Finally, create your own combination of
-panels and tabs. What combination of panels and tabs do you think will be most useful for your
-workflow?
+まず、テキストファイル、Pythonコンソール、端末ウィンドウを作成し、メインのワークエリアに3つの
+パネルに配置します。 次に、ノートブック、端末ウィンドウ、テキストファイルを作成し、
+メインのワークエリアに3つのパネルを配置します。 最後に、
+パネルとタブの独自の組み合わせを作成します。
+ワークフローで最も役に立つのはどのパネルとタブの組み合わせだと思いますか？
 
-:::::::::::::::  solution
+::::::::::::::::: solution
 
-## Solution
+## 解決策
 
 After creating the necessary tabs, you can drag one of the tabs to the center of a panel to
 move the tab to the panel; next you can subdivide a tab panel by dragging a tab to the left,
@@ -260,95 +260,94 @@ right, top, or bottom of the panel.
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Code vs. Text
+## コードとテキスト
 
-Jupyter mixes code and text in different types of blocks, called cells. We often use the term
-"code" to mean "the source code of software written in a language such as Python".
-A "code cell" in a Notebook is a cell that contains software;
-a "text cell" is one that contains ordinary prose written for human beings.
+Jupyter は、セルと呼ばれるさまざまな種類のブロックにコードとテキストをミックスします。 "
+"code"という用語は、"Pythonなどの言語で書かれたソフトウェアのソースコード"を意味することがよくあります。
+ノートブックの「コードセル」は、ソフトウェアを含むセルです。
+「テキストセル」とは、人間のために書かれた普通の散文を含むものです。
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## The Notebook has Command and Edit modes.
+## メモ帳にはコマンドと編集モードがあります。
 
-- If you press <kbd>Esc</kbd> and <kbd>Return</kbd> alternately, the outer border of your code cell will change from gray to blue.
-- These are the **Command** (gray) and **Edit** (blue) modes of your notebook.
-- Command mode allows you to edit notebook-level features, and Edit mode changes the content of cells.
+- <kbd>Esc</kbd> と <kbd>Return</kbd> を交互に押すと、コードセルの外枠はグレーから青に変わります。
+- これらはノートブックの **Command** (グレー) と **Edit** (青) モードです。
+- format@@0モードでは、ノートブックレベルの機能を編集でき、format@@1モードではセルの内容が変更されます。
 - When in Command mode (esc/gray),
-  - The <kbd>b</kbd> key will make a new cell below the currently selected cell.
-  - The <kbd>a</kbd> key will make one above.
-  - The <kbd>x</kbd> key will delete the current cell.
-  - The <kbd>z</kbd> key will undo your last cell operation (which could be a deletion, creation, etc).
-- All actions can be done using the menus, but there are lots of keyboard shortcuts to speed things up.
+  - <kbd>b</kbd> キーは、現在選択されているセルの下に新しいセルを作成します。
+  - <kbd>a</kbd> key will make one above.
+  - <kbd>x</kbd> キーで現在のセルが削除されます。
+  - <kbd>z</kbd> キーを押すと、最後のセル操作(削除、作成など)が取り消されます。
+- すべてのアクションはメニューを使用して行うことができますが、スピードアップするためのキーボードショートカットがたくさんあります。
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::: チャレンジ
 
-## Command Vs. Edit
+## (Command) 対。 編集
 
-In the Jupyter notebook page are you currently in Command or Edit mode?\
-Switch between the modes.
-Use the shortcuts to generate a new cell.
-Use the shortcuts to delete a cell.
-Use the shortcuts to undo the last cell operation you performed.
+Jupyterノートブックページでは、現在コマンドまたは編集モードにいますか?\
+モードを切り替える。
+ショートカットを使用して新しいセルを生成します。
+ショートカットを使用してセルを削除します。
+最後に実行したセル操作を元に戻すにはショートカットを使用します。
 
-:::::::::::::::  solution
+::::::::::::::::: solution
 
-## Solution
+## 解決策
 
-Command mode has a grey border and Edit mode has a blue border.
-Use <kbd>Esc</kbd> and <kbd>Return</kbd> to switch between modes.
-You need to be in Command mode (Press <kbd>Esc</kbd> if your cell is blue).  Type <kbd>b</kbd> or <kbd>a</kbd>.
-You need to be in Command mode (Press <kbd>Esc</kbd> if your cell is blue).  Type <kbd>x</kbd>.
-You need to be in Command mode (Press <kbd>Esc</kbd> if your cell is blue).  Type <kbd>z</kbd>.
+コマンドモードにはグレーの境界線があり、編集モードには青の境界線があります。
+モードを切り替えるには、 <kbd>Esc</kbd> と <kbd>Return</kbd> を使用します。
+コマンドモードにする必要があります(セルが青色の場合は、 <kbd>Esc</kbd> を押します)。  <kbd>b</kbd> または <kbd>a</kbd> と入力します。
+コマンドモードにする必要があります(セルが青色の場合は、 <kbd>Esc</kbd> を押します)。  <kbd>x</kbd> と入力します。
+コマンドモードにする必要があります(セルが青色の場合は、 <kbd>Esc</kbd> を押します)。  <kbd>z</kbd> と入力します。
 
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-### Use the keyboard and mouse to select and edit cells.
+### キーボードとマウスを使用してセルを選択および編集します。
 
-- Pressing the <kbd>Return</kbd> key turns the border blue and engages Edit mode, which allows
-  you to type within the cell.
-- Because we want to be able to write many lines of code in a single cell,
-  pressing the <kbd>Return</kbd> key when in Edit mode (blue) moves the cursor to the next line
-  in the cell just like in a text editor.
-- We need some other way to tell the Notebook we want to run what's in the cell.
-- Pressing <kbd>Shift</kbd>+<kbd>Return</kbd> together will execute the contents of the cell.
+- <kbd>Return</kbd> キーを押すと、境界線が青色になり、編集モードが有効になります。このモードでは、セル内に
+  を入力できます。
+- 1つのセルに多くのコードを書けるようにしたいからです
+  を押すと <kbd></kbd> キーを返すと、編集モード (青) では、テキストエディタのようにセル内の次の行
+  にカーソルが移動します。
+- 私たちは、セル内のものを実行したいとノートブックに伝えるためのいくつかの他の方法が必要です。
+- <kbd>Shift</kbd>+<kbd>Return</kbd> を押すと、セルの内容が実行されます。
 - Notice that the <kbd>Return</kbd> and <kbd>Shift</kbd> keys on the right of the keyboard are
   right next to each other.
 
-### The Notebook will turn Markdown into pretty-printed documentation.
+### ノートブックはMarkdownをきれいに印刷されたドキュメントに変換します。
 
-- Notebooks can also render [Markdown][markdown].
-  - A simple plain-text format for writing lists, links,
-    and other things that might go into a web page.
-  - Equivalently, a subset of HTML that looks like what you'd send in an old-fashioned email.
-- Turn the current cell into a Markdown cell by entering the Command mode (<kbd>Esc</kbd>/gray)
-  and press the <kbd>M</kbd> key.
-- `In [ ]:` will disappear to show it is no longer a code cell and you will be able to write in
-  Markdown.
-- Turn the current cell into a Code cell by entering the Command mode (<kbd>Esc</kbd>/gray) and
-  press the <kbd>y</kbd> key.
+- ノートブックは [Markdown][markdown] をレンダリングすることもできます。
+  - リスト、リンク、
+    などを書くためのシンプルなプレーンテキスト形式です。
+  - 同様に、あなたが古い電子メールで送るもののように見えるHTMLのサブセット。
+- コマンドモード (<kbd>Esc</kbd>/gray)
+  を入力して、現在のセルをマークダウンセルに変換し、 <kbd>M</kbd> キーを押します。
+- `In [ ]:`は消えてコードセルではなくなり、
+  マークダウンで書くことができます。
+- コマンドモード (<kbd>Esc</kbd>/gray ) を入力し、 <kbd>y</kbd> キーを押して、現在のセルをコードセルにします。
 
-### Markdown does most of what HTML does.
+### MarkdownはHTMLが行うことのほとんどを行います。
 
 <div class="row">
 
   <div class="col-md-6" markdown="1">
 
 ```
-*   Use asterisks
-*   to create
-*   bullet lists.
+* アスタリスク
+* を使用して
+* 箇条書きリストを作成します。
 ```
 
   
 
   <div class="col-md-6" markdown="1">
 
-- Use asterisks
-- to create
-- bullet lists.
+- アスタリスクを使用
+- 作成する
+- 箇条書きリストだ
 
   </div>
 
@@ -359,18 +358,18 @@ You need to be in Command mode (Press <kbd>Esc</kbd> if your cell is blue).  Typ
   <div class="col-md-6" markdown="1">
 
 ```
-1.  Use numbers
-1.  to create
-1.  numbered lists.
+1. 数字
+1を使用して、
+1. 番号付きリストを作成します。
 ```
 
   
 
   <div class="col-md-6" markdown="1">
 
-1. Use numbers
-2. to create
-3. numbered lists.
+1. 数字を使用
+2. 作成する
+3. 番号付きリスト
 
   
 
@@ -393,12 +392,12 @@ You need to be in Command mode (Press <kbd>Esc</kbd> if your cell is blue).  Typ
 
   <div class="col-md-6" markdown="1">
 
-- You can use indents
-  - To create sublists
-  - of the same type
-- Or sublists
+- インデントを使用できます
+  - サブリストを作成するには
+  - 同じ種類の
+- またはサブリスト
 
-  1. Of different
+  1. さまざまな
   2. types
 
   </div>
@@ -417,7 +416,7 @@ You need to be in Command mode (Press <kbd>Esc</kbd> if your cell is blue).  Typ
 
   <div class="col-md-6" markdown="1">
 
-## A Level-1 Heading
+## レベル1の見出し
 
   
 
@@ -428,40 +427,14 @@ You need to be in Command mode (Press <kbd>Esc</kbd> if your cell is blue).  Typ
   <div class="col-md-6" markdown="1">
 
 ```
-## A Level-2 Heading (etc.)
+## レベル 2 見出し (etc.)
 ```
 
   
 
   <div class="col-md-6" markdown="1">
 
-## A Level-2 Heading (etc.)
-
-  
-
-</div>
-
-<div class="row">
-
-  <div class="col-md-6" markdown="1">
-
-```
-Line breaks
-don't matter.
-
-But blank lines
-create new paragraphs.
-```
-
-  
-
-  <div class="col-md-6" markdown="1">
-
-Line breaks
-don't matter.
-
-But blank lines
-create new paragraphs.
+## レベル2の見出し（等）
 
   
 
@@ -472,8 +445,34 @@ create new paragraphs.
   <div class="col-md-6" markdown="1">
 
 ```
-[Create links](http://software-carpentry.org) with `[...](...)`.
-Or use [named links][data_carpentry].
+
+改行は関係ありません。
+
+空白の行
+は新しい段落を作成します。
+```
+
+  
+
+  <div class="col-md-6" markdown="1">
+
+改行
+は関係ありません。
+
+しかし、空白行
+は新しい段落を作成します。
+
+  
+
+</div>
+
+<div class="row">
+
+  <div class="col-md-6" markdown="1">
+
+```
+[Create links](http://software-carpentry.org) with `[...](...)` .
+Or use [name-links][data_carpentry].
 
 [data_carpentry]: http://datacarpentry.org
 ```
@@ -483,67 +482,67 @@ Or use [named links][data_carpentry].
   <div class="col-md-6" markdown="1">
 
 [Create links](https://software-carpentry.org) with `[...](...)`.
-Or use [named links][data_carpentry].
+または、[nameed links][data_carpentry] を使用してください。
 
   
 
 </div>
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::: チャレンジ
 
-## Creating Lists in Markdown
+## Markdown でリストを作成する
 
-Create a nested list in a Markdown cell in a notebook that looks like this:
+次のようなノートブックのMarkdownセルにネストされたリストを作成します。
 
-1. Get funding.
-2. Do work.
+1. 資金を得る。
+2. 仕事をしなさい。
 
-- Design experiment.
-- Collect data.
-- Analyze.
+- デザインの実験。
+- データを収集する。
+- 分析する
 
-3. Write up.
-4. Publish.
+3. 手を挙げて。
+4. 公開
 
-:::::::::::::::  solution
+::::::::::::::::: solution
 
-## Solution
+## 解決策
 
-This challenge integrates both the numbered list and bullet list.
-Note that the bullet list is indented 2 spaces so that it is inline with the items of the numbered list.
+このチャレンジは、番号付きリストと箇条書きリストの両方を統合します。
+箇条書きリストは 2 つのスペースでインデントされており、番号付きリストの項目とインラインになります。
 
 ```
-1.  Get funding.
-2.  Do work.
-    *   Design experiment.
-    *   Collect data.
-    *   Analyze.
-3.  Write up.
-4.  Publish.
+1. 資金を得る。
+2. 仕事をする。
+    * 設計実験。
+    * データを収集する。
+    * 分析。
+3. 準備する。
+4. 公開。
 ```
 
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::: チャレンジ
 
-## More Math
+## さらに多くのMath
 
-What is displayed when a Python cell in a notebook
-that contains several calculations is executed?
-For example, what happens when this cell is executed?
+複数の計算を含むノートブック
+のPythonセルが実行されると、何が表示されますか?
+たとえば、このセルが実行された場合はどうなりますか?
 
 ```python
 7 * 3
 2 + 1
 ```
 
-:::::::::::::::  solution
+::::::::::::::::: solution
 
-## Solution
+## 解決策
 
-Python returns the output of the last calculation.
+Python は最後の計算の出力を返します。
 
 ```python
 3
@@ -553,32 +552,32 @@ Python returns the output of the last calculation.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::: チャレンジ
 
-## Change an Existing Cell from Code to Markdown
+## コードからマークダウンに既存のセルを変更
 
 What happens if you write some Python in a code cell
 and then you switch it to a Markdown cell?
-For example,
-put the following in a code cell:
+例えば、
+は以下をコードセルに入れます。
 
 ```python
 x = 6 * 7 + 12
 print(x)
 ```
 
-And then run it with <kbd>Shift</kbd>+<kbd>Return</kbd> to be sure that it works as a code cell.
-Now go back to the cell and use <kbd>Esc</kbd> then <kbd>m</kbd> to switch the cell to Markdown
-and "run" it with <kbd>Shift</kbd>+<kbd>Return</kbd>.
-What happened and how might this be useful?
+そして、 <kbd>Shift</kbd>+<kbd>で実行し、コードセルとして動作することを確認するために</kbd> を返します。
+セルに戻り、 <kbd>Esc</kbd> と <kbd>m</kbd> を使用してセルを Markdown
+に切り替え、シフト <kbd>Shift</kbd>+<kbd>Return</kbd> を使用します。
+何が起こり、これはどのように有用でしょうか?
 
-:::::::::::::::  solution
+::::::::::::::::: solution
 
-## Solution
+## 解決策
 
-The Python code gets treated like Markdown text.
-The lines appear as if they are part of one contiguous paragraph.
-This could be useful to temporarily turn on and off cells in notebooks that get used for multiple purposes.
+Python コードは Markdown テキストのように扱われます。
+行は連続する段落の一部であるかのように表示されます。
+これは、複数の目的で使用されるノートブックのセルを一時的にオン/オフする場合に便利です。
 
 ```python
 x = 6 * 7 + 12 print(x)
@@ -588,52 +587,52 @@ x = 6 * 7 + 12 print(x)
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::: チャレンジ
 
-## Equations
+## 式
 
-Standard Markdown (such as we're using for these notes) won't render equations,
-but the Notebook will.
-Create a new Markdown cell
-and enter the following:
+標準的なマークダウン(これらのノートに使用しているような)は、
+式はレンダリングされませんが、ノートブックはレンダリングされます。
+新しいMarkdown セル
+を作成し、次のように入力します:
 
 ```
 $\sum_{i=1}^{N} 2^{-i} \approx 1$
 ```
 
-(It's probably easier to copy and paste.)
-What does it display?
-What do you think the underscore, `_`, circumflex, `^`, and dollar sign, `$`, do?
+(コピーして貼り付ける方が簡単でしょう。
+何を表示しますか？
+アンダースコア、`_`、surflex、`^`、ドル記号、`$`はどう思いますか？
 
-:::::::::::::::  solution
+::::::::::::::::: solution
 
-## Solution
+## 解決策
 
-The notebook shows the equation as it would be rendered from LaTeX equation syntax.
-The dollar sign, `$`, is used to tell Markdown that the text in between is a LaTeX equation.
-If you're not familiar with LaTeX,  underscore, `_`, is used for subscripts and circumflex, `^`, is used for superscripts.
-A pair of curly braces, `{` and `}`, is used to group text together so that the statement `i=1` becomes the subscript and `N` becomes the superscript.
-Similarly, `-i` is in curly braces to make the whole statement the superscript for `2`.
-`\sum` and `\approx` are LaTeX commands for "sum over" and "approximate" symbols.
+ノートブックには、LaTeX式構文からレンダリングされる式が表示されます。
+`$`のドル記号はMarkdownに、テキストの間にLaTeXの式があることを伝えるために使われます。
+LaTeX、underscore、`_`をよく知らない場合は、subscriptsやsurflexに使われます。`^`は上付き文字に使われます。
+組の中括弧、 `{` と `}`、 は、テキストをグループ化するために使用されます。`i=1` が下付き文字になり、`N` が上付き文字になります。
+同様に、`-i`は中括弧内にあり、文全体を`2`の上付き文字にします。
+`\sum` と `\approx` は、 "sum over" と "approximate" シンボルの LaTeX コマンドです。
 
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Closing JupyterLab
+## JupyterLab を閉じる
 
-- From the Menu Bar select the "File" menu and then choose "Shut Down" at the bottom of the dropdown menu. You will be prompted to confirm that you wish to shutdown the JupyterLab server (don't forget to save your work!). Click "Shut Down" to shutdown the JupyterLab server.
-- To restart the JupyterLab server you will need to re-run the following command from a shell.
+- メニューバーから「ファイル」メニューを選択し、ドロップダウンメニューの下部にある「シャットダウン」を選択します。 JupyterLabサーバーをシャットダウンすることを確認するメッセージが表示されます(作業を保存することを忘れないでください)。 JupyterLabサーバーをシャットダウンするには、「シャットダウン」をクリックします。
+- JupyterLab サーバーを再起動するには、シェルから次のコマンドを再実行する必要があります。
 
 ```
 $ jupyter lab
 ```
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::: チャレンジ
 
-## Closing JupyterLab
+## JupyterLab を閉じる
 
-Practice closing and restarting the JupyterLab server.
+JupyterLabサーバーを閉じて再起動する練習をします。
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -649,11 +648,11 @@ Practice closing and restarting the JupyterLab server.
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- Python scripts are plain text files.
-- Use the Jupyter Notebook for editing and running Python.
-- The Notebook has Command and Edit modes.
-- Use the keyboard and mouse to select and edit cells.
-- The Notebook will turn Markdown into pretty-printed documentation.
-- Markdown does most of what HTML does.
+- Python スクリプトはプレーンテキストファイルです。
+- Pythonの編集と実行にはJupyter Notebook を使用してください。
+- メモ帳にはコマンドと編集モードがあります。
+- キーボードとマウスを使用してセルを選択および編集します。
+- ノートブックはMarkdownをきれいに印刷されたドキュメントに変換します。
+- MarkdownはHTMLが行うことのほとんどを行います。
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
