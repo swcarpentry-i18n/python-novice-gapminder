@@ -1,23 +1,23 @@
 ---
-title: Instructors' Guide
+title: Інструкція по установкам
 ---
 
-## General Notes
+## Загальні нотатки
 
-It's all right not to get through the whole lesson.
-:   This lesson is designed for people who have never programmed before,
-but any given class may include people with a wide range of prior experience.
+Не можна було пройти весь урок.
+: Цей урок призначений для людей, які ніколи раніше не запрограмували,
+, але будь-який заданий клас може включати людей з великим діапазоном попереднього досвіду.
 We have therefore included enough material to fill a full day if need be,
 but expect that many offerings will only get as far as the introduction to Pandas.
 
-Don't tell people to Google things.
+Не кажи людям щось Google .
 :   One of the goals of this lesson is
 to help novices build a workable mental model of how programming works.
 Until they have that model,
 they will not know what to search for or how to recognize a helpful answer.
-Telling them to Google can also give the impression that we think their problem is trivial.
-(That said, if learners have done enough programming before to be past these issues,
-having them search for solutions online can help them solidify their understanding.)
+Якщо говорити про них в Google, це також матиме враження, що ми думаємо, що їхня проблема банальна.
+(Однак, якщо учні зробили достатньо програмування, щоб подолати ці питання,
+створення пошукових рішень в Інтернеті може допомогти їм зміцнити розуміння.)
 It's also worth quoting
 [Trevor King]([https://github.com/swcarpentry/python-novice-](https://github.com/swcarpentry/python-novice-)
 gapminder/issues/22#issuecomment-182573516)'s
