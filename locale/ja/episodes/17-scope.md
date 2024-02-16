@@ -1,53 +1,53 @@
 ---
-title: Variable Scope
+title: 変数スコープ
 teaching: 10
 exercises: 10
 ---
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- Identify local and global variables.
-- Identify parameters as local variables.
-- Read a traceback and determine the file, function, and line number on which the error occurred, the type of error, and the error message.
+- ローカルおよびグローバル変数を特定します。
+- パラメータをローカル変数として識別します。
+- トレースバックを読み、エラーが発生したファイル、関数、行番号、エラーの種類、エラーメッセージを決定します。
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::: questions
+::::::::::::::::::::::::::::::::::
 
-- How do function calls actually work?
-- How can I determine where errors occurred?
+- 関数呼び出しは実際にどのように動作しますか?
+- どこでエラーが発生したかを確認するにはどうすればよいですか?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## The scope of a variable is the part of a program that can 'see' that variable.
+## 変数のスコープは、変数を「見る」ことができるプログラムの一部です。
 
-- There are only so many sensible names for variables.
+- 変数には非常に多くの賢明な名前しかありません。
 - People using functions shouldn't have to worry about
   what variable names the author of the function used.
-- People writing functions shouldn't have to worry about
-  what variable names the function's caller uses.
-- The part of a program in which a variable is visible is called its _scope_.
+- 関数を書いている人は、関数の呼び出し元が使用する変数の名前を
+  気にする必要はありません。
+- 変数が表示されるプログラムの一部は _scope_ と呼ばれます。
 
 ```python
 pressure = 103.9
 
 def adjust(t):
     temperature = t * 1.43 / pressure
-    return temperature
+    リターン温度
 ```
 
-- `pressure` is a _global variable_.
-  - Defined outside any particular function.
-  - Visible everywhere.
-- `t` and `temperature` are _local variables_ in `adjust`.
-  - Defined in the function.
-  - Not visible in the main program.
-  - Remember: a function parameter is a variable
-    that is automatically assigned a value when the function is called.
+- `pressure`は_グローバル変数_です。
+  - 特定の関数の外側で定義されます。
+  - どこにでも表示できます。
+- `t`と`temperature`は`adjust`の_ローカル変数_です。
+  - 関数で定義します。
+  - メインプログラムには表示されません。
+  - 関数パラメータは、関数が呼び出されたときに自動的に値が割り当てられる変数
+    です。
 
 ```python
 print('adjusted:', adjust(0.9))
-print('temperature after call:', temperature)
+print('call:', temperature)
 ```
 
 ```output
@@ -55,18 +55,18 @@ adjusted: 0.01238691049085659
 ```
 
 ```error
-Traceback (most recent call last):
-  File "/Users/swcarpentry/foo.py", line 8, in <module>
-    print('temperature after call:', temperature)
+トレースバック (直近の呼び出しが最後):
+  ファイル "/Users/swcarpentry/foo.py", 行8, in <module>
+    print('call:', temperature)
 NameError: name 'temperature' is not defined
 ```
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::: チャレンジ
 
-## Local and Global Variable Use
+## ローカルおよびグローバル変数の使用
 
-Trace the values of all variables in this program as it is executed.
-(Use '---' as the value of variables before and after they exist.)
+実行時にこのプログラム内のすべての変数の値をトレースします。
+(変数が存在する前後の値として「---」を使用します。
 
 ```python
 limit = 100
@@ -80,18 +80,18 @@ print(clip(value))
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::: チャレンジ
 
-## Reading Error Messages
+## エラー メッセージの読み取り
 
-Read the traceback below, and identify the following:
+以下のトレースバックを読み、以下のように識別します。
 
-1. How many levels does the traceback have?
-2. What is the file name where the error occurred?
-3. What is the function name where the error occurred?
-4. On which line number in this function did the error occur?
-5. What is the type of error?
-6. What is the error message?
+1. トレースバックのレベルはいくつですか？
+2. エラーが発生したファイル名は何ですか?
+3. エラーが発生した関数名は何ですか?
+4. この関数のどの行番号でエラーが発生しましたか?
+5. エラーの種類は何ですか?
+6. エラーメッセージとは何ですか?
 
 ```error
 ---------------------------------------------------------------------------
@@ -115,20 +115,20 @@ KeyError                                  Traceback (most recent call last)
 KeyError: 'Friday'
 ```
 
-:::::::::::::::  solution
+::::::::::::::::: solution
 
-## Solution
+## 解決策
 
-1. Three levels.
+1. ３つのレベルです
 
 2. `errors_02.py`
 
 3. `print_message`
 
-4. Line 11
+4. 11行目
 
-5. `KeyError`. These errors occur when we are trying to look up a key that does not exist (usually in a data
-   structure such as a dictionary). We can find more information about the `KeyError` and other built-in exceptions
+5. `KeyError`. これらのエラーは、存在しないキー(通常は辞書のようなデータ
+   構造体内)を検索しようとするときに発生します。 We can find more information about the `KeyError` and other built-in exceptions
    in the [Python docs](https://docs.python.org/3/library/exceptions.html#KeyError).
 
 6. `KeyError: 'Friday'`
@@ -139,6 +139,6 @@ KeyError: 'Friday'
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- The scope of a variable is the part of a program that can 'see' that variable.
+- 変数のスコープは、変数を「見る」ことができるプログラムの一部です。
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
