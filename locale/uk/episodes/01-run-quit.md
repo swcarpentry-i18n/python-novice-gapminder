@@ -7,10 +7,10 @@ exercises: 0
 ::::::::::::::::::::::::::::::::::::::: objectives
 
 - Запуск серверу JupyterLab.
-- Create a new Python script.
+- Створення нового скрипту Python.
 - Створення блокноту Jupyter.
-- Зупинка серверу JupyterLab.
-- Understand the difference between a Python script and a Jupyter notebook.
+- Завершення роботи сервера JupyterLab.
+- Розуміння різниці між скриптом Python і блокнотом Jupyter.
 - Створення в блокноті комірок типу Markdown.
 - Створення та виконання в блокноті комірок Python.
 
@@ -22,7 +22,7 @@ exercises: 0
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-To run Python, we are going to use \[Jupyter Notebooks]\[jupyter] via [JupyterLab][jupyterlab] for the remainder of this workshop. Jupyter notebooks are common in data science and visualization and serve as a convenient common-denominator experience for running Python code interactively where we can easily view and share the results of our Python code.
+Для запуску Python, протягом цього семінару ми будемо використовувати \[блокноти Jupyter]\[jupyter] у середовищі [JupyterLab][jupyterlab]. Jupyter notebooks are common in data science and visualization and serve as a convenient common-denominator experience for running Python code interactively where we can easily view and share the results of our Python code.
 
 Існують й інші способи редагування, управління та виконання коду. Розробники програмного забезпечення часто використовують інтегроване середовище розробки (IDE), подібне до [PyCharm](https://www.jetbrains. om/pycharm/) або [Visual Studio Code](https://code.visualstudio.com/) або текстові редактори такі як Vim або Emacs, щоб створити та відредагувати свої програми Python. Після редагування та збереження ваших програм Python ви можете виконувати ці програми в самому IDE або безпосередньо в командному рядку. На відміну від цього, блокноти Jupyter дозволяють відразу переглянути результати нашого Python коду.
 
