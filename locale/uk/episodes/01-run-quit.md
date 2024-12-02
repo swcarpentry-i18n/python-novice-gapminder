@@ -122,11 +122,11 @@ JupyterLab має багато функцій, які можна знайти в
 - **File:** Дії, пов’язані з файлами та каталогами, такі як _New_, _Open_, _Close_, _Save_ тощо. Меню _File_ також містить дію _Shut Down_, яка застосовується для завершення роботи сервера JupyterLab.
 - **Edit:** Дії, пов’язані з редагуванням документів та іншими видами діяльності, такими як _Undo_, _Cut_, _Copy_, _Paste_ тощо.
 - **View:** Дії, які змінюють зовнішній вигляд інтерфейсу JupyterLab.
-- **Run:** Actions for running code in different activities such as notebooks and code consoles (discussed below).
-- **Ядро:** Дії щодо управління ядрами. Kernels in Jupyter will be explained in more detail below.
-- **Tabs:** A list of the open documents and activities in the main work area.
-- **Settings:** Common JupyterLab settings can be configured using this menu. There is also an _Advanced Settings Editor_ option in the dropdown menu that provides more fine-grained control of JupyterLab settings and configuration options.
-- **Help:** A list of JupyterLab and kernel help links.
+- **Run:** Дії для запуску коду в різних застосунках, таких як Jupyter Notebook та командний рядок (розглянуто нижче).
+- \*\* Kernel:\*\* Дії щодо управління ядрами. Ядра у Jupyter будуть детально описані нижче.
+- **Tabs:** Список відкритих документів та застосунків у робочій області.
+- **Settings:** За допомогою цього меню можна налаштувати загальні параметри JupyterLab. Окрім того, у ньому також є опція _Advanced Settings Editor_, яка забезпечує більш детальний контроль параметрів і опцій для конфігурації JupyterLab.
+- **Help:** Список посилань на довідку JupyterLab та інші ресурси.
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
