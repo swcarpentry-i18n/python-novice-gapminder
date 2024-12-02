@@ -29,29 +29,24 @@ exercises: 0
 JupyterLab має декілька інших зручних функцій:
 
 - Ви можете легко вводити, редагувати, копіювати та вставляти блоки коду.
-- Автодоповнення за допомогою клавіші Tab дозволяє легко отримати доступ до назв об'єктів, які ви використовуєте.
-- It allows you to annotate your code with links, different sized text, bullets, etc.
-  to make it more accessible to you and your collaborators.
-- It allows you to display figures next to the code that produces them
-  to tell a complete story of the analysis.
+- Автодоповнення за допомогою клавіші Tab дозволяє легко отримувати доступ до назв об'єктів, які ви використовуєте.
+- Дозволяє легко доповнювати свій код посиланнями, текстом різного розміру, маркерами тощо, щоб зробити його доступнішим для вас і ваших колег.
+- Дозволяє розміщувати графічні елементи безпосередньо поруч із кодом, який їх створює,
+  щоб продемонструвати повну історію аналізу даних.
 
 Кожен блокнот містить одну або кілька комірок, що містять код, текст або зображення.
 
 ## Початок роботи з JupyterLab
 
-JupyterLab is an application server with a web user interface from [Project Jupyter][jupyter] that
-enables one to work with documents and activities such as Jupyter notebooks, text editors, terminals,
-and even custom components in a flexible, integrated, and extensible manner. JupyterLab вимагає досить оновлений браузер (в ідеалі – поточна версія Chrome, Safari або Firefox); Інтернет браузер версії 9 і нижче _не_ підтримується.
+JupyterLab є сервером застосунків із вебінтерфейсом користувача від [Project Jupyter][jupyter], що
+дозволяє працювати з документами та іншими застосунками, такими як блокноти Jupyter, текстові редактори, термінали, і навіть спеціальні компоненти, гнучким, інтегрованим і розширюваним способом. JupyterLab потребує досить сучасний браузер (в ідеалі – поточна версія Chrome, Safari або Firefox); Internet Explorer версії 9 і нижче _не_ підтримується.
 
-JupyterLab є частиною інсталяційного пакета Anaconda Python. If you have not already
-installed the Anaconda Python distribution, see [the setup instructions](../learners/setup.md)
-for installation instructions.
+JupyterLab є частиною інсталяційного пакета Anaconda Python. Якщо ви не встановили дистрибутив Anaconda Python, дивіться інструкції щодо процесу інсталяції [тут](../learners/setup.md).
 
-In this lesson we will run JupyterLab locally on our own machines so it will not require an internet connection besides
-the initial connection to download and install Anaconda and JupyterLab
+На цьому уроці ми запустимо JupyterLab локально на наших власних пристроях, тому для цього підключення до Інтернету буде потрібно лише на початку для завантаження та встановлення середовищ розробки Anaconda та JupyterLab
 
 - Запустіть сервер JupyterLab на вашому комп'ютері
-- Use a web browser to open a special localhost URL that connects to your JupyterLab server
+- Використовуйте веббраузер для відкриття спеціальної локальної URL-адреси для з'єднання з сервером JupyterLab
 - The JupyterLab server does the work and the web browser renders the result
 - Type code into the browser and see the results after your JupyterLab server has finished executing your code
 
@@ -62,9 +57,7 @@ the initial connection to download and install Anaconda and JupyterLab
 JupyterLab є [подальшим кроком в еволюції Jupyter Notebook](https://jupyterlab.readthedocs.io/en/stable/getting_started/overview.html#overview).
 Якщо ви використовували Jupyter Notebook раніше, то ви добре зрозумієте діапазон можливостей JupyterLab.
 
-Experienced users of Jupyter notebooks interested in a more detailed discussion of the similarities and differences
-between the JupyterLab and Jupyter notebook user interfaces can find more information in the
-[JupyterLab user interface documentation][jupyterlab-ui].
+Досвідчені користувачі блокнотів Jupyter, зацікавлені у більш детальному обговоренні схожостей і відмінностей між інтерфейсами JupyterLab і Jupyter Notebook, можуть знайти більше інформації у [документації з інтерфейсу користувача JupyterLab][jupyterlab-ui].
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
