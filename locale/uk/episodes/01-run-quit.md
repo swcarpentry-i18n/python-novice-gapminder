@@ -255,7 +255,7 @@ a "text cell" is one that contains ordinary prose written for human beings.
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Command Vs. Edit
+## Командний режим або режим редагування
 
 In the Jupyter notebook page are you currently in Command or Edit mode?\
 Switch between the modes.
@@ -267,48 +267,43 @@ Use the shortcuts to undo the last cell operation you performed.
 
 ## Рішення
 
-Рішення Командний режим має сіру рамку, а режим редагування — синю.
-Use <kbd>Esc</kbd> and <kbd>Return</kbd> to switch between modes.
-You need to be in Command mode (Press <kbd>Esc</kbd> if your cell is blue).  Введіть <kbd>b</kbd> або <kbd>a</kbd>.
-You need to be in Command mode (Press <kbd>Esc</kbd> if your cell is blue).  Введіть <kbd>x</kbd>.
-You need to be in Command mode (Press <kbd>Esc</kbd> if your cell is blue).  Введіть <kbd>z</kbd>.
+Командний режим має сіру рамку, а режим редагування — синю.
+Використовуйте <kbd>Esc</kbd> та <kbd>Return</kbd> для перемикання режимів.
+Ви маєте бути в командному режимі (Натисніть <kbd>Esc</kbd> якщо ваша комірка синя).  Введіть <kbd>b</kbd> або <kbd>a</kbd>.
+Ви маєте бути в командному режимі (Натисніть <kbd>Esc</kbd> якщо ваша клітинка синя).  Введіть <kbd>x</kbd>.
+Ви маєте бути в командному режимі (Натисніть <kbd>Esc</kbd> якщо ваша комірка синя).  Введіть <kbd>z</kbd>.
 
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-### Use the keyboard and mouse to select and edit cells.
+### Використовуйте клавіатуру та мишу для виділення та редагування комірок.
 
 - Якщо натиснути клавішу <kbd>Return</kbd>, рамка стане синьою та ввімкнеться режим редагування, що дозволяє введення команди в комірку.
-- Because we want to be able to write many lines of code in a single cell,
-  pressing the <kbd>Return</kbd> key when in Edit mode (blue) moves the cursor to the next line
-  in the cell just like in a text editor.
-- We need some other way to tell the Notebook we want to run what's in the cell.
-- Pressing <kbd>Shift</kbd>\+<kbd>Return</kbd> together will execute the contents of the cell.
-- Notice that the <kbd>Return</kbd> and <kbd>Shift</kbd> keys on the right of the keyboard are
-  right next to each other.
+- Якщо є необхідність введення кількох рядків кода в одну клітинку, то натискання клавіші <kbd>Return</kbd> в режимі редагування (синя рамка) переміщує курсор на наступний рядок в комірці, як у текстовому редакторі.
+- Якщо нам потрібно запустити код, що знаходиться в комірці, нам потрібен інший спосіб повідомити про це Notebook.
+- Одночасне натискання клавіш <kbd>Shift</kbd> + <kbd>Return</kbd> призведе до виконання вмісту комірки.
+- Зверніть увагу, що клавіші <kbd>Return</kbd> та <kbd>Shift</kbd> розташовані поруч на клавіатурі справа.
 
-### Notebook підтримує мову розмітки текстів Markdown
+### Jupyter Notebook підтримує мову розмітки текстів Markdown.
 
 - Notebooks can also render [Markdown][markdown].
-  - Простий текстовий формат для запису списків, посилань та інших елементів, які можуть з'являтися на  вебсторінці.
+  - A simple plain-text format for writing lists, links,
+    and other things that might go into a web page.
   - Власне, це підмножина HTML, яка виглядає у стилі старомодного електронного листа.
-- Turn the current cell into a Markdown cell by entering the Command mode (<kbd>Esc</kbd>/gray)
-  and press the <kbd>M</kbd> key.
-- `In [ ]:` will disappear to show it is no longer a code cell and you will be able to write in
-  Markdown.
-- Turn the current cell into a Code cell by entering the Command mode (<kbd>Esc</kbd>/gray) and
-  press the <kbd>y</kbd> key.
+- Перетворіть поточну комірку на комірку Markdown, увійшовши в командний режим (<kbd>Esc</kbd>/gray) та натиснувши клавішу <kbd>M</kbd>.
+- Позначка `In [ ]:` зникне, щоб показати, що це вже не комірка коду, і ви зможете писати текст у форматі Markdown.
+- Перетворіть поточну комірку на комірку з кодом, увійшовши в командний режим (<kbd>Esc</kbd>/gray) та натиснувши клавішу <kbd>y</kbd>.
 
-### Markdown робить більшість того, що робить HTML.
+### Markdown does most of what HTML does.
 
 Table: Showing some markdown syntax and its rendered output.
 
 +---------------------------------------+------------------------------------------------+
-\| Markdown code                         | Rendered output                                |
+\| Код Markdown                  | Виведення                               |
 +=======================================+================================================+
 +---------------------------------------+------------------------------------------------+
-\| `                                  | <p></p>                                        | | *   Use asterisks                     | -   Use asterisks                              | | *   to create                         | -   to create                                  | | *   bullet lists.                     | -   bullet lists.                              |
+\| `                                  | <p></p>                                        | | *   Використовуйте зірочки                     | -   Використовуйте зірочки                     |           | *   для створення                         | -   для створення                                  | | *   маркованих списків.                     | -   bullet lists.                              |
 |`                                   |                                                |
 +---------------------------------------+------------------------------------------------+
 +---------------------------------------+------------------------------------------------+
@@ -356,8 +351,8 @@ Create a nested list in a Markdown cell in a notebook that looks like this:
 
 ## Рішення
 
-Рішення Це завдання поєднує як нумерований, так і маркований списки.
-Note that the bullet list is indented 2 spaces so that it is inline with the items of the numbered list.
+Це завдання поєднує як нумерований, так і маркований списки.
+Зверніть увагу, що маркований список має відступ на 2 пробіли, щоб він не збігався з елементами нумерованого списку.
 
 ```
 1.  Get funding.
@@ -377,9 +372,8 @@ Note that the bullet list is indented 2 spaces so that it is inline with the ite
 
 ## Більше математики
 
-What is displayed when a Python cell in a notebook
-that contains several calculations is executed?
-Наприклад, що трапиться при виконанні дій наступної комірки?
+Що зображується, коли виконується комірка Python в блокноті, що містить декілька обчислень?
+For example, what happens when this cell is executed?
 
 ```python
 7 * 3
@@ -406,15 +400,14 @@ Python повертає результат останнього розрахун
 
 What happens if you write some Python in a code cell
 and then you switch it to a Markdown cell?
-For example,
-put the following in a code cell:
+Наприклад, напишіть наступний вираз в комірці коду:
 
 ```python
 x = 6 * 7 + 12
 print(x)
 ```
 
-А потім запустіть цей код в комірці за допомогою <kbd>Shift</kbd>\+<kbd>Return</kbd>, щоб переконатися, що ця комірка працює як комірка коду.
+Потім запустіть цей код в комірці за допомогою <kbd>Shift</kbd>\+<kbd>Return</kbd>, щоб переконатися, що ця комірка працює як комірка коду.
 Тепер поверніться до комірки та натисніть <kbd>Esc</kbd>, а потім <kbd>m</kbd>, щоб перемкнути комірку на Markdown і "запустити" її за допомогою <kbd>Shift</kbd>\+<kbd>Return</kbd>.
 Що сталося, і як це може бути корисним?
 
