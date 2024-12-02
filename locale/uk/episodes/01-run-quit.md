@@ -70,8 +70,8 @@ JupyterLab є [подальшим кроком в еволюції Jupyter Noteb
 Для запуску сервера JupyterLab вам потрібно отримати доступ до командного рядка через Terminal.
 Існує два способи відкрити термінал на Mac.
 
-1. У директорії Applications відкрийте теку Utilities і двічі натисніть Terminal
-2. Натисніть <kbd>Command</kbd> + <kbd>spacebar</kbd> для запуску Spotlight. Введіть `Terminal`, а потім двічі клацніть на результат пошуку або натисніть <kbd>Enter</kbd>
+1. In your Applications folder, open Utilities and double-click on Terminal
+2. Натисніть <kbd>Command</kbd> + <kbd>spacebar</kbd> для запуску Spotlight. Введіть `Terminal`, а потім двічі клацніть на результаті пошуку або натисніть <kbd>Enter</kbd>
 
 Після запуску Terminal введіть команду для запуску сервера JupyterLab.
 
@@ -79,9 +79,9 @@ JupyterLab є [подальшим кроком в еволюції Jupyter Noteb
 $ jupyter lab
 ```
 
-### Windows Users - Command Line
+### Користувачі Windows - Командний рядок
 
-To start the JupyterLab server you will need to access the Anaconda Prompt.
+Для запуску сервера JupyterLab вам потрібен застосунок Anaconda Prompt.
 
 Press <kbd>Windows Logo Key</kbd> and search for `Anaconda Prompt`, click the result or press enter.
 
@@ -93,20 +93,17 @@ $ jupyter lab
 
 ### Anaconda Navigator
 
-To start a JupyterLab server from Anaconda Navigator you must first [start Anaconda Navigator (click for detailed instructions on macOS, Windows, and Linux)](https://docs.anaconda.com/free/navigator/getting-started/#navigator-starting-navigator). You can search for Anaconda Navigator via Spotlight on macOS (<kbd>Command</kbd> + <kbd>spacebar</kbd>), the Windows search function (<kbd>Windows Logo Key</kbd>) or opening a terminal shell and executing the `anaconda-navigator` executable from the command line.
+Для запуску серверу JupyterLab з Anaconda Navigator ви маєте спочатку [запустити Anaconda Navigator (натисніть для докладних інструкцій з macOS, Windows та Linux)](https://docs.anaconda.com/free/navigator/getting-started/#navigator-starting-navigator). Ви можете виконати пошук Anaconda Navigator через Spotlight на macOS (<kbd>Command</kbd> + <kbd>spacebar</kbd>), скористатися функцією пошуку Windows (<kbd>ключ Windows Logo</kbd>) або відкривши термінал та виконавши команду `anaconda-navigator` у командному рядку.
 
-Після того, як ви запустили Anaconda Navigator, натисніть кнопку `Launch` під JupyterLab. You may need
-to scroll down to find it.
+Після того, як ви запустили Anaconda Navigator, натисніть кнопку `Launch` під JupyterLab. Можливо, вам знадобиться продивитись список донизу, аби знайти її.
 
-Here is a screenshot of an Anaconda Navigator page similar to the one that should open on either macOS
-or Windows.
+Нижче наведено скриншот сторінки Anaconda Navigator, схожої на ту, яка має відкриватися для macOS або Windows.
 
 <p align='center'>
   <img alt="Anaconda Navigator landing page" src="fig/0_anaconda_navigator_landing_page.png" width="750"/>
 </p>
 
-And here is a screenshot of a JupyterLab landing page that should be similar to the one that opens in your
-default web browser after starting the JupyterLab server on either macOS or Windows.
+Нижче наведено скриншот екрана стартової сторінки JupyterLab, схожої на ту, яка має відкритися у вашому веббраузері за замовчуванням після запуску сервера JupyterLab в операційній системі macOS або Windows.
 
 <p align='center'>
   <img alt="JupyterLab landing page" src="fig/0_jupyterlab_landing_page.png" width="750"/>
@@ -114,17 +111,13 @@ default web browser after starting the JupyterLab server on either macOS or Wind
 
 ## Інтерфейс JupyterLab
 
-JupyterLab has many features found in traditional integrated development environments (IDEs) but
-is focused on providing flexible building blocks for interactive, exploratory computing.
+JupyterLab має багато функцій, які можна знайти в традиційних інтегрованих середовищах розробки (IDE), але його особливістю є забезпечення гнучких "будівельних блоків" для інтерактивних дослідницьких обчислень.
 
-The [JupyterLab Interface][jupyterlab-ui]
-consists of the Menu Bar, a collapsable Left Side Bar, and the Main Work Area which contains tabs
-of documents and activities.
+[Інтерфейс JupyterLab][jupyterlab-ui] складається з панелі меню, лівої бічної панелі (що згортається за потреби), і основної робочої області, яка містить вкладки з документами та різними застосунками JupyterLab.
 
-### Панель Меню
+### Панель меню
 
-The Menu Bar at the top of JupyterLab has the top-level menus that expose various actions
-available in JupyterLab along with their keyboard shortcuts (where applicable). Наступні пункти меню наявні за замовчуванням.
+Панель меню у верхній частині вікна JupyterLab містить меню верхнього рівня, яке зображує різні дії доступні в JupyterLab разом із їхніми комбінаціями клавіш (де це можливо). Наступні пункти меню наявні за замовчуванням.
 
 - **File:** Actions related to files and directories such as _New_, _Open_, _Close_, _Save_, etc. The _File_ menu also includes the _Shut Down_ action used to shutdown the JupyterLab server.
 - **Edit:** Actions related to editing documents and other activities such as _Undo_, _Cut_, _Copy_, _Paste_, etc.
