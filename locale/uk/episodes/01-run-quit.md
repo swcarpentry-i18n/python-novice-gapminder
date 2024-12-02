@@ -119,8 +119,8 @@ JupyterLab має багато функцій, які можна знайти в
 
 Панель меню у верхній частині вікна JupyterLab містить меню верхнього рівня, яке зображує різні дії доступні в JupyterLab разом із їхніми комбінаціями клавіш (де це можливо). Наступні пункти меню наявні за замовчуванням.
 
-- **File:** Actions related to files and directories such as _New_, _Open_, _Close_, _Save_, etc. The _File_ menu also includes the _Shut Down_ action used to shutdown the JupyterLab server.
-- **Edit:** Actions related to editing documents and other activities such as _Undo_, _Cut_, _Copy_, _Paste_, etc.
+- **File:** Дії, пов’язані з файлами та каталогами, такі як _New_, _Open_, _Close_, _Save_ тощо. Меню _File_ також містить дію _Shut Down_, яка застосовується для завершення роботи сервера JupyterLab.
+- **Edit:** Дії, пов’язані з редагуванням документів та іншими видами діяльності, такими як _Undo_, _Cut_, _Copy_, _Paste_ тощо.
 - **View:** Actions that alter the appearance of JupyterLab.
 - **Run:** Actions for running code in different activities such as notebooks and code consoles (discussed below).
 - **Ядро:** Дії щодо управління ядрами. Kernels in Jupyter will be explained in more detail below.
