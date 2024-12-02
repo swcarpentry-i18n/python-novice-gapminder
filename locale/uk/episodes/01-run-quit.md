@@ -121,7 +121,7 @@ JupyterLab має багато функцій, які можна знайти в
 
 - **File:** Дії, пов’язані з файлами та каталогами, такі як _New_, _Open_, _Close_, _Save_ тощо. Меню _File_ також містить дію _Shut Down_, яка застосовується для завершення роботи сервера JupyterLab.
 - **Edit:** Дії, пов’язані з редагуванням документів та іншими видами діяльності, такими як _Undo_, _Cut_, _Copy_, _Paste_ тощо.
-- **View:** Actions that alter the appearance of JupyterLab.
+- **View:** Дії, які змінюють зовнішній вигляд інтерфейсу JupyterLab.
 - **Run:** Actions for running code in different activities such as notebooks and code consoles (discussed below).
 - **Ядро:** Дії щодо управління ядрами. Kernels in Jupyter will be explained in more detail below.
 - **Tabs:** A list of the open documents and activities in the main work area.
