@@ -158,41 +158,41 @@ the default Left Side Bar is provided below.
 <p align='center'>   <img alt="JupyterLab Left Side Bar" src="fig/0_jupyterlab_left_side_bar.png" width="250"/>
 </p>
 
-The left sidebar can be collapsed or expanded by selecting "Show Left Sidebar" in the View menu or
-by clicking on the active sidebar tab.
+Ліву бічну панель можна згорнути або розгорнути вибравши пункт “Show Left Sidebar” у меню View, або натиснувши на активну вкладку бічної панелі.
 
 ### Основна робоча область
 
 Основна робоча область в JupyterLab дозволяє упорядковувати документи (блокноти, текстові файли та ін.)
-and other activities (terminals, code consoles, etc.) на панелях вкладок, які можуть бути змінені або
-розділені. A screenshot of the default Main Work Area is provided below.
+and other activities (terminals, code consoles, etc.) into panels of tabs that can be resized or
+subdivided. A screenshot of the default Main Work Area is provided below.
 
-Якщо Ви не бачите вкладку Launcher на панелі запуску, натисніть синій плюс під знаком "Файл" та "Редагувати", і ця вкладка з'явиться.
+Якщо Ви не бачите вкладку Launcher на панелі запуску, натисніть синій плюс під "File" та "Edit" у панелі меню, і ця вкладка з'явиться.
 
 <p align='center'>   <img alt="JupyterLab Main Work Area" src="fig/0_jupyterlab_main_work_area.png" width="750"/>
 </p>
 
-Drag a tab to the center of a tab panel to move the tab to the panel. Розділіть панель вкладок за допомогою перетягування вкладки ліворуч, праворуч, до верху або до низу панелі. Робоча панель має одну поточну дію. Вкладка для поточної дії позначена кольоровою верхньою рамкою (за замовчуванням - синьою).
+Drag a tab to the center of a tab panel to move the tab to the panel. Subdivide a tab panel by
+dragging a tab to the left, right, top, or bottom of the panel. The work area has a single current
+activity. Вкладка для поточної дії позначена кольоровою верхньою рамкою (за замовчуванням - синьою).
 
-## Creating a Python script
+## Створення скрипту Python
 
-- To start writing a new Python program click the Text File icon under the _Other_ header in the Launcher tab of the Main Work Area.
-  - You can also create a new plain text file by selecting the _New -> Text File_ from the _File_ menu in the Menu Bar.
-- To convert this plain text file to a Python program, select the _Save File As_ action from the _File_ menu in the Menu Bar and give your new text file a name that ends with the `.py` extension.
-  - The `.py` extension lets everyone (including the operating system) know that this text file is a Python program.
+- Щоб почати писати нову програму на Python, натисніть піктограму текстового файлу під заголовком _Other_ на вкладці Launcher (Запуск) головної робочої області.
+  - Можна також створити новий текстовий файл, якщо обрати _New -> Text File_ у меню _File_ на панелі меню.
+- Щоб перетворити цей звичайний текстовий файл на програму Python, виберіть дію _Save File As_ у меню _File_ на панелі меню та надайте новому текстовому файлу назву, яка закінчується розширенням `.py`.
+  - Розширення `.py` повідомляє всім (операційній системі включно), що цей текстовий файл є програмою Python.
   - Це умовність, а не вимога.
 
-## Створення Jupyter Notebook
+## Створення блокноту Jupyter
 
-To open a new notebook click the Python 3 icon under the _Notebook_ header in the Launcher tab in
-the main work area. You can also create a new notebook by selecting _New -> Notebook_ from the _File_ menu in the Menu Bar.
+Щоб відкрити новий блокнот, натисніть піктограму Python 3 під заголовком _Notebook_ на вкладці Launcher в у головній робочій області. Ви також можете створити новий блокнот, обравши _New -> Notebook_ у меню _File_ на панелі меню.
 
-Додаткові зауваження щодо Jupyter notebooks.
+Додаткові зауваження щодо блокнотів Jupyter.
 
-- Файли, створені в Jupiter Notebook, мають розширення `.ipynb`, щоб відрізнити їх від програм на Python, створених як звичайний текстовий файл.
-- Notebooks can be exported as Python scripts that can be run from the command line.
+- Файли, створені в Jupyter Notebook, мають розширення `.ipynb`, щоб відрізнити їх від програм на Python, створених як звичайний текстовий файл.
+- Блокноти можна експортувати як скрипти Python, які можна запускати з командного рядка.
 
-Нижче наведено скриншот екрана Jupyter Notebook, який працює в JupyterLab. If you are interested in
+Below is a screenshot of a Jupyter notebook running inside JupyterLab. If you are interested in
 more details, then see the [official notebook documentation][jupyterlab-notebook-docs].
 
 <p align='center'>   <img alt="Example Jupyter Notebook" src="fig/0_jupyterlab_notebook_screenshot.png" width="750"/>
@@ -204,7 +204,7 @@ more details, then see the [official notebook documentation][jupyterlab-notebook
 
 - Файл блокноту зберігається у форматі JSON.
 - Подібно до вебсторінки, те, що зберігається, відрізняється від того, що ви бачите у своєму браузері.
-- Але формат JSON дозволяє Jupyter змішувати вихідний код, текст і зображення в одному файлі.
+- But this format allows Jupyter to mix source code, text, and images, all in one file.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -212,25 +212,19 @@ more details, then see the [official notebook documentation][jupyterlab-notebook
 
 ## Упорядкування документів в панелях вкладок
 
-У головній робочій області JupyterLab ви можете впорядковувати документи на панелі вкладок. Here is an
-example from the [official documentation][jupyterlab].
+У головній робочій області JupyterLab ви можете впорядковувати документи на панелі вкладок. Нижче наведено приклад з [офіційної документації][jupyterlab].
 
 <p align='center'>   <img alt="Multi-panel JupyterLab" src="fig/0_multipanel_jupyterlab_screenshot.png" width="750"/>
 </p>
 
-First, create a text file, Python console, and terminal window and arrange them into three
-panels in the main work area. Next, create a notebook, terminal window, and text file and
-arrange them into three panels in the main work area. Finally, create your own combination of
-panels and tabs. What combination of panels and tabs do you think will be most useful for your
-workflow?
+Спочатку створіть текстовий файл, консоль Python, та вікно терміналу і розташуйте їх у три
+панелі в основній робочій області. Далі створіть блокнот, вікно терміналу, та текстовий файл і розподіліть їх на три панелі в основній робочій зоні. Нарешті, створіть власну комбінацію панелей і вкладок. Яка, на вашу думку, комбінація панелей та вкладок буде найбільш корисною для вашого робочого процесу?
 
 :::::::::::::::  solution
 
 ## Рішення
 
-After creating the necessary tabs, you can drag one of the tabs to the center of a panel to
-move the tab to the panel; next you can subdivide a tab panel by dragging a tab to the left,
-right, top, or bottom of the panel.
+Після створення необхідних вкладок ви можете перетягнути одну з них в центр панелі для переміщення вкладки на панель; потім ви можете розділити панель, перетягнувши вкладку ліворуч, праворуч, вгору або до низу панелі.
 
 :::::::::::::::::::::::::
 
@@ -238,7 +232,7 @@ right, top, or bottom of the panel.
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Код проти тексту
+## Code vs. Text
 
 Jupyter дозволяє змішувати код і текст у різних типах блоків, які називаються комірками. We often use the term
 "code" to mean "the source code of software written in a language such as Python".
@@ -247,16 +241,16 @@ a "text cell" is one that contains ordinary prose written for human beings.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## The Notebook has Command and Edit modes.
+## Jupyter Notebook має командний режим та режим редагування.
 
 - If you press <kbd>Esc</kbd> and <kbd>Return</kbd> alternately, the outer border of your code cell will change from gray to blue.
-- These are the **Command** (gray) and **Edit** (blue) modes of your notebook.
+- Існують сірий - **Command** (командний) та синій - **Edit** (редагування) режими вашого блокноту.
 - Command mode allows you to edit notebook-level features, and Edit mode changes the content of cells.
 - В командному режимі (esc/сірий),
-  - The <kbd>b</kbd> key will make a new cell below the currently selected cell.
-  - The <kbd>a</kbd> key will make one above.
-  - The <kbd>x</kbd> key will delete the current cell.
-  - The <kbd>z</kbd> key will undo your last cell operation (which could be a deletion, creation, etc).
+  - Клавіша <kbd>b</kbd> створює нову комірку нижче поточної обраної комірки.
+  - Клавіша <kbd>a</kbd> створює одну комірку вище поточної.
+  - Клавіша <kbd>x</kbd> видаляє поточну комірку.
+  - Клавіша <kbd>z</kbd> скасовує вашу останню операцію з коміркою (це може бути операція видалення, створення тощо).
 - Усі дії можна виконувати за допомогою меню, але є багато комбінацій клавіш для прискорення процесу.
 
 :::::::::::::::::::::::::::::::::::::::  challenge
