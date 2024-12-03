@@ -431,25 +431,26 @@ x = 6 * 7 + 12 print(x)
 
 ## Рівняння
 
-Стандартний Markdown (наприклад, такий, що використовується для цих нотаток) не надаватиме рівняння, але Notebook буде.
+Standard Markdown (such as we're using for these notes) won't render equations,
+but the Notebook will.
 Створіть нову комірку Markdown і введіть наступне:
 
 ```
 $\sum_{i=1}^{N} 2^{-i} \approx 1$
 ```
 
-(Мабуть, легше скопіювати та вставити.)
-What does it display?
-Що ви думаєте про підкреслювання, `_`, циркумфлекс, `^` і доларовий знак, `$`, далі?
+(Мабуть, це легше скопіювати та вставити.)
+Що зображається?
+What do you think the underscore, `_`, circumflex, `^`, and dollar sign, `$`, do?
 
 :::::::::::::::  solution
 
 ## Рішення
 
-У блокноті показано рівняння з синтаксисом рівняння LaTeX.
+The notebook shows the equation as it would be rendered from LaTeX equation syntax.
 The dollar sign, `$`, is used to tell Markdown that the text in between is a LaTeX equation.
-Якщо ви не знайомі з LaTeX, підкреслення, `_`, використовується для підрядкових індексів та циркумфлекс, `^`, використовується для верхніх індексів.
-Пара фігурних дужок, `{` та `}`, використовується для групування тексту разом, щоб вираз `i=1` став нижнім та `N` - верхнім індексом.
+If you're not familiar with LaTeX,  underscore, `_`, is used for subscripts and circumflex, `^`, is used for superscripts.
+A pair of curly braces, `{` and `}`, is used to group text together so that the statement `i=1` becomes the subscript and `N` becomes the superscript.
 Аналогічно, вираз `-i` взятий у фігурні дужки, щоб зробити цей вираз верхнім індексом для `2`.
 `\sum` та `\approx` є командами LaTeX для значень "sum over" й "approximate".
 
@@ -457,9 +458,9 @@ The dollar sign, `$`, is used to tell Markdown that the text in between is a LaT
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Закриття JupyterLab
+## Closing JupyterLab
 
-- From the Menu Bar select the "File" menu and then choose "Shut Down" at the bottom of the dropdown menu. Вам буде запропоновано підтвердити, що Ви бажаєте вимкнути сервер JupyterLab (не забудьте зберегти свою роботу!). Click "Shut Down" to shutdown the JupyterLab server.
+- На панелі меню оберіть меню "File" і натисніть "Shut Down" внизу спадного меню. Вам буде запропоновано підтвердити, що Ви бажаєте вимкнути сервер JupyterLab (не забудьте зберегти свою роботу!). Натисніть "Shut Down", щоб вимкнути сервер JupyterLab.
 - To restart the JupyterLab server you will need to re-run the following command from a shell.
 
 ```
@@ -468,7 +469,7 @@ $ jupyter lab
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Закриття JupyterLab
+## Closing JupyterLab
 
 Потренуйтеся закривати та перезапускати сервер JupyterLab.
 
@@ -484,9 +485,9 @@ $ jupyter lab
 
 - Python scripts are plain text files.
 - Застосування Jupyter Notebook для редагування та запуску Python
-- Jupiter Notebook має режими команд та редагування
+- The Notebook has Command and Edit modes.
 - Use the keyboard and mouse to select and edit cells.
-- Notebook підтримує мову розмітки текстів Markdown
-- Markdown виконує більшість функцій HTML.
+- Notebook підтримує мову розмітки текстів Markdown.
+- Markdown does most of what HTML does.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
