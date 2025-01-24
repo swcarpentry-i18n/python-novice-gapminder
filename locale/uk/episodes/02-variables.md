@@ -23,7 +23,7 @@ exercises: 10
 
 - Імена змінних
 
-  - can **only** contain letters, digits, and underscore `_` (typically used to separate words in long variable names)
+  - можуть складатися **тільки** з букв, цифр та підкреслення `_` (яке звичайно використовується, щоб відокремити слова у довгих назвах змінних)
   - не можуть починатися з цифри
   - are **case sensitive** (age, Age and AGE are three different variables)
 
