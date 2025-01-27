@@ -184,8 +184,7 @@ print(ewr_422_yY, 'is', flabadab, 'years old')
 
 ## Заміна значень
 
-Fill the table showing the values of the variables in this program
-_after_ each statement is executed.
+Заповніть таблицю, вказавши значення змінних у цій програмі _після_ виконання кожного оператора.
 
 ```python
 # Оператор  # Значення x   # Значення y   # Значення swap #
@@ -221,8 +220,7 @@ y = swap   # 3.0          # 1.0          # 1.0           #
 ## Прогнозування значень
 
 Яким є остаточне значення змінної `position` у програмі нижче?
-(Try to predict the value without running the program,
-then check your prediction.)
+(Спробуйте передбачити значення, не запускаючи програму, а потім перевірте свій прогноз.)
 
 ```python
 initial = 'left'
@@ -242,7 +240,7 @@ print(position)
 left
 ```
 
-The `initial` variable is assigned the value `'left'`.
+Змінній `initial` присвоєно значення `'left'`.
 У другому рядку змінна `position` також отримує
 значення `'left'`. У третьому рядку змінній `initial` надається значення `'right'`, але змінна `position` зберігає своє значення `'left'`.
 
@@ -252,7 +250,7 @@ The `initial` variable is assigned the value `'left'`.
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Challenge
+## Завдання
 
 Якщо ви присвоїли `a = 123`,
 що станеться, якщо ви спробуєте отримати другу цифру `a` через `a[1]`?
@@ -263,7 +261,8 @@ The `initial` variable is assigned the value `'left'`.
 
 Numbers are not strings or sequences and Python will raise an error if you try to perform an index operation on a
 number. У [наступному уроці про типи даних і перетворення типів](03-types-conversion.md)
-ми дізнаємось більше про типи і як конвертувати один тип в інший. Якщо вам потрібна N-та цифра числа, ви можете перетворити число на рядок за допомогою вбудованої функції `str`, а потім виконати операцію індексування цього рядка.
+ми дізнаємось більше про типи і як конвертувати один тип в інший. If you want the Nth digit of a number you
+can convert it into a string using the `str` built-in function and then perform an index operation on that string.
 
 ```python
 a = 123
@@ -296,8 +295,8 @@ print(a[1])
 Hint: think about which code you would rather inherit
 from someone who is leaving the lab:
 
-1. `ts = m 60 + s`
-2. `tot_sec = min 60 + sec`
+1. `ts = m * 60 + s`
+2. `tot_sec = min * 60 + sec`
 3. `total_seconds = minutes * 60 + seconds`
 
 :::::::::::::::  solution
