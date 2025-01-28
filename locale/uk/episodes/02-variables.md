@@ -292,8 +292,7 @@ print(a[1])
 
 Яке ім'я для змінної є кращим: `m`, `min` або `minutes`?
 Чому?
-Hint: think about which code you would rather inherit
-from someone who is leaving the lab:
+Підказка: подумайте, який код ви б хотіли успадкувати від того, хто залишає лабораторію:
 
 1. `ts = m * 60 + s`
 2. `tot_sec = min * 60 + sec`
@@ -343,7 +342,7 @@ atom_name[1:3] is: ar
 species_name = "Acacia buxifolia"
 ```
 
-What would these expressions return?
+Що виводять ці вирази?
 
 1. `species_name[2:8]`
 2. `species_name[11:]` (без значення після двокрапки)
@@ -351,7 +350,7 @@ What would these expressions return?
 4. `species_name[:]` (тільки двокрапка)
 5. `species_name[11:-3]`
 6. `species_name[-5:-3]`
-7. What happens when you choose a `stop` value which is out of range? (тобто спробуйте виконати `species_name[0:20]` або `species_name[:103]`)
+7. Що станеться, якщо ми оберемо значення `stop`, яке виходить за рамки діапазону? (тобто спробуйте виконати `species_name[0:20]` або `species_name[:103]`)
 
 :::::::::::::::  solution
 
@@ -379,7 +378,7 @@ What would these expressions return?
 
 - Використовуйте змінні для зберігання значень.
 - Використовуйте `print` для виводу значень.
-- Variables persist between cells.
+- Змінні зберігаються між комірками.
 - Змінні мають бути створені перед їх використанням.
 - Змінні можна використовувати для обчислень.
 - Використовуйте індекс, щоб отримати один символ із рядка.
