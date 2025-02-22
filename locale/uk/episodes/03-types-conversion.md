@@ -247,15 +247,14 @@ print(result, 'is', type(result))
 
 ## Вибір типу
 
-What type of value (integer, floating point number, or character string)
-would you use to represent each of the following?  Спробуйте знайти більш ніж одну гарну відповідь для кожної проблеми.  For example, in  # 1, when would counting days with a floating point variable make more sense than using an integer?
+Який тип значення (ціле число, дійсне число або рядок символів) ви б використовували для представлення кожного з наступних значень?  Спробуйте знайти більш ніж одну гарну відповідь для кожної проблеми.  For example, in  # 1, when would counting days with a floating point variable make more sense than using an integer?
 
 1. Кількість днів, які пройшли з початку року.
 2. Час, що пройшов від початку року до сьогоднішнього дня.
 3. Серійний номер лабораторного обладнання.
 4. Вік лабораторного зразка
 5. Поточне населення міста.
-6. Average population of a city over time.
+6. Середня чисельність населення міста протягом певного часу.
 
 :::::::::::::::  solution
 
