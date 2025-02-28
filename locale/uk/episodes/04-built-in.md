@@ -238,8 +238,8 @@ SyntaxError: unexpected EOF while parsing
 ## Python reports a runtime error when something goes wrong while a program is executing. {#runtime-error}
 
 ```python
-age = 53
-remaining = 100 - aege # mis-spelled 'age'
+age = 53 
+remaining = 100 - aege # неправильно написано 'age'
 ```
 
 ```error
@@ -258,8 +258,8 @@ NameError: name 'aege' is not defined
 ## What Happens When
 
 1. Explain in simple terms the order of operations in the following program:
-   when does the addition happen, when does the subtraction happen,
-   when is each function called, etc.
+  when does the addition happen, when does the subtraction happen,
+  when is each function called, etc.
 2. What is the final value of `radiance`?
 
 ```python
@@ -295,7 +295,7 @@ radiance = max(2.1, 2.0 + min(radiance, 1.1 * radiance - 0.5))
 
 1. Подумайте, що виведе кожен з операторів `print` у наведеній нижче програмі.
 2. Функція `max(len(rich), poor)` поверне відповідь або повідомлення про помилку?
-   Якщо поверне відповідь, чи буде вона мати сенс?
+  Якщо поверне відповідь, чи буде вона мати сенс?
 
 ```python
 easy_string = "abc"
@@ -408,3 +408,5 @@ all of these functions, including the ones that we've covered in this lesson. Д
 - Якщо перечитаєте джерело, можна виправити синтаксичні помилки, а якщо відстежите компілювання - помилки виконання.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
