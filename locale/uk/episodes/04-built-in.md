@@ -403,9 +403,9 @@ all of these functions, including the ones that we've covered in this lesson. Д
 - Використовуйте вбудовану функцію `help`, щоб отримати довідку щодо функції.
 - The Jupyter Notebook has two ways to get help.
 - Кожна функція щось повертає.
-- Python повідомляє про синтаксичну помилку, коли він не може зрозуміти джерело програми.
+- Python reports a syntax error when it can't understand the source of a program.
 - Python reports a runtime error when something goes wrong while a program is executing.
-- Якщо перечитаєте джерело, можна виправити синтаксичні помилки, а якщо відстежите компілювання - помилки виконання.
+- Fix syntax errors by reading the source code, and runtime errors by tracing the program's execution.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
