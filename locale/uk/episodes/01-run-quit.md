@@ -47,7 +47,7 @@ JupyterLab є частиною інсталяційного пакета Anacond
 
 - Запустіть сервер JupyterLab на вашому комп'ютері
 - Використовуйте веббраузер для відкриття спеціальної локальної URL-адреси для з'єднання з сервером JupyterLab
-- The JupyterLab server does the work and the web browser renders the result
+- Сервер JupyterLab виконує обчислювальну роботу, а веббраузер відображає її результат
 - Type code into the browser and see the results after your JupyterLab server has finished executing your code
 
 :::::::::::::::::::::::::::::::::::::::::  callout
@@ -70,7 +70,7 @@ JupyterLab є [подальшим кроком в еволюції Jupyter Noteb
 Для запуску сервера JupyterLab вам потрібно отримати доступ до командного рядка через Terminal.
 Існує два способи відкрити термінал на Mac.
 
-1. In your Applications folder, open Utilities and double-click on Terminal
+1. У каталозі Applications відкрийте підкаталог Utilities і двічі натисніть Terminal
 2. Натисніть <kbd>Command</kbd> + <kbd>spacebar</kbd> для запуску Spotlight. Введіть `Terminal`, а потім двічі клацніть на результаті пошуку або натисніть <kbd>Enter</kbd>
 
 Після запуску Terminal введіть команду для запуску сервера JupyterLab.
@@ -132,18 +132,16 @@ JupyterLab має багато функцій, які можна знайти в
 
 ## Ядра
 
-The JupyterLab [docs](https://jupyterlab.readthedocs.io/en/stable/user/documents_kernels.html)
-define kernels as "separate processes started by the server that runs your code in different programming languages and environments."
-When we open a Jupyter Notebook, that starts a kernel - a process - that is going to run the code.
+[Документація JupyterLab](https://jupyterlab.readthedocs.io/en/stable/user/documents_kernels.html)
+визначає ядра як "окремі процеси сервера, що виконують ваш код у відповідних мовах програмування та середовищах."
+Коли ми відкриваємо Jupyter Notebook, то ініціалізується ядро - процес, який буде виконувати код.
 In this lesson, we'll be using the Jupyter ipython kernel which lets us run Python 3 code interactively.
 
-Using other Jupyter [kernels for other programming languages](https://github.com/jupyter/jupyter/wiki/Jupyter-kernels) would let us
-write and execute code in other programming languages in the same JupyterLab interface, like R, Java, Julia, Ruby, JavaScript, Fortran,
-etc.
+Використання інших [ядер Jupyter для інших мов програмування](https://github.com/jupyter/jupyter/wiki/Jupyter-kernels) дозволить нам використовувати спільний інтерфейс JupyterLab для того, щоб писати та виконувати код, наприклад, у таких мовах як R, Java, Julia, Ruby, JavaScript, Fortran, тощо.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-A screenshot of the default Menu Bar is provided below.
+Скриншот стандартної панелі меню надано нижче.
 
 <p align='center'>   <img alt="JupyterLab Menu Bar" src="fig/0_jupyterlab_menu_bar.png" width="750"/>
 </p>
@@ -152,8 +150,7 @@ A screenshot of the default Menu Bar is provided below.
 
 The left sidebar contains a number of commonly used tabs, such as a file browser (showing the
 contents of the directory where the JupyterLab server was launched), a list of running kernels
-and terminals, the command palette, and a list of open tabs in the main work area. A screenshot of
-the default Left Side Bar is provided below.
+and terminals, the command palette, and a list of open tabs in the main work area. Скриншот стандартної лівої бічної панелі наведений нижче.
 
 <p align='center'>   <img alt="JupyterLab Left Side Bar" src="fig/0_jupyterlab_left_side_bar.png" width="250"/>
 </p>
@@ -163,17 +160,16 @@ the default Left Side Bar is provided below.
 ### Основна робоча область
 
 Основна робоча область в JupyterLab дозволяє упорядковувати документи (блокноти, текстові файли та ін.)
-and other activities (terminals, code consoles, etc.) into panels of tabs that can be resized or
-subdivided. A screenshot of the default Main Work Area is provided below.
+та інші види діяльності (термінали, інтерфейси командного рядка тощо) into panels of tabs that can be resized or
+subdivided. Скриншот стандартної основної робочої області наведено нижче.
 
 Якщо Ви не бачите вкладку Launcher на панелі запуску, натисніть синій плюс під "File" та "Edit" у панелі меню, і ця вкладка з'явиться.
 
 <p align='center'>   <img alt="JupyterLab Main Work Area" src="fig/0_jupyterlab_main_work_area.png" width="750"/>
 </p>
 
-Drag a tab to the center of a tab panel to move the tab to the panel. Subdivide a tab panel by
-dragging a tab to the left, right, top, or bottom of the panel. The work area has a single current
-activity. Вкладка для поточної дії позначена кольоровою верхньою рамкою (за замовчуванням - синьою).
+Щоб перемістити вкладку на деяку панель, перетягніть її в центр цієї панелі. Subdivide a tab panel by
+dragging a tab to the left, right, top, or bottom of the panel. Кожна робоча панель має одну поточну активну вкладку. Вкладка для поточної дії позначена кольоровою верхньою рамкою (за замовчуванням - синьою).
 
 ## Створення скрипту Python
 
@@ -204,7 +200,7 @@ more details, then see the [official notebook documentation][jupyterlab-notebook
 
 - Файл блокноту зберігається у форматі JSON.
 - Подібно до вебсторінки, те, що зберігається, відрізняється від того, що ви бачите у своєму браузері.
-- But this format allows Jupyter to mix source code, text, and images, all in one file.
+- Але формат JSON дозволяє Jupyter комбінувати вихідний код, текст і графіку в одному файлі.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -232,7 +228,7 @@ more details, then see the [official notebook documentation][jupyterlab-notebook
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Code vs. Text
+## Код або текст?
 
 Jupyter дозволяє змішувати код і текст у різних типах блоків, які називаються комірками. We often use the term
 "code" to mean "the source code of software written in a language such as Python".
@@ -243,7 +239,7 @@ a "text cell" is one that contains ordinary prose written for human beings.
 
 ## Jupyter Notebook має командний режим та режим редагування.
 
-- If you press <kbd>Esc</kbd> and <kbd>Return</kbd> alternately, the outer border of your code cell will change from gray to blue.
+- Якщо ви натиснете <kbd>Esc</kbd> та <kbd>Return</kbd> по черзі, то зовнішня межа комірки коду буде змінюватися з сірої на синю.
 - Існують сірий - **Command** (командний) та синій - **Edit** (редагування) режими вашого блокноту.
 - Command mode allows you to edit notebook-level features, and Edit mode changes the content of cells.
 - В командному режимі (esc/сірий),
