@@ -254,9 +254,9 @@ a "text cell" is one that contains ordinary prose written for human beings.
 ## Командний режим або режим редагування
 
 In the Jupyter notebook page are you currently in Command or Edit mode?\
-Switch between the modes.
+Перейдіть з одного режиму в інший, а потім у зворотному напрямку.
 Use the shortcuts to generate a new cell.
-Use the shortcuts to delete a cell.
+Використайте швидкі клавіші, щоб видалити комірку.
 Use the shortcuts to undo the last cell operation you performed.
 
 :::::::::::::::  solution
@@ -283,7 +283,7 @@ Use the shortcuts to undo the last cell operation you performed.
 
 ### Jupyter Notebook підтримує мову розмітки текстів Markdown.
 
-- Notebooks can also render [Markdown][markdown].
+- Блокноти також можуть візуалізувати [Markdown][markdown].
   - A simple plain-text format for writing lists, links,
     and other things that might go into a web page.
   - Власне, це підмножина HTML, яка виглядає у стилі старомодного електронного листа.
@@ -291,9 +291,9 @@ Use the shortcuts to undo the last cell operation you performed.
 - Позначка `In [ ]:` зникне, щоб показати, що це вже не комірка коду, і ви зможете писати текст у форматі Markdown.
 - Перетворіть поточну комірку на комірку з кодом, увійшовши в командний режим (<kbd>Esc</kbd>/gray) та натиснувши клавішу <kbd>y</kbd>.
 
-### Markdown does most of what HTML does.
+### Markdown робить більшість того, що можна зробити у HTML.
 
-Table: Showing some markdown syntax and its rendered output.
+Таблиця: Елементи синтаксису Markdown та їх зображення.
 
 +---------------------------------------+------------------------------------------------+
 \| Код Markdown                  | Виведення                               |
@@ -323,7 +323,7 @@ Table: Showing some markdown syntax and its rendered output.
 |`                                   |                                                |
 +---------------------------------------+------------------------------------------------+
 +---------------------------------------+------------------------------------------------+
-\| ``                                  | <p></p>                                        | | [Links](http://software-carpentry.org)| [Links](https://software-carpentry.org)        | | are created with `[...](...)`.        | are created with `[...](...)`.                 | | Or use [named links][data-carp].      | Or use [named links][data_carpentry].          | |                                       |                                                | | [data-carp]: http://datacarpentry.org |                                                |
+\| ``                                  | <p></p>                                        | | [Links](http://software-carpentry.org)| [Links](https://software-carpentry.org)        | | are created with `[...](...)`.        | are created with `[...](...)`.                 | | Or use [named links][data-carp].      Або використовуйте [іменовані посилання][data_carpentry].          | |                                       |                                                | | [data-carp]: http://datacarpentry.org |                                                |
 |``                                   |                                                |
 +---------------------------------------+------------------------------------------------+
 
@@ -331,7 +331,7 @@ Table: Showing some markdown syntax and its rendered output.
 
 ## Створення списків в Markdown
 
-Create a nested list in a Markdown cell in a notebook that looks like this:
+Створіть вкладений список в Markdown-комірці блокноту так, щоб вона виглядала наступним чином:
 
 1. Знайти фінансування.
 2. Виконати роботу.
@@ -369,7 +369,7 @@ Create a nested list in a Markdown cell in a notebook that looks like this:
 ## Більше математики
 
 Що зображується, коли виконується комірка Python в блокноті, що містить декілька обчислень?
-For example, what happens when this cell is executed?
+Наприклад, що трапиться при виконанні наступної комірки?
 
 ```python
 7 * 3
@@ -394,8 +394,7 @@ Python повертає результат останнього розрахун
 
 ## Change an Existing Cell from Code to Markdown
 
-What happens if you write some Python in a code cell
-and then you switch it to a Markdown cell?
+Що станеться, якщо Ви напишете у комірці код Python, а потім перемкнете її у режим Markdown?
 Наприклад, напишіть наступний вираз в комірці коду:
 
 ```python
@@ -437,16 +436,16 @@ $\sum_{i=1}^{N} 2^{-i} \approx 1$
 
 (Мабуть, це легше скопіювати та вставити.)
 Що зображається?
-What do you think the underscore, `_`, circumflex, `^`, and dollar sign, `$`, do?
+Як ви думаєте, що роблять підкреслювання `_`, циркумфлекс `^` і знак долара `$`?
 
 :::::::::::::::  solution
 
 ## Рішення
 
-The notebook shows the equation as it would be rendered from LaTeX equation syntax.
-The dollar sign, `$`, is used to tell Markdown that the text in between is a LaTeX equation.
-If you're not familiar with LaTeX,  underscore, `_`, is used for subscripts and circumflex, `^`, is used for superscripts.
-A pair of curly braces, `{` and `}`, is used to group text together so that the statement `i=1` becomes the subscript and `N` becomes the superscript.
+Рівняння зображується у блокноті відповідно до синтаксису, який використовується у LaTeX.
+Знаки долара `$` використовуються для того, щоб повідомити Markdown про те, що текст між цими знаками є рівнянням LaTeX.
+Якщо ви не знайомі з LaTeX, підкреслення `_` використовується для підрядкових індексів та циркумфлекс `^` використовується для верхніх індексів.
+Пара фігурних дужок `{` та `}` використовується для групування тексту разом, щоб вираз `i=1` став нижнім, а `N` - верхнім індексом.
 Аналогічно, вираз `-i` взятий у фігурні дужки, щоб зробити цей вираз верхнім індексом для `2`.
 `\sum` та `\approx` є командами LaTeX для значень "sum over" й "approximate".
 
@@ -454,7 +453,7 @@ A pair of curly braces, `{` and `}`, is used to group text together so that the 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Closing JupyterLab
+## Вихід з JupyterLab
 
 - На панелі меню оберіть меню "File" і натисніть "Shut Down" внизу спадного меню. Вам буде запропоновано підтвердити, що Ви бажаєте вимкнути сервер JupyterLab (не забудьте зберегти свою роботу!). Натисніть "Shut Down", щоб вимкнути сервер JupyterLab.
 - To restart the JupyterLab server you will need to re-run the following command from a shell.
@@ -465,7 +464,7 @@ $ jupyter lab
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Closing JupyterLab
+## Вихід з JupyterLab
 
 Потренуйтеся закривати та перезапускати сервер JupyterLab.
 
@@ -481,10 +480,10 @@ $ jupyter lab
 
 - Python scripts are plain text files.
 - Застосування Jupyter Notebook для редагування та запуску Python
-- The Notebook has Command and Edit modes.
-- Use the keyboard and mouse to select and edit cells.
+- Jupyter Notebook має командний режим та режим редагування.
+- Використовуйте клавіатуру та мишу для виділення та редагування комірок.
 - Notebook підтримує мову розмітки текстів Markdown.
-- Markdown does most of what HTML does.
+- Markdown робить більшість того, що можна зробити у HTML.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
