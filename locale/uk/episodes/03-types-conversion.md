@@ -457,7 +457,9 @@ print(a_complex_number.imag)
 
 ## Рішення
 
-1. Стандартні математичні позначення зазвичай використовують `i` для позначення комплексного числа. Однак, судячи з різних джерел, це було раннє позначення, яке використовувалось в електротехніці, та зараз було б дуже складно з технічної точки зору його змінити. [Stack Overflow містить додаткові пояснення та обговорення.](http://stackoverflow.com/questions/24812444/why-are-complex-numbers-in-python-denoted-with-j-instead-of-i)
+1. Стандартні математичні позначення зазвичай використовують `i` для позначення комплексного числа. However, from media reports it
+  was an early convention established from electrical engineering that now presents a technically expensive area to
+  change. [Stack Overflow містить додаткові пояснення та обговорення.](http://stackoverflow.com/questions/24812444/why-are-complex-numbers-in-python-denoted-with-j-instead-of-i)
 
 2. `(4+2j)`
 
