@@ -83,7 +83,7 @@ $ jupyter lab
 
 Для запуску сервера JupyterLab вам потрібен застосунок Anaconda Prompt.
 
-Press <kbd>Windows Logo Key</kbd> and search for `Anaconda Prompt`, click the result or press enter.
+Натисніть <kbd>Windows Logo Key</kbd> і знайдіть `Anaconda Prompt`, натисніть на результат пошуку або на клавішу enter.
 
 Після запуску Anaconda Prompt введіть команду:
 
