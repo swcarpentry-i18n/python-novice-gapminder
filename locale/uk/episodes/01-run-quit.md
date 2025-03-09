@@ -48,7 +48,7 @@ JupyterLab є частиною інсталяційного пакета Anacond
 - Запустіть сервер JupyterLab на вашому комп'ютері
 - Використовуйте веббраузер для відкриття спеціальної локальної URL-адреси для з'єднання з сервером JupyterLab
 - Сервер JupyterLab виконує обчислювальну роботу, а веббраузер відображає її результат
-- Type code into the browser and see the results after your JupyterLab server has finished executing your code
+- Введіть код у браузері, і як тільки сервер JupyterLab завершить виконання, ви зможете переглянути результати
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
