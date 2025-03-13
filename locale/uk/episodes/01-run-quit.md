@@ -392,7 +392,7 @@ Python повертає результат останнього розрахун
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Change an Existing Cell from Code to Markdown
+## Зміна типу вже наявної комірки з Code на Markdown
 
 Що станеться, якщо Ви напишете у комірці код Python, а потім перемкнете її у режим Markdown?
 Наприклад, напишіть наступний вираз в комірці коду:
@@ -412,7 +412,7 @@ print(x)
 
 Код Python розглядається як текст Markdown.
 Рядки виглядають так, ніби вони є частиною одного суміжного абзацу.
-This could be useful to temporarily turn on and off cells in notebooks that get used for multiple purposes.
+Це може бути корисним для тимчасового вмикання та вимикання комірок у блокнотах, які використовуються для різних цілей.
 
 ```python
 x = 6 * 7 + 12 print(x)
@@ -426,8 +426,7 @@ x = 6 * 7 + 12 print(x)
 
 ## Рівняння
 
-Standard Markdown (such as we're using for these notes) won't render equations,
-but the Notebook will.
+Стандартний Markdown (наприклад, такий, що використовується для цих нотаток) не відображає рівняння, але Notebook буде це робити.
 Створіть нову комірку Markdown і введіть наступне:
 
 ```
@@ -456,7 +455,7 @@ $\sum_{i=1}^{N} 2^{-i} \approx 1$
 ## Вихід з JupyterLab
 
 - На панелі меню оберіть меню "File" і натисніть "Shut Down" внизу спадного меню. Вам буде запропоновано підтвердити, що Ви бажаєте вимкнути сервер JupyterLab (не забудьте зберегти свою роботу!). Натисніть "Shut Down", щоб вимкнути сервер JupyterLab.
-- To restart the JupyterLab server you will need to re-run the following command from a shell.
+- Щоб перезапустити сервер JupyterLab, вам потрібно буде повторно виконати наступну команду в терміналі.
 
 ```
 $ jupyter lab
@@ -478,7 +477,7 @@ $ jupyter lab
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- Python scripts are plain text files.
+- Скрипти Python - це звичайні текстові файли.
 - Застосування Jupyter Notebook для редагування та запуску Python
 - Jupyter Notebook має командний режим та режим редагування.
 - Використовуйте клавіатуру та мишу для виділення та редагування комірок.
