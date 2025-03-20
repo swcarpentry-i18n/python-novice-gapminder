@@ -300,8 +300,7 @@ print(a[1])
 
 ## Рішення
 
-`minutes` is better because `min` might mean something like "minimum"
-(and actually is an existing built-in function in Python that we will cover later).
+`minutes` краще, оскільки `min` можна помилково прийняти за "мінімум" (що насправді є вбудованою функцією в Python, яку ми розглянемо пізніше).
 
 :::::::::::::::::::::::::
 
