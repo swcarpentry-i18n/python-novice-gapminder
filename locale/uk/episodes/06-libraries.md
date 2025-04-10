@@ -175,7 +175,7 @@ bases = 'ACTTGCTTGAC'
 
 ## Solution
 
-Рішення. Здається, модуль [random][randommod] може допомогти.
+Здається, модуль [random][randommod] може допомогти.
 
 The string has 11 characters, each having a positional index from 0 to 10.
 You could use the [`random.randrange`](https://docs.python.org/3/library/random.html#random.randrange)
@@ -302,7 +302,7 @@ angle = m.degrees(m.pi / 2)
 print(angle)
 ```
 
-can be written as
+можна записати як
 
 ```python
 import math
@@ -310,8 +310,7 @@ angle = math.degrees(math.pi / 2)
 print(angle)
 ```
 
-Since you just wrote the code and are familiar with it, you might actually
-find the first version easier to read. But when trying to read a huge piece
+Оскільки ви щойно написали код і знайомі з ним, вам справді легше читати першу версію. But when trying to read a huge piece
 of code written by someone else, or when getting back to your own huge piece
 of code after several months, non-abbreviated names are often easier, except
 where there are clear abbreviation conventions.
@@ -356,10 +355,9 @@ Library calls:
 
 **Note:** although library call 4 works, importing all names from a module using a wildcard
 import is [not recommended][pep8-imports] as it makes it unclear which names from the module
-are used in the code. In general it is best to make your imports as specific as possible and to
-only import what your code uses. In library call 1, the `import` statement explicitly tells us
-that the `sin` function is imported from the `math` module, but library call 4 does not
-convey this information.
+are used in the code. Загалом, краще робити імпорт якомога точнішим та імпортувати лише те, що використовує ваш код. У виклику бібліотеки 1 оператор `import` явно повідомляє нам
+що функція `sin` імпортується з модуля `math`, але виклик бібліотеки 4 не
+передає цю інформацію.
 
 :::::::::::::::::::::::::
 
@@ -390,7 +388,7 @@ print(angle)
 ```
 
 Most likely you find this version easier to read since it's less dense.
-The main reason not to use this form of import is to avoid name clashes.
+Основною причиною не використовувати цю форму імпорту є уникнення збігу імен.
 For instance, you wouldn't import `degrees` this way if you also wanted to
 use the name `degrees` for a variable or function of your own. Or if you
 were to also import a function named `degrees` from another library.
