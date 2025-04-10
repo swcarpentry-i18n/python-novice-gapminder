@@ -6,7 +6,7 @@ exercises: 10
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- Поясніть, що таке бібліотеки програмного забезпечення, і чому програмісти створюють та використовують їх.
+- Explain what software libraries are and why programmers create and use them.
 - Write programs that import and use modules from Python's standard library.
 - Find and read documentation for the standard library interactively (in the interpreter) and online.
 
@@ -98,7 +98,7 @@ FUNCTIONS
 
 ## Import specific items from a library module to shorten programs.
 
-- Use `from ... import ...` to load only specific items from a library module.
+- Використовуйте `from ... import ...`, щоб завантажити лише певні елементи з бібліотечного модуля.
 - Then refer to them directly without library name as prefix.
 
 ```python
@@ -113,7 +113,7 @@ cos(pi) is -1.0
 
 ## Create an alias for a library module when importing it to shorten programs.
 
-- Use `import ... as ...` to give a library a short _alias_ while importing it.
+- Використовуйте `import ... ... as ...`, щоб надати бібліотеці короткий псевдонім під час її імпорту.
 - Then refer to items in the library using that shortened name.
 
 ```python
@@ -128,8 +128,7 @@ cos(pi) is -1.0
 
 - Commonly used for libraries that are frequently used or have long names.
   - E.g., the `matplotlib` plotting library is often aliased as `mpl`.
-- But can make programs harder to understand,
-  since readers must learn your program's aliases.
+- Але цей спосіб робить програми складнішими, оскільки читачі мають вивчити псевдоніми вашої програми.
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
@@ -162,13 +161,13 @@ of programming is showing in Python's function names.
 
 ## Locating the Right Module
 
-You want to select a random character from a string:
+Припустимо, ви хочете вибрати випадковий символ з рядка:
 
 ```python
 bases = 'ACTTGCTTGAC'
 ```
 
-1. Which [standard library][stdlib] module could help you?
+1. Який модуль зі [стандартної бібліотеки][stdlib] може допомогти?
 2. Which function would you select from that module? Are there alternatives?
 3. Try to write a program that uses the function.
 
@@ -176,7 +175,7 @@ bases = 'ACTTGCTTGAC'
 
 ## Solution
 
-The [random module][randommod] seems like it could help.
+Рішення. Здається, модуль [random][randommod] може допомогти.
 
 The string has 11 characters, each having a positional index from 0 to 10.
 You could use the [`random.randrange`](https://docs.python.org/3/library/random.html#random.randrange)
@@ -190,7 +189,7 @@ random_index = randrange(len(bases))
 print(bases[random_index])
 ```
 
-or more compactly:
+або більш компактно:
 
 ```python
 from random import randrange
@@ -199,7 +198,7 @@ print(bases[randrange(len(bases))])
 ```
 
 Perhaps you found the [`random.sample`](https://docs.python.org/3/library/random.html#random.sample) function?
-It allows for slightly less typing but might be a bit harder to understand just by reading:
+Це дозволяє використовувати трохи менше коду, але може бути трохи складнішим для розуміння при читанні:
 
 ```python
 from random import sample
@@ -207,8 +206,7 @@ from random import sample
 print(sample(bases, 1)[0])
 ```
 
-Note that this function returns a list of values. We will learn about
-lists in [episode 11](11-lists.md).
+Зверніть увагу, що ця функція повертає список (list) значень. Ми дізнаємося про списки у [епізоді 11](11-lists.md).
 
 The simplest and shortest solution is the [`random.choice`](https://docs.python.org/3/library/random.html#random.choice)
 function that does exactly what we want:
@@ -227,8 +225,7 @@ print(choice(bases))
 
 ## Jigsaw Puzzle (Parson's Problem) Programming Example
 
-Rearrange the following statements so that a random
-DNA base is printed and its index in the string.
+Упорядкуйте наступні оператори таким чином, щоб друкувалась випадкова ДНК основа та її індекс в рядку.
 Not all statements may be needed.  Feel free to use/add
 intermediate variables.
 
