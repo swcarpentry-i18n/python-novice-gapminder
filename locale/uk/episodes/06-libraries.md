@@ -7,7 +7,7 @@ exercises: 10
 ::::::::::::::::::::::::::::::::::::::: objectives
 
 - Поясніть, що таке бібліотеки програмного забезпечення, і чому програмісти створюють та використовують їх.
-- Створення програм, які імпортують і використовують стандартні бібліотеки Python.
+- Write programs that import and use modules from Python's standard library.
 - Find and read documentation for the standard library interactively (in the interpreter) and online.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
