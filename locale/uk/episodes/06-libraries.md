@@ -6,27 +6,25 @@ exercises: 10
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- Explain what software libraries are and why programmers create and use them.
-- Write programs that import and use modules from Python's standard library.
-- Find and read documentation for the standard library interactively (in the interpreter) and online.
+- Переваги створення та використання бібліотек програмного забезпечення.
+- Імпорт та використання стандартних бібліотек Python у власних програмах.
+- Пошук документації про стандартні бібліотеки в інтерактивному режимі (в інтерпретаторі) або онлайн.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: questions
 
-- How can I use software that other people have written?
-- How can I find out what that software does?
+- Як використовувати програмне забезпечення, написане іншими людьми?
+- Як дізнатися, які саме функції виконує це програмне забезпечення?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Most of the power of a programming language is in its libraries.
+## Більша частина потужності мови програмування полягає в її бібліотеках.
 
-- A _library_ is a collection of files (called _modules_) that contains
-  functions for use by other programs.
-  - May also contain data values (e.g., numerical constants) and other things.
-  - Library's contents are supposed to be related, but there's no way to enforce that.
-- The Python [standard library][stdlib] is an extensive suite of modules that comes
-  with Python itself.
+- _Бібліотека_ - це колекція файлів (так званих _модулів_), що містить функції для використання іншими програмами.
+  - Може також визначати значення даних (наприклад, числові константи) та інші речі.
+  - Передбачається, що зміст бібліотеки певним чином взаємопов'язаний, але немає засобів це проконтролювати.
+- [Стандартна бібліотека][stdlib] Python — це великий набір модулів, що входить до складу базової інсталяції Python.
 - Many additional libraries are available from [PyPI][pypi] (the Python Package Index).
 - We will see later how to write new libraries.
 
