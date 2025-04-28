@@ -60,10 +60,9 @@ print(data_oceania)
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## File Not Found
+## Файл не знайдено
 
-Our lessons store their data files in a `data` sub-directory,
-which is why the path to the file is `data/gapminder_gdp_oceania.csv`.
+Наші уроки зберігають свої файли даних у підкаталозі `data`, тому шлях до файлу є таким: `data/gapminder_gdp_oceania.csv`.
 If you forget to include `data/`,
 or if you include it but your copy of the file is somewhere else,
 you will get a [runtime error](04-built-in.md)
@@ -75,12 +74,12 @@ FileNotFoundError: [Errno 2] No such file or directory: 'data/gapminder_gdp_ocea
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Use `index_col` to specify that a column's values should be used as row headings.
+## Використовуйте `index_col`, щоб вказати, що значення стовпця мають використовуватися як заголовки рядків.
 
-- Row headings are numbers (0 and 1 in this case).
-- Really want to index by country.
-- Pass the name of the column to `read_csv` as its `index_col` parameter to do this.
-- Naming the dataframe `data_oceania_country` tells us which region the data includes (`oceania`) and how it is indexed (`country`).
+- Заголовки рядків є числами (0 і 1 у цьому випадку).
+- Насправді краще індексувати за назвами країн.
+- Для цього передайте назву стовпця в `read_csv` як параметр `index_col`.
+- Назва фрейму даних «data_oceania_country» говорить нам про те, з якою географічною зоною пов'язані дані (`oceania`) та про те, як вони індексуються (`країна`).
 
 ```python
 data_oceania_country = pd.read_csv('data/gapminder_gdp_oceania.csv', index_col='country')
@@ -104,7 +103,7 @@ Australia       23424.76683     26997.93657     30687.75473     34435.36744
 New Zealand     18363.32494     21050.41377     23189.80135     25185.00911
 ```
 
-## Use the `DataFrame.info()` method to find out more about a dataframe.
+## Використовуйте `DataFrame.info`, щоб дізнатися більше про фрейми даних.
 
 ```python
 data_oceania_country.info()
@@ -130,16 +129,16 @@ dtypes: float64(12)
 memory usage: 208.0+ bytes
 ```
 
-- This is a `DataFrame`
+- Це `DataFrame`
 - Two rows named `'Australia'` and `'New Zealand'`
 - Twelve columns, each of which has two actual 64-bit floating point values.
   - We will talk later about null values, which are used to represent missing observations.
-- Uses 208 bytes of memory.
+- Використано 208 байтів пам'яті.
 
-## The `DataFrame.columns` variable stores information about the dataframe's columns.
+## Змінна `DataFrame.columns` зберігає інформацію про стовпці фрейму даних.
 
-- Note that this is data, _not_ a method.  (It doesn't have parentheses.)
-  - Like `math.pi`.
+- Note that this is data, _not_ a method.  (Відсутні дужки)
+  - Подібно до `math.pi`.
   - So do not use `()` to try to call it.
 - Called a _member variable_, or just _member_.
 
