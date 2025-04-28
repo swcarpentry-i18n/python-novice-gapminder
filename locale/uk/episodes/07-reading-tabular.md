@@ -6,8 +6,8 @@ exercises: 10
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- Import the Pandas library.
-- Use Pandas to load a simple CSV data set.
+- Імпорт бібліотеки Pandas.
+- Використання Pandas для завантаження звичайного набору даних CSV.
 - Get some basic information about a Pandas DataFrame.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -21,13 +21,13 @@ exercises: 10
 ## Use the Pandas library to do statistics on tabular data.
 
 - [Pandas](https://pandas.pydata.org/) is a widely-used Python library for statistics, particularly on tabular data.
-- Borrows many features from R's dataframes.
+- Ця бібліотека запозичує багато функцій з фреймів даних мови R.
   - A 2-dimensional table whose columns have names
     and potentially have different data types.
-- Load Pandas with `import pandas as pd`. The alias `pd` is commonly used to refer to the Pandas library in code.
-- Read a Comma Separated Values (CSV) data file with `pd.read_csv`.
-  - Argument is the name of the file to be read.
-  - Returns a dataframe that you can assign to a variable
+- Завантажте цю бібліотеку за допомогою `import pandas as pd`. The alias `pd` is commonly used to refer to the Pandas library in code.
+- Читайте файл даних із роздільними комами (Comma Separate Values - CSV) за допомогою `pd.read_csv`.
+  - Аргумент — це ім'я файлу, який потрібно прочитати.
+  - Ця команда повертає фрейм даних, який ви можете призначити змінній
 
 ```python
 import pandas as pd
