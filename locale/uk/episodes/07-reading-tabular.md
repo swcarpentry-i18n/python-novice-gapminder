@@ -7,7 +7,7 @@ exercises: 10
 ::::::::::::::::::::::::::::::::::::::: objectives
 
 - Імпорт бібліотеки Pandas.
-- Використання Pandas для завантаження звичайного набору даних CSV.
+- Use Pandas to load a simple CSV data set.
 - Get some basic information about a Pandas DataFrame.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -25,9 +25,9 @@ exercises: 10
   - A 2-dimensional table whose columns have names
     and potentially have different data types.
 - Завантажте цю бібліотеку за допомогою `import pandas as pd`. The alias `pd` is commonly used to refer to the Pandas library in code.
-- Читайте файл даних із роздільними комами (Comma Separate Values - CSV) за допомогою `pd.read_csv`.
+- Read a Comma Separated Values (CSV) data file with `pd.read_csv`.
   - Аргумент — це ім'я файлу, який потрібно прочитати.
-  - Ця команда повертає фрейм даних, який ви можете призначити змінній
+  - Returns a dataframe that you can assign to a variable
 
 ```python
 import pandas as pd
@@ -55,7 +55,7 @@ print(data_oceania)
 ```
 
 - The columns in a dataframe are the observed variables, and the rows are the observations.
-- Pandas uses backslash `\` to show wrapped lines when output is too wide to fit the screen.
+- Pandas використовує зворотну скісну риску `\` для позначення перенесених рядків, коли вивід занадто широкий для розміщення на екрані.
 - Using descriptive dataframe names helps us distinguish between multiple dataframes so we won't accidentally overwrite a dataframe or read from the wrong one.
 
 :::::::::::::::::::::::::::::::::::::::::  callout
@@ -407,7 +407,7 @@ You can use `help` to get information on how to use `to_csv`.
 In order to write the DataFrame `data_americas` to a file called `processed.csv`, execute the following command:
 
 ```python
-data_americas.to_csv('processed.csv')
+americas.to_csv('processed.csv')
 ```
 
 For help on `read_csv` or `to_csv`, you could execute, for example:
