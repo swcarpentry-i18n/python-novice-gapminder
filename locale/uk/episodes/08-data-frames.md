@@ -1,25 +1,25 @@
 ---
-title: Pandas DataFrames
+title: Фрейми даних Pandas
 teaching: 15
 exercises: 15
 ---
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- Select individual values from a Pandas dataframe.
-- Select entire rows or entire columns from a dataframe.
-- Select a subset of both rows and columns from a dataframe in a single operation.
-- Select a subset of a dataframe by a single Boolean criterion.
+- Вибір окремих значень з фрейму даних Pandas.
+- Виділення цілих рядків або цілих стовпців з фрейму даних.
+- Вибір підмножини рядків і стовпців з фрейму даних за одну операцію.
+- Вибір підмножини з фрейму даних за єдиним булевим критерієм.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: questions
 
-- How can I do statistical analysis of tabular data?
+- Як я можу виконати статистичний аналіз табличних даних?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Note about Pandas DataFrames/Series
+## Зауваження щодо Pandas DataFrames/Series
 
 A [DataFrame][pandas-dataframe] is a collection of [Series][pandas-series];
 The DataFrame is the way Pandas represents a table, and Series is the data-structure
@@ -32,7 +32,7 @@ What makes Pandas so attractive is the powerful interface to access individual r
 of the table, proper handling of missing values, and relational-databases operations
 between DataFrames.
 
-## Selecting values
+## Вибір значень
 
 To access a value at the position `[i,j]` of a DataFrame, we have two options, depending on
 what is the meaning of `i` in use.
