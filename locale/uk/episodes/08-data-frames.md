@@ -134,8 +134,7 @@ everything up to but not including the final index.
 ## Result of slicing can be used in further operations.
 
 - Usually don't just print a slice.
-- All the statistical operators that work on entire dataframes
-  work the same way on slices.
+- Усі статистичні оператори, які працюють зі цілими фреймами даних, так само працюють зі зрізами.
 - E.g., calculate max of a slice.
 
 ```python
@@ -163,7 +162,7 @@ dtype: float64
 ## Use comparisons to select data based on value.
 
 - Comparison is applied element by element.
-- Returns a similarly-shaped dataframe of `True` and `False`.
+- Повертає фрейм даних подібної форми, що містить `True` і `False`.
 
 ```python
 # Use a subset of data to keep output readable.
@@ -194,7 +193,7 @@ Norway                True           True           True
 Poland               False          False          False
 ```
 
-## Select values or NaN using a Boolean mask.
+## Виберіть значення або NaN за допомогою булевої маски.
 
 - A frame full of Booleans is sometimes called a _mask_ because of how it can be used.
 
