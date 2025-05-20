@@ -212,7 +212,7 @@ Norway          13450.40151     16361.87647     18965.05551
 Poland                  NaN             NaN             NaN
 ```
 
-- Get the value where the mask is true, and NaN (Not a Number) where it is false.
+- Отримайте значення, якщо маска є істинною, і NaN (не число), якщо вона хибна.
 - Useful because NaNs are ignored by operations like max, min, average, etc.
 
 ```python
