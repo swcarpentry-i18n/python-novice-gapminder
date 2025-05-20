@@ -244,8 +244,7 @@ throughly:
 - The axis=1 argument needs to be explained clearly.
   :::::::::::::::::::::::::::::::::::::::::::::::::
 
-Pandas vectorizing methods and grouping operations are features that provide users
-much flexibility to analyse their data.
+Методи векторизації та операції групування Pandas — це функції, які надають користувачам велику гнучкість для аналізу своїх даних.
 
 For instance, let's say we want to have a clearer view on how the European countries
 split themselves according to their GDP.
@@ -325,10 +324,9 @@ print(data.groupby(wealth_score).sum())
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Selection of Individual Values
+## Вибір індивідуальних значень
 
-Assume Pandas has been imported into your notebook
-and the Gapminder GDP data for Europe has been loaded:
+Припустімо, що Pandas було імпортовано та дані Gapminder про ВВП для Європи завантажено.
 
 ```python
 import pandas as pd
@@ -336,19 +334,19 @@ import pandas as pd
 data_europe = pd.read_csv('data/gapminder_gdp_europe.csv', index_col='country')
 ```
 
-Write an expression to find the Per Capita GDP of Serbia in 2007.
+Напишіть вираз для визначення ВВП Сербії на душу населення у 2007 році.
 
 :::::::::::::::  solution
 
-## Solution
+## Рішення
 
-The selection can be done by using the labels for both the row ("Serbia") and the column ("gdpPercap\_2007"):
+Вибір можна зробити за допомогою мітки ("Сербія") для рядка, та мітки ("gdpPercap\_2007") для стовпця:
 
 ```python
 print(data_europe.loc['Serbia', 'gdpPercap_2007'])
 ```
 
-The output is
+Результат є таким
 
 ```output
 9786.534714
@@ -362,7 +360,7 @@ The output is
 
 ## Extent of Slicing
 
-1. Do the two statements below produce the same output?
+1. Чи дають два наведені нижче твердження однаковий результат?
 2. Based on this,
   what rule governs what is included (or not) in numerical slices and named slices in Pandas?
 
@@ -373,9 +371,9 @@ print(data_europe.loc['Albania':'Belgium', 'gdpPercap_1952':'gdpPercap_1962'])
 
 :::::::::::::::  solution
 
-## Solution
+## Рішення
 
-No, they do not produce the same output! The output of the first statement is:
+Ні, вони не дають однакові результати! Результатом першого виразу є:
 
 ```output
         gdpPercap_1952  gdpPercap_1957
@@ -384,7 +382,7 @@ Albania     1601.056136     1942.284244
 Austria     6137.076492     8842.598030
 ```
 
-The second statement gives:
+Друге твердження дає:
 
 ```output
         gdpPercap_1952  gdpPercap_1957  gdpPercap_1962
@@ -395,7 +393,7 @@ Belgium     8343.105127     9714.960623    10991.206760
 ```
 
 Clearly, the second statement produces an additional column and an additional row compared to the first statement.\
-What conclusion can we draw? We see that a numerical slice, 0:2, _omits_ the final index (i.e. index 2)
+Який висновок ми можемо зробити? We see that a numerical slice, 0:2, _omits_ the final index (i.e. index 2)
 in the range provided,
 while a named slice, 'gdpPercap\_1952':'gdpPercap\_1962', _includes_ the final element.
 
