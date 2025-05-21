@@ -403,10 +403,9 @@ while a named slice, 'gdpPercap\_1952':'gdpPercap\_1962', _includes_ the final e
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Reconstructing Data
+## Реконструювання даних
 
-Explain what each line in the following short program does:
-what is in `first`, `second`, etc.?
+Поясніть, що робить кожен рядок у наступній короткій програмі: що в `first`, `second`, etc.?
 
 ```python
 first = pd.read_csv('data/gapminder_all.csv', index_col='country')
@@ -418,7 +417,7 @@ fourth.to_csv('result.csv')
 
 :::::::::::::::  solution
 
-## Solution
+## Рішення
 
 Let's go through this piece of code line by line.
 
