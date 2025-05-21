@@ -425,8 +425,7 @@ Let's go through this piece of code line by line.
 first = pd.read_csv('data/gapminder_all.csv', index_col='country')
 ```
 
-This line loads the dataset containing the GDP data from all countries into a dataframe called
-`first`. The `index_col='country'` parameter selects which column to use as the
+В цьому рядку дані про ВВП з усіх країн завантажуються у фрейм даних `first`. The `index_col='country'` parameter selects which column to use as the
 row labels in the dataframe.
 
 ```python
@@ -434,23 +433,22 @@ second = first[first['continent'] == 'Americas']
 ```
 
 This line makes a selection: only those rows of `first` for which the 'continent' column matches
-'Americas' are extracted. Notice how the Boolean expression inside the brackets,
-`first['continent'] == 'Americas'`, is used to select only those rows where the expression is true.
-Try printing this expression! Can you print also its individual True/False elements?
-(hint: first assign the expression to a variable)
+'Americas' are extracted. Зверніть увагу, як логічний вираз у дужках, `first['continent'] == 'Americas'`, використовується для вибору лише тих рядків, де вираз є істинним.
+Спробуйте надрукувати цей вираз! Чи можете ви також надрукувати його окремі елементи True/False?
+(підказка: спочатку призначте вираз певній змінній)
 
 ```python
 third = second.drop('Puerto Rico')
 ```
 
-As the syntax suggests, this line drops the row from `second` where the label is 'Puerto Rico'. The
+Як підказує синтаксис, цей код видаляє рядок з міткою 'Puerto Rico' з фрейму даних `second`. The
 resulting dataframe `third` has one row less than the original dataframe `second`.
 
 ```python
 fourth = third.drop('continent', axis = 1)
 ```
 
-Again we apply the drop function, but in this case we are dropping not a row but a whole column.
+Знову ми застосовуємо функцію drop, але в цьому випадку ми видаляємо не рядок, а цілий стовпець.
 To accomplish this, we need to specify also the `axis` parameter (we want to drop the second column
 which has index 1).
 
@@ -459,7 +457,7 @@ fourth.to_csv('result.csv')
 ```
 
 The final step is to write the data that we have been working on to a csv file. Pandas makes this easy
-with the `to_csv()` function. The only required argument to the function is the filename. Note that the
+with the `to_csv()` function. Єдиним обов’язковим аргументом для функції є ім’я файлу. Note that the
 file will be written in the directory from which you started the Jupyter or Python session.
 
 :::::::::::::::::::::::::
@@ -468,9 +466,9 @@ file will be written in the directory from which you started the Jupyter or Pyth
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Selecting Indices
+## Вибір індексів
 
-Explain in simple terms what `idxmin` and `idxmax` do in the short program below.
+Поясніть простими словами, що роблять `idxmin` і `idxmax` у короткій програмі нижче.
 When would you use these methods?
 
 ```python
@@ -481,7 +479,7 @@ print(data.idxmax())
 
 :::::::::::::::  solution
 
-## Solution
+## Рішення
 
 For each column in `data`, `idxmin` will return the index value corresponding to each column's minimum;
 `idxmax` will do accordingly the same for each column's maximum value.
@@ -494,20 +492,20 @@ You can use these functions whenever you want to get the row index of the minimu
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Practice with Selection
+## Потренуйтеся з вибором
 
-Assume Pandas has been imported and the Gapminder GDP data for Europe has been loaded.
-Write an expression to select each of the following:
+Припустімо, що Pandas було імпортовано та дані Gapminder про ВВП для Європи завантажено.
+Напишіть вираз, щоб вибрати кожне з наступного:
 
-1. GDP per capita for all countries in 1982.
-2. GDP per capita for Denmark for all years.
+1. ВВП на душу населення для всіх країн у 1982 році.
+2. ВВП на душу населення для Данії за всі роки.
 3. GDP per capita for all countries for years _after_ 1985.
 4. GDP per capita for each country in 2007 as a multiple of
   GDP per capita for that country in 1952.
 
 :::::::::::::::  solution
 
-## Solution
+## Рішення
 
 1:
 
@@ -559,9 +557,9 @@ Suggest different ways of doing the following operations on a DataFrame:
 
 :::::::::::::::  solution
 
-## Solution
+## Рішення
 
-1\. Access a single column:
+1\. Доступ до одного стовпця:
 
 ```python
 # by name
@@ -583,7 +581,7 @@ data.iloc[:, [col_index]] # as a DataFrame
 data.T[data.T.index == "col_name"].T
 ```
 
-2\. Access a single row:
+2\. Доступ до одного рядку:
 
 ```python
 # by name using .loc
@@ -602,7 +600,7 @@ data.iloc[[row_index]]   # as a DataFrame
 data[data.index == "row_name"]
 ```
 
-3\. Access an individual DataFrame element:
+3\. Доступ до окремого елемента фрейму даних:
 
 ```python
 # by column/row names
@@ -642,7 +640,7 @@ data.iloc[:, [col_index]].loc[["row_name"]]  # as a DataFrame
 data[data.index == "row_name"].T[data.T.index == "col_name"].T
 ```
 
-4\. Access several columns:
+4\. Доступ до декількох стовпців:
 
 ```python
 # by name
@@ -653,7 +651,7 @@ data.loc[:, ["col1", "col2", "col3"]]
 data.iloc[:, [col1_index, col2_index, col3_index]]
 ```
 
-5\. Access several rows
+5\. Доступ до декількох рядків
 
 ```python
 # by name
@@ -663,7 +661,7 @@ data.loc[["row1", "row2", "row3"]]
 data.iloc[[row1_index, row2_index, row3_index]]
 ```
 
-6\. Access a subset of specific rows and columns
+6\. Доступ до підмножини визначених рядків і стовпців
 
 ```python
 # by names
@@ -679,7 +677,7 @@ data[["col1", "col2", "col3"]].iloc[[row1_index, row2_index, row3_index]]
 data.iloc[:, [col1_index, col2_index, col3_index]].loc[["row1", "row2", "row3"]]
 ```
 
-7\. Access a subset of row and column ranges
+7\. Доступ до підмножини рядків і діапазонів стовпців
 
 ```python
 # by name
