@@ -539,21 +539,21 @@ data['gdpPercap_2007']/data['gdpPercap_1952']
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Many Ways of Access
+## Багато способів доступу
 
 There are at least two ways of accessing a value or slice of a DataFrame: by name or index.
-However, there are many others. For example, a single column or row can be accessed either as a `DataFrame`
-or a `Series` object.
+However, there are many others. Наприклад, можна отримати окремий стовпець або рядок як `DataFrame`
+або `Series` об'єкт.
 
-Suggest different ways of doing the following operations on a DataFrame:
+Запропонуйте різні способи виконання наступних операцій з фреймами даних:
 
-1. Access a single column
-2. Access a single row
-3. Access an individual DataFrame element
-4. Access several columns
-5. Access several rows
-6. Access a subset of specific rows and columns
-7. Access a subset of row and column ranges
+1. Доступ до одного стовпця
+2. Доступ до одного рядку
+3. Доступ до окремого елемента фрейму даних
+4. Доступ до декількох стовпців
+5. Доступ до декількох рядків
+6. Доступ до підмножини визначених рядків і стовпців
+7. Доступ до підмножини рядків і діапазонів стовпців
 
 :::::::::::::::  solution
 
@@ -699,7 +699,7 @@ data.iloc[:, col1_index:col2_index].loc["row1":"row2"]
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Exploring available methods using the `dir()` function
+## Пошук доступних методів використовуючи функцію `dir()`
 
 Python includes a `dir()` function that can be used to display all of the available methods (functions) that are built into a data object.  In Episode 4, we used some methods with a string. But we can see many more are available by using `dir()`:
 
@@ -708,7 +708,7 @@ my_string = 'Hello world!'   # creation of a string object
 dir(my_string)
 ```
 
-This command returns:
+Ця команда повертає:
 
 ```python
 ['__add__',
@@ -729,9 +729,9 @@ to find the function that prints out the median per-capita GDP across all Europe
 
 :::::::::::::::  solution
 
-## Solution
+## Рішення
 
-Among many choices, `dir()` lists the `median()` function as a possibility.  Thus,
+Серед багатьох варіантів `dir()` пропонує функцію `median()` як можливість.  Таким чином,
 
 ```python
 data.median()
@@ -743,7 +743,7 @@ data.median()
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Interpretation
+## Інтерпретація
 
 Poland's borders have been stable since 1945,
 but changed several times in the years before then.
@@ -758,12 +758,12 @@ for the entire twentieth century?
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- Use `DataFrame.iloc[..., ...]` to select values by integer location.
-- Use `:` on its own to mean all columns or all rows.
-- Select multiple columns or rows using `DataFrame.loc` and a named slice.
-- Result of slicing can be used in further operations.
-- Use comparisons to select data based on value.
-- Select values or NaN using a Boolean mask.
+- Використовуйте `DataFrame.iloc[..., ...]` для вибору значень за їх позицією
+- Використовуйте `:` окремо для позначення всіх стовпців або всіх рядків.
+- Вибирайте кілька стовпців або рядків за допомогою `DataFrame.loc` та визначеного зрізу.
+- Результат застосування операції зрізу може бути використаний у подальших операціях.
+- Використовуйте порівняння для вибору даних на основі певного значення.
+- Виберіть значення або NaN за допомогою булевої маски.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
