@@ -1,19 +1,19 @@
 ---
-title: Plotting
+title: Побудова графіків
 teaching: 15
 exercises: 15
 ---
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- Create a time series plot showing a single data set.
-- Create a scatter plot showing relationship between two data sets.
+- Створення графіку часового ряду, який відповідає одному набору даних.
+- Створення діаграми розсіювання, яка показує зв’язок між двома наборами даних.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: questions
 
-- How can I plot my data?
+- Як побудувати графік за моїми даними?
 - How can I save my plot for publishing?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -374,3 +374,5 @@ Whenever you are generating plots to go into a paper or a presentation, there ar
 - Can plot many sets of data together.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
