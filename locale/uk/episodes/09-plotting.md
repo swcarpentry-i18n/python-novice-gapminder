@@ -102,7 +102,7 @@ plt.ylabel('GDP per capita')
 
 ![](fig/9_gdp_australia_nz.svg){alt='GDP plot for Australia and New Zealand'}
 
-## Many styles of plot are available.
+## Доступні багато стилів графіків.
 
 - For example, do a bar plot using a fancier style.
 
@@ -116,7 +116,7 @@ plt.ylabel('GDP per capita')
 
 ## Data can also be plotted by calling the `matplotlib` `plot` function directly.
 
-- The command is `plt.plot(x, y)`
+- Формат команди є таким: `plt.plot(x, y)`
 - The color and format of markers can also be specified as an additional optional argument e.g., `b-` is a blue line, `g--` is a green dashed line.
 
 ## Get Australia data from dataframe
@@ -149,27 +149,27 @@ plt.ylabel('GDP per capita ($)')
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Adding a Legend
+## Додавання легенди
 
 Often when plotting multiple datasets on the same figure it is desirable to have
 a legend describing the data.
 
-This can be done in `matplotlib` in two stages:
+Це можна зробити в `matplotlib` за два етапи:
 
-- Provide a label for each dataset in the figure:
+- Вкажіть мітку для кожного набору даних у графіку:
 
 ```python
 plt.plot(years, gdp_australia, label='Australia')
 plt.plot(years, gdp_nz, label='New Zealand')
 ```
 
-- Instruct `matplotlib` to create the legend.
+- Доручіть `matplotlib` створити легенду.
 
 ```python
 plt.legend()
 ```
 
-By default matplotlib will attempt to place the legend in a suitable position. If you
+За замовчуванням matplotlib спробує розмістити легенду у відповідному місці. If you
 would rather specify a position this can be done with the `loc=` argument, e.g to place
 the legend in the upper left corner of the plot, specify `loc='upper left'`
 
@@ -177,7 +177,7 @@ the legend in the upper left corner of the plot, specify `loc='upper left'`
 
 ![](fig/9_gdp_australia_nz_formatted.svg){alt='GDP formatted plot for Australia and New Zealand'}
 
-- Plot a scatter plot correlating the GDP of Australia and New Zealand
+- Побудуйте точкову діаграму співвідношення ВВП Австралії та Нової Зеландії
 - Use either `plt.scatter` or `DataFrame.plot.scatter`
 
 ```python
@@ -194,7 +194,7 @@ data.T.plot.scatter(x = 'Australia', y = 'New Zealand')
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Minima and Maxima
+## Мінімум та максимум
 
 Fill in the blanks below to plot the minimum GDP per capita over time
 for all the countries in Europe.
@@ -210,7 +210,7 @@ plt.xticks(rotation=90)
 
 :::::::::::::::  solution
 
-## Solution
+## Рішення
 
 ```python
 data_europe = pd.read_csv('data/gapminder_gdp_europe.csv', index_col='country')
