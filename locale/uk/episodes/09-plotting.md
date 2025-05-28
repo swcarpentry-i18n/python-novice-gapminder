@@ -60,9 +60,9 @@ if several are created by a single cell.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Plot data directly from a [`Pandas dataframe`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html).
+## Побудова графіків безпосередньо з [Pandas dataframes](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html).
 
-- We can also plot [Pandas dataframes](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html).
+- Для побудови графіків можна також використовувати [фрейми даних Pandas](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html).
 - Before plotting, we convert the column headings from a `string` to `integer` data type, since they represent numerical values,
   using [str.replace()](https://pandas.pydata.org/docs/reference/api/pandas.Series.str.replace.html) to remove the `gpdPercap_`
   prefix and then [astype(int)](https://pandas.pydata.org/docs/reference/api/pandas.Series.astype.html)
@@ -90,10 +90,10 @@ data.loc['Australia'].plot()
 
 ![](fig/9_gdp_australia.svg){alt='GDP plot for Australia'}
 
-## Select and transform data, then plot it.
+## Виділіть та трансформуйте дані, а потім побудуйте графік.
 
 - By default, [`DataFrame.plot`](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.plot.html#pandas.DataFrame.plot) plots with the rows as the X axis.
-- We can transpose the data in order to plot multiple series.
+- Ми можемо транспонувати дані, щоб побудувати кілька графіків разом.
 
 ```python
 data.T.plot()
