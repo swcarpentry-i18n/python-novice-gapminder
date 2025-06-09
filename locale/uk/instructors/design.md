@@ -4,7 +4,7 @@ title: Дизайн уроку
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Потрібна допомога
+## Help Wanted
 
 **We are filling in the exercises [below](#stage-3-learning-plan)
 in order to make the lesson plan more concrete.
