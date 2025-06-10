@@ -230,14 +230,12 @@ plt.xticks(rotation=90)
 
 ## Співвідношення
 
-Modify the example in the notes to create a scatter plot showing
-the relationship between the minimum and maximum GDP per capita
-among the countries in Asia for each year in the data set.
-What relationship do you see (if any)?
+Модифікуйте приклад у примітках, щоб створити діаграму розсіювання, що показує співвідношення між мінімальним і максимальним ВВП на душу населення серед країн Азії за кожен рік у наборі даних.
+Який зв’язок ви бачите (якщо такий є)?
 
 :::::::::::::::  solution
 
-## Solution
+## Рішення
 
 ```python
 data_asia = pd.read_csv('data/gapminder_gdp_asia.csv', index_col='country')
