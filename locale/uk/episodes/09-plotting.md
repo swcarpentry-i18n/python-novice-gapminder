@@ -228,7 +228,7 @@ plt.xticks(rotation=90)
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Correlations
+## Співвідношення
 
 Modify the example in the notes to create a scatter plot showing
 the relationship between the minimum and maximum GDP per capita
