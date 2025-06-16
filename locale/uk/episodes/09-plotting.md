@@ -317,18 +317,15 @@ A single number or one value for each data point. Визначає розмір 
 ## Збереження вашого графіка в файл
 
 If you are satisfied with the plot you see you may want to save it to a file,
-perhaps to include it in a publication. There is a function in the
-matplotlib.pyplot module that accomplishes this:
+perhaps to include it in a publication. У модулі matplotlib.pyplot є функція, яка виконує це:
 [savefig](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.savefig.html).
-Calling this function, e.g. with
+Виклик цієї функції
 
 ```python
 plt.savefig('my_figure.png')
 ```
 
-will save the current figure to the file `my_figure.png`. The file format
-will automatically be deduced from the file name extension (other formats
-are pdf, ps, eps and svg).
+збереже поточний графік у файл `my_figure.png`. Формат файлу буде автоматично визначено з розширення імені файлу (інші формати: pdf, ps, eps і svg).
 
 Note that functions in `plt` refer to a global figure variable
 and after a figure has been displayed to the screen (e.g. with `plt.show`)
