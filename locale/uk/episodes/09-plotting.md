@@ -297,7 +297,7 @@ explain what each argument to `plot` does.
 
 ![](fig/9_more_correlations_solution.svg){alt='More Correlations Solution'}
 
-A good place to look is the documentation for the plot function -
+Гарне місце для пошуку документації до функції графіків -
 help(data\_all.plot).
 
 kind - As seen already this determines the kind of plot to be drawn.
@@ -306,8 +306,7 @@ x and y - A column name or index that determines what data will be
 placed on the x and y axes of the plot
 
 s - Details for this can be found in the documentation of plt.scatter.
-A single number or one value for each data point. Determines the size
-of the plotted points.
+A single number or one value for each data point. Визначає розмір маркера.
 
 :::::::::::::::::::::::::
 
@@ -315,7 +314,7 @@ of the plotted points.
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Saving your plot to a file
+## Збереження вашого графіка в файл
 
 If you are satisfied with the plot you see you may want to save it to a file,
 perhaps to include it in a publication. There is a function in the
