@@ -245,7 +245,7 @@ data_asia.describe().T.plot(kind='scatter', x='min', y='max')
 ![](fig/9_correlations_solution1.svg){alt='Correlations Solution 1'}
 
 No particular correlations can be seen between the minimum and maximum GDP values
-year on year. It seems the fortunes of asian countries do not rise and fall together.
+year on year. Здається, статки азійських країн не зростають і не падають разом.
 
 :::::::::::::::::::::::::
 
@@ -261,7 +261,7 @@ print(data_asia.idxmin())
 
 :::::::::::::::  solution
 
-## Solution
+## Рішення
 
 ![](fig/9_correlations_solution2.png){alt='Correlations Solution 2'}
 
