@@ -268,8 +268,7 @@ print(data_asia.idxmin())
 Seems the variability in this value is due to a sharp drop after 1972.
 Some geopolitics at play perhaps? Given the dominance of oil producing countries,
 maybe the Brent crude index would make an interesting comparison?
-Whilst Myanmar consistently has the lowest GDP, the highest GDP nation has varied
-more notably.
+У той час як М’янма постійно має найнижчий ВВП, країна з найвищим ВВП змінюється більш помітно.
 
 :::::::::::::::::::::::::
 
