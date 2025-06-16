@@ -293,7 +293,7 @@ explain what each argument to `plot` does.
 
 :::::::::::::::  solution
 
-## Solution
+## Рішення
 
 ![](fig/9_more_correlations_solution.svg){alt='More Correlations Solution'}
 
