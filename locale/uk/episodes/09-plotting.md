@@ -14,7 +14,7 @@ exercises: 15
 :::::::::::::::::::::::::::::::::::::::: questions
 
 - Як побудувати графік за моїми даними?
-- How can I save my plot for publishing?
+- Як зберегти графік для публікації?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -27,7 +27,7 @@ exercises: 15
 import matplotlib.pyplot as plt
 ```
 
-- Simple plots are then (fairly) simple to create.
+- Створення простих графіків є (відносно) нескладним.
 
 ```python
 time = [0, 1, 2, 3]
@@ -360,7 +360,7 @@ Whenever you are generating plots to go into a paper or a presentation, there ar
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- [`matplotlib`](https://matplotlib.org/) is the most widely used scientific plotting library in Python.
+- [`matplotlib`](https://matplotlib.org/) — це найпоширеніша наукова бібліотека для побудови графіків у Python.
 - Побудова графіків можлива безпосередньо з використанням фреймів даних Pandas.
 - Select and transform data, then plot it.
 - Many styles of plot are available: see the [Python Graph Gallery](https://python-graph-gallery.com/matplotlib/) for more options.
