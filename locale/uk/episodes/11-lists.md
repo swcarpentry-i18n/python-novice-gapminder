@@ -6,7 +6,7 @@ exercises: 10
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- Explain why programs need collections of values.
+- Поясніть, навіщо програмам потрібні набори значень.
 - Write programs that create flat lists, index them, slice them, and modify them through assignment and method calls.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
