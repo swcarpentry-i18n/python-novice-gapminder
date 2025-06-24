@@ -362,7 +362,7 @@ Whenever you are generating plots to go into a paper or a presentation, there ar
 
 - [`matplotlib`](https://matplotlib.org/) — це найпоширеніша наукова бібліотека для побудови графіків у Python.
 - Побудова графіків можлива безпосередньо з використанням фреймів даних Pandas.
-- Select and transform data, then plot it.
+- Побудова графіків включає виділення та трансформацію даних.
 - Many styles of plot are available: see the [Python Graph Gallery](https://python-graph-gallery.com/matplotlib/) for more options.
 - Can plot many sets of data together.
 
