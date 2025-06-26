@@ -17,7 +17,7 @@ exercises: 10
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## A list stores many values in a single structure.
+## Список є структурою даних, яка містить в собі багато значень.
 
 - Doing calculations with a hundred variables called `pressure_001`, `pressure_002`, etc.,
   would be at least as slow as doing them by hand.
