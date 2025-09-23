@@ -1,5 +1,5 @@
 ---
-title: Instructors' Guide
+title: Поради інструктору
 ---
 
 ## General Notes
@@ -25,3 +25,5 @@ comment about online search:
 "If you find anything,
 other folks were confused enough to bother with a blog or Stack Overflow post,
 so it's probably not trivial."
+
+
