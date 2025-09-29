@@ -75,9 +75,8 @@ The main sections are:
   - Зробити урок придатним до використання для Data Carpentry та Software Carpentry
   - Genuine novices are likely to want data analysis
   - And people with some prior experience:
-    - will accept data analysis as an authentic task,
-    - and are unlikely to have encountered Pandas,
-      so they'll still get something useful out of the lesson
+    - сприймуть аналіз даних як реальне завдання,
+    - і навряд чи стикалися з Pandas, тому вони все одно отримають щось корисне з уроку
 - Challenges will mostly _not_ be "write this code from scratch"
   - Want lots of short exercises that can reliably be finished in allotted time
   - So use MCQs, fill-in-the-blanks, Parsons Problems, "tweak this code", etc.
