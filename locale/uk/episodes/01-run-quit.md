@@ -93,7 +93,7 @@ $ jupyter lab
 
 ### Anaconda Navigator
 
-Для запуску серверу JupyterLab з Anaconda Navigator ви маєте спочатку [запустити Anaconda Navigator (натисніть для докладних інструкцій з macOS, Windows та Linux)](https://docs.anaconda.com/free/navigator/getting-started/#navigator-starting-navigator). Ви можете виконати пошук Anaconda Navigator через Spotlight на macOS (<kbd>Command</kbd> + <kbd>spacebar</kbd>), скористатися функцією пошуку Windows (<kbd>ключ Windows Logo</kbd>) або відкривши термінал та виконавши команду `anaconda-navigator` у командному рядку.
+Для запуску серверу JupyterLab з Anaconda Navigator ви маєте спочатку [запустити Anaconda Navigator (натисніть для докладних інструкцій з macOS, Windows та Linux)](https://docs.anaconda.com/free/navigator/getting-started/#navigator-starting-navigator). Ви можете виконати пошук Anaconda Navigator через Spotlight на macOS (<kbd>Command</kbd> + <kbd>spacebar</kbd>), скористатися функцією пошуку Windows (<kbd>клавіша Windows Logo</kbd>) або відкривши термінал та виконавши команду `anaconda-navigator` у командному рядку.
 
 Після того, як ви запустили Anaconda Navigator, натисніть кнопку `Launch` під JupyterLab. Можливо, вам знадобиться продивитись список донизу, аби знайти її.
 
