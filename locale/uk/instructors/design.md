@@ -71,8 +71,8 @@ The main sections are:
     - To make display of output from examples tidier
       (e.g., use Australia/New Zealand, which is only two lines)
     - And allow examples showing use of multiple data sets
-- Focus on Pandas instead of NumPy
-  - Makes lesson usable by both Data Carpentry and Software Carpentry
+- Зробити фокус на Pandas замість NumPy
+  - Зробити урок придатним до використання для Data Carpentry та Software Carpentry
   - Genuine novices are likely to want data analysis
   - And people with some prior experience:
     - will accept data analysis as an authentic task,
