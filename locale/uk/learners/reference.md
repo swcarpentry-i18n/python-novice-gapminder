@@ -29,7 +29,7 @@ title: 'Reference'
     - `stop` is the index of the element after the last desired element.
 - Use `len(...)` to find the length of a variable or string.
 
-## [Data Types and Type Conversion](episodes/03-types-conversion.md)
+## [Типи даних та їх перетворення](episodes/03-types-conversion.md)
 
 - Each value has a type. This controls what can be done with it.
   - `int` represents an integer
@@ -43,7 +43,7 @@ title: 'Reference'
     - Convert string to integer: `int(...)`.
     - Convert integer to string: `str(...)`.
 
-## [Built-in Functions and Help](episodes/04-built-in.md)
+## [Вбудовані функції та Довідка](episodes/04-built-in.md)
 
 - To add a comment, place `#` before the thing you do not with to be executed.
 - Commonly used built-in functions:
