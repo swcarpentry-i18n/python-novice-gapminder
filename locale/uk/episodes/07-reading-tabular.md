@@ -7,7 +7,7 @@ exercises: 10
 ::::::::::::::::::::::::::::::::::::::: objectives
 
 - Імпорт бібліотеки Pandas.
-- Use Pandas to load a simple CSV data set.
+- Використання Pandas для завантаження набору даних у CSV форматі.
 - Get some basic information about a Pandas DataFrame.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -18,16 +18,15 @@ exercises: 10
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Use the Pandas library to do statistics on tabular data.
+## Використовуйте бібліотеку Pandas для статистичного аналізу табличних даних.
 
 - [Pandas](https://pandas.pydata.org/) is a widely-used Python library for statistics, particularly on tabular data.
 - Ця бібліотека запозичує багато функцій з фреймів даних мови R.
-  - A 2-dimensional table whose columns have names
-    and potentially have different data types.
+  - Фрейм — це двовимірна таблиця з іменованими стовпцями, які потенційно містять різні типи даних.
 - Завантажте цю бібліотеку за допомогою `import pandas as pd`. The alias `pd` is commonly used to refer to the Pandas library in code.
 - Read a Comma Separated Values (CSV) data file with `pd.read_csv`.
   - Аргумент — це ім'я файлу, який потрібно прочитати.
-  - Returns a dataframe that you can assign to a variable
+  - Ця команда повертає фрейм даних, який ви можете присвоїти змінній
 
 ```python
 import pandas as pd
@@ -54,7 +53,7 @@ print(data_oceania)
 1     25185.00911
 ```
 
-- The columns in a dataframe are the observed variables, and the rows are the observations.
+- Стовпці у фреймі даних – це спостережувані змінні, а рядки – це спостереження.
 - Pandas використовує зворотну скісну риску `\` для позначення перенесених рядків, коли вивід занадто широкий для розміщення на екрані.
 - Using descriptive dataframe names helps us distinguish between multiple dataframes so we won't accidentally overwrite a dataframe or read from the wrong one.
 
@@ -131,13 +130,13 @@ memory usage: 208.0+ bytes
 
 - Це `DataFrame`
 - Two rows named `'Australia'` and `'New Zealand'`
-- Twelve columns, each of which has two actual 64-bit floating point values.
-  - We will talk later about null values, which are used to represent missing observations.
+- А також дванадцять стовпців, кожен з яких містить два фактичних 64-бітних значення з плаваючою комою.
+  - Пізніше ми поговоримо про null значення, які використовуються для представлення відсутніх спостережень.
 - Використано 208 байтів пам'яті.
 
 ## Змінна `DataFrame.columns` зберігає інформацію про стовпці фрейму даних.
 
-- Note that this is data, _not_ a method.  (Відсутні дужки)
+- Зверніть увагу, що це дані, _а не_ метод.  (Відсутні дужки)
   - Подібно до `math.pi`.
   - So do not use `()` to try to call it.
 - Called a _member variable_, or just _member_.
@@ -259,16 +258,16 @@ to find out what `DataFrame.head` and `DataFrame.tail` do.
 
 1. What method call will display the first three rows of this data?
 2. What method call will display the last three columns of this data?
-  (Hint: you may need to change your view of the data.)
+   (Hint: you may need to change your view of the data.)
 
 :::::::::::::::  solution
 
 ## Solution
 
 1. We can check out the first five rows of `data_americas` by executing `data_americas.head()`
-  which lets us view the beginning of the DataFrame. We can specify the number of rows we wish
-  to see by specifying the parameter `n` in our call to `data_americas.head()`.
-  To view the first three rows, execute:
+   which lets us view the beginning of the DataFrame. We can specify the number of rows we wish
+   to see by specifying the parameter `n` in our call to `data_americas.head()`.
+   To view the first three rows, execute:
 
 ```python
 data_americas.head(n=3)
@@ -301,9 +300,9 @@ Brazil        9065.800825
 ```
 
 2. To check out the last three rows of `data_americas`, we would use the command,
-  `americas.tail(n=3)`, analogous to `head()` used above. However, here we want to look at
-  the last three columns so we need to change our view and then use `tail()`. To do so, we
-  create a new DataFrame in which rows and columns are switched:
+   `americas.tail(n=3)`, analogous to `head()` used above. However, here we want to look at
+   the last three columns so we need to change our view and then use `tail()`. To do so, we
+   create a new DataFrame in which rows and columns are switched:
 
 ```python
 americas_flipped = data_americas.T
