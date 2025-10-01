@@ -138,8 +138,8 @@ memory usage: 208.0+ bytes
 
 - Зверніть увагу, що це дані, _а не_ метод.  (Відсутні дужки)
   - Подібно до `math.pi`.
-  - So do not use `()` to try to call it.
-- Called a _member variable_, or just _member_.
+  - Тому не використовуйте `()` для її виклику.
+- Ця змінна називається змінною-членом або просто членом .
 
 ```python
 print(data_oceania_country.columns)
@@ -152,36 +152,24 @@ Index(['gdpPercap_1952', 'gdpPercap_1957', 'gdpPercap_1962', 'gdpPercap_1967',
       dtype='object')
 ```
 
-## Use `DataFrame.T` to transpose a dataframe.
+## Використовуйте `DataFrame.T`, щоб транспонувати фрейм даних.
 
 - Sometimes want to treat columns as rows and vice versa.
 - Transpose (written `.T`) doesn't copy the data, just changes the program's view of it.
-- Like `columns`, it is a member variable.
+- Як і `columns`, це змінна-член.
 
 ```python
 print(data_oceania_country.T)
 ```
 
 ```output
-country           Australia  New Zealand
-gdpPercap_1952  10039.59564  10556.57566
-gdpPercap_1957  10949.64959  12247.39532
-gdpPercap_1962  12217.22686  13175.67800
-gdpPercap_1967  14526.12465  14463.91893
-gdpPercap_1972  16788.62948  16046.03728
-gdpPercap_1977  18334.19751  16233.71770
-gdpPercap_1982  19477.00928  17632.41040
-gdpPercap_1987  21888.88903  19007.19129
-gdpPercap_1992  23424.76683  18363.32494
-gdpPercap_1997  26997.93657  21050.41377
-gdpPercap_2002  30687.75473  23189.80135
-gdpPercap_2007  34435.36744  25185.00911
+{: .language-python} ~~~ country Australia New Zealand gdpPercap_1952 10039.59564 10556.57566 gdpPercap_1957 10949.64959 12247.39532 gdpPercap_1962 12217.22686 13175.67800 gdpPercap_1967 14526.12465 14463.91893 gdpPercap_1972 16788.62948 16046.03728 gdpPercap_1977 18334.19751 16233.71770 gdpPercap_1982 19477.00928 17632.41040 gdpPercap_1987 21888.88903 19007.19129 gdpPercap_1992 23424.76683 18363.32494 gdpPercap_1997 26997.93657 21050.41377 gdpPercap_2002 30687.75473 23189.80135 gdpPercap_2007 34435.36744 25185.00911 ~~~
 ```
 
-## Use `DataFrame.describe()` to get summary statistics about data.
+## Використовуйте `DataFrame.describe`, щоб отримати зведену статистику даних.
 
 `DataFrame.describe()` gets the summary statistics of only the columns that have numerical data.
-All other columns are ignored, unless you use the argument `include='all'`.
+Усі інші стовпці ігноруються, якщо ви не використовуєте аргумент `include='all'`.
 
 ```python
 print(data_oceania_country.describe())
@@ -233,7 +221,7 @@ and display its summary statistics.
 
 :::::::::::::::  solution
 
-## Solution
+## Рішення
 
 To read in a CSV, we use `pd.read_csv` and pass the filename `'data/gapminder_gdp_americas.csv'` to it.
 We also once again pass the column name `'country'` to the parameter `index_col` in order to index by country.
@@ -250,7 +238,7 @@ data_americas.describe()
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Inspecting Data
+## Перевірка даних
 
 After reading the data for the Americas,
 use `help(data_americas.head)` and `help(data_americas.tail)`
@@ -262,11 +250,10 @@ to find out what `DataFrame.head` and `DataFrame.tail` do.
 
 :::::::::::::::  solution
 
-## Solution
+## Рішення
 
 1. We can check out the first five rows of `data_americas` by executing `data_americas.head()`
-   which lets us view the beginning of the DataFrame. We can specify the number of rows we wish
-   to see by specifying the parameter `n` in our call to `data_americas.head()`.
+   which lets us view the beginning of the DataFrame. Ми можемо вказати кількість рядків, які ми хочемо бачити, визначивши параметр `n` у нашому виклику `americas.head()`.
    To view the first three rows, execute:
 
 ```python
@@ -300,8 +287,7 @@ Brazil        9065.800825
 ```
 
 2. To check out the last three rows of `data_americas`, we would use the command,
-   `americas.tail(n=3)`, analogous to `head()` used above. However, here we want to look at
-   the last three columns so we need to change our view and then use `tail()`. To do so, we
+   `americas.tail(n=3)`, analogous to `head()` used above. Однак тут ми хочемо переглянути останні три стовпці, отже, нам потрібно змінити подання інформації, а потім використати `tail()`. To do so, we
    create a new DataFrame in which rows and columns are switched:
 
 ```python
@@ -371,14 +357,13 @@ your_home_directory
     +-- analysis.ipynb
 ```
 
-What value(s) should you pass to `read_csv` to read `microbes.csv` in `analysis.ipynb`?
+Які значення потрібно передати в `read_csv`, щоб прочитати `microbes.csv` у `analysis.ipynb`?
 
 :::::::::::::::  solution
 
-## Solution
+## Рішення
 
-We need to specify the path to the file of interest in the call to `pd.read_csv`. We first need to 'jump' out of
-the folder `thesis` using '../' and then into the folder `field_data` using 'field\_data/'. Then we can specify the filename \\`microbes.csv.
+We need to specify the path to the file of interest in the call to `pd.read_csv`. По-перше, потрібно «вистрибнути» з теки `thesis` за допомогою '../', а потім зайти у теку `field_data` за допомогою 'field_data/'. Після цього вказати назву файлу \`microbes.csv.
 The result is as follows:
 
 ```python
@@ -391,17 +376,17 @@ data_microbes = pd.read_csv('../field_data/microbes.csv')
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Writing Data
+## Запис даних
 
 As well as the `read_csv` function for reading data from a file,
 Pandas provides a `to_csv` function to write dataframes to files.
 Applying what you've learned about reading from files,
 write one of your dataframes to a file called `processed.csv`.
-You can use `help` to get information on how to use `to_csv`.
+Ви можете скористатися `help`, щоб отримати інформацію про застосування `to_csv`.
 
 :::::::::::::::  solution
 
-## Solution
+## Рішення
 
 In order to write the DataFrame `data_americas` to a file called `processed.csv`, execute the following command:
 
@@ -416,7 +401,7 @@ help(data_americas.to_csv)
 help(pd.read_csv)
 ```
 
-Note that `help(to_csv)` or `help(pd.to_csv)` throws an error! This is due to the fact that `to_csv` is not a global Pandas function, but
+Зауважте, що команди `help(to_csv)` або `help(pd.to_csv)` є помилковими! This is due to the fact that `to_csv` is not a global Pandas function, but
 a member function of DataFrames. This means you can only call it on an instance of a DataFrame
 e.g., `data_americas.to_csv` or `data_oceania.to_csv`
 
@@ -427,11 +412,11 @@ e.g., `data_americas.to_csv` or `data_oceania.to_csv`
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
 - Use the Pandas library to get basic statistics out of tabular data.
-- Use `index_col` to specify that a column's values should be used as row headings.
-- Use `DataFrame.info` to find out more about a dataframe.
-- The `DataFrame.columns` variable stores information about the dataframe's columns.
-- Use `DataFrame.T` to transpose a dataframe.
-- Use `DataFrame.describe` to get summary statistics about data.
+- Використовуйте `index_col`, щоб вказати, що значення стовпця мають використовуватися як заголовки рядків.
+- Використовуйте `DataFrame.info`, щоб дізнатися більше про фрейми даних.
+- Змінна `DataFrame.columns` зберігає інформацію про стовпці фрейму даних.
+- Використовуйте `DataFrame.T`, щоб транспонувати фрейм даних.
+- Використовуйте `DataFrame.describe`, щоб отримати зведену статистику даних.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
