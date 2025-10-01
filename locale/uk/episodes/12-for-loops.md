@@ -1,5 +1,5 @@
 ---
-title: For Loops
+title: Цикли for
 teaching: 10
 exercises: 15
 ---
@@ -461,3 +461,5 @@ print('My favorite season is ', seasons[3])
 - The Accumulator pattern turns many values into one.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
