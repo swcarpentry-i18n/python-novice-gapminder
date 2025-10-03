@@ -395,7 +395,7 @@ Austria     6137.076492     8842.598030    10750.721110
 Belgium     8343.105127     9714.960623    10991.206760
 ```
 
-Clearly, the second statement produces an additional column and an additional row compared to the first statement.\
+Clearly, the second statement produces an additional column and an additional row compared to the first statement.  
 What conclusion can we draw? We see that a numerical slice, 0:2, _omits_ the final index (i.e. index 2)
 in the range provided,
 while a named slice, 'gdpPercap\_1952':'gdpPercap\_1962', _includes_ the final element.
@@ -772,3 +772,5 @@ for the entire twentieth century?
 - Select values or NaN using a Boolean mask.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
