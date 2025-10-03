@@ -285,7 +285,7 @@ a "text cell" is one that contains ordinary prose written for human beings.
 
 ## Command Vs. Edit
 
-In the Jupyter notebook page are you currently in Command or Edit mode?\
+In the Jupyter notebook page are you currently in Command or Edit mode?  
 Switch between the modes.
 Use the shortcuts to generate a new cell.
 Use the shortcuts to delete a cell.
@@ -530,3 +530,5 @@ Practice closing and restarting the JupyterLab server.
 - Markdown does most of what HTML does.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
