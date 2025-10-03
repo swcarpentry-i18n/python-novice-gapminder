@@ -40,9 +40,9 @@ Remember that a DataFrame provides an _index_ as a way to identify the rows of t
 a row, then, has a _position_ inside the table as well as a _label_, which
 uniquely identifies its _entry_ in the DataFrame.
 
-## Use `DataFrame.iloc[..., ...]` to select values by their (entry) position
+## Використовуйте `DataFrame.iloc[..., ...]` для вибору значень за їх позицією
 
-- Can specify location by numerical index analogously to 2D version of character selection in strings.
+- Можна вказати позицію значення за допомогою числового індексу аналогічно 2D-версії вибору символів у рядках.
 
 ```python
 import pandas as pd
@@ -54,7 +54,7 @@ print(data.iloc[0, 0])
 1601.056136
 ```
 
-## Use `DataFrame.loc[..., ...]` to select values by their (entry) label.
+## Використовуйте `DataFrame.loc[..., ...]` для вибору значень за їхньою міткою (записом).
 
 - Можна вказати розташування по рядку та/або імені стовпця.
 
@@ -90,7 +90,7 @@ gdpPercap_2007    5937.029526
 Name: Albania, dtype: float64
 ```
 
-- Would get the same result printing `data.loc["Albania"]` (without a second index).
+- Той самий результат можна отримати, використовуючи `data.loc["Albania"]` (без вказання другого індексу).
 
 ```python
 print(data.loc[:, "gdpPercap_1952"])
@@ -250,9 +250,9 @@ For instance, let's say we want to have a clearer view on how the European count
 split themselves according to their GDP.
 
 1. We may have a glance by splitting the countries in two groups during the years surveyed,
-  those who presented a GDP _higher_ than the European average and those with a _lower_ GDP.
+   those who presented a GDP _higher_ than the European average and those with a _lower_ GDP.
 2. We then estimate a _wealthy score_ based on the historical (from 1962 to 2007) values,
-  where we account how many times a country has participated in the groups of _lower_ or _higher_ GDP
+   where we account how many times a country has participated in the groups of _lower_ or _higher_ GDP
 
 ```python
 mask_higher = data > data.mean()
@@ -362,7 +362,7 @@ print(data_europe.loc['Serbia', 'gdpPercap_2007'])
 
 1. Чи дають два наведені нижче твердження однаковий результат?
 2. Based on this,
-  what rule governs what is included (or not) in numerical slices and named slices in Pandas?
+   what rule governs what is included (or not) in numerical slices and named slices in Pandas?
 
 ```python
 print(data_europe.iloc[0:2, 0:2])
@@ -392,7 +392,7 @@ Austria     6137.076492     8842.598030    10750.721110
 Belgium     8343.105127     9714.960623    10991.206760
 ```
 
-Clearly, the second statement produces an additional column and an additional row compared to the first statement.\
+Clearly, the second statement produces an additional column and an additional row compared to the first statement.  
 Який висновок ми можемо зробити? We see that a numerical slice, 0:2, _omits_ the final index (i.e. index 2)
 in the range provided,
 while a named slice, 'gdpPercap\_1952':'gdpPercap\_1962', _includes_ the final element.
@@ -501,7 +501,7 @@ You can use these functions whenever you want to get the row index of the minimu
 2. ВВП на душу населення для Данії за всі роки.
 3. GDP per capita for all countries for years _after_ 1985.
 4. GDP per capita for each country in 2007 as a multiple of
-  GDP per capita for that country in 1952.
+   GDP per capita for that country in 1952.
 
 :::::::::::::::  solution
 
