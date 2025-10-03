@@ -461,3 +461,5 @@ print('My favorite season is ', seasons[3])
 - The Accumulator pattern turns many values into one.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
