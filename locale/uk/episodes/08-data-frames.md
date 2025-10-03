@@ -54,7 +54,7 @@ print(data.iloc[0, 0])
 1601.056136
 ```
 
-## Використовуйте `DataFrame.loc[..., ...]` для вибору значень за їхньою міткою (записом).
+## Use `DataFrame.loc[..., ...]` to select values by their (entry) label.
 
 - Можна вказати розташування по рядку та/або імені стовпця.
 
@@ -66,9 +66,9 @@ print(data.loc["Albania", "gdpPercap_1952"])
 1601.056136
 ```
 
-## Use `:` on its own to mean all columns or all rows.
+## Використовуйте лише `:` для позначення всіх стовпців або всіх рядків.
 
-- Just like Python's usual slicing notation.
+- Це відповідає звичайному синтаксису зрізів у Python.
 
 ```python
 print(data.loc["Albania", :])
@@ -111,7 +111,7 @@ Name: gdpPercap_1952, dtype: float64
 - Той самий результат можна отримати, якщо надрукувати `data["gdpPercap_1952"]`
 - Also get the same result printing `data.gdpPercap_1952` (not recommended, because easily confused with `.` notation for methods)
 
-## Select multiple columns or rows using `DataFrame.loc` and a named slice.
+## Вибирайте кілька стовпців або рядків за допомогою `DataFrame.loc` та визначеного зрізу.
 
 ```python
 print(data.loc['Italy':'Poland', 'gdpPercap_1962':'gdpPercap_1972'])
@@ -127,15 +127,13 @@ Norway         13450.401510    16361.876470    18965.055510
 Poland          5338.752143     6557.152776     8006.506993
 ```
 
-In the above code, we discover that **slicing using `loc` is inclusive at both
-ends**, which differs from **slicing using `iloc`**, where slicing indicates
-everything up to but not including the final index.
+У наведеному вище коді ми бачимо, що **зріз із використанням `loc` має обидва виміри**, на відміну від **зрізу із застосуванням `iloc`**, де зріз включає все, крім кінцевого індексу.
 
-## Result of slicing can be used in further operations.
+## Результат зрізу можна використовувати в подальших операціях.
 
 - Usually don't just print a slice.
 - Усі статистичні оператори, які працюють зі цілими фреймами даних, так само працюють зі зрізами.
-- E.g., calculate max of a slice.
+- Наприклад, обчислення максимальної кількості за стовпцями зрізу.
 
 ```python
 print(data.loc['Italy':'Poland', 'gdpPercap_1962':'gdpPercap_1972'].max())
@@ -159,9 +157,9 @@ gdpPercap_1972    7778.414017
 dtype: float64
 ```
 
-## Use comparisons to select data based on value.
+## Використовуйте операції порівняння для вибору даних на основі певного значення.
 
-- Comparison is applied element by element.
+- Порівняння здійснюється поелементно.
 - Повертає фрейм даних подібної форми, що містить `True` і `False`.
 
 ```python
@@ -213,7 +211,7 @@ Poland                  NaN             NaN             NaN
 ```
 
 - Отримайте значення, якщо маска є істинною, і NaN (не число), якщо вона хибна.
-- Useful because NaNs are ignored by operations like max, min, average, etc.
+- Це зручно, оскільки операції на кшталт max, min, average автоматично ігнорують значення NaN.
 
 ```python
 print(subset[subset > 10000].describe())
@@ -231,13 +229,11 @@ min      12790.849560    10022.401310    12269.273780
 max      13450.401510    16361.876470    18965.055510
 ```
 
-## Group By: split-apply-combine
+## Групувати за: розділити - застосувати - комбінувати
 
 ::::::::::::::::::::::::::::::::::::: instructor
 Learners often struggle here, many may not work with financial data and concepts so they
-find the example concepts difficult to get their head around. The biggest problem
-though is the line generating the wealth_score, this step needs to be talked through
-throughly:
+find the example concepts difficult to get their head around. Однак основна проблема полягає в рядку, який обчислює wealth_score; цей крок потребує ретельного обговорення:
 
 - It uses implicit conversion between boolean and float values which
   has not been covered in the course so far.
@@ -246,13 +242,10 @@ throughly:
 
 Методи векторизації та операції групування Pandas — це функції, які надають користувачам велику гнучкість для аналізу своїх даних.
 
-For instance, let's say we want to have a clearer view on how the European countries
-split themselves according to their GDP.
+Наприклад, скажімо, ми хочемо мати більш чітке уявлення про те, як європейські країни розподілені відповідно до свого ВВП.
 
-1. We may have a glance by splitting the countries in two groups during the years surveyed,
-   those who presented a GDP _higher_ than the European average and those with a _lower_ GDP.
-2. We then estimate a _wealthy score_ based on the historical (from 1962 to 2007) values,
-   where we account how many times a country has participated in the groups of _lower_ or _higher_ GDP
+1. Ми можемо поглянути на ситуацію, поділивши країни на дві групи за роки спостережень: ті, у яких ВВП _вище_ середнього по Європі, і країни з _нижчим_ ВВП.
+2. Далі ми оцінюємо показник заможності на основі історичних значень (з 1962 по 2007 рік), підраховуючи, скільки разів кожна країна входила до груп із вищим або нижчим ВВП
 
 ```python
 mask_higher = data > data.mean()
