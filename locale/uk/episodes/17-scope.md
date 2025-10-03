@@ -142,3 +142,5 @@ KeyError: 'Friday'
 - The scope of a variable is the part of a program that can 'see' that variable.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
