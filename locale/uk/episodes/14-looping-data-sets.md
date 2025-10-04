@@ -6,9 +6,9 @@ exercises: 10
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- Be able to read and write globbing expressions that match sets of files.
-- Use glob to create lists of files.
-- Write for loops to perform operations on files given their names in a list.
+- Навчіться читати та писати вирази модулю glob, які відповідають наборам файлів.
+- Використовуйте модуль glob для створення списків файлів
+- Напишіть цикли for для виконання операцій над файлами, зазначеними в списку.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -20,8 +20,8 @@ exercises: 10
 
 ## Use a `for` loop to process files given a list of their names.
 
-- A filename is a character string.
-- And lists can contain character strings.
+- Ім'я файлу - це рядок символів.
+- І списки можуть містити рядки символів.
 
 ```python
 import pandas as pd
@@ -51,9 +51,9 @@ gdpPercap_2007    944
 dtype: float64
 ```
 
-## Use [`glob.glob`](https://docs.python.org/3/library/glob.html#glob.glob) to find sets of files whose names match a pattern.
+## Використовуйте [`glob.glob`](https://docs.python.org/3/library/glob.html#glob.glob), щоб знайти набори файлів, імена яких відповідають шаблону.
 
-- In Unix, the term "globbing" means "matching a set of files with a pattern".
+- В Unix термін "globbing" означає "відповідність набору файлів шаблону".
 - The most common patterns are:
   - `*` meaning "match zero or more characters"
   - `?` meaning "match exactly one character"
@@ -265,3 +265,5 @@ function.
 - Use `glob` and `for` to process batches of files.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
