@@ -7,7 +7,7 @@ exercises: 15
 ::::::::::::::::::::::::::::::::::::::: objectives
 
 - Explain and identify the difference between function definition and function call.
-- Write a function that takes a small, fixed number of arguments and produces a single result.
+- Напишіть функцію, яка використовує невелику фіксовану кількість вхідних аргументів, а видає єдиний результат.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -17,27 +17,27 @@ exercises: 15
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Break programs down into functions to make them easier to understand.
+## Розбийте програми на функції, щоб їх було легше зрозуміти.
 
 - Human beings can only keep a few items in working memory at a time.
 - Understand larger/more complicated ideas by understanding and combining pieces.
-  - Components in a machine.
-  - Lemmas when proving theorems.
-- Functions serve the same purpose in programs.
+  - Компоненти в машині.
+  - Леми при доведенні теорем.
+- Функції служать тій же меті в програмах.
   - _Encapsulate_ complexity so that we can treat it as a single "thing".
 - Also enables _re-use_.
   - Write one time, use many times.
 
 ## Define a function using `def` with a name, parameters, and a block of code.
 
-- Begin the definition of a new function with `def`.
-- Followed by the name of the function.
-  - Must obey the same rules as variable names.
+- Почніть визначення нової функції з `def`.
+- Далі йде назва функції.
+  - Назви функцій мають відповідати тим самим правилам, що й імена змінних.
 - Then _parameters_ in parentheses.
-  - Empty parentheses if the function doesn't take any inputs.
+  - Порожні дужки, якщо функція не приймає жодних вхідних даних.
   - We will discuss this in detail in a moment.
-- Then a colon.
-- Then an indented block of code.
+- Потім двокрапка.
+- Потім блок коду з відступом.
 
 ```python
 def print_greeting():
@@ -46,11 +46,11 @@ def print_greeting():
     print('Right?')
 ```
 
-## Defining a function does not run it.
+## Визначення функції не запускає її.
 
 - Defining a function does not run it.
-  - Like assigning a value to a variable.
-- Must call the function to execute the code it contains.
+  - Як присвоєння значення змінній.
+- Необхідно викликати функцію, щоб виконати код, який вона містить.
 
 ```python
 print_greeting()
@@ -62,9 +62,9 @@ Hello!
 
 ## Arguments in a function call are matched to its defined parameters.
 
-- Functions are most useful when they can operate on different data.
-- Specify _parameters_ when defining a function.
-  - These become variables when the function is executed.
+- Функції найбільш корисні, коли вони можуть працювати з різними даними.
+- Укажіть _параметри_ під час визначення функції.
+  - Вони стають змінними під час виконання функції.
   - Are assigned the arguments in the call (i.e., the values passed to the function).
   - If you don't name the arguments when using them in the call, the arguments will be matched to
     parameters in the order the parameters are defined in the function.
