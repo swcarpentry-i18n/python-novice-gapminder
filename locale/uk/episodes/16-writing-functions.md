@@ -357,7 +357,7 @@ print_date(day=1, month=2, year=2003)
 
 :::::::::::::::  solution
 
-## Solution
+## Рішення
 
 1. `2003/2/1`
 
