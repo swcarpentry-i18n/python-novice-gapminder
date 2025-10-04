@@ -225,9 +225,9 @@ so it is perfectly clear to a reader (and to Python) what you really mean.
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Tracing Execution
+## Відстеження виконання
 
-What does this program print?
+Що надрукує ця програма?
 
 ```python
 pressure = 71.9
@@ -252,7 +252,7 @@ print(pressure)
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Trimming Values
+## Обрізання значень
 
 Fill in the blanks so that this program creates a new list
 containing zeroes where the original list's values were negative
@@ -294,7 +294,7 @@ print(result)
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Processing Small Files
+## Обробка малих файлів
 
 Modify this program so that it only processes files with fewer than 50 records.
 
@@ -326,7 +326,7 @@ for filename in glob.glob('data/*.csv'):
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Initializing
+## Ініціалізація
 
 Modify this program so that it finds the largest and smallest values in the list
 no matter what the range of values originally is.
@@ -399,9 +399,9 @@ print(smallest, largest)
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
 - Use `if` statements to control whether or not a block of code is executed.
-- Conditionals are often used inside loops.
+- Умовні оператори часто використовуються всередині циклів.
 - Use `else` to execute a block of code when an `if` condition is _not_ true.
-- Use `elif` to specify additional tests.
+- Використовуйте `elif` для визначення додаткових перевірок.
 - Conditions are tested once, in order.
 - Create a table showing variables' values to trace a program's execution.
 
