@@ -98,13 +98,13 @@ print_date(month=3, day=19, year=1871)
   `()` contains the ingredients for the function
   while the body contains the recipe.
 
-## Functions may return a result to their caller using `return`.
+## Функції можуть повертати результат до свого виклику за допомогою `return`.
 
 - Use `return ...` to give a value back to the caller.
-- May occur anywhere in the function.
+- Може виникнути будь-де у функції.
 - But functions are easier to understand if `return` occurs:
-  - At the start to handle special cases.
-  - At the very end, with a final result.
+  - На початку функції для обробки особливих випадків.
+  - У самому кінці з остаточним результатом.
 
 ```python
 def average(values):
@@ -123,7 +123,7 @@ average of actual values: 2.6666666666666665
 ```
 
 ```python
-print('average of empty list:', average([]))
+print('середнє порожнього списку:', average([]))
 ```
 
 ```output
@@ -145,14 +145,14 @@ result of call is: None
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Identifying Syntax Errors
+## Виявлення синтаксичних помилок
 
 1. Read the code below and try to identify what the errors are
    _without_ running it.
-2. Run the code and read the error message.
-   Is it a `SyntaxError` or an `IndentationError`?
-3. Fix the error.
-4. Repeat steps 2 and 3 until you have fixed all the errors.
+2. Запустіть код і прочитайте повідомлення про помилку.
+   Це `SyntaxError` чи `IndentationError`?
+3. Виправте помилку.
+4. Повторюйте кроки 2 та 3 доки не виправите всі помилки.
 
 ```python
 def another_function
@@ -163,7 +163,7 @@ def another_function
 
 :::::::::::::::  solution
 
-## Solution
+## Рішення
 
 ```python
 def another_function():
@@ -178,9 +178,9 @@ def another_function():
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Definition and Use
+## Визначення та використання
 
-What does the following program print?
+Що друкує наступна програма?
 
 ```python
 def report(pressure):
@@ -191,7 +191,7 @@ print('calling', report, 22.5)
 
 :::::::::::::::  solution
 
-## Solution
+## Рішення
 
 ```output
 calling <function report at 0x7fd128ff1bf8> 22.5
@@ -215,9 +215,9 @@ pressure is 22.5
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Order of Operations
+## Порядок виконання операцій
 
-1. What's wrong in this example?
+1. Що не так у цьому прикладі?
 
 ```python
 result = print_time(11, 37, 59)
@@ -245,7 +245,7 @@ result of call is: None
 
 :::::::::::::::  solution
 
-## Solution
+## Рішення
 
 1. The problem with the example is that the function `print_time()` is defined _after_ the call to the function is made. Python
    doesn't know how to resolve the name `print_time` since it hasn't been defined yet and will raise a `NameError` e.g.,
@@ -263,7 +263,7 @@ result of call is: None
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Encapsulation
+## Інкапсуляція
 
 Fill in the blanks to create a function that takes a single filename as an argument,
 loads the data in the file named by the argument,
@@ -279,7 +279,7 @@ def min_in_data(____):
 
 :::::::::::::::  solution
 
-## Solution
+## Рішення
 
 ```python
 import pandas as pd
@@ -297,9 +297,8 @@ def min_in_data(filename):
 
 ## Find the First
 
-Fill in the blanks to create a function that takes a list of numbers as an argument
-and returns the first negative value in the list.
-What does your function do if the list is empty? What if the list has no negative numbers?
+Заповніть порожні поля, щоб створити функцію, яка приймає список чисел як аргумент і повертає перше від’ємне значення в списку.
+Що робить ваша функція, якщо список порожній? What if the list has no negative numbers?
 
 ```python
 def first_negative(values):
@@ -310,7 +309,7 @@ def first_negative(values):
 
 :::::::::::::::  solution
 
-## Solution
+## Рішення
 
 ```python
 def first_negative(values):
