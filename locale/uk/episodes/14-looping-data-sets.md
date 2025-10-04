@@ -115,11 +115,11 @@ data/gapminder_gdp_oceania.csv 10039.59564
 
 1. `data/gapminder_gdp_africa.csv`
 2. `data/gapminder_gdp_americas.csv`
-3. `data/gapminder_gdp_africa.csv`
+3. `data/gapminder_gdp_asia.csv`
 
 :::::::::::::::  solution
 
-## Рішення
+## Solution
 
 1 is not matched by the glob.
 
@@ -129,7 +129,7 @@ data/gapminder_gdp_oceania.csv 10039.59564
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Minimum File Size
+## Мінімальний розмір файлу
 
 Modify this program so that it prints the number of records in
 the file that has the fewest records.
@@ -149,7 +149,7 @@ returns a tuple with the number of rows and columns of the data frame.
 
 :::::::::::::::  solution
 
-## Solution
+## Рішення
 
 ```python
 import glob
@@ -172,11 +172,9 @@ What other special strings does the [`float` function][float-function] recognize
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Comparing Data
+## Порівняння даних
 
-Write a program that reads in the regional data sets
-and plots the average GDP per capita for each region over time
-in a single chart. Pandas will raise an error if it encounters
+Напишіть програму, яка читає регіональні набори даних і будує графік середнього ВВП на душу населення для кожного регіону в часі в одній діаграмі. Pandas will raise an error if it encounters
 non-numeric columns in a dataframe computation so you may need
 to either filter out those columns or tell pandas to ignore them.
 
@@ -262,7 +260,7 @@ function.
 
 - Use a `for` loop to process files given a list of their names.
 - Use `glob.glob` to find sets of files whose names match a pattern.
-- Use `glob` and `for` to process batches of files.
+- Використовуйте `glob` і `for` для обробки пакетів файлів.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
