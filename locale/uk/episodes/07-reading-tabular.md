@@ -21,7 +21,7 @@ exercises: 10
 ## Використовуйте бібліотеку Pandas для статистичного аналізу табличних даних.
 
 - [Pandas](https://pandas.pydata.org/) is a widely-used Python library for statistics, particularly on tabular data.
-- Ця бібліотека запозичує багато функцій з фреймів даних мови R.
+- Borrows many features from R's dataframes.
   - Фрейм — це двовимірна таблиця з іменованими стовпцями, які потенційно містять різні типи даних.
 - Завантажте цю бібліотеку за допомогою `import pandas as pd`. The alias `pd` is commonly used to refer to the Pandas library in code.
 - Read a Comma Separated Values (CSV) data file with `pd.read_csv`.
