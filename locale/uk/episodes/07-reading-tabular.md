@@ -1,5 +1,5 @@
 ---
-title: Reading Tabular Data into DataFrames
+title: Зчитування табличних даних у датафрейми
 teaching: 10
 exercises: 10
 ---
@@ -8,25 +8,25 @@ exercises: 10
 
 - Імпорт бібліотеки Pandas.
 - Використання Pandas для завантаження набору даних у CSV форматі.
-- Get some basic information about a Pandas DataFrame.
+- Базова інформація про датафрейми бібліотеки Pandas.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: questions
 
-- How can I read tabular data?
+- Як я можу завантажити табличні дані у датафрейми Pandas?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Використовуйте бібліотеку Pandas для статистичного аналізу табличних даних.
 
-- [Pandas](https://pandas.pydata.org/) is a widely-used Python library for statistics, particularly on tabular data.
-- Borrows many features from R's dataframes.
-  - Фрейм — це двовимірна таблиця з іменованими стовпцями, які потенційно містять різні типи даних.
-- Завантажте цю бібліотеку за допомогою `import pandas as pd`. The alias `pd` is commonly used to refer to the Pandas library in code.
-- Read a Comma Separated Values (CSV) data file with `pd.read_csv`.
+- [Pandas](https://pandas.pydata.org/) - це бібліотека Python, яка широко використовується для статистичного аналізу, зокрема при роботі з табличними даними.
+- Ця бібліотека запозичує багато функцій з датафреймів мови R.
+  - Датафрейм — це двовимірна таблиця з іменованими стовпцями, які потенційно містять різні типи даних.
+- Завантажте цю бібліотеку за допомогою `import pandas as pd`. Псевдонім `pd` зазвичай використовується для посилання на бібліотеку Pandas у коді.
+- Файл даних зі значеннями, розділеними комами (Comma Separate Values - CSV), читається за допомогою `pd.read_csv`.
   - Аргумент — це ім'я файлу, який потрібно прочитати.
-  - Ця команда повертає фрейм даних, який ви можете присвоїти змінній
+  - Ця команда повертає датафрейм, який ви можете присвоїти змінній
 
 ```python
 import pandas as pd
@@ -53,19 +53,16 @@ print(data_oceania)
 1     25185.00911
 ```
 
-- Стовпці у фреймі даних – це спостережувані змінні, а рядки – це спостереження.
+- Стовпці у датафреймі – це спостережувані змінні, а рядки – це спостереження.
 - Pandas використовує зворотну скісну риску `\` для позначення перенесених рядків, коли вивід занадто широкий для розміщення на екрані.
-- Using descriptive dataframe names helps us distinguish between multiple dataframes so we won't accidentally overwrite a dataframe or read from the wrong one.
+- Використання змістовних імен для датафреймів допомагає нам розрізняти кілька датафреймів, запобігаючи випадковому перезапису або помилковому читанню.
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
 ## Файл не знайдено
 
 Наші уроки зберігають свої файли даних у підкаталозі `data`, тому шлях до файлу є таким: `data/gapminder_gdp_oceania.csv`.
-If you forget to include `data/`,
-or if you include it but your copy of the file is somewhere else,
-you will get a [runtime error](04-built-in.md)
-that ends with a line like this:
+Якщо ви забули додати`data/`, або якщо ваша копія файлу знаходиться в іншому місці, ви отримаєте [runtime error](04-built-in.md), який закінчується таким рядком:
 
 ```error
 FileNotFoundError: [Errno 2] No such file or directory: 'data/gapminder_gdp_oceania.csv'
@@ -73,12 +70,12 @@ FileNotFoundError: [Errno 2] No such file or directory: 'data/gapminder_gdp_ocea
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Використовуйте `index_col`, щоб вказати, що значення стовпця мають використовуватися як заголовки рядків.
+## Використовуйте `index_col`, щоб вказати стовпець, значення якого мають використовуватися як заголовки рядків.
 
 - Заголовки рядків є числами (0 і 1 у цьому випадку).
-- Насправді краще індексувати за назвами країн.
+- Але насправді краще індексувати за назвами країн.
 - Для цього передайте назву стовпця в `read_csv` як параметр `index_col`.
-- Назва фрейму даних «data_oceania_country» говорить нам про те, з якою географічною зоною пов'язані дані (`oceania`) та про те, як вони індексуються (`країна`).
+- Назва датафрейму `data_oceania_country` говорить нам про те, з якою географічною зоною пов'язані дані (`oceania`) та про те, як вони індексуються (`country`).
 
 ```python
 data_oceania_country = pd.read_csv('data/gapminder_gdp_oceania.csv', index_col='country')
@@ -102,7 +99,7 @@ Australia       23424.76683     26997.93657     30687.75473     34435.36744
 New Zealand     18363.32494     21050.41377     23189.80135     25185.00911
 ```
 
-## Використовуйте `DataFrame.info`, щоб дізнатися більше про фрейми даних.
+## Використовуйте `DataFrame.info()`, щоб дізнатися більше про датафрейми.
 
 ```python
 data_oceania_country.info()
@@ -129,12 +126,12 @@ memory usage: 208.0+ bytes
 ```
 
 - Це `DataFrame`
-- Two rows named `'Australia'` and `'New Zealand'`
-- А також дванадцять стовпців, кожен з яких містить два фактичних 64-бітних значення з плаваючою комою.
-  - Пізніше ми поговоримо про null значення, які використовуються для представлення відсутніх спостережень.
-- Використано 208 байтів пам'яті.
+- Містить два рядки з назвами `'Australia'` та `'New Zealand'`
+- А також дванадцять стовпців, кожен з яких містить два 64-бітних значення з плаваючою комою.
+  - Пізніше ми поговоримо про `null` значення, які використовуються для представлення відсутніх спостережень.
+- Використовує 208 байтів пам'яті.
 
-## Змінна `DataFrame.columns` зберігає інформацію про стовпці фрейму даних.
+## Змінна `DataFrame.columns` зберігає інформацію про стовпці датафрейму.
 
 - Зверніть увагу, що це дані, _а не_ метод.  (Відсутні дужки)
   - Подібно до `math.pi`.
@@ -152,7 +149,7 @@ Index(['gdpPercap_1952', 'gdpPercap_1957', 'gdpPercap_1962', 'gdpPercap_1967',
       dtype='object')
 ```
 
-## Використовуйте `DataFrame.T`, щоб транспонувати фрейм даних.
+## Use `DataFrame.T` to transpose a dataframe.
 
 - Sometimes want to treat columns as rows and vice versa.
 - Transpose (written `.T`) doesn't copy the data, just changes the program's view of it.
@@ -163,7 +160,19 @@ print(data_oceania_country.T)
 ```
 
 ```output
-{: .language-python} ~~~ country Australia New Zealand gdpPercap_1952 10039.59564 10556.57566 gdpPercap_1957 10949.64959 12247.39532 gdpPercap_1962 12217.22686 13175.67800 gdpPercap_1967 14526.12465 14463.91893 gdpPercap_1972 16788.62948 16046.03728 gdpPercap_1977 18334.19751 16233.71770 gdpPercap_1982 19477.00928 17632.41040 gdpPercap_1987 21888.88903 19007.19129 gdpPercap_1992 23424.76683 18363.32494 gdpPercap_1997 26997.93657 21050.41377 gdpPercap_2002 30687.75473 23189.80135 gdpPercap_2007 34435.36744 25185.00911 ~~~
+country           Australia  New Zealand
+gdpPercap_1952  10039.59564  10556.57566
+gdpPercap_1957  10949.64959  12247.39532
+gdpPercap_1962  12217.22686  13175.67800
+gdpPercap_1967  14526.12465  14463.91893
+gdpPercap_1972  16788.62948  16046.03728
+gdpPercap_1977  18334.19751  16233.71770
+gdpPercap_1982  19477.00928  17632.41040
+gdpPercap_1987  21888.88903  19007.19129
+gdpPercap_1992  23424.76683  18363.32494
+gdpPercap_1997  26997.93657  21050.41377
+gdpPercap_2002  30687.75473  23189.80135
+gdpPercap_2007  34435.36744  25185.00911
 ```
 
 ## Використовуйте `DataFrame.describe`, щоб отримати зведену статистику даних.
@@ -413,9 +422,9 @@ e.g., `data_americas.to_csv` or `data_oceania.to_csv`
 
 - Use the Pandas library to get basic statistics out of tabular data.
 - Використовуйте `index_col`, щоб вказати, що значення стовпця мають використовуватися як заголовки рядків.
-- Використовуйте `DataFrame.info`, щоб дізнатися більше про фрейми даних.
-- Змінна `DataFrame.columns` зберігає інформацію про стовпці фрейму даних.
-- Використовуйте `DataFrame.T`, щоб транспонувати фрейм даних.
+- Use `DataFrame.info` to find out more about a dataframe.
+- The `DataFrame.columns` variable stores information about the dataframe's columns.
+- Use `DataFrame.T` to transpose a dataframe.
 - Використовуйте `DataFrame.describe`, щоб отримати зведену статистику даних.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
