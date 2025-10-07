@@ -12,7 +12,7 @@ exercises: 0
 
 :::::::::::::::::::::::::::::::::::::::: questions
 
-- What have we learned?
+- Що саме ми вивчили?
 - What else is out there and where do I find it?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
