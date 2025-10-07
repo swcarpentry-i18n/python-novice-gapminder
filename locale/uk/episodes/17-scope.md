@@ -64,7 +64,7 @@ NameError: name 'temperature' is not defined
 
 ## Використання локальних і глобальних змінних
 
-Trace the values of all variables in this program as it is executed.
+Відстежте значення всіх змінних у цій програмі під час її виконання.
 (Use '---' as the value of variables before and after they exist.)
 
 ```python
@@ -81,16 +81,16 @@ print(clip(value))
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Reading Error Messages
+## Читання повідомлень про помилки
 
 Read the traceback below, and identify the following:
 
-1. How many levels does the traceback have?
-2. What is the file name where the error occurred?
-3. What is the function name where the error occurred?
+1. Скільки рівнів має системна діагностика?
+2. Як називається файл, у якому сталася помилка?
+3. Як називається функція, у якій сталася помилка?
 4. On which line number in this function did the error occur?
-5. What is the type of error?
-6. What is the error message?
+5. Який тип помилки?
+6. Яке повідомлення про помилку?
 
 ```error
 ---------------------------------------------------------------------------
@@ -118,13 +118,13 @@ KeyError: 'Friday'
 
 ## Solution
 
-1. Three levels.
+1. Три рівні.
 
 2. `errors_02.py`
 
 3. `print_message`
 
-4. Line 11
+4. Рядок 11
 
 5. `KeyError`. These errors occur when we are trying to look up a key that does not exist (usually in a data
    structure such as a dictionary). We can find more information about the `KeyError` and other built-in exceptions
@@ -138,7 +138,7 @@ KeyError: 'Friday'
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- The scope of a variable is the part of a program that can 'see' that variable.
+- Область змінної - це частина програми, яка може "бачити" цю зміну.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
