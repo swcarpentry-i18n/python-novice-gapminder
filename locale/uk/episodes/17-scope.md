@@ -1,12 +1,12 @@
 ---
-title: Variable Scope
+title: Область видимості змінної
 teaching: 10
 exercises: 10
 ---
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- Identify local and global variables.
+- Визначення локальних і глобальних змінних.
 - Identify parameters as local variables.
 - Read a traceback and determine the file, function, and line number on which the error occurred, the type of error, and the error message.
 
@@ -14,19 +14,19 @@ exercises: 10
 
 :::::::::::::::::::::::::::::::::::::::: questions
 
-- How do function calls actually work?
-- How can I determine where errors occurred?
+- Як насправді виклики функцій працюють?
+- Як можна визначити, де виникають помилки?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## The scope of a variable is the part of a program that can 'see' that variable.
+## Область змінної - це частина програми, яка може "бачити" цю зміну.
 
 - There are only so many sensible names for variables.
 - People using functions shouldn't have to worry about
   what variable names the author of the function used.
 - People writing functions shouldn't have to worry about
   what variable names the function's caller uses.
-- The part of a program in which a variable is visible is called its _scope_.
+- Частина програми, в якій змінна є видимою, називається її _областю_.
 
 ```python
 pressure = 103.9
@@ -37,13 +37,12 @@ def adjust(t):
 ```
 
 - `pressure` is a _global variable_.
-  - Defined outside any particular function.
-  - Visible everywhere.
+  - Визначається поза будь-якою конкретною функцією.
+  - Є видимою у будь-якому місці програми.
 - `t` and `temperature` are _local variables_ in `adjust`.
   - Defined in the function.
-  - Not visible in the main program.
-  - Remember: a function parameter is a variable
-    that is automatically assigned a value when the function is called.
+  - Не є видимими у головній програмі.
+  - Нагадування: параметр функції – це змінна, якій автоматично присвоюється значення під час виклику функції.
 
 ```python
 print('adjusted:', adjust(0.9))
@@ -63,7 +62,7 @@ NameError: name 'temperature' is not defined
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Local and Global Variable Use
+## Використання локальних і глобальних змінних
 
 Trace the values of all variables in this program as it is executed.
 (Use '---' as the value of variables before and after they exist.)
