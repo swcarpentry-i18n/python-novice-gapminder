@@ -7,8 +7,8 @@ exercises: 10
 ::::::::::::::::::::::::::::::::::::::: objectives
 
 - Визначення локальних і глобальних змінних.
-- Identify parameters as local variables.
-- Read a traceback and determine the file, function, and line number on which the error occurred, the type of error, and the error message.
+- Ідентифікація параметрів як локальних змінних.
+- Аналіз звіту системної діагностики (traceback) та визначення файлу, функції й номера рядка, у якому сталася помилка, а також типу помилки й тексту повідомлення про неї.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -36,11 +36,11 @@ def adjust(t):
     return temperature
 ```
 
-- `pressure` is a _global variable_.
+- `pressure` – це _глобальна змінна_.
   - Визначається поза будь-якою конкретною функцією.
   - Є видимою у будь-якому місці програми.
 - `t` and `temperature` are _local variables_ in `adjust`.
-  - Defined in the function.
+  - Визначені всередині функції.
   - Не є видимими у головній програмі.
   - Нагадування: параметр функції – це змінна, якій автоматично присвоюється значення під час виклику функції.
 
@@ -88,7 +88,7 @@ Read the traceback below, and identify the following:
 1. Скільки рівнів має системна діагностика?
 2. Як називається файл, у якому сталася помилка?
 3. Як називається функція, у якій сталася помилка?
-4. On which line number in this function did the error occur?
+4. В якому рядку цієї функції виникла помилка?
 5. Який тип помилки?
 6. Яке повідомлення про помилку?
 
@@ -116,7 +116,7 @@ KeyError: 'Friday'
 
 :::::::::::::::  solution
 
-## Solution
+## Рішення
 
 1. Три рівні.
 
@@ -126,8 +126,8 @@ KeyError: 'Friday'
 
 4. Рядок 11
 
-5. `KeyError`. These errors occur when we are trying to look up a key that does not exist (usually in a data
-   structure such as a dictionary). We can find more information about the `KeyError` and other built-in exceptions
+5. `KeyError`. Ці помилки виникають при спробі звернутися до ключа, який не існує (зазвичай в структурі
+   даних на кшталт словника). We can find more information about the `KeyError` and other built-in exceptions
    in the [Python docs](https://docs.python.org/3/library/exceptions.html#KeyError).
 
 6. `KeyError: 'Friday'`
