@@ -177,7 +177,7 @@ gdpPercap_2007  34435.36744  25185.00911
 
 ## Використовуйте `DataFrame.describe`, щоб отримати зведену статистику даних.
 
-`DataFrame.describe()` gets the summary statistics of only the columns that have numerical data.
+DataFrame.describe() отримує зведену статистику лише для стовпців, які містять числові дані.
 Усі інші стовпці ігноруються, якщо ви не використовуєте аргумент `include='all'`.
 
 ```python
@@ -221,7 +221,7 @@ max      23424.766830    26997.936570    30687.754730    34435.367440
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Reading Other Data
+## Читання інших даних
 
 Read the data in `gapminder_gdp_americas.csv`
 (which should be in the same directory as `gapminder_gdp_oceania.csv`)
