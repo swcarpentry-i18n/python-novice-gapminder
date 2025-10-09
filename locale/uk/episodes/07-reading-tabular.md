@@ -149,10 +149,10 @@ Index(['gdpPercap_1952', 'gdpPercap_1957', 'gdpPercap_1962', 'gdpPercap_1967',
       dtype='object')
 ```
 
-## Use `DataFrame.T` to transpose a dataframe.
+## Використовуйте `DataFrame.T`, щоб транспонувати датафрейм.
 
-- Sometimes want to treat columns as rows and vice versa.
-- Transpose (written `.T`) doesn't copy the data, just changes the program's view of it.
+- Іноді потрібно розглядати стовпці як рядки та навпаки.
+- Транспонування (written `.T`) не копіює дані, а лише змінює їх подання.
 - Як і `columns`, це змінна-член.
 
 ```python
@@ -232,7 +232,7 @@ and display its summary statistics.
 
 ## Рішення
 
-To read in a CSV, we use `pd.read_csv` and pass the filename `'data/gapminder_gdp_americas.csv'` to it.
+Щоб зчитати CSV-файл, ми використовуємо функцію pd.read_csv і передаємо їй ім'я файлу 'data/gapminder_gdp_americas.csv' як аргумент.
 We also once again pass the column name `'country'` to the parameter `index_col` in order to index by country.
 The summary statistics can be displayed with the `DataFrame.describe()` method.
 
@@ -249,13 +249,11 @@ data_americas.describe()
 
 ## Перевірка даних
 
-After reading the data for the Americas,
-use `help(data_americas.head)` and `help(data_americas.tail)`
-to find out what `DataFrame.head` and `DataFrame.tail` do.
+Після введення датафрейму `data_americas`, попрацюйте з довідкою `help(data_americas.head)` і `help(data_americas.tail)`, щоб дізнатися про призначення команд `DataFrame.head` і `DataFrame.tail`.
 
-1. What method call will display the first three rows of this data?
-2. What method call will display the last three columns of this data?
-   (Hint: you may need to change your view of the data.)
+1. Виклик якого методу виведе перші три рядки цього датафрейму?
+2. Виклик якого методу виведе останні три стовпці цього датафрейму?
+   (Підказка: вам може знадобитися змінити спосіб перегляду даних.)
 
 :::::::::::::::  solution
 
@@ -263,7 +261,7 @@ to find out what `DataFrame.head` and `DataFrame.tail` do.
 
 1. We can check out the first five rows of `data_americas` by executing `data_americas.head()`
    which lets us view the beginning of the DataFrame. Ми можемо вказати кількість рядків, які ми хочемо бачити, визначивши параметр `n` у нашому виклику `americas.head()`.
-   To view the first three rows, execute:
+   Для перегляду перших трьох рядків виконайте:
 
 ```python
 data_americas.head(n=3)
