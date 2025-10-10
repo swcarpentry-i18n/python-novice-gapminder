@@ -322,7 +322,7 @@ The program prints `m`.
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Stepping Through a List
+## Перехід по списку
 
 Що друкує наступна програма?
 
@@ -431,8 +431,8 @@ list `letters` remains unchanged), while `letters.sort()` sorts the list
 
 ## Копіювання (чи ні)
 
-What do these two programs print?
-In simple terms, explain the difference between `new = old` and `new = old[:]`.
+Що друкують ці дві програми?
+Простими словами поясніть різницю між `new = old` and `new = old[:]`.
 
 ```python
 # Program A
@@ -479,15 +479,15 @@ from the list `old`; `new` and `old` are different objects.
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
 - A list stores many values in a single structure.
-- Use an item's index to fetch it from a list.
-- Lists' values can be replaced by assigning to them.
-- Appending items to a list lengthens it.
-- Use `del` to remove items from a list entirely.
-- The empty list contains no values.
-- Lists may contain values of different types.
-- Character strings can be indexed like lists.
-- Character strings are immutable.
-- Indexing beyond the end of the collection is an error.
+- Щоб отримати елемент списку, використовуйте його індекс.
+- Значення елементів списків можна замінити шляхом присвоєння.
+- Додавання елементів до списку подовжує його.
+- Щоб повністю видалити елементи зі списку, використовуйте `del`.
+- Порожній список не містить жодних значень.
+- Списки можуть містити значення різних типів.
+- Рядки символів можна індексувати як списки.
+- Рядки символів незмінні.
+- Індексація після кінця колекції є помилкою.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
