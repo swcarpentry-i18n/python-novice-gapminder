@@ -135,8 +135,8 @@ memory usage: 208.0+ bytes
 
 - Зверніть увагу, що це дані, _а не_ метод.  (Відсутні дужки)
   - Подібно до `math.pi`.
-  - Тому не використовуйте `()` для її виклику.
-- Ця змінна називається змінною-членом або просто членом .
+  - So do not use `()` to try to call it.
+- Called a _member variable_, or just _member_.
 
 ```python
 print(data_oceania_country.columns)
@@ -153,7 +153,7 @@ Index(['gdpPercap_1952', 'gdpPercap_1957', 'gdpPercap_1962', 'gdpPercap_1967',
 
 - Іноді потрібно розглядати стовпці як рядки та навпаки.
 - Транспонування (written `.T`) не копіює дані, а лише змінює їх подання.
-- Як і `columns`, це змінна-член.
+- Like `columns`, it is a member variable.
 
 ```python
 print(data_oceania_country.T)
@@ -177,8 +177,8 @@ gdpPercap_2007  34435.36744  25185.00911
 
 ## Використовуйте `DataFrame.describe`, щоб отримати зведену статистику даних.
 
-DataFrame.describe() отримує зведену статистику лише для стовпців, які містять числові дані.
-Усі інші стовпці ігноруються, якщо ви не використовуєте аргумент `include='all'`.
+`DataFrame.describe()` gets the summary statistics of only the columns that have numerical data.
+All other columns are ignored, unless you use the argument `include='all'`.
 
 ```python
 print(data_oceania_country.describe())
