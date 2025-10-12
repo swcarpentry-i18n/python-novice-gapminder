@@ -221,20 +221,17 @@ max      23424.766830    26997.936570    30687.754730    34435.367440
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Читання інших даних
+## Reading Other Data
 
-Read the data in `gapminder_gdp_americas.csv`
-(which should be in the same directory as `gapminder_gdp_oceania.csv`)
-into a variable called `data_americas`
-and display its summary statistics.
+Зчитайте дані з файлу `gapminder_gdp_americas.csv` (який має бути в тому ж каталозі, що й `gapminder_gdp_oceania.csv`) у змінну `data_americas` і відобразіть її зведену статистику.
 
 :::::::::::::::  solution
 
-## Рішення
+## Відповідь
 
-Щоб зчитати CSV-файл, ми використовуємо функцію pd.read_csv і передаємо їй ім'я файлу 'data/gapminder_gdp_americas.csv' як аргумент.
+To read in a CSV, we use `pd.read_csv` and pass the filename `'data/gapminder_gdp_americas.csv'` to it.
 We also once again pass the column name `'country'` to the parameter `index_col` in order to index by country.
-The summary statistics can be displayed with the `DataFrame.describe()` method.
+Зведену статистику можна показати за допомогою методу `DataFrame.describe()`.
 
 ```python
 data_americas = pd.read_csv('data/gapminder_gdp_americas.csv', index_col='country')
