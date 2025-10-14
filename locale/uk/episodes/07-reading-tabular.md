@@ -135,7 +135,7 @@ memory usage: 208.0+ bytes
 
 - Зверніть увагу, що це дані, _а не_ метод.  (Відсутні дужки)
   - Подібно до `math.pi`.
-  - So do not use `()` to try to call it.
+  - Тому не використовуйте `()`, тому що це - не функція.
 - Called a _member variable_, or just _member_.
 
 ```python
@@ -177,8 +177,8 @@ gdpPercap_2007  34435.36744  25185.00911
 
 ## Використовуйте `DataFrame.describe`, щоб отримати зведену статистику даних.
 
-`DataFrame.describe()` gets the summary statistics of only the columns that have numerical data.
-All other columns are ignored, unless you use the argument `include='all'`.
+`DataFrame.describe()` отримує зведену статистику лише для стовпців, які містять числові дані.
+Якщо ви не використовуєте аргумент `include='all'`, усі інші стовпці ігноруються.
 
 ```python
 print(data_oceania_country.describe())
@@ -216,12 +216,11 @@ min      18363.324940    21050.413770    23189.801350    25185.009110
 max      23424.766830    26997.936570    30687.754730    34435.367440
 ```
 
-- Not particularly useful with just two records,
-  but very helpful when there are thousands.
+- Це не додає багато нової інформації у випадку лише двох записів, але дуже корисно, коли їх тисячі.
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Reading Other Data
+## Ще одна вправа на читання даних
 
 Зчитайте дані з файлу `gapminder_gdp_americas.csv` (який має бути в тому ж каталозі, що й `gapminder_gdp_oceania.csv`) у змінну `data_americas` і відобразіть її зведену статистику.
 
@@ -229,8 +228,8 @@ max      23424.766830    26997.936570    30687.754730    34435.367440
 
 ## Відповідь
 
-To read in a CSV, we use `pd.read_csv` and pass the filename `'data/gapminder_gdp_americas.csv'` to it.
-We also once again pass the column name `'country'` to the parameter `index_col` in order to index by country.
+Щоб зчитати CSV-файл, ми використовуємо функцію `pd.read_csv` і передаємо їй ім'я файлу `'data/gapminder_gdp_americas.csv'` як аргумент.
+Також ми передаємо назву стовпця `'country'` у параметрі `index_col`, щоб індексувати за країною.
 Зведену статистику можна показати за допомогою методу `DataFrame.describe()`.
 
 ```python
