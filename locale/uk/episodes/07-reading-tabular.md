@@ -245,15 +245,15 @@ data_americas.describe()
 
 ## Перевірка даних
 
-Після введення датафрейму `data_americas`, попрацюйте з довідкою `help(data_americas.head)` і `help(data_americas.tail)`, щоб дізнатися про призначення команд `DataFrame.head` і `DataFrame.tail`.
+Після введення датафрейму `data_americas` попрацюйте з довідкою `help(data_americas.head)` та `help(data_americas.tail)`, щоб дізнатися про призначення команд `DataFrame.head` та `DataFrame.tail`.
 
 1. Виклик якого методу виведе перші три рядки цього датафрейму?
 2. Виклик якого методу виведе останні три стовпці цього датафрейму?
-   (Підказка: вам може знадобитися змінити спосіб перегляду даних.)
+   (Підказка: вам може знадобитися змінити спосіб перегляду даних).
 
 :::::::::::::::  solution
 
-## Рішення
+## Відповідь
 
 1. We can check out the first five rows of `data_americas` by executing `data_americas.head()`
    which lets us view the beginning of the DataFrame. Ми можемо вказати кількість рядків, які ми хочемо бачити, визначивши параметр `n` у нашому виклику `americas.head()`.
@@ -364,9 +364,9 @@ your_home_directory
 
 :::::::::::::::  solution
 
-## Рішення
+## Solution
 
-We need to specify the path to the file of interest in the call to `pd.read_csv`. По-перше, потрібно «вистрибнути» з теки `thesis` за допомогою '../', а потім зайти у теку `field_data` за допомогою 'field_data/'. Після цього вказати назву файлу \`microbes.csv.
+We need to specify the path to the file of interest in the call to `pd.read_csv`. По-перше, потрібно «вистрибнути» з теки `thesis` за допомогою '../', а потім зайти у теку `field_data` за допомогою 'field_data/'. Then we can specify the filename \\`microbes.csv.
 The result is as follows:
 
 ```python
@@ -389,7 +389,7 @@ write one of your dataframes to a file called `processed.csv`.
 
 :::::::::::::::  solution
 
-## Рішення
+## Solution
 
 In order to write the DataFrame `data_americas` to a file called `processed.csv`, execute the following command:
 
