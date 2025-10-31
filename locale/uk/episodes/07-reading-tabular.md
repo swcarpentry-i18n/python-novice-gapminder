@@ -297,8 +297,7 @@ Brazil        9065.800825
 americas_flipped = data_americas.T
 ```
 
-We can then view the last three columns of `americas` by viewing the last three rows
-of `americas_flipped`:
+Тепер ми можемо переглянути останні три стовпці `data_americas` за допомогою перегляду останніх трьох рядків `americas_flipped`:
 
 ```python
 americas_flipped.tail(n=3)
