@@ -346,8 +346,7 @@ data_americas.T.tail(n=3).T
 
 ## Reading Files in Other Directories
 
-The data for your current project is stored in a file called `microbes.csv`,
-which is located in a folder called `field_data`.
+Дані вашого поточного проєкту зберігаються у файлі під назвою `microbes.csv`, який знаходиться в каталозі `field_data`.
 You are doing analysis in a notebook called `analysis.ipynb`
 in a sibling folder called `thesis`:
 
