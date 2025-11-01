@@ -6,10 +6,10 @@ exercises: 15
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- Вибір окремих значень з фрейму даних Pandas.
-- Виділення цілих рядків або цілих стовпців з фрейму даних.
-- Вибір підмножини рядків і стовпців з фрейму даних за одну операцію.
-- Вибір підмножини з фрейму даних за єдиним булевим критерієм.
+- Вибір окремих значень з датафрейму Pandas.
+- Виділення цілих рядків або цілих стовпців з датафрейму.
+- Вибір підмножини рядків і стовпців з датафрейму за одну операцію.
+- Вибір підмножини з датафрейму за єдиним булевим критерієм.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -19,7 +19,7 @@ exercises: 15
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Зауваження щодо Pandas DataFrames/Series
+## Note about Pandas DataFrames/Series
 
 A [DataFrame][pandas-dataframe] is a collection of [Series][pandas-series];
 The DataFrame is the way Pandas represents a table, and Series is the data-structure
@@ -28,9 +28,7 @@ Pandas use to represent a column.
 Pandas is built on top of the [Numpy][numpy] library, which in practice means that
 most of the methods defined for Numpy Arrays apply to Pandas Series/DataFrames.
 
-What makes Pandas so attractive is the powerful interface to access individual records
-of the table, proper handling of missing values, and relational-databases operations
-between DataFrames.
+Що робить Pandas таким привабливим? Це потужний інтерфейс для доступу до окремих записів таблиці, належної обробки відсутніх значень та підтримки операцій з датафреймами, подібних до тих, що застосовуються в реляційних базах даних.
 
 ## Вибір значень
 
