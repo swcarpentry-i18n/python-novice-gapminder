@@ -54,7 +54,7 @@ print(data.iloc[0, 0])
 
 ## Use `DataFrame.loc[..., ...]` to select values by their (entry) label.
 
-- Можна вказати розташування по рядку та/або імені стовпця.
+- Can specify location by row and/or column name.
 
 ```python
 print(data.loc["Albania", "gdpPercap_1952"])
