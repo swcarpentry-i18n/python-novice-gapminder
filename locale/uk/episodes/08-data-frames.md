@@ -64,7 +64,7 @@ print(data.loc["Albania", "gdpPercap_1952"])
 1601.056136
 ```
 
-## Використовуйте лише `:` для позначення всіх стовпців або всіх рядків.
+## Use `:` on its own to mean all columns or all rows.
 
 - Це відповідає звичайному синтаксису зрізів у Python.
 
