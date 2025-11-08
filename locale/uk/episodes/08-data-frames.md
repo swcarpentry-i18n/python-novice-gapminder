@@ -107,7 +107,7 @@ Name: gdpPercap_1952, dtype: float64
 ```
 
 - Той самий результат можна отримати, якщо надрукувати `data["gdpPercap_1952"]`
-- Also get the same result printing `data.gdpPercap_1952` (not recommended, because easily confused with `.` notation for methods)
+- Більш того, той самий результат можна отримати, застосовуючи нотацію `data.gdpPercap_1952` (але не рекомендується, оскільки її легко сплутати з позначенням `.` для використання методів)
 
 ## Вибирайте кілька стовпців або рядків за допомогою `DataFrame.loc` та визначеного зрізу.
 
