@@ -8,7 +8,7 @@ exercises: 10
 
 - Визначення локальних і глобальних змінних.
 - Ідентифікація параметрів як локальних змінних.
-- Read a traceback and determine the file, function, and line number on which the error occurred, the type of error, and the error message.
+- Аналіз звіту системної діагностики (traceback) та визначення файлу, функції й номера рядка, у якому сталася помилка, а також типу помилки й тексту повідомлення про неї.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
