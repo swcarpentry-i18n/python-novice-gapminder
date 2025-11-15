@@ -85,7 +85,7 @@ print(clip(value))
 
 Read the traceback below, and identify the following:
 
-1. How many levels does the traceback have?
+1. Скільки рівнів має трасування помилок?
 2. Як називається файл, у якому сталася помилка?
 3. Як називається функція, у якій сталася помилка?
 4. В якому рядку цієї функції виникла помилка?
