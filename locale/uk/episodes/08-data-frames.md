@@ -535,8 +535,8 @@ There are at least two ways of accessing a value or slice of a DataFrame: by nam
 3. Доступ до окремого елемента датафрейму
 4. Доступ до декількох стовпців
 5. Доступ до декількох рядків
-6. Доступ до підмножини визначених рядків і стовпців
-7. Доступ до підмножини діапазонів рядків і стовпців
+6. Access a subset of specific rows and columns
+7. Access a subset of row and column ranges
 
 :::::::::::::::  solution
 
@@ -644,7 +644,7 @@ data.loc[["row1", "row2", "row3"]]
 data.iloc[[row1_index, row2_index, row3_index]]
 ```
 
-6\. Доступ до підмножини визначених рядків і стовпців
+6\. Access a subset of specific rows and columns
 
 ```python
 # by names
@@ -660,7 +660,7 @@ data[["col1", "col2", "col3"]].iloc[[row1_index, row2_index, row3_index]]
 data.iloc[:, [col1_index, col2_index, col3_index]].loc[["row1", "row2", "row3"]]
 ```
 
-7\. Доступ до підмножини рядків і діапазонів стовпців
+7\. Access a subset of row and column ranges
 
 ```python
 # by name
@@ -684,7 +684,7 @@ data.iloc[:, col1_index:col2_index].loc["row1":"row2"]
 
 ## Пошук доступних методів використовуючи функцію `dir()`
 
-Python includes a `dir()` function that can be used to display all of the available methods (functions) that are built into a data object.  In Episode 4, we used some methods with a string. But we can see many more are available by using `dir()`:
+У Python є функція `dir()`, яка дозволяє переглянути всі доступні методи (функції), які вбудовані в об’єкт даних.  В епізоді 4 ми використали деякі методи для рядка. Але за допомогою `dir()` можна побачити ще більше доступних методів:
 
 ```python
 my_string = 'Hello world!'   # creation of a string object 
@@ -705,9 +705,9 @@ dir(my_string)
 'zfill']
 ```
 
-You can use `help()` or <kbd>Shift</kbd>\+<kbd>Tab</kbd> to get more information about what these methods do.
+Ви можете використати `help()` або <kbd>Shift</kbd>\+<kbd>Tab</kbd>, щоб дізнатися більше про призначення цих методів.
 
-Assume Pandas has been imported and the Gapminder GDP data for Europe has been loaded as `data`.  Then, use `dir()`
+Припустимо, що Pandas вже імпортовано, а дані Gapminder про ВВП Європи завантажено в змінну `data`.  Then, use `dir()`
 to find the function that prints out the median per-capita GDP across all European countries for each year that information is available.
 
 :::::::::::::::  solution
