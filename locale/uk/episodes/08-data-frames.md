@@ -726,12 +726,11 @@ data.median()
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Інтерпретація
+## Interpretation
 
 Poland's borders have been stable since 1945,
 but changed several times in the years before then.
-How would you handle this if you were creating a table of GDP per capita for Poland
-for the entire twentieth century?
+Як би ви врахували це при створенні таблиці ВВП на душу населення для Польщі за все ХХ століття?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -742,11 +741,11 @@ for the entire twentieth century?
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
 - Використовуйте `DataFrame.iloc[..., ...]` для вибору значень за їх позицією
-- Використовуйте `:` окремо для позначення всіх стовпців або всіх рядків.
-- Вибирайте кілька стовпців або рядків за допомогою `DataFrame.loc` та визначеного зрізу.
+- Use `:` on its own to mean all columns or all rows.
+- Select multiple columns or rows using `DataFrame.loc` and a named slice.
 - Результат застосування операції зрізу може бути використаний у подальших операціях.
-- Використовуйте порівняння для вибору даних на основі певного значення.
-- Виберіть значення або NaN за допомогою булевої маски.
+- Use comparisons to select data based on value.
+- Select values or NaN using a Boolean mask.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
