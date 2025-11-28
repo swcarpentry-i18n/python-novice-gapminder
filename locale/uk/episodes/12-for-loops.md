@@ -1,5 +1,5 @@
 ---
-title: For Loops
+title: Цикли for
 teaching: 10
 exercises: 15
 ---
@@ -14,29 +14,29 @@ exercises: 15
 
 :::::::::::::::::::::::::::::::::::::::: questions
 
-- How can I make a program do many things?
+- Як змусити програму робити багато речей?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## A _for loop_ executes commands once for each value in a collection.
+## Цикл for виконує команди один раз для кожного значення в колекції.
 
 - Doing calculations on the values in a list one by one
   is as painful as working with `pressure_001`, `pressure_002`, etc.
 - A _for loop_ tells Python to execute some statements once for each value in a list,
   a character string,
   or some other collection.
-- "for each thing in this group, do these operations"
+- "для кожного елемента в цій групі виконайте ці операції"
 
 ```python
-for number in [2, 3, 5]:
-    print(number)
+for number in [2, 3, 5]: 
+     print(number)
 ```
 
 - Цей цикл `for` є еквівалентним наступному:
 
 ```python
-print(2)
-print(3)
+print(2) 
+print(3) 
 print(5)
 ```
 
@@ -51,7 +51,7 @@ print(5)
 ## Цикл `for` складається з колекції, змінної циклу та тіла циклу.
 
 ```python
-for number in [2, 3, 5]:
+for number in [2, 3, 5]: 
     print(number)
 ```
 
