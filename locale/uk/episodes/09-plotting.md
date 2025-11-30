@@ -170,24 +170,24 @@ plt.legend()
 
 ![](fig/9_gdp_australia_nz_formatted.svg){alt='Форматований графік ВВП для Австралії та Нової Зеландії'}
 
-- Plot a scatter plot correlating the GDP of Australia and New Zealand
-- Use either `plt.scatter` or `DataFrame.plot.scatter`
+- Побудуйте точкову діаграму співвідношення ВВП Австралії та Нової Зеландії
+- Використовуйте `plt.scatter` або `DataFrame.plot.scatter`
 
 ```python
 plt.scatter(gdp_australia, gdp_nz)
 ```
 
-![](fig/9_gdp_correlation_plt.svg){alt='GDP correlation using plt.scatter'}
+![](fig/9_gdp_correlation_plt.svg){alt='Точкова діаграма, створена за допомогою plt.scatter'}
 
 ```python
 data.T.plot.scatter(x = 'Australia', y = 'New Zealand')
 ```
 
-![](fig/9_gdp_correlation_data.svg){alt='GDP correlation using data.T.plot.scatter'}
+![](fig/9_gdp_correlation_data.svg){alt='Точкова діаграма кореляції ВВП, побудована за допомогою data.T.plot.scatter.'}
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Мінімум та максимум
+## Minima and Maxima
 
 Заповніть порожні поля нижче, щоб побудувати графік мінімального ВВП на душу населення протягом часу для всіх країн Європи.
 Потім побудуйте графік максимального ВВП на душу населення в Європі.
@@ -202,7 +202,7 @@ plt.xticks(rotation=90)
 
 :::::::::::::::  solution
 
-## Рішення
+## Відповідь
 
 ```python
 data_europe = pd.read_csv('data/gapminder_gdp_europe.csv', index_col='country')
@@ -227,22 +227,20 @@ plt.xticks(rotation=90)
 
 :::::::::::::::  solution
 
-## Рішення
+## Відповідь
 
 ```python
 data_asia = pd.read_csv('data/gapminder_gdp_asia.csv', index_col='country')
 data_asia.describe().T.plot(kind='scatter', x='min', y='max')
 ```
 
-![](fig/9_correlations_solution1.svg){alt='Співвідношення Рішення 1'}
+![](fig/9_correlations_solution1.svg){alt='Співвідношення - Відповідь 1'}
 
-No particular correlations can be seen between the minimum and maximum GDP values
-year on year. Здається, статки азійських країн не зростають і не падають разом.
+Між мінімальним і максимальним значеннями ВВП за роками не спостерігається чіткої залежності. Здається, статки азійських країн не зростають і не падають разом.
 
 :::::::::::::::::::::::::
 
-You might note that the variability in the maximum is much higher than
-that of the minimum.  Зверніть увагу на максимальні значення та відповідні індекси:
+Ви можете помітити, що варіабельність максимальних значень значно вища, ніж варіабельність мінімальних значень.  Зверніть увагу на максимальні значення та відповідні індекси:
 
 ```python
 data_asia = pd.read_csv('data/gapminder_gdp_asia.csv', index_col='country')
@@ -253,13 +251,12 @@ print(data_asia.idxmin())
 
 :::::::::::::::  solution
 
-## Рішення
+## Відповідь
 
-![](fig/9_correlations_solution2.png){alt='Співвідношення Рішення 2'}
+![](fig/9_correlations_solution2.png){alt='Співвідношення - Відповідь 2'}
 
-Seems the variability in this value is due to a sharp drop after 1972.
-Some geopolitics at play perhaps? Given the dominance of oil producing countries,
-maybe the Brent crude index would make an interesting comparison?
+Здається, варіабельність цього значення зумовлена різким спадом після 1972 року.
+Можливо, тут зіграли роль геополітичні чинники? Враховуючи домінування нафтовидобувних країн, можливо, індекс нафти Brent стане цікавим об'єктом для порівняння?
 У той час як М’янма постійно має найнижчий ВВП, країна з найвищим ВВП змінюється більш помітно.
 
 :::::::::::::::::::::::::
@@ -284,11 +281,11 @@ data_all.plot(kind='scatter', x='gdpPercap_2007', y='lifeExp_2007',
 
 :::::::::::::::  solution
 
-## Рішення
+## Відповідь
 
 ![](fig/9_more_correlations_solution.svg){alt='More Correlations Solution'}
 
-Гарне місце для пошуку документації до функції графіків -
+Гарне місце для пошуку документації до функції plot -
 help(data\_all.plot).
 
 kind - Як вже було показано, цей параметр визначає тип графіку, який буде створено.
