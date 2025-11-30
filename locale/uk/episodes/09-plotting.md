@@ -7,7 +7,7 @@ exercises: 15
 ::::::::::::::::::::::::::::::::::::::: objectives
 
 - Створення графіку часового ряду, який відповідає одному набору даних.
-- Створення діаграми розсіювання, яка показує зв’язок між двома наборами даних.
+- Create a scatter plot showing relationship between two data sets.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -42,11 +42,12 @@ plt.ylabel('Position (km)')
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Display All Open Figures
+## Зображення всіх графіків з програмного коду
 
 У прикладі з Jupyter Notebook виконання комірки призводить до побудови графіку безпосередньо під кодом.
 Графік також зберігається у блокноті для подальшого перегляду.
-Проте, інші середовища Python, такі як інтерактивна сесія Python, що ініціюється з термінала, або Python скрипт, виконаний за допомогою командного рядка, потребують додаткової команди для зображення графіку.
+However, other Python environments like an interactive Python session started from a terminal
+or a Python script executed via the command line require an additional command to display the figure.
 
 Доручіть `matplotlib` зобразити графік:
 
@@ -58,10 +59,10 @@ plt.show()
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Побудова графіків безпосередньо з [Pandas dataframes](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html).
+## Побудова графіків безпосередньо з [датафреймів Pandas](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html).
 
-- Для побудови графіків можна також використовувати [фрейми даних Pandas](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html).
-- Перед побудовою графіку ми перетворюємо назви стовпців із типу `string` на `integer`, оскільки вони представляють числові значення. Для цього використовуємо метод [str.replace()](https://pandas.pydata.org/docs/reference/api/pandas.Series.str.replace. tml), щоб видалити префікс `gpdPercap_`, а потім [astype(int)](https://pandas.pydata.org/docs/reference/api/pandas.Series.astype. tml), щоб перетворити ряд значень рядка (`['1952', '1957', ...'2007']`) у ряд цілих чисел: `[1925, 1957, ..., 2007]`.
+- Для побудови графіків можна також використовувати [датафрейми Pandas](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html).
+- Перед побудовою графіку ми перетворюємо назви стовпців із типу `string` на `integer`, оскільки вони представляють числові значення. Для цього використовуємо метод [str.replace()](https://pandas.pydata.org/docs/reference/api/pandas.Series.str.replace.html), щоб видалити префікс `gpdPercap_`, а потім [astype(int)](https://pandas.pydata.org/docs/reference/api/pandas.Series.astype.html), щоб перетворити ряд значень рядка (`['1952', '1957', ...'2007']`) у ряд цілих чисел: `[1925, 1957, ..., 2007]`.
 
 ```python
 import pandas as pd
@@ -99,7 +100,7 @@ plt.ylabel('GDP per capita')
 
 ## Доступні багато стилів графіків.
 
-- For example, do a bar plot using a fancier style.
+- Наприклад, можна створити стовпчикову діаграму з більш вишуканим стилем.
 
 ```python
 plt.style.use('ggplot')
@@ -146,8 +147,7 @@ plt.ylabel('GDP per capita ($)')
 
 ## Додавання легенди
 
-Often when plotting multiple datasets on the same figure it is desirable to have
-a legend describing the data.
+Зазвичай при побудові графіків з кількох наборів даних разом, бажано мати легенду, що описує ці дані.
 
 Це можна зробити в `matplotlib` за два етапи:
 
