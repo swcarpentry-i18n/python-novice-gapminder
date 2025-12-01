@@ -317,7 +317,7 @@ plt.savefig('my_figure.png')
 Зауважимо, що функції в `plt` посилаються на глобальну змінну графіка і після того, як графік виведено на екран (наприклад, за допомогою `plt.show`) matplotlib змусить цю змінну посилатися на новий порожній графік.
 Тому переконайтеся, що ви викликаєте `plt.savefig` перед тим, як графік буде зображено на екрані, інакше ви можете створити файл із порожнім графіком.
 
-При використанні фреймів даних дані часто генеруються та виводяться на екрані однією лінією.
+When using dataframes, data is often generated and plotted to screen in one line.
 На додаток до `plt.savefig`, ми можемо зберегти посилання на поточний графік у локальну змінну (використовуючи `plt.gcf`), а потім викликати `savefig` метод цієї змінної для збереження графіка у файл.
 
 ```python
@@ -334,7 +334,7 @@ fig.savefig('my_figure.png')
 
 Щоразу, коли ви створюєте графіки для статті чи презентації, варто врахувати кілька речей, щоб переконатися, що всі зрозуміють ваші графіки.
 
-- Завжди перевіряйте, що ваш текст достатньо великий для читання. Використовуйте параметр `fontsize` в `xlabel`, `ylabel`, `title`, та `legend`, а також [`tick_params` з `labelsize`](https://matplotlib.org/2.1.1/api/_as_gen/matplotlib.pyplot.tick_params.html) щоб збільшити розмір чисел на ваших осях.
+- Always make sure your text is large enough to read. Use the `fontsize` parameter in `xlabel`, `ylabel`, `title`, and `legend`, and [`tick_params` with `labelsize`](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.tick_params.html) to increase the text size of the numbers on your axes.
 - Також слід подбати, щоб елементи графіка були добре помітними. Використовуйте `s`, щоб збільшити розмір маркерів діаграми розсіювання, і `linewidth`, щоб збільшити розміри ліній вашого графіка.
 - Якщо розрізняти елементи графіка тільки за кольором, це може ускладнити його сприйняття для людей із дальтонізмом або тих, хто переглядає матеріали в чорно-білому вигляді (наприклад, після друку). Для ліній можна використовувати параметр `linestyle`, щоб задати різні стилі ліній. Для діаграм розсіювання `marker` дозволяє змінювати форму ваших точок. Якщо ви не впевнені у вибраній кольоровій палітрі, скористайтеся інструментами на кшталт [Coblis](https://www.color-blindness.com/coblis-color-blindness-simulator/) або [Color Oracle](https://colororacle.org/) щоб імітувати, як виглядатимуть ваші графіки для людей з дальтонізмом.
 
@@ -343,8 +343,8 @@ fig.savefig('my_figure.png')
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
 - [`matplotlib`](https://matplotlib.org/) — це найпоширеніша наукова бібліотека для побудови графіків у Python.
-- Побудова графіків можлива безпосередньо з використанням фреймів даних Pandas.
-- Побудова графіків включає виділення та трансформацію даних.
+- Plot data directly from a Pandas dataframe.
+- Select and transform data, then plot it.
 - Many styles of plot are available: see the [Python Graph Gallery](https://python-graph-gallery.com/matplotlib/) for more options.
 - Can plot many sets of data together.
 
