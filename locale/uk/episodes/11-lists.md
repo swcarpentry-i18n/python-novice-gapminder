@@ -6,21 +6,20 @@ exercises: 10
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- Поясніть, навіщо програмам потрібні набори значень.
-- Напишіть програми, які створюють списки, індексують їх, а також розрізають і змінюють їх через присвоювання значень та виклик методів.
+- Explain why programs need collections of values.
+- Write programs that create flat lists, index them, slice them, and modify them through assignment and method calls.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: questions
 
-- Як зберігати декілька значень?
+- How can I store multiple values?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Список є структурою даних, яка містить в собі багато значень.
+## A list stores many values in a single structure.
 
-- Doing calculations with a hundred variables called `pressure_001`, `pressure_002`, etc.,
-  would be at least as slow as doing them by hand.
+- Виконання обчислень із сотнею змінних під назвою `pressure_001`, `pressure_002` тощо, було б принаймні так само повільно, як робити їх вручну.
 - Використовуйте список для зберігання багатьох значень разом.
   - Список позначається квадратними дужками `[...]`.
   - Значення розділяються комами `,`.
