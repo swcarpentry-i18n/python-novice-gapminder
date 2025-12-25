@@ -136,7 +136,7 @@ memory usage: 208.0+ bytes
 - Зверніть увагу, що це дані, _а не_ метод.  (Відсутні дужки)
   - Подібно до `math.pi`.
   - Тому не використовуйте `()`, тому що це - не функція.
-- Called a _member variable_, or just _member_.
+- Ця змінна називається атрибутом.
 
 ```python
 print(data_oceania_country.columns)
