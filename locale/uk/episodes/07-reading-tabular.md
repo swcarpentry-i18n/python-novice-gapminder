@@ -290,8 +290,7 @@ Brazil        9065.800825
 ```
 
 2. Щоб перевірити останні три рядки `data_americas`, ми можемо використати команду `data_americas.tail(n=3)`, яка аналогічна методу `head()`, що застосовувався вище. However, here we want to look at
-   the last three columns so we need to change our view and then use `tail()`. To do so, we
-   create a new DataFrame in which rows and columns are switched:
+   the last three columns so we need to change our view and then use `tail()`. Для цього ми маємо транспонувати цей датафрейм:
 
 ```python
 americas_flipped = data_americas.T
