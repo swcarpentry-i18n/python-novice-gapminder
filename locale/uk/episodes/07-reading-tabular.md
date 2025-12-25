@@ -342,7 +342,7 @@ data_americas.T.tail(n=3).T
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Reading Files in Other Directories
+## Читання файлів в інших каталогах
 
 Дані вашого поточного проєкту зберігаються у файлі під назвою `microbes.csv`, який знаходиться в каталозі `field_data`.
 You are doing analysis in a notebook called `analysis.ipynb`
@@ -356,7 +356,7 @@ your_home_directory
     +-- analysis.ipynb
 ```
 
-What value(s) should you pass to `read_csv` to read `microbes.csv` in `analysis.ipynb`?
+Які значення вам потрібно передати у функцію `read_csv`, щоб прочитати `microbes.csv` з блокнота `analysis.ipynb`?
 
 :::::::::::::::  solution
 
