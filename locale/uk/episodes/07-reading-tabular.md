@@ -324,8 +324,7 @@ gdpPercap_2002             11460.6       39097.1     7727   8605.05
 gdpPercap_2007             18008.5       42951.7  10611.5   11415.8
 ```
 
-This shows the data that we want, but we may prefer to display three columns instead of three rows,
-so we can flip it back:
+Це показує потрібні нам дані, але якщо ми віддаємо перевагу перегляду трьох стовпців замість трьох рядків, ми можемо додатково транспонувати останній результат:
 
 ```python
 americas_flipped.tail(n=3).T    
