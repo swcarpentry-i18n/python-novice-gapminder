@@ -380,8 +380,8 @@ data_microbes = pd.read_csv('../field_data/microbes.csv')
 
 As well as the `read_csv` function for reading data from a file,
 Pandas provides a `to_csv` function to write dataframes to files.
-Applying what you've learned about reading from files,
-write one of your dataframes to a file called `processed.csv`.
+Використовуючи знання про читання з файлів,
+запишіть один з ваших датафреймів у файл під назвою `processed.csv`.
 Ви можете скористатися `help`, щоб отримати інформацію про застосування `to_csv`.
 
 :::::::::::::::  solution
@@ -401,8 +401,7 @@ help(data_americas.to_csv)
 help(pd.read_csv)
 ```
 
-Зауважте, що команди `help(to_csv)` або `help(pd.to_csv)` є помилковими! This is due to the fact that `to_csv` is not a global Pandas function, but
-a member function of DataFrames. This means you can only call it on an instance of a DataFrame
+Зауважте, що команди `help(to_csv)` або `help(pd.to_csv)` є помилковими! Це пов'язано з тим, що `to_csv` є не глобальною функцією Pandas, а методом, визначеним для датафреймів. This means you can only call it on an instance of a DataFrame
 e.g., `data_americas.to_csv` or `data_oceania.to_csv`
 
 :::::::::::::::::::::::::
