@@ -206,7 +206,7 @@ Norway          13450.40151     16361.87647     18965.05551
 Poland                  NaN             NaN             NaN
 ```
 
-- Get the value where the mask is true, and NaN (Not a Number) where it is false.
+- Результат містить оригінальні значення, коли умова виконується, та NaN (Not a Number - не число) у решті випадків.
 - Це зручно, оскільки операції на кшталт max, min, average автоматично ігнорують значення NaN.
 
 ```python
@@ -225,7 +225,7 @@ min      12790.849560    10022.401310    12269.273780
 max      13450.401510    16361.876470    18965.055510
 ```
 
-## Group By: split-apply-combine
+## Group By: групує, застосовує та комбінує
 
 ::::::::::::::::::::::::::::::::::::: instructor
 Learners often struggle here, many may not work with financial data and concepts so they
@@ -368,7 +368,7 @@ Albania     1601.056136     1942.284244
 Austria     6137.076492     8842.598030
 ```
 
-The second statement gives:
+Другий вираз дає:
 
 ```output
         gdpPercap_1952  gdpPercap_1957  gdpPercap_1962
