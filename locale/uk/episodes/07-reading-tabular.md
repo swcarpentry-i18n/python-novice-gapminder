@@ -409,7 +409,7 @@ help(pd.read_csv)
 
 - Use the Pandas library to get basic statistics out of tabular data.
 - Use `index_col` to specify that a column's values should be used as row headings.
-- Use `DataFrame.info` to find out more about a dataframe.
+- Використовуйте `DataFrame.info`, щоб дізнатися більше про структуру датафрейму.
 - Змінна `DataFrame.columns` зберігає інформацію про стовпці датафрейму.
 - Використовуйте `DataFrame.T`, щоб транспонувати датафрейм.
 - Використовуйте `DataFrame.describe`, щоб отримати зведену статистику даних.
