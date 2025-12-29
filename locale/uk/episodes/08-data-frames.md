@@ -19,11 +19,9 @@ exercises: 15
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Note about Pandas DataFrames/Series
+## Датафрейми та серії у Pandas
 
-A [DataFrame][pandas-dataframe] is a collection of [Series][pandas-series];
-The DataFrame is the way Pandas represents a table, and Series is the data-structure
-Pandas use to represent a column.
+Датафрейм ([DataFrame][pandas-dataframe]) містить декілька серій ([Series][pandas-series]); Датафрейм — це спосіб представлення таблиці в Pandas, а серія — це структура даних, яку Pandas використовує для представлення окремого стовпця.
 
 Pandas is built on top of the [Numpy][numpy] library, which in practice means that
 most of the methods defined for Numpy Arrays apply to Pandas Series/DataFrames.
