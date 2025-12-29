@@ -62,7 +62,7 @@ print(data.loc["Albania", "gdpPercap_1952"])
 1601.056136
 ```
 
-## Use `:` on its own to mean all columns or all rows.
+## Використовуйте лише `:` замість мітки для позначення всіх стовпців або всіх рядків.
 
 - Це відповідає звичайному синтаксису зрізів у Python.
 
@@ -123,15 +123,13 @@ Norway         13450.401510    16361.876470    18965.055510
 Poland          5338.752143     6557.152776     8006.506993
 ```
 
-In the above code, we discover that **slicing using `loc` is inclusive at both
-ends**, which differs from **slicing using `iloc`**, where slicing indicates
-everything up to but not including the final index.
+У наведеному вище коді ми бачимо, що **зріз із використанням `loc` включає дані на обох вказаних кінцях**, на відміну від **зрізу із застосуванням `iloc`**, де зріз не включає кінцевий індекс.
 
 ## Результат зрізу можна використовувати в подальших операціях.
 
-- Usually don't just print a slice.
+- Зазвичай зрізи формуються не тільки для друку.
 - Усі статистичні оператори, які працюють зі цілими фреймами даних, так само працюють зі зрізами.
-- E.g., calculate max of a slice.
+- Наприклад, обчислення максимальних значень у зрізі.
 
 ```python
 print(data.loc['Italy':'Poland', 'gdpPercap_1962':'gdpPercap_1972'].max())
@@ -189,7 +187,7 @@ Norway                True           True           True
 Poland               False          False          False
 ```
 
-## Select values or NaN using a Boolean mask.
+## Вибір значень або NaN за допомогою булевої маски.
 
 - A frame full of Booleans is sometimes called a _mask_ because of how it can be used.
 
