@@ -46,8 +46,7 @@ plt.ylabel('Position (km)')
 
 У прикладі з Jupyter Notebook виконання комірки призводить до побудови графіку безпосередньо під кодом.
 Графік також зберігається у блокноті для подальшого перегляду.
-However, other Python environments like an interactive Python session started from a terminal
-or a Python script executed via the command line require an additional command to display the figure.
+Проте, інші середовища Python, такі як інтерактивна сесія Python, що виконується у терміналі, або Python скрипт, виконаний за допомогою командного рядка, потребують додаткової команди для зображення графіку.
 
 Доручіть `matplotlib` зобразити графік:
 
@@ -115,7 +114,7 @@ plt.ylabel('GDP per capita')
 - Формат команди є таким: `plt.plot(x, y)`
 - Колір та формат маркерів також можна вказати як додатковий необов'язковий аргумент, тобто, `b-` - це синя лінія, `g--` - це зелена пунктирна лінія.
 
-## Get Australia data from dataframe
+## Отримаємо дані Австралії з датафрейму.
 
 ```python
 years = data.columns
@@ -187,7 +186,7 @@ data.T.plot.scatter(x = 'Australia', y = 'New Zealand')
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Minima and Maxima
+## Мінімуми та максимуми
 
 Заповніть порожні поля нижче, щоб побудувати графік мінімального ВВП на душу населення протягом часу для всіх країн Європи.
 Потім побудуйте графік максимального ВВП на душу населення в Європі.
@@ -212,7 +211,7 @@ plt.legend(loc='best')
 plt.xticks(rotation=90)
 ```
 
-![](fig/9_minima_maxima_solution.png){alt='Minima Maxima Solution'}
+![](fig/9_minima_maxima_solution.png){alt='Рішення для графіків мінімуму та максимуму'}
 
 :::::::::::::::::::::::::
 
