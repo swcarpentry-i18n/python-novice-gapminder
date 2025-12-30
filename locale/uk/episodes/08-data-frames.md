@@ -530,8 +530,8 @@ data['gdpPercap_2007']/data['gdpPercap_1952']
 3. Доступ до окремого елемента датафрейму
 4. Доступ до декількох стовпців
 5. Доступ до декількох рядків
-6. Access a subset of specific rows and columns
-7. Access a subset of row and column ranges
+6. Доступ до підмножини, заданої визначеними рядками та стовпцями
+7. Доступ до підмножини, заданої діапазонами рядків та стовпців
 
 :::::::::::::::  solution
 
@@ -639,7 +639,7 @@ data.loc[["row1", "row2", "row3"]]
 data.iloc[[row1_index, row2_index, row3_index]]
 ```
 
-6\. Access a subset of specific rows and columns
+6\. Доступ до підмножини, заданої визначеними рядками та стовпцями
 
 ```python
 # by names
@@ -655,7 +655,7 @@ data[["col1", "col2", "col3"]].iloc[[row1_index, row2_index, row3_index]]
 data.iloc[:, [col1_index, col2_index, col3_index]].loc[["row1", "row2", "row3"]]
 ```
 
-7\. Access a subset of row and column ranges
+7\. Доступ до підмножини, заданої діапазонами рядків та стовпців
 
 ```python
 # by name
@@ -721,7 +721,7 @@ data.median()
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Interpretation
+## Інтерпретація даних
 
 Poland's borders have been stable since 1945,
 but changed several times in the years before then.
@@ -736,11 +736,11 @@ but changed several times in the years before then.
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
 - Використовуйте `DataFrame.iloc[..., ...]` для вибору значень за їх позицією
-- Use `:` on its own to mean all columns or all rows.
-- Select multiple columns or rows using `DataFrame.loc` and a named slice.
+- Використовуйте лише `:` замість міток для позначення всіх стовпців або всіх рядків.
+- Вибирайте кілька стовпців або рядків за допомогою `DataFrame.loc` та зрізу, заданого іменами стовпців або рядків.
 - Результат застосування операції зрізу може бути використаний у подальших операціях.
 - Use comparisons to select data based on value.
-- Select values or NaN using a Boolean mask.
+- Вибирайте значення або NaN за допомогою булевої маски.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
