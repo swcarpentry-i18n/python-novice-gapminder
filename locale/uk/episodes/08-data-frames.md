@@ -432,8 +432,7 @@ fourth = third.drop('continent', axis = 1)
 ```
 
 Знову ми застосовуємо функцію `drop`, але в цьому випадку ми видаляємо не рядок, а цілий стовпець.
-To accomplish this, we need to specify also the `axis` parameter (we want to drop the second column
-which has index 1).
+Для цього нам також потрібно вказати параметр `axis` (ми хочемо видалити другий стовпець, який має індекс 1).
 
 ```python
 fourth.to_csv('result.csv')
@@ -520,7 +519,7 @@ data['gdpPercap_2007']/data['gdpPercap_1952']
 
 ## Багато способів доступу
 
-There are at least two ways of accessing a value or slice of a DataFrame: by name or index.
+Отримати значення або зріз з датафрейму можна щонайменше двома способами: за назвою або за індексом.
 Однак існує багато інших варіантів. Наприклад, можна отримати окремий стовпець або рядок як `DataFrame`
 або `Series` об'єкт.
 
