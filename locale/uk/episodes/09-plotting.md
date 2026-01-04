@@ -266,9 +266,7 @@ print(data_asia.idxmin())
 
 ## Більше кореляцій
 
-This short program creates a plot showing
-the correlation between GDP and life expectancy for 2007,
-normalizing marker size by population:
+Ця коротка програма створює графік, який ілюструє взаємозв’язок між ВВП і очікуваною тривалістю життя на 2007 рік, змінюючи розмір маркера в залежності із чисельністю населення:
 
 ```python
 data_all = pd.read_csv('data/gapminder_all.csv', index_col='country')
@@ -316,7 +314,7 @@ plt.savefig('my_figure.png')
 Зауважимо, що функції в `plt` посилаються на глобальну змінну графіка і після того, як графік виведено на екран (наприклад, за допомогою `plt.show`) matplotlib змусить цю змінну посилатися на новий порожній графік.
 Тому переконайтеся, що ви викликаєте `plt.savefig` перед тим, як графік буде зображено на екрані, інакше ви можете створити файл із порожнім графіком.
 
-When using dataframes, data is often generated and plotted to screen in one line.
+При використанні датафреймів дані зазвичай генеруються та виводяться на екрані одним рядком коду.
 На додаток до `plt.savefig`, ми можемо зберегти посилання на поточний графік у локальну змінну (використовуючи `plt.gcf`), а потім викликати `savefig` метод цієї змінної для збереження графіка у файл.
 
 ```python
@@ -333,7 +331,7 @@ fig.savefig('my_figure.png')
 
 Щоразу, коли ви створюєте графіки для статті чи презентації, варто врахувати кілька речей, щоб переконатися, що всі зрозуміють ваші графіки.
 
-- Always make sure your text is large enough to read. Використовуйте параметр `fontsize` в `xlabel`, `ylabel`, `title`, та `legend`, а також [`tick_params` з `labelsize`](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.tick_params.html) щоб збільшити розмір тексту на осях графіку.
+- Завжди стежте за тим, щоб розмір тексту був зручним для читання. Використовуйте параметр `fontsize` в `xlabel`, `ylabel`, `title`, та `legend`, а також [`tick_params` з `labelsize`](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.tick_params.html) щоб збільшити розмір тексту на осях графіку.
 - Також слід подбати, щоб елементи графіка були добре помітними. Використовуйте `s`, щоб збільшити розмір маркерів діаграми розсіювання, і `linewidth`, щоб збільшити розміри ліній вашого графіка.
 - Якщо розрізняти елементи графіка тільки за кольором, це може ускладнити його сприйняття для людей із дальтонізмом або тих, хто переглядає матеріали в чорно-білому вигляді (наприклад, після друку). Для ліній можна використовувати параметр `linestyle`, щоб задати різні стилі ліній. Для діаграм розсіювання `marker` дозволяє змінювати форму ваших точок. Якщо ви не впевнені у вибраній кольоровій палітрі, скористайтеся інструментами на кшталт [Coblis](https://www.color-blindness.com/coblis-color-blindness-simulator/) або [Color Oracle](https://colororacle.org/) щоб імітувати, як виглядатимуть ваші графіки для людей з дальтонізмом.
 
@@ -342,7 +340,7 @@ fig.savefig('my_figure.png')
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
 - [`matplotlib`](https://matplotlib.org/) — це найпоширеніша наукова бібліотека для побудови графіків у Python.
-- Plot data directly from a Pandas dataframe.
+- Будуйте графіки безпосередньо з датафрейму Pandas.
 - Побудова графіків включає вибір та трансформацію даних.
 - Many styles of plot are available: see the [Python Graph Gallery](https://python-graph-gallery.com/matplotlib/) for more options.
 - На одному графіку можна одразу зобразити кілька наборів даних.
