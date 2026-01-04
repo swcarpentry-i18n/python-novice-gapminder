@@ -23,15 +23,13 @@ exercises: 15
 
 Датафрейм ([DataFrame][pandas-dataframe]) містить декілька серій ([Series][pandas-series]); Датафрейм — це спосіб представлення таблиці в Pandas, а серія — це структура даних, яку Pandas використовує для представлення окремого стовпця.
 
-Pandas is built on top of the [Numpy][numpy] library, which in practice means that
-most of the methods defined for Numpy Arrays apply to Pandas Series/DataFrames.
+Pandas побудована на основі бібліотеки [Numpy][numpy], що означає, що більшість методів для масивів Numpy також застосовується до датафреймів та серій у Pandas.
 
 Що робить Pandas таким привабливим? Це потужний інтерфейс для доступу до окремих записів таблиці, належної обробки відсутніх значень та підтримки операцій з датафреймами, подібних до тих, що застосовуються в реляційних базах даних.
 
 ## Вибір значень
 
-To access a value at the position `[i,j]` of a DataFrame, we have two options, depending on
-what is the meaning of `i` in use.
+Існує два способи доступу до значення в позиції `[i,j]` у датафреймі, залежно від того, як інтерпретується `i`.
 Remember that a DataFrame provides an _index_ as a way to identify the rows of the table;
 a row, then, has a _position_ inside the table as well as a _label_, which
 uniquely identifies its _entry_ in the DataFrame.
@@ -52,7 +50,7 @@ print(data.iloc[0, 0])
 
 ## Use `DataFrame.loc[..., ...]` to select values by their (entry) label.
 
-- Can specify location by row and/or column name.
+- Можна вказати розташування, використовуючи заголовок рядку та/або стовпця.
 
 ```python
 print(data.loc["Albania", "gdpPercap_1952"])
@@ -159,11 +157,11 @@ dtype: float64
 - Returns a similarly-shaped dataframe of `True` and `False`.
 
 ```python
-# Use a subset of data to keep output readable.
+# Використовуємо частину даних, щоб результат був читабельним
 subset = data.loc['Italy':'Poland', 'gdpPercap_1962':'gdpPercap_1972']
 print('Subset of data:\n', subset)
 
-# Which values were greater than 10000 ?
+# Які значення перевищують 10000 ?
 print('\nWhere are values large?\n', subset > 10000)
 ```
 
@@ -189,7 +187,7 @@ Poland               False          False          False
 
 ## Вибір значень або NaN за допомогою булевої маски.
 
-- A frame full of Booleans is sometimes called a _mask_ because of how it can be used.
+- Датафрейм, що містить лише булеві значення, іноді називають маскою через спосіб його використання.
 
 ```python
 mask = subset > 10000
@@ -345,7 +343,7 @@ print(data_europe.loc['Serbia', 'gdpPercap_2007'])
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Extent of Slicing
+## Межі зрізу
 
 1. Чи дають два наведені нижче твердження однаковий результат?
 2. На основі цього, яке правило визначає, що включено (чи ні) до числових та іменованих зрізів у Pandas?
@@ -378,7 +376,7 @@ Austria     6137.076492     8842.598030    10750.721110
 Belgium     8343.105127     9714.960623    10991.206760
 ```
 
-Clearly, the second statement produces an additional column and an additional row compared to the first statement.  
+Вочевидь, другий вираз повертає додатковий стовпець і додатковий рядок у порівнянні з першим.  
 Який висновок ми можемо зробити? Ми бачимо, що числовий зріз 0:2 _не включає_ кінцевий індекс (тобто, індекс 2), тоді як іменований зріз 'gdpPercap\_1952':'gdpPercap\_1962' _включає_ кінцевий елемент.
 
 :::::::::::::::::::::::::
@@ -389,8 +387,7 @@ Clearly, the second statement produces an additional column and an additional ro
 
 ## Реконструювання даних
 
-Explain what each line in the following short program does:
-what is in `first`, `second`, etc.?
+Опишіть, що робить кожен рядок наведеної короткої програми та які значення зберігаються в змінних `first`, `second` тощо?
 
 ```python
 first = pd.read_csv('data/gapminder_all.csv', index_col='country')
@@ -424,8 +421,7 @@ second = first[first['continent'] == 'Americas']
 third = second.drop('Puerto Rico')
 ```
 
-Як підказує синтаксис, цей код видаляє рядок з міткою 'Puerto Rico' з датафрейму `second`. The
-resulting dataframe `third` has one row less than the original dataframe `second`.
+Як підказує синтаксис, цей код видаляє рядок з міткою 'Puerto Rico' з датафрейму `second`. У результаті датафрейм `third` містить на один рядок менше, ніж вихідний датафрейм `second`.
 
 ```python
 fourth = third.drop('continent', axis = 1)
@@ -702,14 +698,13 @@ dir(my_string)
 
 Ви можете використати `help()` або <kbd>Shift</kbd>\+<kbd>Tab</kbd>, щоб дізнатися більше про призначення цих методів.
 
-Припустимо, що Pandas вже імпортовано, а дані Gapminder про ВВП Європи завантажено в змінну `data`.  Then, use `dir()`
-to find the function that prints out the median per-capita GDP across all European countries for each year that information is available.
+Припустимо, що Pandas вже імпортовано, а дані Gapminder про ВВП Європи завантажено в змінну `data`.  Тоді скористайтеся `dir()`, щоб знайти функцію, яка друкує середній ВВП на душу населення для всіх європейських країн за кожен доступний рік.
 
 :::::::::::::::  solution
 
 ## Відповідь
 
-Among many choices, `dir()` lists the `median()` function as a possibility.  Таким чином,
+Серед багатьох варіантів `dir()` пропонує функцію `median()`.  Таким чином,
 
 ```python
 data.median()
@@ -723,8 +718,7 @@ data.median()
 
 ## Інтерпретація даних
 
-Poland's borders have been stable since 1945,
-but changed several times in the years before then.
+Кордони Польщі стабільні з 1945 року, але до цього кілька разів змінювалися.
 Як би ви врахували це при створенні таблиці ВВП на душу населення для Польщі за все ХХ століття?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
