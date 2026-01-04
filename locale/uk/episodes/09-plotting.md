@@ -282,7 +282,7 @@ data_all.plot(kind='scatter', x='gdpPercap_2007', y='lifeExp_2007',
 
 ## Відповідь
 
-![](fig/9_more_correlations_solution.svg){alt='More Correlations Solution'}
+![](fig/9_more_correlations_solution.svg){alt='Більше кореляцій - Відповідь'}
 
 Гарне місце для пошуку документації до функції plot -
 help(data\_all.plot).
