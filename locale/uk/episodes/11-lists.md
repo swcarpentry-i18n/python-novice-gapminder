@@ -38,7 +38,7 @@ length: 5
 
 ## Щоб отримати елемент списку, використовуйте його індекс.
 
-- Just like strings.
+- Це робиться так само, як і при роботі з рядками.
 
 ```python
 print('zeroth item of pressures:', pressures[0])
