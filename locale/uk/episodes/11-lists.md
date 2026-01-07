@@ -174,9 +174,8 @@ TypeError: 'str' object does not support item assignment
 ## Indexing beyond the end of the collection is an error.
 
 - Python reports an `IndexError` if we attempt to access a value that doesn't exist.
-  - This is a kind of [runtime error](04-built-in.md).
-  - Cannot be detected as the code is parsed
-    because the index might be calculated based on data.
+  - Це різновид помилки виконання ([runtime error](04-built-in.md)).
+  - Її неможливо виявити під час аналізу коду, оскільки індекс може бути розрахований на основі даних, з якими працює програма.
 
 ```python
 print('99th element of element is:', element[99])
