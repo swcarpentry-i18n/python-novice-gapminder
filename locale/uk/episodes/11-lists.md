@@ -109,7 +109,7 @@ the last element in `primes` will itself be a list, not an integer. Списки
 ## Use `del` to remove items from a list entirely.
 
 - We use `del list_name[index]` to remove an element from a list (in the example, 9 is not a prime number) and thus shorten it.
-- `del` is not a function or a method, but a statement in the language.
+- `del` - це не функція і не метод, а оператор мови Python.
 
 ```python
 primes = [2, 3, 5, 7, 9]
@@ -149,8 +149,8 @@ print('третій символ:', element[3])
 ```
 
 ```output
-zeroth character: c
-third character: b
+нульовий символ: c
+третій символ: b
 ```
 
 ## Рядки символів незмінні.
