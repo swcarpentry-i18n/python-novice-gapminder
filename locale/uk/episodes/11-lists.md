@@ -187,7 +187,7 @@ IndexError: string index out of range
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Fill in the Blanks
+## Заповнення пропусків
 
 Fill in the blanks so that the program below produces the output shown.
 
