@@ -235,8 +235,7 @@ how long is the list `values[start:stop]`?
 
 ## Рішення
 
-The list `values[start:stop]` has up to `stop - start` elements.  For example,
-`values[1:4]` has the 3 elements `values[1]`, `values[2]`, and `values[3]`.
+Список `values[start:stop]` має до `stop - start` елементів.  Наприклад, `values[1:4]` має 3 елементи `values[1]`, `values[2]`, та `values[3]`.
 Why 'up to'? As we saw in [episode 2](02-variables.md),
 if `stop` is greater than the total length of the list `values`,
 we will still get a list back but it will be shorter than expected.
@@ -249,7 +248,7 @@ we will still get a list back but it will be shorter than expected.
 
 ## Від рядків до списків і назад.
 
-Given this:
+Нехай є:
 
 ```python
 print('string to list:', list('tin'))
