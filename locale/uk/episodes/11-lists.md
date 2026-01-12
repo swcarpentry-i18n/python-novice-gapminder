@@ -288,7 +288,7 @@ element = 'helium'
 print(element[-1])
 ```
 
-1. How does Python interpret a negative index?
+1. Як Python інтерпретує від'ємний індекс?
 2. If a list or string has N elements,
    what is the most negative index that can safely be used with it,
    and what location does that index represent?
@@ -300,7 +300,7 @@ print(element[-1])
 
 ## Рішення
 
-The program prints `m`.
+Програма надрукує `m`.
 
 1. Python interprets a negative index as starting from the end (as opposed to
    starting from the beginning).  The last element is `-1`.
