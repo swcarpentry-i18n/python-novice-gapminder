@@ -308,7 +308,7 @@ print(element[-1])
 2. The last index that can safely be used with a list of N elements is element
    `-N`, which represents the first element.
 
-3. `del values[-1]` removes the last element from the list.
+3. `del values[-1]` видаляє останній елемент зі списку.
 
 4. `values[:-1]`
 
@@ -328,7 +328,7 @@ print(element[::2])
 print(element[::-1])
 ```
 
-1. If we write a slice as `low:high:stride`, what does `stride` do?
+1. Якщо ми визначаємо зріз як `low:high:stride`, що робить `stride`?
 2. What expression would select all of the even-numbered items from a collection?
 
 :::::::::::::::  solution
@@ -342,7 +342,7 @@ furn
 eniroulf
 ```
 
-1. `stride` is the step size of the slice.
+1. `stride` є розміром кроку зрізу.
 
 2. Зріз `1::2` вибирає всі елементи з парними номерами з колекції: він починається з елементу `1` (який є другим елементом, оскільки індексація починається з `0`), продовжується до кінця (оскільки `end` не задано) і використовує розмір кроку `2` (таким чином обираючи кожний другий елемент).
 
