@@ -380,7 +380,7 @@ The second statement returns an empty string, because the slice goes "out of bou
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Sort and Sorted
+## Сортування на місці чи у новий список
 
 Що друкують ці дві програми?
 Простими словами поясніть різницю між `sorted(letters)` and `letters.sort()`.
@@ -403,13 +403,13 @@ print('letters is', letters, 'and result is', result)
 
 ## Рішення
 
-Program A prints
+Програма А надрукує
 
 ```output
 letters is ['g', 'o', 'l', 'd'] and result is ['d', 'g', 'l', 'o']
 ```
 
-Program B prints
+Програма В надрукує
 
 ```output
 letters is ['d', 'g', 'l', 'o'] and result is None
@@ -448,15 +448,15 @@ print('new is', new, 'and old is', old)
 
 :::::::::::::::  solution
 
-## Solution
+## Рішення
 
-Program A prints
+Програма А надрукує
 
 ```output
 new is ['D', 'o', 'l', 'd'] and old is ['D', 'o', 'l', 'd']
 ```
 
-Program B prints
+Програма В надрукує
 
 ```output
 new is ['D', 'o', 'l', 'd'] and old is ['g', 'o', 'l', 'd']
@@ -474,7 +474,7 @@ from the list `old`; `new` and `old` are different objects.
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- A list stores many values in a single structure.
+- Список є структурою даних, яка містить багато значень.
 - Щоб отримати елемент списку, використовуйте його індекс.
 - Значення елементів списків можна замінити шляхом присвоєння.
 - Додавання елементів до списку подовжує його.
