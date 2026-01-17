@@ -7,7 +7,7 @@ exercises: 10
 ::::::::::::::::::::::::::::::::::::::: objectives
 
 - Explain why programs need collections of values.
-- Write programs that create flat lists, index them, slice them, and modify them through assignment and method calls.
+- Написати програми, які створюють списки, індексують їх, отримують зрізи, а також змінюють списки через присвоєння значень та виклик методів.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -17,7 +17,7 @@ exercises: 10
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## A list stores many values in a single structure.
+## За допомогою списків можна зберігати кілька значень в одній структурі даних.
 
 - Виконання обчислень із сотнею змінних під назвою `pressure_001`, `pressure_002` тощо, було б принаймні так само повільно, як робити їх вручну.
 - Використовуйте список для зберігання багатьох значень разом.
@@ -82,9 +82,9 @@ print('Список primes змінився:', primes)
 - `append` є _методом_ списків.
   - Методи подібні функціям, але вони прив’язані до певних об’єктів.
 - Для виклику методів використовується синтаксис `object_name.method_name` .
-  - Deliberately resembles the way we refer to things in a library.
+  - Такий запис навмисно відтворює те, як ми звертаємося до функцій у бібліотеці.
 - По ходу роботи ми познайомимося з іншими методами, визначеними для списків.
-  - Use `help(list)` for a preview.
+  - Використовуйте `help(list)`, якщо бажаєте переглянути їх перелік зараз.
 - `extend` - це метод, схожий на `append`, але він дозволяє об’єднувати два списки.  Наприклад:
 
 ```python
@@ -103,12 +103,11 @@ primes has now become: [2, 3, 5, 7, 11, 13, 17, 19]
 primes has finally become: [2, 3, 5, 7, 11, 13, 17, 19, [37, 41, 43, 47]]
 ```
 
-Note that while `extend` maintains the "flat" structure of the list, appending a list to a list means
-the last element in `primes` will itself be a list, not an integer. Списки можуть містити значення будь-якого типу; отже, можливі списки списків.
+Зауважимо, що `extend` зберігає "плоску" структуру списку, тоді як додавання списку до іншого списку за допомогою `append` дає двовимірний результат: останній елемент з `primes` є списком, а не цілим числом. Списки можуть містити значення будь-якого типу; отже, можливі списки списків.
 
-## Use `del` to remove items from a list entirely.
+## Використовуйте `del` для повного видалення елементів зі списку.
 
-- We use `del list_name[index]` to remove an element from a list (in the example, 9 is not a prime number) and thus shorten it.
+- Ми використовуємо `del list_name[index]` для видалення елемента зі списку (у прикладі нижче, 9 не є простим числом) і таким чином скоротити список.
 - `del` - це не функція і не метод, а оператор мови Python.
 
 ```python
