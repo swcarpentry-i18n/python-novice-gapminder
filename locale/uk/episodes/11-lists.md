@@ -126,8 +126,8 @@ primes після видалення останнього елементу: [2, 
 
 - Use `[]` on its own to represent a list that doesn't contain any values.
   - Порожній список - це "нуль списків."
-- Helpful as a starting point for collecting values
-  (which we will see in the [next episode](12-for-loops.md)).
+- Корисний як початкова структура для накопичення значень
+  (як ми побачимо в [наступному епізоді](12-for-loops.md)).
 
 ## Списки можуть містити значення різних типів.
 
@@ -155,10 +155,10 @@ print('третій символ:', element[3])
 ## Рядки символів незмінні.
 
 - Неможливо змінити символи в рядку після його створення.
-  - _Immutable_: can't be changed after creation.
-  - In contrast, lists are _mutable_: they can be modified in place.
-- Python considers the string to be a single value with parts,
-  not a collection of values.
+  - _Незмінний_ (_Immutable_): не може бути змінений після створення.
+  - На відміну від рядків, списки можна _змінювати_ після їх створення.
+- Python розглядає рядок як одне значення, яке складається з частин,
+  а не як набір незалежних значень.
 
 ```python
 element[0] = 'C'
@@ -170,9 +170,9 @@ TypeError: 'str' object does not support item assignment
 
 - Списки та рядки символів є _колекціями_.
 
-## Indexing beyond the end of the collection is an error.
+## Індексація після кінця колекції призводить до помилки.
 
-- Python reports an `IndexError` if we attempt to access a value that doesn't exist.
+- Python повідомляє про помилку `IndexError`, якщо ми намагаємося звернутися до не наявного значення.
   - Це різновид помилки виконання ([runtime error](04-built-in.md)).
   - Її неможливо виявити під час аналізу коду, оскільки індекс може бути розрахований на основі даних, з якими працює програма.
 
@@ -188,7 +188,7 @@ IndexError: string index out of range
 
 ## Заповнення пропусків
 
-Fill in the blanks so that the program below produces the output shown.
+Заповніть пропуски так, щоб наведена нижче програма видала показаний результат.
 
 ```python
 values = ____
@@ -227,17 +227,17 @@ print('second time:', values)
 
 ## How Large is a Slice?
 
-If `start` and `stop` are both non-negative integers,
-how long is the list `values[start:stop]`?
+Якщо `start` і `stop` є невід'ємними цілими числами,
+якою є довжина списку `values[start:stop:]`?
 
 :::::::::::::::  solution
 
 ## Рішення
 
 Список `values[start:stop]` має до `stop - start` елементів.  Наприклад, `values[1:4]` має 3 елементи `values[1]`, `values[2]`, та `values[3]`.
-Why 'up to'? As we saw in [episode 2](02-variables.md),
-if `stop` is greater than the total length of the list `values`,
-we will still get a list back but it will be shorter than expected.
+Чому 'до'? Як ми бачили у [епізоді 2](02-variables.md),
+якщо `stop` перевищує загальну довжину списку `values`,
+результатом усе одно буде список, але коротший, ніж очікувалося.
 
 :::::::::::::::::::::::::
 
@@ -259,8 +259,8 @@ string to list: ['t', 'i', 'n']
 list to string: gold
 ```
 
-1. What does `list('some string')` do?
-2. What does `'-'.join(['x', 'y', 'z'])` generate?
+1. Що робить команда `list('some string')`?
+2. Що генерує команда `'-'.join(['x', 'y', 'z'])`?
 
 :::::::::::::::  solution
 
