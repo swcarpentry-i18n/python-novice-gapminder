@@ -288,12 +288,12 @@ print(element[-1])
 ```
 
 1. Як Python інтерпретує від'ємний індекс?
-2. If a list or string has N elements,
-   what is the most negative index that can safely be used with it,
-   and what location does that index represent?
-3. If `values` is a list, what does `del values[-1]` do?
-4. How can you display all elements but the last one without changing `values`?
-   (Hint: you will need to combine slicing and negative indexing.)
+2. Якщо список або рядок має N елементів,
+   який найбільший від'ємний індекс можна безпечно використовувати для даного рядка,
+   і яку позицію він означає?
+3. Якщо `values` є списком, що відбувається при виконанні `del values[-1]`?
+4. Як можна показати всі елементи, окрім останнього, не змінюючи `values`?
+   (Підказка: вам знадобиться одночасно використати зрізи та від’ємну індексацію.)
 
 :::::::::::::::  solution
 
