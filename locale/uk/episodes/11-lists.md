@@ -270,7 +270,7 @@ list to string: gold
 
 2. [`join`](https://docs.python.org/3/library/stdtypes.html#str.join) повертає рядок, який є _конкатенацією_
    всіх елементів, та додає роздільник між кожним елементом у списку. У результаті отримуємо
-   `x-y-z`. The separator between the elements is the string that provides this method.
+   `x-y-z`. Рядок, який викликає цей метод, виступає роздільником між елементами.
 
 :::::::::::::::::::::::::
 
