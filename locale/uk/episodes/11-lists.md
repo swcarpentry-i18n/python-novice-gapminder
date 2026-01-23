@@ -266,10 +266,10 @@ list to string: gold
 
 ## Рішення
 
-1. [`list('some string')`](https://docs.python.org/3/library/stdtypes.html#list) converts a string into a list containing all of its characters.
+1. [`list('some string')`](https://docs.python.org/3/library/stdtypes.html#list) перетворює рядок на список окремих символів.
 
-2. [`join`](https://docs.python.org/3/library/stdtypes.html#str.join) returns a string that is the _concatenation_
-   of each string element in the list and adds the separator between each element in the list. This results in
+2. [`join`](https://docs.python.org/3/library/stdtypes.html#str.join) повертає рядок, який є _конкатенацією_
+   всіх елементів, та додає роздільник між кожним елементом у списку. У результаті отримуємо
    `x-y-z`. The separator between the elements is the string that provides this method.
 
 :::::::::::::::::::::::::
