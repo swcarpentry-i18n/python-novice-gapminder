@@ -147,7 +147,7 @@ a range is not a list: range(0, 3)
 
 - A common pattern in programs is to:
   1. Initialize an _accumulator_ variable to zero, the empty string, or the empty list.
-  2. Update the variable with values from a collection.
+  2. Оновлення змінної значеннями з колекції.
 
 ```python
 # Sum the first 10 integers.
@@ -162,22 +162,22 @@ print(total)
 ```
 
 - Read `total = total + (number + 1)` as:
-  - Add 1 to the current value of the loop variable `number`.
+  - Додати 1 до поточного значення змінної циклу `number`.
   - Add that to the current value of the accumulator variable `total`.
   - Assign that to `total`, replacing the current value.
 - We have to add `number + 1` because `range` produces 0..9, not 1..10.
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Classifying Errors
+## Класифікація помилок
 
-Is an indentation error a syntax error or a runtime error?
+Чи є помилка відступу синтаксичною чи помилкою виконання?
 
 :::::::::::::::  solution
 
-## Solution
+## Рішення
 
-An IndentationError is a syntax error. Programs with syntax errors cannot be started.
+An IndentationError is a syntax error. Неможливо запустити програми з синтаксичними помилками.
 A program with a runtime error will start but an error will be thrown under certain conditions.
 
 :::::::::::::::::::::::::
@@ -186,10 +186,9 @@ A program with a runtime error will start but an error will be thrown under cert
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Tracing Execution
+## Відстеження виконання
 
-Create a table showing the numbers of the lines that are executed when this program runs,
-and the values of the variables after each line is executed.
+Створіть таблицю з номерами рядків, які виконуються під час виконання цієї програми, і значення змінних після виконання кожного рядка.
 
 ```python
 total = 0
@@ -199,17 +198,17 @@ for char in "tin":
 
 :::::::::::::::  solution
 
-## Solution
+## Рішення
 
-| Line no | Variables            |
-| ------- | -------------------- |
-| 1       | total = 0            |
-| 2       | total = 0 char = 't' |
-| 3       | total = 1 char = 't' |
-| 2       | total = 1 char = 'i' |
-| 3       | total = 2 char = 'i' |
-| 2       | total = 2 char = 'n' |
-| 3       | total = 3 char = 'n' |
+| Номер рядка | Значення змінних     |
+| ----------- | -------------------- |
+| 1           | total = 0            |
+| 2           | total = 0 char = 't' |
+| 3           | total = 1 char = 't' |
+| 2           | total = 1 char = 'i' |
+| 3           | total = 2 char = 'i' |
+| 2           | total = 2 char = 'n' |
+| 3           | total = 3 char = 'n' |
 
 :::::::::::::::::::::::::
 
@@ -219,8 +218,7 @@ for char in "tin":
 
 ## Reversing a String
 
-Fill in the blanks in the program below so that it prints "nit"
-(the reverse of the original character string "tin").
+Заповніть порожні місця в програмі нижче, щоб вона друкувала "nit" (зворотний вихідний рядок символів "tin").
 
 ```python
 original = "tin"
@@ -232,7 +230,7 @@ print(result)
 
 :::::::::::::::  solution
 
-## Solution
+## Рішення
 
 ```python
 original = "tin"
@@ -248,7 +246,7 @@ print(result)
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Practice Accumulating
+## Практика накопичення.
 
 Fill in the blanks in each of the programs below
 to produce the indicated result.
