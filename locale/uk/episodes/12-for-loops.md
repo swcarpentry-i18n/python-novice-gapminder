@@ -261,7 +261,7 @@ print(total)
 
 :::::::::::::::  solution
 
-## Solution
+## Рішення
 
 ```python
 total = 0
@@ -273,7 +273,7 @@ print(total)
 :::::::::::::::::::::::::
 
 ```python
-# List of word lengths: ["red", "green", "blue"] => [3, 5, 4]
+# Список довжин слів: ["red", "green", "blue"] => [3, 5, 4]
 lengths = ____
 for word in ["red", "green", "blue"]:
     lengths.____(____)
@@ -282,7 +282,7 @@ print(lengths)
 
 :::::::::::::::  solution
 
-## Solution
+## Рішення
 
 ```python
 lengths = []
@@ -294,7 +294,7 @@ print(lengths)
 :::::::::::::::::::::::::
 
 ```python
-# Concatenate all words: ["red", "green", "blue"] => "redgreenblue"
+# Об’єднайте всі слова: ["red", "green", "blue"] => "redgreenblue"
 words = ["red", "green", "blue"]
 result = ____
 for ____ in ____:
@@ -304,7 +304,7 @@ print(result)
 
 :::::::::::::::  solution
 
-## Solution
+## Рішення
 
 ```python
 words = ["red", "green", "blue"]
@@ -323,7 +323,7 @@ a for loop.
 
 :::::::::::::::  solution
 
-## Solution
+## Рішення
 
 ```python
 acronym = ""
@@ -342,7 +342,7 @@ print(acronym)
 
 Reorder and properly indent the lines of code below
 so that they print a list with the cumulative sum of data.
-The result should be `[1, 3, 5, 10]`.
+Результатом має бути `[1, 3, 5, 10]`.
 
 ```python
 cumulative.append(total)
@@ -356,7 +356,7 @@ data = [1,2,2,5]
 
 :::::::::::::::  solution
 
-## Solution
+## Рішення
 
 ```python
 total = 0
@@ -387,7 +387,7 @@ print(cumulative)
 
 ```python
 for number in range(10):
-    # use a if the number is a multiple of 3, otherwise use b
+    # використовуйте a, якщо число кратне 3, інакше використовуйте b
     if (Number % 3) == 0:
         message = message + a
     else:
@@ -397,7 +397,7 @@ print(message)
 
 :::::::::::::::  solution
 
-## Solution
+## Рішення
 
 - Python variable names are case sensitive: `number` and `Number` refer to different variables.
 - The variable `message` needs to be initialized as an empty string.
@@ -406,7 +406,7 @@ print(message)
 ```python
 message = ""
 for number in range(10):
-    # use a if the number is a multiple of 3, otherwise use b
+    # використовуйте a, якщо число кратне 3, інакше використовуйте b
     if (number % 3) == 0:
         message = message + "a"
     else:
@@ -434,7 +434,7 @@ print('My favorite season is ', seasons[4])
 
 :::::::::::::::  solution
 
-## Solution
+## Рішення
 
 This list has 4 elements and the index to access the last element in the list is `3`.
 
