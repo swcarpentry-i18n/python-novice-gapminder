@@ -175,7 +175,7 @@ print(total)
 
 :::::::::::::::  solution
 
-## Рішення
+## Solution
 
 An IndentationError is a syntax error. Неможливо запустити програми з синтаксичними помилками.
 A program with a runtime error will start but an error will be thrown under certain conditions.
