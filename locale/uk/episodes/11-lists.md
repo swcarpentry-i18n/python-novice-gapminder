@@ -207,7 +207,7 @@ second time: [3, 5]
 
 :::::::::::::::  solution
 
-## Рішення
+## Відповідь
 
 ```python
 values = []
@@ -232,7 +232,7 @@ print('second time:', values)
 
 :::::::::::::::  solution
 
-## Рішення
+## Відповідь
 
 Список `values[start:stop]` має до `stop - start` елементів.  Наприклад, `values[1:4]` має 3 елементи `values[1]`, `values[2]`, та `values[3]`.
 Чому 'до'? Як ми бачили у [епізоді 2](02-variables.md),
